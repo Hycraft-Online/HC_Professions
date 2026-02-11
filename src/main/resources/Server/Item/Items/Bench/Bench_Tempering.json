@@ -1,0 +1,72 @@
+{
+  "TranslationProperties": {
+    "Name": "hc-professions.items.Bench_Tempering.name",
+    "Description": "hc-professions.items.Bench_Tempering.description"
+  },
+  "Icon": "Icons/ItemsGenerated/Bench_Weapon.png",
+  "Categories": ["Furniture.Benches"],
+  "Recipe": {
+    "TimeSeconds": 5,
+    "Input": [
+      {"ItemId": "Ingredient_Bar_Iron", "Quantity": 5},
+      {"ResourceTypeId": "Wood_Trunk", "Quantity": 10}
+    ],
+    "BenchRequirement": [
+      {
+        "Type": "Crafting",
+        "Categories": ["Workbench_Crafting"],
+        "Id": "Workbench"
+      }
+    ]
+  },
+  "BlockType": {
+    "Material": "Solid",
+    "DrawType": "Model",
+    "Opacity": "Transparent",
+    "CustomModel": "Blocks/Benches/Weapon.blockymodel",
+    "CustomModelTexture": [
+      {"Texture": "Blocks/Benches/Weapon_Texture.png", "Weight": 1}
+    ],
+    "VariantRotation": "NESW",
+    "HitboxType": "Bench_Weapon",
+    "State": {
+      "Id": "crafting",
+      "Definitions": {
+        "CraftCompleted": {
+          "CustomModelAnimation": "Blocks/Benches/Weapon_Crafting.blockyanim",
+          "Looping": true
+        },
+        "CraftCompletedInstant": {
+          "CustomModelAnimation": "Blocks/Benches/Weapon_Crafting.blockyanim"
+        }
+      }
+    },
+    "Gathering": {
+      "Breaking": {"GatherType": "Benches"}
+    },
+    "Bench": {
+      "Type": "Crafting",
+      "Id": "Tempering_Bench",
+      "LocalOpenSoundEventId": "SFX_Weapon_Bench_Open",
+      "LocalCloseSoundEventId": "SFX_Weapon_Bench_Close",
+      "CompletedSoundEventId": "SFX_Weapon_Bench_Craft",
+      "BenchUpgradeSoundEventId": "SFX_Workbench_Upgrade_Start_Default",
+      "BenchUpgradeCompletedSoundEventId": "SFX_Workbench_Upgrade_Complete_Default",
+      "Categories": []
+    },
+    "BlockParticleSetId": "Stone",
+    "ParticleColor": "#5C583E",
+    "Support": {"Down": [{"FaceType": "Full"}]},
+    "BlockSoundSetId": "Stone"
+  },
+  "PlayerAnimationsId": "Block",
+  "IconProperties": {
+    "Scale": 0.37,
+    "Translation": [18.7, -15],
+    "Rotation": [22.5, 45, 22.5]
+  },
+  "Tags": {"Type": ["Bench"]},
+  "MaxStack": 1,
+  "ItemLevel": 2,
+  "ItemSoundSetId": "ISS_Blocks_Wood"
+}

@@ -1,0 +1,17 @@
+{
+  "TranslationProperties": {
+    "Name": "hc-professions.items.Component_Chainlinks_Refined.name"
+  },
+  "Categories": [
+    "Items.Ingredients"
+  ],
+  "Quality": "Uncommon",
+  "Icon": "Icons/ItemsGenerated/Component_Chainlinks_Refined.png",
+  "Tags": {
+    "Type": [
+      "Component"
+    ]
+  },
+  "MaxStack": 64,
+  "DropOnDeath": true
+}

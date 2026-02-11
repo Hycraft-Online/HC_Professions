@@ -1,0 +1,11 @@
+{
+  "TranslationProperties": {
+    "Name": "hc-professions.items.TemperStone_Rough.name"
+  },
+  "Categories": ["Items.Ingredients"],
+  "Quality": "Common",
+  "Icon": "Icons/ItemsGenerated/Bench_Weapon.png",
+  "Tags": {"Type": ["Ingredient"]},
+  "MaxStack": 64,
+  "DropOnDeath": true
+}

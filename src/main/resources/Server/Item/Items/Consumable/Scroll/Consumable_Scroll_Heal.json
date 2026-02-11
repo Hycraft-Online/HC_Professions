@@ -1,0 +1,17 @@
+{
+  "TranslationProperties": {
+    "Name": "hc-professions.items.Consumable_Scroll_Heal.name"
+  },
+  "Categories": [
+    "Items.Ingredients"
+  ],
+  "Quality": "Rare",
+  "Icon": "Icons/ItemsGenerated/Consumable_Scroll_Heal.png",
+  "Tags": {
+    "Type": [
+      "Consumable"
+    ]
+  },
+  "MaxStack": 10,
+  "DropOnDeath": true
+}

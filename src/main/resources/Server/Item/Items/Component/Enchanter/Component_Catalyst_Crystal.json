@@ -1,0 +1,17 @@
+{
+  "TranslationProperties": {
+    "Name": "hc-professions.items.Component_Catalyst_Crystal.name"
+  },
+  "Categories": [
+    "Items.Ingredients"
+  ],
+  "Quality": "Epic",
+  "Icon": "Icons/ItemsGenerated/Component_Catalyst_Crystal.png",
+  "Tags": {
+    "Type": [
+      "Component"
+    ]
+  },
+  "MaxStack": 16,
+  "DropOnDeath": true
+}

@@ -1,0 +1,17 @@
+{
+  "TranslationProperties": {
+    "Name": "hc-professions.items.Consumable_Armor_Polish_Crude.name"
+  },
+  "Categories": [
+    "Items.Ingredients"
+  ],
+  "Quality": "Common",
+  "Icon": "Icons/ItemsGenerated/Consumable_Armor_Polish_Crude.png",
+  "Tags": {
+    "Type": [
+      "Consumable"
+    ]
+  },
+  "MaxStack": 20,
+  "DropOnDeath": true
+}

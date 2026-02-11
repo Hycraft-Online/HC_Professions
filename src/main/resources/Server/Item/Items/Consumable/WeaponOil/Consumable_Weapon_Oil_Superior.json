@@ -1,0 +1,17 @@
+{
+  "TranslationProperties": {
+    "Name": "hc-professions.items.Consumable_Weapon_Oil_Superior.name"
+  },
+  "Categories": [
+    "Items.Ingredients"
+  ],
+  "Quality": "Rare",
+  "Icon": "Icons/ItemsGenerated/Consumable_Weapon_Oil_Superior.png",
+  "Tags": {
+    "Type": [
+      "Consumable"
+    ]
+  },
+  "MaxStack": 20,
+  "DropOnDeath": true
+}

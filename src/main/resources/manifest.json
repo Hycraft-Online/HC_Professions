@@ -1,0 +1,18 @@
+{
+  "Group": "${group}",
+  "Name": "${name}",
+  "Version": "${version}",
+  "Description": "${description}",
+  "Authors": [{"Name": "Server Admin"}],
+  "ServerVersion": "${server_version}",
+  "IncludesAssetPack": true,
+  "Dependencies": {
+    "Hytale:EntityModule": "*"
+  },
+  "OptionalDependencies": {
+    "ModServer:HC_Equipment": "*",
+    "ModServer:HC_Leveling": "*"
+  },
+  "DisabledByDefault": false,
+  "Main": "${entry_point}"
+}

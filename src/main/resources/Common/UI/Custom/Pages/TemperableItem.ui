@@ -1,0 +1,36 @@
+$C = "../Common.ui";
+
+Group {
+    Padding: (Bottom: 2);
+    Anchor: (Height: 44);
+
+    Button #ItemRow {
+        Anchor: (Full: 0);
+        LayoutMode: Left;
+        Padding: (Left: 4, Right: 4, Top: 2, Bottom: 2);
+        Style: $C.@SecondaryButtonStyle;
+
+        ItemSlot #ItemSlot {
+            Anchor: (Width: 34, Height: 34);
+            ShowQualityBackground: true;
+        }
+
+        Group #ItemText {
+            FlexWeight: 1;
+            LayoutMode: Top;
+            Padding: (Left: 6);
+
+            Label #ItemRowName {
+                Text: "";
+                Style: (FontSize: 13, TextColor: #FFFFFF, RenderBold: true, VerticalAlignment: Center);
+                Anchor: (Height: 20);
+            }
+
+            Label #ItemRowSubtitle {
+                Text: "";
+                Style: (FontSize: 11, TextColor: #ccb588, VerticalAlignment: Center);
+                Anchor: (Height: 16);
+            }
+        }
+    }
+}

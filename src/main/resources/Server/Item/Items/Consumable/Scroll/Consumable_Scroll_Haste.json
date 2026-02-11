@@ -1,0 +1,17 @@
+{
+  "TranslationProperties": {
+    "Name": "hc-professions.items.Consumable_Scroll_Haste.name"
+  },
+  "Categories": [
+    "Items.Ingredients"
+  ],
+  "Quality": "Epic",
+  "Icon": "Icons/ItemsGenerated/Consumable_Scroll_Haste.png",
+  "Tags": {
+    "Type": [
+      "Consumable"
+    ]
+  },
+  "MaxStack": 10,
+  "DropOnDeath": true
+}

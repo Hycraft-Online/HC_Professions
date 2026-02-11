@@ -1,0 +1,17 @@
+{
+  "TranslationProperties": {
+    "Name": "hc-professions.items.Consumable_Weapon_Oil_Pristine.name"
+  },
+  "Categories": [
+    "Items.Ingredients"
+  ],
+  "Quality": "Epic",
+  "Icon": "Icons/ItemsGenerated/Consumable_Weapon_Oil_Pristine.png",
+  "Tags": {
+    "Type": [
+      "Consumable"
+    ]
+  },
+  "MaxStack": 20,
+  "DropOnDeath": true
+}
