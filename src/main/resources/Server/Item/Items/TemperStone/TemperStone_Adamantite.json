@@ -1,0 +1,17 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.TemperStone_Adamantite.name"
+  },
+  "Categories": [
+    "Items.Ingredients"
+  ],
+  "Quality": "Epic",
+  "Tags": {
+    "Type": [
+      "Ingredient"
+    ]
+  },
+  "MaxStack": 64,
+  "DropOnDeath": true,
+  "Icon": "Icons/ItemsGenerated/TemperStone_Adamantite.png"
+}

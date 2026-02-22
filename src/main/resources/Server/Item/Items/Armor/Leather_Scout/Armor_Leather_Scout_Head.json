@@ -1,0 +1,98 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.Armor_Leather_Scout_Head.name"
+  },
+  "Parent": "Armor_Iron_Head",
+  "Quality": "Rare",
+  "ItemLevel": 50,
+  "Icon": "Icons/ItemsGenerated/Armor_Leather_Scout_Head.png",
+  "IconProperties": {
+    "Rotation": [
+      22.5,
+      45,
+      22.5
+    ],
+    "Scale": 0.5,
+    "Translation": [
+      -1.5,
+      -12.3
+    ]
+  },
+  "Model": "Items/Armors/Cosmetic_Bandits/Bandana.blockymodel",
+  "Texture": "Items/Armors/Leather_Scout/Cosmetic_Head_Texture.png",
+  "Recipe": {
+    "TimeSeconds": 2,
+    "Input": [
+      {
+        "ItemId": "Ingredient_Leather_Storm",
+        "Quantity": 5
+      },
+      {
+        "ItemId": "Ingredient_Bar_Thorium",
+        "Quantity": 2
+      },
+      {
+        "ItemId": "Ingredient_Bolt_Silk",
+        "Quantity": 2
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Id": "Armor_Bench",
+        "Type": "Crafting",
+        "Categories": [
+          "Armor_Head"
+        ]
+      }
+    ],
+    "KnowledgeRequired": true
+  },
+  "Armor": {
+    "ArmorSlot": "Head",
+    "BaseDamageResistance": 0,
+    "CosmeticsToHide": [
+      "EarAccessory",
+      "Ear",
+      "Haircut",
+      "HeadAccessory"
+    ],
+    "StatModifiers": {
+      "Health": [
+        {
+          "Amount": 14,
+          "CalculationType": "Additive"
+        }
+      ]
+    },
+    "DamageResistance": {
+      "Physical": [
+        {
+          "Amount": 0.08,
+          "CalculationType": "Multiplicative"
+        }
+      ],
+      "Projectile": [
+        {
+          "Amount": 0.07,
+          "CalculationType": "Multiplicative"
+        }
+      ],
+      "Elemental": [
+        {
+          "Amount": 0.03,
+          "CalculationType": "Multiplicative"
+        }
+      ]
+    }
+  },
+  "Tags": {
+    "Type": [
+      "Armor"
+    ],
+    "Family": [
+      "Leather_Scout"
+    ]
+  },
+  "MaxDurability": 170,
+  "ItemSoundSetId": "ISS_Armor_Leather"
+}

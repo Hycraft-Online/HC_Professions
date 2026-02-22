@@ -1,13 +1,12 @@
 package com.hcprofessions.pages;
 
 import com.hcequipment.api.HC_EquipmentAPI;
+import com.hcequipment.models.ArmorType;
 import com.hcequipment.models.ItemRarity;
 import com.hcprofessions.HC_ProfessionsPlugin;
+import com.hcprofessions.managers.AllProfessionManager;
 import com.hcprofessions.managers.CraftingGateManager;
-import com.hcprofessions.managers.ProfessionManager;
-import com.hcprofessions.models.CraftQualityTier;
 import com.hcprofessions.models.Profession;
-import com.hcprofessions.models.QualityTierDefinition;
 
 import com.hypixel.hytale.codec.Codec;
 import com.hypixel.hytale.codec.KeyedCodec;
@@ -30,7 +29,6 @@ import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 import javax.annotation.Nonnull;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.util.Random;
 import java.util.UUID;
 import java.util.logging.Level;
@@ -38,48 +36,54 @@ import java.util.logging.Level;
 public class TemperingBenchPage extends InteractiveCustomUIPage<TemperingBenchPage.TemperEventData> {
 
     private final HC_ProfessionsPlugin plugin;
-    private final Profession profession;
     private int selectedIndex = -1;
     private final Random random = new Random();
 
     // Cached temperable items
     private final List<TemperableEntry> temperableItems = new ArrayList<>();
 
-    // Material -> (temper stone item ID, bar item ID, bar quantity)
-    private static final Map<String, TemperCost> MATERIAL_COSTS = Map.ofEntries(
-        Map.entry("Crude",      new TemperCost("TemperStone_Rough",    "Ingredient_Bar_Copper", 2)),
-        Map.entry("Copper",     new TemperCost("TemperStone_Rough",    "Ingredient_Bar_Copper", 3)),
-        Map.entry("Bronze",     new TemperCost("TemperStone_Rough",    "Ingredient_Bar_Copper", 4)),
-        Map.entry("Iron",       new TemperCost("TemperStone_Polished", "Ingredient_Bar_Iron",   3)),
-        Map.entry("Steel",      new TemperCost("TemperStone_Polished", "Ingredient_Bar_Iron",   5)),
-        Map.entry("Thorium",    new TemperCost("TemperStone_Pristine", "Ingredient_Bar_Thorium",    3)),
-        Map.entry("Cobalt",     new TemperCost("TemperStone_Pristine", "Ingredient_Bar_Cobalt",     4)),
-        Map.entry("Mithril",    new TemperCost("TemperStone_Pristine", "Ingredient_Bar_Mithril",    5)),
-        Map.entry("Adamantite", new TemperCost("TemperStone_Pristine", "Ingredient_Bar_Adamantite", 6))
-    );
+    private static final String[] ROMAN_NUMERALS = {"I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"};
+    private static final int ITEM_LEVEL_RANGE = 10;
 
-    // Display names for temper stones
-    private static final Map<String, String> STONE_NAMES = Map.of(
-        "TemperStone_Rough",    "Rough Temper Stone",
-        "TemperStone_Polished", "Polished Temper Stone",
-        "TemperStone_Pristine", "Pristine Temper Stone"
-    );
+    /**
+     * Derives temper stone ID from item level.
+     * Every 5 item levels maps to one tier: I (1-5), II (6-10), ... X (46-50).
+     */
+    private static String getTemperStoneForLevel(int itemLevel) {
+        int tier = Math.clamp((itemLevel - 1) / 5, 0, 9);
+        return "TemperStone_" + ROMAN_NUMERALS[tier];
+    }
 
-    // Display names for bar items
-    private static final Map<String, String> BAR_NAMES = Map.of(
-        "Ingredient_Bar_Copper",     "Copper Bar",
-        "Ingredient_Bar_Iron",       "Iron Bar",
-        "Ingredient_Bar_Thorium",    "Thorium Bar",
-        "Ingredient_Bar_Cobalt",     "Cobalt Bar",
-        "Ingredient_Bar_Mithril",    "Mithril Bar",
-        "Ingredient_Bar_Adamantite", "Adamantite Bar"
-    );
+    /** "TemperStone_IV" -> "IV" */
+    private static String getStoneTierName(String stoneId) {
+        return stoneId.replace("TemperStone_", "");
+    }
 
-    public TemperingBenchPage(@Nonnull PlayerRef playerRef, @Nonnull Profession profession,
-                              @Nonnull HC_ProfessionsPlugin plugin) {
+    /** "TemperStone_IV" -> "Temper Stone IV" */
+    private static String getStoneName(String stoneId) {
+        return "Temper Stone " + getStoneTierName(stoneId);
+    }
+
+    /**
+     * Determine which profession is relevant for tempering this item.
+     * Weapons -> WEAPONSMITH (Bladesmith), Plate -> ARMORSMITH (Platesmith),
+     * Leather -> LEATHERWORKER, Cloth -> TAILOR.
+     */
+    private static Profession getRelevantProfession(String itemId, String equipType) {
+        if ("WEAPON".equals(equipType)) return Profession.WEAPONSMITH;
+        // ARMOR -> check armor_type via HC_EquipmentAPI
+        ArmorType armorType = HC_EquipmentAPI.getArmorType(itemId);
+        if (armorType == null) return Profession.ARMORSMITH; // fallback to plate
+        return switch (armorType) {
+            case PLATE -> Profession.ARMORSMITH;
+            case LEATHER -> Profession.LEATHERWORKER;
+            case CLOTH -> Profession.TAILOR;
+        };
+    }
+
+    public TemperingBenchPage(@Nonnull PlayerRef playerRef, @Nonnull HC_ProfessionsPlugin plugin) {
         super(playerRef, CustomPageLifetime.CanDismiss, TemperEventData.CODEC);
         this.plugin = plugin;
-        this.profession = profession;
     }
 
     @Override
@@ -87,10 +91,7 @@ public class TemperingBenchPage extends InteractiveCustomUIPage<TemperingBenchPa
                      @Nonnull UIEventBuilder events, @Nonnull Store<EntityStore> store) {
         cmd.append("Pages/TemperingBench.ui");
 
-        // Set title based on profession
-        String title = profession == Profession.WEAPONSMITH
-            ? "Weaponsmith's Forge" : "Armorsmith's Anvil";
-        cmd.set("#TitleText.Text", title);
+        cmd.set("#TitleText.Text", "Tempering Bench");
 
         // Scan inventory for temperable items
         scanInventory(store);
@@ -115,6 +116,7 @@ public class TemperingBenchPage extends InteractiveCustomUIPage<TemperingBenchPa
         int capacity = container.getCapacity();
         UUID playerUuid = playerRef.getUuid();
         CraftingGateManager gateManager = plugin.getCraftingGateManager();
+        AllProfessionManager allProfManager = plugin.getAllProfessionManager();
 
         for (int i = 0; i < capacity; i++) {
             ItemStack stack = container.getItemStack((short) i);
@@ -128,19 +130,33 @@ public class TemperingBenchPage extends InteractiveCustomUIPage<TemperingBenchPa
             // Check if this is a known vanilla equipment item
             if (!HC_EquipmentAPI.isVanillaEquipment(itemId)) continue;
 
-            // Filter by profession type
+            // No profession filter -- all equipment types shown
             String equipType = HC_EquipmentAPI.getVanillaEquipmentType(itemId);
-            if (profession == Profession.WEAPONSMITH && !"WEAPON".equals(equipType)) continue;
-            if (profession == Profession.ARMORSMITH && !"ARMOR".equals(equipType)) continue;
 
             String material = HC_EquipmentAPI.getVanillaMaterial(itemId);
             String displayName = HC_EquipmentAPI.getVanillaDisplayName(itemId);
             if (material == null || displayName == null) continue;
 
-            // Check gate (level requirement)
-            CraftingGateManager.GateCheck gateCheck = gateManager.checkPermission(playerUuid, itemId);
+            // Derive temper stone from item level (not material name)
+            int baseItemLevel = HC_EquipmentAPI.getVanillaItemLevel(itemId);
+            String stoneId = getTemperStoneForLevel(baseItemLevel);
+            String stoneTier = getStoneTierName(stoneId);
 
-            temperableItems.add(new TemperableEntry(i, stack, itemId, displayName, material, gateCheck));
+            // Determine which profession is relevant for this item
+            Profession relevantProf = getRelevantProfession(itemId, equipType);
+            int profLevel = allProfManager.getLevel(playerUuid, relevantProf);
+
+            // Require profession level >= base item level to temper
+            int requiredProfLevel = baseItemLevel;
+            boolean tierGated = profLevel < requiredProfLevel;
+
+            // Check gate using AllProfessionManager (level in relevant profession)
+            CraftingGateManager.GateCheck gateCheck = gateManager.checkTemperPermission(
+                playerUuid, itemId, allProfManager);
+
+            temperableItems.add(new TemperableEntry(i, stack, itemId, displayName, material,
+                baseItemLevel, stoneId, stoneTier,
+                equipType, relevantProf, profLevel, requiredProfLevel, tierGated, gateCheck));
         }
     }
 
@@ -149,9 +165,7 @@ public class TemperingBenchPage extends InteractiveCustomUIPage<TemperingBenchPa
 
         if (temperableItems.isEmpty()) {
             cmd.set("#EmptyState.Visible", true);
-            cmd.set("#EmptyState.Text", profession == Profession.WEAPONSMITH
-                ? "No untempered weapons found"
-                : "No untempered armor found");
+            cmd.set("#EmptyState.Text", "No untempered equipment found");
             return;
         }
 
@@ -163,16 +177,26 @@ public class TemperingBenchPage extends InteractiveCustomUIPage<TemperingBenchPa
             cmd.set(selector + " #ItemSlot.ItemId", entry.vanillaId);
             cmd.set(selector + " #ItemRowName.TextSpans", Message.raw(entry.displayName));
 
-            // Show material + level requirement
-            String subtitle = entry.material;
-            if (!entry.gateCheck.isAllowed() && entry.gateCheck.gate() != null) {
-                subtitle += " - Requires Lv. " + entry.gateCheck.gate().requiredLevel();
-                cmd.set(selector + " #ItemRowSubtitle.TextSpans",
-                    Message.raw(subtitle).color(java.awt.Color.RED));
+            // Show tier info + relevant profession + level
+            String profName = entry.relevantProfession.getDisplayName();
+            // Show tier name when it differs from material (themed items)
+            String tierLabel = entry.stoneTier.equalsIgnoreCase(entry.material)
+                ? entry.material
+                : entry.material + " [" + entry.stoneTier + " Tier]";
+            String subtitle;
+            java.awt.Color subtitleColor;
+            if (entry.tierGated) {
+                subtitle = tierLabel + " - Requires " + profName + " Lv. " + entry.requiredProfLevel;
+                subtitleColor = java.awt.Color.RED;
+            } else if (!entry.gateCheck.isAllowed() && entry.gateCheck.gate() != null) {
+                subtitle = tierLabel + " - Requires " + profName + " Lv. " + entry.gateCheck.gate().requiredLevel();
+                subtitleColor = java.awt.Color.RED;
             } else {
-                cmd.set(selector + " #ItemRowSubtitle.TextSpans",
-                    Message.raw(subtitle).color(java.awt.Color.LIGHT_GRAY));
+                subtitle = tierLabel + " (" + profName + " Lv. " + entry.profLevel + ")";
+                subtitleColor = java.awt.Color.LIGHT_GRAY;
             }
+            cmd.set(selector + " #ItemRowSubtitle.TextSpans",
+                Message.raw(subtitle).color(subtitleColor));
 
             events.addEventBinding(CustomUIEventBindingType.Activating, selector + " #ItemRow",
                 EventData.of("Action", "SelectItem").append("Index", String.valueOf(i)), false);
@@ -195,48 +219,50 @@ public class TemperingBenchPage extends InteractiveCustomUIPage<TemperingBenchPa
         // Item header
         cmd.set("#PreviewSlot.ItemId", entry.vanillaId);
         cmd.set("#ItemName.TextSpans", Message.raw(entry.displayName));
-        cmd.set("#ItemSubtitle.TextSpans", Message.raw(entry.material + " (Untempered)").color(java.awt.Color.LIGHT_GRAY));
+        String subtitleText = entry.stoneTier.equalsIgnoreCase(entry.material)
+            ? entry.material + " (Untempered)"
+            : entry.material + " [" + entry.stoneTier + " Tier] (Untempered)";
+        cmd.set("#ItemSubtitle.TextSpans", Message.raw(subtitleText).color(java.awt.Color.LIGHT_GRAY));
 
-        // Quality preview from profession level
-        UUID playerUuid = playerRef.getUuid();
-        ProfessionManager profManager = plugin.getProfessionManager();
-        int profLevel = profManager.getLevel(playerUuid);
-        QualityTierDefinition tier = CraftQualityTier.fromLevel(profLevel);
+        // Quality preview based on mastery ratio
+        int profLevel = entry.profLevel;
+        int baseILvl = entry.baseItemLevel;
+        double ratio = baseILvl > 0 ? (double) profLevel / baseILvl : 1.0;
+        int mastery = (int) (ratio * 100);
+
+        String maxRarity;
+        if (ratio >= 2.0) maxRarity = "Epic";
+        else if (ratio >= 1.5) maxRarity = "Rare";
+        else if (ratio >= 1.25) maxRarity = "Uncommon";
+        else maxRarity = "Common";
+
+        int maxILvl = baseILvl + (int) (Math.min(Math.max(ratio - 1.0, 0.0), 1.0) * ITEM_LEVEL_RANGE);
 
         StringBuilder qualityText = new StringBuilder();
-        if (tier != null) {
-            qualityText.append(tier.name()).append(" Quality");
-            qualityText.append("  |  Up to ").append(tier.maxRarity()).append(" rarity");
-            if (tier.maxAffixes() > 0) {
-                qualityText.append("  |  ").append(tier.minAffixes()).append("-").append(tier.maxAffixes()).append(" affixes");
-            }
-        } else {
-            qualityText.append("Prof Lv. ").append(profLevel);
+        qualityText.append(entry.relevantProfession.getDisplayName()).append(" Lv. ").append(profLevel);
+        qualityText.append(" (").append(mastery).append("% mastery)");
+        qualityText.append("  |  Up to ").append(maxRarity);
+        qualityText.append("  |  iLvl ").append(baseILvl);
+        if (maxILvl > baseILvl) {
+            qualityText.append("-").append(maxILvl);
         }
         cmd.set("#StatsTitle.TextSpans", Message.raw(qualityText.toString()));
 
-        // Cost section
-        TemperCost cost = MATERIAL_COSTS.get(entry.material);
-        if (cost != null) {
-            String stoneName = STONE_NAMES.getOrDefault(cost.stoneItemId, cost.stoneItemId);
-            String barName = BAR_NAMES.getOrDefault(cost.barItemId, cost.barItemId);
+        // Cost section - one temper stone derived from item level
+        cmd.set("#CostSlot.ItemId", entry.stoneId);
+        cmd.set("#CostText.TextSpans", Message.raw("1x " + getStoneName(entry.stoneId)));
 
-            cmd.set("#CostSlot.ItemId", cost.stoneItemId);
-            cmd.set("#CostText.TextSpans",
-                Message.raw("1x " + stoneName + " + " + cost.barQuantity + "x " + barName));
-        } else {
-            cmd.set("#CostText.TextSpans", Message.raw("Unknown material cost").color(java.awt.Color.RED));
-        }
+        // Hide component section (no longer used)
+        cmd.set("#ComponentSection.Visible", false);
 
-        // Gate check message
-        if (!entry.gateCheck.isAllowed() && entry.gateCheck.gate() != null) {
-            String gateMsg = switch (entry.gateCheck.result()) {
-                case NO_PROFESSION -> "Choose a profession first! Use /profession choose";
-                case WRONG_PROFESSION -> "Requires " + entry.gateCheck.gate().requiredProfession().getDisplayName();
-                case TOO_LOW_LEVEL -> "Requires " + entry.gateCheck.gate().requiredProfession().getDisplayName()
-                    + " Lv. " + entry.gateCheck.gate().requiredLevel();
-                default -> "";
-            };
+        // Gate check messages (stone tier gate takes priority)
+        if (entry.tierGated) {
+            String gateMsg = "Requires " + entry.relevantProfession.getDisplayName()
+                + " Lv. " + entry.requiredProfLevel + " to temper this item";
+            cmd.set("#ResultText.TextSpans", Message.raw(gateMsg).color(java.awt.Color.RED));
+        } else if (!entry.gateCheck.isAllowed() && entry.gateCheck.gate() != null) {
+            String gateMsg = "Requires " + entry.gateCheck.gate().requiredProfession().getDisplayName()
+                + " Lv. " + entry.gateCheck.gate().requiredLevel();
             cmd.set("#ResultText.TextSpans", Message.raw(gateMsg).color(java.awt.Color.RED));
         } else {
             cmd.set("#ResultText.TextSpans",
@@ -297,87 +323,126 @@ public class TemperingBenchPage extends InteractiveCustomUIPage<TemperingBenchPa
             return;
         }
 
-        // Check gate permission
+        // Check profession level requirement (must meet base item level)
         UUID playerUuid = playerRef.getUuid();
-        CraftingGateManager.GateCheck gateCheck = plugin.getCraftingGateManager().checkPermission(playerUuid, entry.vanillaId);
+        AllProfessionManager allProfManager = plugin.getAllProfessionManager();
+        Profession relevantProf = getRelevantProfession(entry.vanillaId, entry.equipType);
+        int currentLevel = allProfManager.getLevel(playerUuid, relevantProf);
+        if (currentLevel < entry.baseItemLevel) {
+            showMessage("Requires " + relevantProf.getDisplayName() + " Lv. " + entry.baseItemLevel
+                + " to temper this item!", java.awt.Color.RED);
+            return;
+        }
+
+        // Check gate permission using AllProfessionManager
+        CraftingGateManager.GateCheck gateCheck = plugin.getCraftingGateManager()
+            .checkTemperPermission(playerUuid, entry.vanillaId, allProfManager);
         if (!gateCheck.isAllowed()) {
-            String msg = switch (gateCheck.result()) {
-                case NO_PROFESSION -> "Choose a profession first!";
-                case WRONG_PROFESSION -> "Requires " + gateCheck.gate().requiredProfession().getDisplayName();
-                case TOO_LOW_LEVEL -> "Requires " + gateCheck.gate().requiredProfession().getDisplayName()
-                    + " Lv. " + gateCheck.gate().requiredLevel();
-                default -> "Cannot temper this item";
-            };
+            String msg = "Requires " + gateCheck.gate().requiredProfession().getDisplayName()
+                + " Lv. " + gateCheck.gate().requiredLevel();
             showMessage(msg, java.awt.Color.RED);
             return;
         }
 
-        // Check material cost
-        TemperCost cost = MATERIAL_COSTS.get(entry.material);
-        if (cost == null) {
-            showMessage("Unknown material: " + entry.material, java.awt.Color.RED);
-            return;
-        }
+        // Check temper stone cost (derived from item level)
+        String stoneId = entry.stoneId;
+        String stoneName = getStoneName(stoneId);
 
-        String stoneName = STONE_NAMES.getOrDefault(cost.stoneItemId, cost.stoneItemId);
-        String barName = BAR_NAMES.getOrDefault(cost.barItemId, cost.barItemId);
-
-        if (!hasMaterials(player, cost.stoneItemId, 1)) {
+        if (!hasMaterials(player, stoneId, 1)) {
             showMessage("Need 1x " + stoneName + "!", java.awt.Color.RED);
             return;
         }
-        if (!hasMaterials(player, cost.barItemId, cost.barQuantity)) {
-            showMessage("Need " + cost.barQuantity + "x " + barName + "!", java.awt.Color.RED);
-            return;
-        }
 
-        // Roll quality based on profession level
-        ProfessionManager profManager = plugin.getProfessionManager();
-        int profLevel = profManager.getLevel(playerUuid);
-        QualityTierDefinition tier = CraftQualityTier.fromLevel(profLevel);
-        if (tier == null) {
-            showMessage("Cannot determine quality tier!", java.awt.Color.RED);
-            return;
-        }
+        // Roll quality based on mastery ratio (profLevel / baseItemLevel)
+        int profLevel = entry.profLevel;
+        int baseILvl = entry.baseItemLevel;
+        double ratio = baseILvl > 0 ? (double) profLevel / baseILvl : 1.0;
 
-        int itemLevel = tier.rollItemLevel(profLevel, random);
-        int affixCount = tier.rollAffixCount(random);
-
-        // Resolve rarity
-        String rarityName = tier.maxRarity().toUpperCase();
-        if (CraftQualityTier.isGrandmaster(tier) && random.nextDouble() > 0.05) {
-            rarityName = "EPIC";
-        }
-        ItemRarity rarity = ItemRarity.fromString(rarityName);
+        int itemLevel = rollTemperItemLevel(baseILvl, ratio);
+        ItemRarity rarity = rollTemperRarity(ratio);
+        int affixCount = getAffixCountForRarity(rarity);
 
         // Generate tempered item (keeps vanilla item ID, adds RPG metadata)
-        ItemStack result = HC_EquipmentAPI.generateItem(entry.vanillaId, entry.displayName, itemLevel, rarity, affixCount);
+        ItemStack result = HC_EquipmentAPI.generateItem(entry.vanillaId, entry.displayName, itemLevel, rarity, affixCount, playerRef.getUsername());
         if (result == null) {
             showMessage("Failed to temper item!", java.awt.Color.RED);
             return;
         }
 
-        // Deduct materials
-        removeMaterials(player, cost.stoneItemId, 1);
-        removeMaterials(player, cost.barItemId, cost.barQuantity);
+        // Deduct temper stone
+        removeMaterials(player, stoneId, 1);
 
         // Replace item in slot
         container.setItemStackForSlot((short) entry.slotIndex, result, false);
         player.sendInventory();
 
-        // Grant profession XP
-        plugin.getActionXpService().onAction(playerRef, com.hcprofessions.models.ActionType.TEMPER, entry.vanillaId);
+        // Grant XP to the relevant profession via AllProfessionManager
+        int temperXp = getTemperXp(entry.stoneTier);
+        allProfManager.grantXp(playerRef, entry.relevantProfession, temperXp);
+
+        // Grant base XP via HC_Leveling
+        try {
+            com.hcleveling.api.HC_LevelingAPI.grantXp(playerRef, temperXp, "Tempering");
+        } catch (NoClassDefFoundError ignored) {
+            // HC_Leveling not loaded
+        }
 
         // Success message
         String resultMsg = "Tempered " + entry.displayName + " (" + rarity.getDisplayName() + ", iLvl " + itemLevel + ")";
         showMessage(resultMsg, new java.awt.Color(85, 255, 85));
 
-        plugin.getLogger().at(Level.INFO).log("%s tempered %s -> %s quality (prof level %d, iLvl %d)",
-            playerRef.getUsername(), entry.vanillaId, rarity.getDisplayName(), profLevel, itemLevel);
+        plugin.getLogger().at(Level.INFO).log("%s tempered %s -> %s quality (%s level %d, iLvl %d)",
+            playerRef.getUsername(), entry.vanillaId, rarity.getDisplayName(),
+            entry.relevantProfession.getDisplayName(), profLevel, itemLevel);
 
         // Rescan inventory for updated state
         selectedIndex = -1;
         scanInventory(store);
+    }
+
+    private int getTemperXp(String stoneTier) {
+        return switch (stoneTier) {
+            case "I"    -> 5;
+            case "II"   -> 8;
+            case "III"  -> 12;
+            case "IV"   -> 18;
+            case "V"    -> 25;
+            case "VI"   -> 35;
+            case "VII"  -> 50;
+            case "VIII" -> 70;
+            case "IX"   -> 100;
+            case "X"    -> 150;
+            default     -> 10;
+        };
+    }
+
+    private ItemRarity rollTemperRarity(double ratio) {
+        double epicChance = ratio >= 2.0 ? 0.25 : 0.0;
+        double rareChance = ratio >= 1.5 ? Math.min(0.25, (ratio - 1.5) / 0.5 * 0.25) : 0.0;
+        double uncommonChance = Math.min(0.30, Math.max(0.0, (ratio - 1.0) / 1.0 * 0.30));
+
+        double roll = random.nextDouble();
+        if (roll < epicChance) return ItemRarity.EPIC;
+        if (roll < epicChance + rareChance) return ItemRarity.RARE;
+        if (roll < epicChance + rareChance + uncommonChance) return ItemRarity.UNCOMMON;
+        return ItemRarity.COMMON;
+    }
+
+    private int rollTemperItemLevel(int baseItemLevel, double ratio) {
+        if (ratio <= 1.0) return baseItemLevel;
+        double progress = Math.min(ratio - 1.0, 1.0);
+        int effectiveRange = (int) (progress * ITEM_LEVEL_RANGE);
+        if (effectiveRange <= 0) return baseItemLevel;
+        return baseItemLevel + random.nextInt(effectiveRange + 1);
+    }
+
+    private int getAffixCountForRarity(ItemRarity rarity) {
+        return switch (rarity) {
+            case EPIC -> 3;
+            case RARE -> 2;
+            case UNCOMMON -> 1;
+            default -> 0;
+        };
     }
 
     private boolean hasMaterials(Player player, String itemId, int quantity) {
@@ -416,9 +481,11 @@ public class TemperingBenchPage extends InteractiveCustomUIPage<TemperingBenchPa
 
     private record TemperableEntry(int slotIndex, ItemStack stack, String vanillaId,
                                    String displayName, String material,
+                                   int baseItemLevel, String stoneId, String stoneTier,
+                                   String equipType, Profession relevantProfession,
+                                   int profLevel, int requiredProfLevel,
+                                   boolean tierGated,
                                    CraftingGateManager.GateCheck gateCheck) {}
-
-    private record TemperCost(String stoneItemId, String barItemId, int barQuantity) {}
 
     public static class TemperEventData {
         public String action;

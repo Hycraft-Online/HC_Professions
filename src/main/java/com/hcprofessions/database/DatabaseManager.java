@@ -124,6 +124,15 @@ public class DatabaseManager {
             )
             """;
 
+        String createTemperMaterialRequirementsTable = """
+            CREATE TABLE IF NOT EXISTS prof_temper_material_requirements (
+                material VARCHAR(64) PRIMARY KEY,
+                required_level INT NOT NULL DEFAULT 1,
+                enabled BOOLEAN DEFAULT true,
+                sort_order INT DEFAULT 0
+            )
+            """;
+
         String createSkillXpRewardsTable = """
             CREATE TABLE IF NOT EXISTS skill_xp_rewards (
                 id SERIAL PRIMARY KEY,
@@ -167,6 +176,9 @@ public class DatabaseManager {
             stmt.execute(createDefinitionsTable);
             LOGGER.at(Level.INFO).log("Created/verified prof_definitions table");
 
+            stmt.execute(createTemperMaterialRequirementsTable);
+            LOGGER.at(Level.INFO).log("Created/verified prof_temper_material_requirements table");
+
             stmt.execute(createSkillXpRewardsTable);
             stmt.execute(createSkillXpRewardsIndex);
             LOGGER.at(Level.INFO).log("Created/verified skill_xp_rewards table");
@@ -186,6 +198,25 @@ public class DatabaseManager {
             // Migration: add min_level to tradeskill sources
             stmt.execute("ALTER TABLE prof_tradeskill_sources ADD COLUMN IF NOT EXISTS min_level INT DEFAULT 0");
             LOGGER.at(Level.INFO).log("Migration: added min_level to prof_tradeskill_sources (idempotent)");
+
+            // Migration: add ingredients and time_seconds to recipe gates
+            stmt.execute("ALTER TABLE prof_recipe_gates ADD COLUMN IF NOT EXISTS ingredients JSONB DEFAULT '[]'::jsonb");
+            stmt.execute("ALTER TABLE prof_recipe_gates ADD COLUMN IF NOT EXISTS time_seconds INT DEFAULT 0");
+            LOGGER.at(Level.INFO).log("Migration: added ingredients/time_seconds to prof_recipe_gates (idempotent)");
+
+            // Migration: add learn_cost to recipe gates (cost in Coin_Copper to learn from vendor)
+            stmt.execute("ALTER TABLE prof_recipe_gates ADD COLUMN IF NOT EXISTS learn_cost INT DEFAULT 0");
+            stmt.execute("UPDATE prof_recipe_gates SET learn_cost = required_level * 5 WHERE learn_cost = 0");
+            LOGGER.at(Level.INFO).log("Migration: added learn_cost to prof_recipe_gates (idempotent)");
+
+            // Migration: add bench_category for per-recipe bench tab override (e.g. Prepared, Baked for COOK)
+            stmt.execute("ALTER TABLE prof_recipe_gates ADD COLUMN IF NOT EXISTS bench_category VARCHAR(64) DEFAULT NULL");
+            LOGGER.at(Level.INFO).log("Migration: added bench_category to prof_recipe_gates (idempotent)");
+
+            // Migration: rename Weaponsmith -> Bladesmith, Armorsmith -> Platesmith display names
+            stmt.execute("UPDATE prof_definitions SET display_name = 'Bladesmith', description = 'Forge powerful weapons' WHERE id = 'WEAPONSMITH' AND display_name = 'Weaponsmith'");
+            stmt.execute("UPDATE prof_definitions SET display_name = 'Platesmith', description = 'Craft protective plate armor' WHERE id = 'ARMORSMITH' AND display_name = 'Armorsmith'");
+            LOGGER.at(Level.INFO).log("Migration: renamed Weaponsmith->Bladesmith, Armorsmith->Platesmith (idempotent)");
 
         } catch (SQLException e) {
             LOGGER.at(Level.SEVERE).log("Failed to initialize database schema: " + e.getMessage());

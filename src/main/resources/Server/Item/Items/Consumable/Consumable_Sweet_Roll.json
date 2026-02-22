@@ -1,0 +1,61 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.Consumable_Sweet_Roll.name",
+    "Description": "server.items.Consumable_Sweet_Roll.description"
+  },
+  "Categories": [
+    "Items.Ingredients"
+  ],
+  "Quality": "Uncommon",
+  "Tags": {
+    "Type": [
+      "Consumable"
+    ]
+  },
+  "MaxStack": 10,
+  "DropOnDeath": true,
+  "Model": "Items/pouch.blockymodel",
+  "Texture": "Items/pouch.png",
+  "Consumable": true,
+  "Interactions": {
+    "Secondary": "Root_Secondary_Consume_Food_T2"
+  },
+  "InteractionVars": {
+    "Effect": {
+      "Interactions": [
+        {
+          "Type": "ConsumableBuff",
+          "BuffId": "sweet_roll"
+        }
+      ]
+    }
+  },
+  "Recipe": {
+    "Input": [
+      {
+        "ItemId": "Ingredient_Flour",
+        "Quantity": 1
+      },
+      {
+        "ItemId": "Ingredient_Sugar",
+        "Quantity": 1
+      },
+      {
+        "ItemId": "Ingredient_Butter",
+        "Quantity": 1
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Type": "Crafting",
+        "Id": "Cookingbench",
+        "Categories": [
+          "Baked"
+        ]
+      }
+    ],
+    "TimeSeconds": 5,
+    "KnowledgeRequired": true
+  },
+  "Icon": "Icons/ItemsGenerated/Consumable_Sweet_Roll.png"
+}

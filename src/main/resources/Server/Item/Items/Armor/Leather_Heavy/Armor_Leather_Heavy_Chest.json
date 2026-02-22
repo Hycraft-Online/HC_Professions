@@ -1,0 +1,96 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.Armor_Leather_Heavy_Chest.name"
+  },
+  "Parent": "Armor_Iron_Chest",
+  "Quality": "Uncommon",
+  "ItemLevel": 30,
+  "Icon": "Icons/ItemsGenerated/Armor_Leather_Heavy_Chest.png",
+  "IconProperties": {
+    "Rotation": [
+      22.5,
+      45,
+      22.5
+    ],
+    "Scale": 0.405,
+    "Translation": [
+      0,
+      -6.6
+    ]
+  },
+  "Model": "Items/Armors/Leather_Heavy/Chest.blockymodel",
+  "Texture": "Items/Armors/Leather_Heavy/Chest_Texture.png",
+  "Recipe": {
+    "TimeSeconds": 2,
+    "Input": [
+      {
+        "ItemId": "Ingredient_Leather_Heavy",
+        "Quantity": 7
+      },
+      {
+        "Quantity": 4,
+        "ItemId": "Ingredient_Bar_Iron"
+      },
+      {
+        "ItemId": "Ingredient_Bolt_Wool",
+        "Quantity": 6
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Id": "Armor_Bench",
+        "Type": "Crafting",
+        "Categories": [
+          "Armor_Chest"
+        ],
+        "RequiredTierLevel": 0
+      }
+    ],
+    "KnowledgeRequired": true
+  },
+  "Armor": {
+    "ArmorSlot": "Chest",
+    "BaseDamageResistance": 0,
+    "CosmeticsToHide": [
+      "Overtop"
+    ],
+    "StatModifiers": {
+      "Health": [
+        {
+          "Amount": 19,
+          "CalculationType": "Additive"
+        }
+      ]
+    },
+    "DamageResistance": {
+      "Physical": [
+        {
+          "Amount": 0.11,
+          "CalculationType": "Multiplicative"
+        }
+      ],
+      "Projectile": [
+        {
+          "Amount": 0.10,
+          "CalculationType": "Multiplicative"
+        }
+      ],
+      "Ice": [
+        {
+          "CalculationType": "Multiplicative",
+          "Amount": 0.04
+        }
+      ]
+    }
+  },
+  "Tags": {
+    "Type": [
+      "Armor"
+    ],
+    "Family": [
+      "Leather"
+    ]
+  },
+  "MaxDurability": 130,
+  "ItemSoundSetId": "ISS_Armor_Leather"
+}

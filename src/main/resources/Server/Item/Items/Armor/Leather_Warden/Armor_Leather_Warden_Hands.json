@@ -1,0 +1,104 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.Armor_Leather_Warden_Hands.name"
+  },
+  "Parent": "Armor_Iron_Hands",
+  "Quality": "Epic",
+  "ItemLevel": 70,
+  "Icon": "Icons/ItemsGenerated/Armor_Leather_Warden_Hands.png",
+  "IconProperties": {
+    "Rotation": [
+      22.5,
+      45,
+      22.5
+    ],
+    "Scale": 0.645,
+    "Translation": [
+      0.9,
+      -0.9
+    ]
+  },
+  "Model": "Items/Armors/Cosmetic_Bandits/BattlewornGloves.blockymodel",
+  "Texture": "Items/Armors/Leather_Warden/Cosmetic_Hands_Texture.png",
+  "Recipe": {
+    "TimeSeconds": 2,
+    "Input": [
+      {
+        "ItemId": "Ingredient_Leather_Prismic",
+        "Quantity": 4
+      },
+      {
+        "ItemId": "Ingredient_Bar_Cobalt",
+        "Quantity": 2
+      },
+      {
+        "ItemId": "Ingredient_Bolt_Cindercloth",
+        "Quantity": 2
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Id": "Armor_Bench",
+        "Type": "Crafting",
+        "Categories": [
+          "Armor_Hands"
+        ]
+      }
+    ],
+    "KnowledgeRequired": true
+  },
+  "Armor": {
+    "ArmorSlot": "Hands",
+    "BaseDamageResistance": 0,
+    "StatModifiers": {
+      "Health": [
+        {
+          "Amount": 15,
+          "CalculationType": "Additive"
+        }
+      ]
+    },
+    "DamageResistance": {
+      "Physical": [
+        {
+          "Amount": 0.08,
+          "CalculationType": "Multiplicative"
+        }
+      ],
+      "Projectile": [
+        {
+          "Amount": 0.07,
+          "CalculationType": "Multiplicative"
+        }
+      ]
+    },
+    "DamageClassEnhancement": {
+      "Light": [
+        {
+          "Amount": 0.03,
+          "CalculationType": "Multiplicative"
+        }
+      ]
+    }
+  },
+  "Tags": {
+    "Type": [
+      "Armor"
+    ],
+    "Family": [
+      "Leather_Warden"
+    ]
+  },
+  "MaxDurability": 210,
+  "ItemSoundSetId": "ISS_Armor_Leather",
+  "Utility": {
+    "StatModifiers": {
+      "Signature": [
+        {
+          "CalculationType": "Multiplicative",
+          "Amount": 0.02
+        }
+      ]
+    }
+  }
+}

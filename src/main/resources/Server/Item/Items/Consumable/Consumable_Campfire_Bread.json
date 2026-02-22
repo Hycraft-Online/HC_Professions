@@ -1,0 +1,56 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.Consumable_Campfire_Bread.name",
+    "Description": "server.items.Consumable_Campfire_Bread.description"
+  },
+  "Categories": [
+    "Items.Ingredients"
+  ],
+  "Quality": "Common",
+  "Tags": {
+    "Type": [
+      "Consumable"
+    ]
+  },
+  "MaxStack": 10,
+  "DropOnDeath": true,
+  "Model": "Items/pouch.blockymodel",
+  "Texture": "Items/pouch.png",
+  "Consumable": true,
+  "Interactions": {
+    "Secondary": "Root_Secondary_Consume_Food_T2"
+  },
+  "InteractionVars": {
+    "Effect": {
+      "Interactions": [
+        {
+          "Type": "ConsumableBuff",
+          "BuffId": "campfire_bread"
+        }
+      ]
+    }
+  },
+  "Recipe": {
+    "Input": [
+      {
+        "ItemId": "Ingredient_Flour",
+        "Quantity": 2
+      },
+      {
+        "ItemId": "Ingredient_Salt",
+        "Quantity": 1
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Type": "Crafting",
+        "Id": "Cookingbench",
+        "Categories": [
+          "Baked"
+        ]
+      }
+    ],
+    "TimeSeconds": 3
+  },
+  "Icon": "Icons/ItemsGenerated/Consumable_Campfire_Bread.png"
+}

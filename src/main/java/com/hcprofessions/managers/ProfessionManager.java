@@ -51,6 +51,12 @@ public class ProfessionManager {
     public boolean chooseProfession(UUID playerUuid, Profession profession, PlayerRef playerRef, World world) {
         PlayerProfessionData data = getPlayerData(playerUuid);
 
+        if (!profession.isEnabled()) {
+            playerRef.sendMessage(Message.raw(profession.getDisplayName() +
+                " is not available right now.").color(Color.RED));
+            return false;
+        }
+
         if (data.hasProfession()) {
             playerRef.sendMessage(Message.raw("You are already a " + data.getProfession().getDisplayName() +
                 ". Use /profession respec to change.").color(Color.RED));
@@ -92,7 +98,7 @@ public class ProfessionManager {
                 if (playerComponent == null) return;
                 ItemStack benchItem = new ItemStack(benchItemId, 1);
                 SimpleItemContainer.addOrDropItemStacks(store, ref,
-                    playerComponent.getInventory().getCombinedArmorHotbarStorage(),
+                    playerComponent.getInventory().getCombinedArmorHotbarUtilityStorage(),
                     List.of(benchItem));
             });
         }
@@ -109,17 +115,41 @@ public class ProfessionManager {
         }
 
         String oldProfession = data.getProfession().getDisplayName();
+        int oldLevel = data.getLevel();
         data.setProfession(null);
-        data.resetProgression();
+
+        // If above level 20, cap at 20 instead of full reset
+        if (oldLevel > 20) {
+            data.setLevel(20);
+            data.setCurrentXp(0);
+        } else {
+            data.resetProgression();
+        }
         data.incrementRespecCount();
         repository.save(data);
 
-        playerRef.sendMessage(Message.raw("Profession reset! You are no longer a " + oldProfession +
-            ". All profession progress has been lost.").color(new Color(255, 165, 0)));
+        if (oldLevel > 20) {
+            playerRef.sendMessage(Message.raw("Profession reset! You are no longer a " + oldProfession +
+                ". Your level has been set to 20.").color(new Color(255, 165, 0)));
+        } else {
+            playerRef.sendMessage(Message.raw("Profession reset! You are no longer a " + oldProfession +
+                ". All profession progress has been lost.").color(new Color(255, 165, 0)));
+        }
 
         LOGGER.at(Level.INFO).log("%s respecced from %s (respec #%d)",
             playerRef.getUsername(), oldProfession, data.getRespecCount());
         return true;
+    }
+
+    // Configurable release cap — set via prof_xp_config.release_level_cap
+    private volatile int releaseLevelCap = 20;
+
+    public void setReleaseLevelCap(int cap) {
+        this.releaseLevelCap = cap;
+    }
+
+    public int getReleaseLevelCap() {
+        return releaseLevelCap;
     }
 
     public void grantXp(PlayerRef playerRef, int xpAmount) {
@@ -128,6 +158,7 @@ public class ProfessionManager {
         if (!data.hasProfession()) return;
 
         int oldLevel = data.getLevel();
+        if (oldLevel >= releaseLevelCap) return;
         if (oldLevel >= XPCurve.getMaxLevel()) return;
 
         data.addXp(xpAmount);
@@ -140,8 +171,10 @@ public class ProfessionManager {
             NotificationUtil.sendNotification(playerRef.getPacketHandler(), xpMsg, NotificationStyle.Default);
         } catch (Exception ignored) {}
 
+        int effectiveCap = Math.min(releaseLevelCap, XPCurve.getMaxLevel());
+
         boolean leveledUp = false;
-        while (data.getLevel() < XPCurve.getMaxLevel()) {
+        while (data.getLevel() < effectiveCap) {
             long needed = XPCurve.getXpToNextLevel(data.getLevel());
             if (data.getCurrentXp() >= needed) {
                 data.setCurrentXp(data.getCurrentXp() - needed);
@@ -152,7 +185,7 @@ public class ProfessionManager {
             }
         }
 
-        if (data.getLevel() >= XPCurve.getMaxLevel()) {
+        if (data.getLevel() >= effectiveCap) {
             data.setCurrentXp(0);
         }
 
@@ -187,10 +220,14 @@ public class ProfessionManager {
         cache.remove(playerUuid);
     }
 
+    public int getEffectiveLevelCap() {
+        return Math.min(releaseLevelCap, XPCurve.getMaxLevel());
+    }
+
     public String getProgressString(UUID playerUuid) {
         PlayerProfessionData data = getPlayerData(playerUuid);
         if (!data.hasProfession()) return "No profession";
-        if (data.getLevel() >= XPCurve.getMaxLevel()) return "MAX";
+        if (data.getLevel() >= getEffectiveLevelCap()) return "MAX";
         long needed = XPCurve.getXpToNextLevel(data.getLevel());
         return String.format("%,d / %,d XP", data.getCurrentXp(), needed);
     }

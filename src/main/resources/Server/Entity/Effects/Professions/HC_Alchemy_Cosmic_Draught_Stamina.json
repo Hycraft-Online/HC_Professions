@@ -1,0 +1,14 @@
+{
+  "RawStatModifiers": {
+    "Stamina": [
+      {
+        "Amount": 1.32,
+        "CalculationType": "Multiplicative",
+        "Target": "Max"
+      }
+    ]
+  },
+  "OverlapBehavior": "Overwrite",
+  "Duration": 360,
+  "StatusEffectIcon": "UI/StatusEffects/Stamina/Small.png"
+}

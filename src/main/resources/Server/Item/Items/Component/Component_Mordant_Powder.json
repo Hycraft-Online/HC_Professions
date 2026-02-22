@@ -1,0 +1,42 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.Component_Mordant_Powder.name",
+    "Description": "server.items.Component_Mordant_Powder.description"
+  },
+  "Categories": [
+    "Items.Ingredients"
+  ],
+  "Quality": "Uncommon",
+  "Tags": {
+    "Type": [
+      "Component"
+    ]
+  },
+  "MaxStack": 64,
+  "DropOnDeath": true,
+  "Model": "Items/Consumables/Potions/Potion.blockymodel",
+  "Texture": "Items/Consumables/Potions/Potion_Textures/White.png",
+  "Recipe": {
+    "Input": [
+      {
+        "ItemId": "Ingredient_Charcoal",
+        "Quantity": 2
+      },
+      {
+        "ItemId": "Ingredient_Bone_Fragment",
+        "Quantity": 1
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Type": "Crafting",
+        "Id": "Alchemybench",
+        "Categories": [
+          "Alchemy_Potions_Misc"
+        ]
+      }
+    ],
+    "TimeSeconds": 3
+  },
+  "Icon": "Icons/ItemsGenerated/Component_Mordant_Powder.png"
+}

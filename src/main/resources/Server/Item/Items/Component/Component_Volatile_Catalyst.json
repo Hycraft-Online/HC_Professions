@@ -1,0 +1,47 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.Component_Volatile_Catalyst.name",
+    "Description": "server.items.Component_Volatile_Catalyst.description"
+  },
+  "Categories": [
+    "Items.Ingredients"
+  ],
+  "Quality": "Rare",
+  "Tags": {
+    "Type": [
+      "Component"
+    ]
+  },
+  "MaxStack": 64,
+  "DropOnDeath": true,
+  "Model": "Items/Consumables/Potions/Potion.blockymodel",
+  "Texture": "Items/Consumables/Potions/Potion_Textures/White.png",
+  "Recipe": {
+    "Input": [
+      {
+        "ItemId": "Component_Stabilizing_Agent",
+        "Quantity": 1
+      },
+      {
+        "ItemId": "Ingredient_Fire_Essence",
+        "Quantity": 1
+      },
+      {
+        "ItemId": "Ingredient_Crystal_Red",
+        "Quantity": 1
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Type": "Crafting",
+        "Id": "Alchemybench",
+        "Categories": [
+          "Alchemy_Potions_Misc"
+        ]
+      }
+    ],
+    "TimeSeconds": 5,
+    "KnowledgeRequired": true
+  },
+  "Icon": "Icons/ItemsGenerated/Component_Volatile_Catalyst.png"
+}

@@ -10,7 +10,6 @@ import com.hypixel.hytale.server.core.universe.PlayerRef;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 import java.util.function.BiConsumer;
 import java.util.logging.Level;
 
@@ -28,19 +27,13 @@ public class PickupXpListener {
 
     private final ActionXpService actionXpService;
 
-    // Reflection handles for HC_Factions claim checking
+    // Reflection handles for HC_Factions claim checking (only need claim lookup, not ownership)
     private boolean claimCheckAvailable = false;
     private Method getClaimMethod;          // ClaimManager.getClaim(String, int, int)
     private Method toChunkCoordMethod;      // ClaimManager.toChunkCoord(double)
     private Method isFactionClaimMethod;    // Claim.isFactionClaim()
-    private Method isSoloPlayerClaimMethod; // Claim.isSoloPlayerClaim()
-    private Method getPlayerOwnerIdMethod;  // Claim.getPlayerOwnerId()
-    private Method getGuildIdMethod;        // Claim.getGuildId()
     private Method getInstanceMethod;       // HC_FactionsPlugin.getInstance()
     private Method getClaimManagerMethod;   // HC_FactionsPlugin.getClaimManager()
-    private Method getPlayerDataRepoMethod; // HC_FactionsPlugin.getPlayerDataRepository()
-    private Method getPlayerDataMethod;     // PlayerDataRepository.getPlayerData(UUID)
-    private Method pdGetGuildIdMethod;      // PlayerData.getGuildId()
 
     public PickupXpListener(ActionXpService actionXpService) {
         this.actionXpService = actionXpService;
@@ -78,34 +71,19 @@ public class PickupXpListener {
 
     private void resolveClaimCheckHandles() {
         try {
-            // HC_FactionsPlugin
             Class<?> pluginClass = Class.forName("com.hcfactions.HC_FactionsPlugin");
             getInstanceMethod = pluginClass.getMethod("getInstance");
             getClaimManagerMethod = pluginClass.getMethod("getClaimManager");
-            getPlayerDataRepoMethod = pluginClass.getMethod("getPlayerDataRepository");
 
-            // ClaimManager
             Class<?> claimManagerClass = Class.forName("com.hcfactions.managers.ClaimManager");
             getClaimMethod = claimManagerClass.getMethod("getClaim", String.class, int.class, int.class);
             toChunkCoordMethod = claimManagerClass.getMethod("toChunkCoord", double.class);
 
-            // Claim
             Class<?> claimClass = Class.forName("com.hcfactions.models.Claim");
             isFactionClaimMethod = claimClass.getMethod("isFactionClaim");
-            isSoloPlayerClaimMethod = claimClass.getMethod("isSoloPlayerClaim");
-            getPlayerOwnerIdMethod = claimClass.getMethod("getPlayerOwnerId");
-            getGuildIdMethod = claimClass.getMethod("getGuildId");
-
-            // PlayerDataRepository
-            Class<?> playerDataRepoClass = Class.forName("com.hcfactions.database.repositories.PlayerDataRepository");
-            getPlayerDataMethod = playerDataRepoClass.getMethod("getPlayerData", UUID.class);
-
-            // PlayerData
-            Class<?> playerDataClass = Class.forName("com.hcfactions.models.PlayerData");
-            pdGetGuildIdMethod = playerDataClass.getMethod("getGuildId");
 
             claimCheckAvailable = true;
-            LOGGER.at(Level.INFO).log("Claim check handles resolved - FARMING own-land check enabled");
+            LOGGER.at(Level.INFO).log("Claim check handles resolved - FARMING claimed-land check enabled");
         } catch (Exception e) {
             claimCheckAvailable = false;
             LOGGER.at(Level.WARNING).log("Could not resolve claim check handles (FARMING XP will be disabled): " + e.getMessage());
@@ -136,14 +114,16 @@ public class PickupXpListener {
     }
 
     /**
-     * Check if the player is standing on their own claimed land (solo or guild).
-     * Uses reflection to access HC_Factions' ClaimManager.
+     * Check if the player is standing on claimed land (any non-faction claim).
+     *
+     * Ownership verification is NOT needed here because ClaimPickupProtectionSystem
+     * already verified the player has permission before calling notifyPickupListeners.
+     * This check only exists to block FARMING XP on unclaimed/wild land.
      */
     private boolean isOnOwnClaim(PlayerRef playerRef) {
         if (!claimCheckAvailable) return false;
 
         try {
-            // Get player entity ref and store
             var entityRef = playerRef.getReference();
             if (entityRef == null || !entityRef.isValid()) return false;
 
@@ -157,41 +137,24 @@ public class PickupXpListener {
                 TransformComponent.getComponentType());
             if (transform == null) return false;
 
-            // Convert to chunk coords
             double posX = transform.getPosition().getX();
             double posZ = transform.getPosition().getZ();
             int chunkX = (int) toChunkCoordMethod.invoke(null, posX);
             int chunkZ = (int) toChunkCoordMethod.invoke(null, posZ);
 
-            // Get claim at position
             Object plugin = getInstanceMethod.invoke(null);
             Object claimManager = getClaimManagerMethod.invoke(plugin);
             String worldName = world.getName();
             Object claim = getClaimMethod.invoke(claimManager, worldName, chunkX, chunkZ);
 
-            if (claim == null) return false; // Unclaimed land
+            if (claim == null) return false; // Unclaimed/wild land — no farming XP
 
-            // Faction claims are not "own land"
+            // Faction claims (admin-protected capitals) — no farming XP
             if ((boolean) isFactionClaimMethod.invoke(claim)) return false;
 
-            UUID playerUuid = playerRef.getUuid();
-
-            // Solo player claim - check if player is the owner
-            if ((boolean) isSoloPlayerClaimMethod.invoke(claim)) {
-                UUID ownerId = (UUID) getPlayerOwnerIdMethod.invoke(claim);
-                return playerUuid.equals(ownerId);
-            }
-
-            // Guild claim - check if player is in the same guild
-            UUID claimGuildId = (UUID) getGuildIdMethod.invoke(claim);
-            if (claimGuildId == null) return false;
-
-            Object playerDataRepo = getPlayerDataRepoMethod.invoke(plugin);
-            Object playerData = getPlayerDataMethod.invoke(playerDataRepo, playerUuid);
-            if (playerData == null) return false;
-
-            UUID playerGuildId = (UUID) pdGetGuildIdMethod.invoke(playerData);
-            return claimGuildId.equals(playerGuildId);
+            // Any guild or solo claim — ClaimPickupProtectionSystem already
+            // verified ownership before calling us, so just return true
+            return true;
 
         } catch (Exception e) {
             LOGGER.at(Level.WARNING).log("Claim check failed for %s: %s",

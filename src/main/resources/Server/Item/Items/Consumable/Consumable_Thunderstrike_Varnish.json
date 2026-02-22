@@ -1,0 +1,61 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.Consumable_Thunderstrike_Varnish.name",
+    "Description": "server.items.Consumable_Thunderstrike_Varnish.description"
+  },
+  "Categories": [
+    "Items.Ingredients"
+  ],
+  "Quality": "Rare",
+  "Tags": {
+    "Type": [
+      "Consumable"
+    ]
+  },
+  "MaxStack": 10,
+  "DropOnDeath": true,
+  "Model": "Items/Consumables/Potions/Potion.blockymodel",
+  "Texture": "Items/Consumables/Potions/Potion_Textures/White.png",
+  "Consumable": true,
+  "Interactions": {
+    "Secondary": "Root_Secondary_Consume_Potion"
+  },
+  "InteractionVars": {
+    "Effect": {
+      "Interactions": [
+        {
+          "Type": "ConsumableBuff",
+          "BuffId": "alchemy_elixir_tempest"
+        }
+      ]
+    }
+  },
+  "Recipe": {
+    "Input": [
+      {
+        "ItemId": "Component_Sigil_Dust",
+        "Quantity": 1
+      },
+      {
+        "ItemId": "Component_Quicksilver_Drops",
+        "Quantity": 1
+      },
+      {
+        "ItemId": "Ingredient_Lightning_Essence",
+        "Quantity": 1
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Type": "Crafting",
+        "Id": "Alchemybench",
+        "Categories": [
+          "Alchemy_Potions"
+        ]
+      }
+    ],
+    "TimeSeconds": 8,
+    "KnowledgeRequired": true
+  },
+  "Icon": "Icons/ItemsGenerated/Consumable_Thunderstrike_Varnish.png"
+}

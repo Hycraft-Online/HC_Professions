@@ -1,0 +1,61 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.Consumable_Seasoned_Fish_Plate.name",
+    "Description": "server.items.Consumable_Seasoned_Fish_Plate.description"
+  },
+  "Categories": [
+    "Items.Ingredients"
+  ],
+  "Quality": "Uncommon",
+  "Tags": {
+    "Type": [
+      "Consumable"
+    ]
+  },
+  "MaxStack": 10,
+  "DropOnDeath": true,
+  "Model": "Items/pouch.blockymodel",
+  "Texture": "Items/pouch.png",
+  "Consumable": true,
+  "Interactions": {
+    "Secondary": "Root_Secondary_Consume_Food_T2"
+  },
+  "InteractionVars": {
+    "Effect": {
+      "Interactions": [
+        {
+          "Type": "ConsumableBuff",
+          "BuffId": "seasoned_fish_plate"
+        }
+      ]
+    }
+  },
+  "Recipe": {
+    "Input": [
+      {
+        "ItemId": "Ingredient_Fish_Oil",
+        "Quantity": 1
+      },
+      {
+        "ItemId": "Ingredient_Spices",
+        "Quantity": 1
+      },
+      {
+        "ItemId": "Ingredient_Vegetables",
+        "Quantity": 1
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Type": "Crafting",
+        "Id": "Cookingbench",
+        "Categories": [
+          "Prepared"
+        ]
+      }
+    ],
+    "TimeSeconds": 6,
+    "KnowledgeRequired": true
+  },
+  "Icon": "Icons/ItemsGenerated/Consumable_Seasoned_Fish_Plate.png"
+}

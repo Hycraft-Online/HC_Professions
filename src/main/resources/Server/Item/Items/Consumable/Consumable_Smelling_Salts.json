@@ -1,0 +1,60 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.Consumable_Smelling_Salts.name",
+    "Description": "server.items.Consumable_Smelling_Salts.description"
+  },
+  "Categories": [
+    "Items.Ingredients"
+  ],
+  "Quality": "Common",
+  "Tags": {
+    "Type": [
+      "Consumable"
+    ]
+  },
+  "MaxStack": 10,
+  "DropOnDeath": true,
+  "Model": "Items/Consumables/Potions/Potion.blockymodel",
+  "Texture": "Items/Consumables/Potions/Potion_Textures/White.png",
+  "Consumable": true,
+  "Interactions": {
+    "Secondary": "Root_Secondary_Consume_Potion"
+  },
+  "InteractionVars": {
+    "Effect": {
+      "Interactions": [
+        {
+          "Type": "ConsumableBuff",
+          "BuffId": "alchemy_elixir_alertness"
+        }
+      ]
+    }
+  },
+  "Recipe": {
+    "Input": [
+      {
+        "ItemId": "Component_Purifying_Salt",
+        "Quantity": 1
+      },
+      {
+        "ItemId": "Component_Mordant_Powder",
+        "Quantity": 1
+      },
+      {
+        "ItemId": "Component_Glass_Vial",
+        "Quantity": 1
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Type": "Crafting",
+        "Id": "Alchemybench",
+        "Categories": [
+          "Alchemy_Potions"
+        ]
+      }
+    ],
+    "TimeSeconds": 4
+  },
+  "Icon": "Icons/ItemsGenerated/Consumable_Smelling_Salts.png"
+}

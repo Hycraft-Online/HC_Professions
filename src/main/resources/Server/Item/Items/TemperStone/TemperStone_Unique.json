@@ -1,0 +1,17 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.TemperStone_Unique.name"
+  },
+  "Categories": [
+    "Items.Ingredients"
+  ],
+  "Quality": "Legendary",
+  "Tags": {
+    "Type": [
+      "Ingredient"
+    ]
+  },
+  "MaxStack": 64,
+  "DropOnDeath": true,
+  "Icon": "Icons/ItemsGenerated/TemperStone_Unique.png"
+}

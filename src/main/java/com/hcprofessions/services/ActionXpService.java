@@ -2,6 +2,7 @@ package com.hcprofessions.services;
 
 import com.hcprofessions.database.XpActionRepository;
 import com.hcprofessions.database.XpActionRepository.XpRewardRow;
+import com.hcprofessions.managers.AllProfessionManager;
 import com.hcprofessions.managers.ProfessionManager;
 import com.hcprofessions.managers.TradeskillManager;
 import com.hcprofessions.models.ActionType;
@@ -9,14 +10,18 @@ import com.hcprofessions.models.Profession;
 import com.hcprofessions.models.SkillTarget;
 import com.hcprofessions.models.Tradeskill;
 import com.hypixel.hytale.logger.HytaleLogger;
+import com.hypixel.hytale.server.core.Message;
 import com.hypixel.hytale.server.core.universe.PlayerRef;
 
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.EnumMap;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.UUID;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.logging.Level;
 import java.util.regex.Pattern;
 
@@ -27,6 +32,13 @@ public class ActionXpService {
     private final XpActionRepository repository;
     private final ProfessionManager professionManager;
     private final TradeskillManager tradeskillManager;
+    private AllProfessionManager allProfessionManager;
+
+    /** Non-native profession crafting stops granting XP at this level (DB-configurable) */
+    private volatile int nonNativeCraftLevelCap = 10;
+
+    /** Track players already notified about the non-native craft cap (uuid:nativeProfession) */
+    private final Set<String> notifiedNonNativeCap = ConcurrentHashMap.newKeySet();
 
     // Per-event: exact match lookup (case-insensitive key)
     private volatile Map<ActionType, Map<String, List<MatchedGrant>>> exactGrants = new EnumMap<>(ActionType.class);
@@ -41,6 +53,31 @@ public class ActionXpService {
         this.professionManager = professionManager;
         this.tradeskillManager = tradeskillManager;
         reload();
+    }
+
+    public ProfessionManager getProfessionManager() {
+        return professionManager;
+    }
+
+    public void setAllProfessionManager(AllProfessionManager allProfessionManager) {
+        this.allProfessionManager = allProfessionManager;
+    }
+
+    public AllProfessionManager getAllProfessionManager() {
+        return allProfessionManager;
+    }
+
+    public void setNonNativeCraftLevelCap(int cap) {
+        this.nonNativeCraftLevelCap = cap;
+    }
+
+    public int getNonNativeCraftLevelCap() {
+        return nonNativeCraftLevelCap;
+    }
+
+    /** Clear notification state for a player (call on disconnect) */
+    public void clearPlayerNotifications(UUID uuid) {
+        notifiedNonNativeCap.removeIf(key -> key.startsWith(uuid.toString()));
     }
 
     public void reload() {
@@ -146,17 +183,32 @@ public class ActionXpService {
 
     private void applyGrant(PlayerRef playerRef, UUID uuid, MatchedGrant grant) {
         if (grant.skillType() == SkillTarget.PROFESSION) {
-            // Check if player has a profession
-            Profession prof = professionManager.getProfession(uuid);
-            if (prof == null) return;
-
-            // Check min level
-            if (grant.minLevel() > 0) {
-                int level = professionManager.getLevel(uuid);
-                if (level < grant.minLevel()) return;
+            // Determine target profession from skill_name (if set)
+            Profession targetProfession = null;
+            if (grant.skillName() != null) {
+                targetProfession = Profession.fromString(grant.skillName());
             }
 
-            professionManager.grantXp(playerRef, grant.xpAmount());
+            // Fall back to player's main profession if no specific target
+            Profession mainProfession = professionManager.getProfession(uuid);
+            if (targetProfession == null) {
+                targetProfession = mainProfession;
+            }
+            if (targetProfession == null) return; // No profession at all
+
+            // Always grant per-profession XP (AllProfessionManager handles non-native cap)
+            if (allProfessionManager != null) {
+                allProfessionManager.grantXp(playerRef, targetProfession, grant.xpAmount());
+            }
+
+            // Also grant to main profession manager if target matches primary
+            if (mainProfession != null && targetProfession == mainProfession) {
+                if (grant.minLevel() > 0) {
+                    int level = professionManager.getLevel(uuid);
+                    if (level < grant.minLevel()) return;
+                }
+                professionManager.grantXp(playerRef, grant.xpAmount());
+            }
 
         } else if (grant.skillType() == SkillTarget.TRADESKILL) {
             // Determine which tradeskill

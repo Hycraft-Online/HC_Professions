@@ -65,8 +65,8 @@ public class DefinitionRepository {
                 {"SKINNING",     "tradeskill", "Skinning",     "#C8966E", "Harvest hides and leather from animals",              4},
                 {"FISHING",      "tradeskill", "Fishing",      "#3C78C8", "Catch fish and aquatic life",                         5},
                 // Professions (crafting)
-                {"WEAPONSMITH",  "profession", "Weaponsmith",  "#C83232", "Forge powerful weapons",                              0},
-                {"ARMORSMITH",   "profession", "Armorsmith",   "#3278C8", "Craft protective armor",                              1},
+                {"WEAPONSMITH",  "profession", "Bladesmith",   "#C83232", "Forge powerful weapons",                              0},
+                {"ARMORSMITH",   "profession", "Platesmith",   "#3278C8", "Craft protective plate armor",                        1},
                 {"ALCHEMIST",    "profession", "Alchemist",    "#8B5CF6", "Brew potions and bombs from herbs",                   2},
                 {"COOK",         "profession", "Cook",         "#E89040", "Prepare food and restorative meals",                  3},
                 {"LEATHERWORKER","profession", "Leatherworker","#8B6914", "Craft leather armor and accessories",                 4},
@@ -89,6 +89,33 @@ public class DefinitionRepository {
             LOGGER.at(Level.INFO).log("Seeded definition defaults");
         } catch (SQLException e) {
             LOGGER.at(Level.SEVERE).log("Failed to seed definitions: " + e.getMessage());
+        }
+    }
+
+    /**
+     * Disables all definitions of the given type except those in the keepEnabled list.
+     * Used to temporarily restrict available professions for release.
+     */
+    public void disableAllExcept(String type, List<String> keepEnabled) {
+        try (Connection conn = db.getConnection()) {
+            // Disable all of this type
+            try (PreparedStatement stmt = conn.prepareStatement(
+                    "UPDATE prof_definitions SET enabled = false WHERE type = ?")) {
+                stmt.setString(1, type);
+                stmt.executeUpdate();
+            }
+            // Re-enable only the ones we want
+            for (String id : keepEnabled) {
+                try (PreparedStatement stmt = conn.prepareStatement(
+                        "UPDATE prof_definitions SET enabled = true WHERE id = ? AND type = ?")) {
+                    stmt.setString(1, id);
+                    stmt.setString(2, type);
+                    stmt.executeUpdate();
+                }
+            }
+            LOGGER.at(Level.INFO).log("Disabled all %s definitions except: %s", type, keepEnabled);
+        } catch (SQLException e) {
+            LOGGER.at(Level.SEVERE).log("Failed to update enabled status: " + e.getMessage());
         }
     }
 

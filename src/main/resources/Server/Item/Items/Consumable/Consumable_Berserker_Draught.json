@@ -1,0 +1,65 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.Consumable_Berserker_Draught.name",
+    "Description": "server.items.Consumable_Berserker_Draught.description"
+  },
+  "Categories": [
+    "Items.Ingredients"
+  ],
+  "Quality": "Epic",
+  "Tags": {
+    "Type": [
+      "Consumable"
+    ]
+  },
+  "MaxStack": 10,
+  "DropOnDeath": true,
+  "Model": "Items/Consumables/Potions/Potion.blockymodel",
+  "Texture": "Items/Consumables/Potions/Potion_Textures/White.png",
+  "Consumable": true,
+  "Interactions": {
+    "Secondary": "Root_Secondary_Consume_Potion"
+  },
+  "InteractionVars": {
+    "Effect": {
+      "Interactions": [
+        {
+          "Type": "ConsumableBuff",
+          "BuffId": "alchemy_elixir_berserker"
+        }
+      ]
+    }
+  },
+  "Recipe": {
+    "Input": [
+      {
+        "ItemId": "Component_Resonance_Crystal",
+        "Quantity": 1
+      },
+      {
+        "ItemId": "Component_Volatile_Catalyst",
+        "Quantity": 1
+      },
+      {
+        "ItemId": "Ingredient_Fire_Essence",
+        "Quantity": 1
+      },
+      {
+        "ItemId": "Ingredient_Void_Essence",
+        "Quantity": 1
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Type": "Crafting",
+        "Id": "Alchemybench",
+        "Categories": [
+          "Alchemy_Potions"
+        ]
+      }
+    ],
+    "TimeSeconds": 12,
+    "KnowledgeRequired": true
+  },
+  "Icon": "Icons/ItemsGenerated/Consumable_Berserker_Draught.png"
+}

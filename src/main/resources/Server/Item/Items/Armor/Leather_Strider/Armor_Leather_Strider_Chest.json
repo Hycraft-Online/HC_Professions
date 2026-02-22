@@ -1,0 +1,95 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.Armor_Leather_Strider_Chest.name"
+  },
+  "Parent": "Armor_Iron_Chest",
+  "Quality": "Epic",
+  "ItemLevel": 60,
+  "Icon": "Icons/ItemsGenerated/Armor_Leather_Strider_Chest.png",
+  "IconProperties": {
+    "Rotation": [
+      22.5,
+      45,
+      22.5
+    ],
+    "Scale": 0.425,
+    "Translation": [
+      0,
+      -6.6
+    ]
+  },
+  "Model": "Items/Armors/Cosmetic_Bandits/ScavengerPoncho.blockymodel",
+  "Texture": "Items/Armors/Leather_Strider/Cosmetic_Chest_Texture.png",
+  "Recipe": {
+    "TimeSeconds": 2,
+    "Input": [
+      {
+        "ItemId": "Ingredient_Leather_Dark",
+        "Quantity": 10
+      },
+      {
+        "ItemId": "Ingredient_Bar_Thorium",
+        "Quantity": 6
+      },
+      {
+        "ItemId": "Ingredient_Bolt_Shadoweave",
+        "Quantity": 5
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Id": "Armor_Bench",
+        "Type": "Crafting",
+        "Categories": [
+          "Armor_Chest"
+        ]
+      }
+    ],
+    "KnowledgeRequired": true
+  },
+  "Armor": {
+    "ArmorSlot": "Chest",
+    "BaseDamageResistance": 0,
+    "CosmeticsToHide": [
+      "Overtop"
+    ],
+    "StatModifiers": {
+      "Health": [
+        {
+          "Amount": 32,
+          "CalculationType": "Additive"
+        }
+      ]
+    },
+    "DamageResistance": {
+      "Physical": [
+        {
+          "Amount": 0.17,
+          "CalculationType": "Multiplicative"
+        }
+      ],
+      "Projectile": [
+        {
+          "Amount": 0.15,
+          "CalculationType": "Multiplicative"
+        }
+      ],
+      "Fire": [
+        {
+          "Amount": 0.08,
+          "CalculationType": "Multiplicative"
+        }
+      ]
+    }
+  },
+  "Tags": {
+    "Type": [
+      "Armor"
+    ],
+    "Family": [
+      "Leather_Strider"
+    ]
+  },
+  "MaxDurability": 190,
+  "ItemSoundSetId": "ISS_Armor_Leather"
+}

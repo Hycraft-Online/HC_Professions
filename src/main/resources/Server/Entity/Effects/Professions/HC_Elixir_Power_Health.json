@@ -1,0 +1,14 @@
+{
+  "RawStatModifiers": {
+    "Health": [
+      {
+        "Amount": 1.2,
+        "CalculationType": "Multiplicative",
+        "Target": "Max"
+      }
+    ]
+  },
+  "OverlapBehavior": "Overwrite",
+  "Duration": 300,
+  "StatusEffectIcon": "UI/StatusEffects/AddHealth/Medium.png"
+}

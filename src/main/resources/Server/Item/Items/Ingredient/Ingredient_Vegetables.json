@@ -1,0 +1,38 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.Ingredient_Vegetables.name",
+    "Description": "server.items.Ingredient_Vegetables.description"
+  },
+  "Categories": [
+    "Items.Ingredients"
+  ],
+  "Quality": "Common",
+  "Tags": {
+    "Type": [
+      "Ingredient"
+    ]
+  },
+  "MaxStack": 64,
+  "DropOnDeath": true,
+  "Model": "Items/pouch.blockymodel",
+  "Texture": "Items/pouch.png",
+  "Recipe": {
+    "Input": [
+      {
+        "ResourceTypeId": "Vegetables",
+        "Quantity": 3
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Type": "Crafting",
+        "Id": "Cookingbench",
+        "Categories": [
+          "Ingredients"
+        ]
+      }
+    ],
+    "TimeSeconds": 1
+  },
+  "Icon": "Icons/ItemsGenerated/Ingredient_Vegetables.png"
+}

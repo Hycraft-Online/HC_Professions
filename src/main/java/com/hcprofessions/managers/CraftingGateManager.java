@@ -57,7 +57,7 @@ public class CraftingGateManager {
 
     public GateCheck checkPermission(UUID playerUuid, String outputItemId) {
         RecipeGate gate = getGate(outputItemId);
-        if (gate == null) {
+        if (gate == null || !gate.enabled()) {
             return new GateCheck(GateCheckResult.ALLOWED, null);
         }
 
@@ -75,6 +75,24 @@ public class CraftingGateManager {
             return new GateCheck(GateCheckResult.TOO_LOW_LEVEL, gate);
         }
 
+        return new GateCheck(GateCheckResult.ALLOWED, gate);
+    }
+
+    /**
+     * Check tempering permission using AllProfessionManager.
+     * Only checks if the player's level in the gate's required profession is sufficient.
+     * Skips NO_PROFESSION and WRONG_PROFESSION checks entirely.
+     */
+    public GateCheck checkTemperPermission(UUID playerUuid, String outputItemId,
+                                           AllProfessionManager allProfManager) {
+        RecipeGate gate = getGate(outputItemId);
+        if (gate == null || !gate.enabled()) {
+            return new GateCheck(GateCheckResult.ALLOWED, null);
+        }
+        int level = allProfManager.getLevel(playerUuid, gate.requiredProfession());
+        if (level < gate.requiredLevel()) {
+            return new GateCheck(GateCheckResult.TOO_LOW_LEVEL, gate);
+        }
         return new GateCheck(GateCheckResult.ALLOWED, gate);
     }
 

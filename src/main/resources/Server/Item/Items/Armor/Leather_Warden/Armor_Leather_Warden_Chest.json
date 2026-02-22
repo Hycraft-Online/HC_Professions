@@ -1,0 +1,107 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.Armor_Leather_Warden_Chest.name"
+  },
+  "Parent": "Armor_Iron_Chest",
+  "Quality": "Epic",
+  "ItemLevel": 70,
+  "Icon": "Icons/ItemsGenerated/Armor_Leather_Warden_Chest.png",
+  "IconProperties": {
+    "Rotation": [
+      22.5,
+      45,
+      22.5
+    ],
+    "Scale": 0.405,
+    "Translation": [
+      0,
+      -6.6
+    ]
+  },
+  "Model": "Items/Armors/Cosmetic_Bandits/BattlewornTunic.blockymodel",
+  "Texture": "Items/Armors/Leather_Warden/Cosmetic_Chest_Texture.png",
+  "Recipe": {
+    "TimeSeconds": 2,
+    "Input": [
+      {
+        "ItemId": "Ingredient_Leather_Prismic",
+        "Quantity": 12
+      },
+      {
+        "ItemId": "Ingredient_Bar_Cobalt",
+        "Quantity": 7
+      },
+      {
+        "ItemId": "Ingredient_Bolt_Cindercloth",
+        "Quantity": 6
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Id": "Armor_Bench",
+        "Type": "Crafting",
+        "Categories": [
+          "Armor_Chest"
+        ]
+      }
+    ],
+    "KnowledgeRequired": true
+  },
+  "Armor": {
+    "ArmorSlot": "Chest",
+    "BaseDamageResistance": 0,
+    "CosmeticsToHide": [
+      "Overtop"
+    ],
+    "StatModifiers": {
+      "Health": [
+        {
+          "Amount": 37,
+          "CalculationType": "Additive"
+        }
+      ]
+    },
+    "DamageResistance": {
+      "Physical": [
+        {
+          "Amount": 0.19,
+          "CalculationType": "Multiplicative"
+        }
+      ],
+      "Projectile": [
+        {
+          "Amount": 0.17,
+          "CalculationType": "Multiplicative"
+        }
+      ]
+    },
+    "DamageClassEnhancement": {
+      "Light": [
+        {
+          "Amount": 0.08,
+          "CalculationType": "Multiplicative"
+        }
+      ]
+    }
+  },
+  "Tags": {
+    "Type": [
+      "Armor"
+    ],
+    "Family": [
+      "Leather_Warden"
+    ]
+  },
+  "MaxDurability": 210,
+  "ItemSoundSetId": "ISS_Armor_Leather",
+  "Utility": {
+    "StatModifiers": {
+      "Signature": [
+        {
+          "CalculationType": "Multiplicative",
+          "Amount": 0.06
+        }
+      ]
+    }
+  }
+}

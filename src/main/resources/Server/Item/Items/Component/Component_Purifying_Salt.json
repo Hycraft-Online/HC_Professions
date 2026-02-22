@@ -1,0 +1,42 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.Component_Purifying_Salt.name",
+    "Description": "server.items.Component_Purifying_Salt.description"
+  },
+  "Categories": [
+    "Items.Ingredients"
+  ],
+  "Quality": "Common",
+  "Tags": {
+    "Type": [
+      "Component"
+    ]
+  },
+  "MaxStack": 64,
+  "DropOnDeath": true,
+  "Model": "Items/Consumables/Potions/Potion.blockymodel",
+  "Texture": "Items/Consumables/Potions/Potion_Textures/White.png",
+  "Recipe": {
+    "Input": [
+      {
+        "ItemId": "Ingredient_Salt",
+        "Quantity": 2
+      },
+      {
+        "ItemId": "Ingredient_Charcoal",
+        "Quantity": 1
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Type": "Crafting",
+        "Id": "Alchemybench",
+        "Categories": [
+          "Alchemy_Potions_Misc"
+        ]
+      }
+    ],
+    "TimeSeconds": 1
+  },
+  "Icon": "Icons/ItemsGenerated/Component_Purifying_Salt.png"
+}

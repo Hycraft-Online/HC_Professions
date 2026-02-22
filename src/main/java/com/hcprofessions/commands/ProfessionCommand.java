@@ -5,11 +5,13 @@ import com.hcprofessions.config.XPCurve;
 import com.hcprofessions.managers.ProfessionManager;
 import com.hcprofessions.models.PlayerProfessionData;
 import com.hcprofessions.models.Profession;
+import com.hcprofessions.pages.ProfessionSelectionPage;
 import com.hypixel.hytale.component.Ref;
 import com.hypixel.hytale.component.Store;
 import com.hypixel.hytale.server.core.Message;
 import com.hypixel.hytale.server.core.command.system.CommandContext;
 import com.hypixel.hytale.server.core.command.system.basecommands.AbstractPlayerCommand;
+import com.hypixel.hytale.server.core.entity.entities.Player;
 import com.hypixel.hytale.server.core.universe.PlayerRef;
 import com.hypixel.hytale.server.core.universe.world.World;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
@@ -27,6 +29,11 @@ public class ProfessionCommand extends AbstractPlayerCommand {
         this.addAliases("prof");
         this.setAllowsExtraArguments(true);
         this.plugin = plugin;
+    }
+
+    @Override
+    protected boolean canGeneratePermission() {
+        return false;
     }
 
     @Override
@@ -52,20 +59,34 @@ public class ProfessionCommand extends AbstractPlayerCommand {
 
     private void handleChoose(CommandContext ctx, PlayerRef playerRef, World world, String[] parts) {
         if (parts.length < 3) {
-            ctx.sendMessage(Message.raw("Available professions:").color(Color.YELLOW));
-            for (Profession prof : Profession.values()) {
-                ctx.sendMessage(Message.raw("  - " + prof.getDisplayName()).color(prof.getColor()));
+            // No profession name given - check if already has one, then open UI
+            PlayerProfessionData data = plugin.getProfessionManager().getPlayerData(playerRef.getUuid());
+            if (data.hasProfession()) {
+                ctx.sendMessage(Message.raw("You are already a " + data.getProfession().getDisplayName() +
+                    ". Use /profession respec to change.").color(Color.RED));
+                return;
             }
-            ctx.sendMessage(Message.raw("Usage: /profession choose <name>").color(Color.GRAY));
+
+            // Open the selection UI page
+            world.execute(() -> {
+                Ref<EntityStore> ref = playerRef.getReference();
+                if (ref == null || !ref.isValid()) return;
+                Store<EntityStore> store = world.getEntityStore().getStore();
+                Player player = store.getComponent(ref, Player.getComponentType());
+                if (player == null) return;
+
+                ProfessionSelectionPage page = new ProfessionSelectionPage(plugin, playerRef);
+                player.getPageManager().openCustomPage(ref, store, page);
+            });
             return;
         }
 
         String profName = parts[2];
         Profession profession = Profession.fromString(profName);
-        if (profession == null) {
+        if (profession == null || !profession.isEnabled()) {
             ctx.sendMessage(Message.raw("Unknown profession: " + profName).color(Color.RED));
             StringBuilder available = new StringBuilder("Available: ");
-            for (Profession p : Profession.values()) {
+            for (Profession p : Profession.getEnabledProfessions()) {
                 available.append(p.getDisplayName()).append(", ");
             }
             ctx.sendMessage(Message.raw(available.substring(0, available.length() - 2)).color(Color.GRAY));
@@ -88,10 +109,11 @@ public class ProfessionCommand extends AbstractPlayerCommand {
         }
 
         Profession prof = data.getProfession();
+        int cap = profManager.getEffectiveLevelCap();
         ctx.sendMessage(Message.raw("Profession: " + prof.getDisplayName()).color(prof.getColor()));
-        ctx.sendMessage(Message.raw("Level: " + data.getLevel() + " / " + XPCurve.getMaxLevel()).color(Color.WHITE));
+        ctx.sendMessage(Message.raw("Level: " + data.getLevel() + " / " + cap).color(Color.WHITE));
 
-        if (data.getLevel() < XPCurve.getMaxLevel()) {
+        if (data.getLevel() < cap) {
             long needed = XPCurve.getXpToNextLevel(data.getLevel());
             ctx.sendMessage(Message.raw("XP: " + String.format("%,d / %,d", data.getCurrentXp(), needed)).color(Color.WHITE));
         } else {

@@ -1,0 +1,47 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.Component_Spirit_Essence.name",
+    "Description": "server.items.Component_Spirit_Essence.description"
+  },
+  "Categories": [
+    "Items.Ingredients"
+  ],
+  "Quality": "Uncommon",
+  "Tags": {
+    "Type": [
+      "Component"
+    ]
+  },
+  "MaxStack": 64,
+  "DropOnDeath": true,
+  "Model": "Items/Consumables/Potions/Potion.blockymodel",
+  "Texture": "Items/Consumables/Potions/Potion_Textures/White.png",
+  "Recipe": {
+    "Input": [
+      {
+        "ItemId": "Component_Distilled_Solvent",
+        "Quantity": 1
+      },
+      {
+        "ItemId": "Ingredient_Life_Essence",
+        "Quantity": 1
+      },
+      {
+        "ItemId": "Ingredient_Herb_Common",
+        "Quantity": 2
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Type": "Crafting",
+        "Id": "Alchemybench",
+        "Categories": [
+          "Alchemy_Potions_Misc"
+        ]
+      }
+    ],
+    "TimeSeconds": 7,
+    "KnowledgeRequired": true
+  },
+  "Icon": "Icons/ItemsGenerated/Component_Spirit_Essence.png"
+}

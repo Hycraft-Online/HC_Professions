@@ -13,7 +13,15 @@ import com.hcprofessions.database.QualityTierRepository;
 import com.hcprofessions.database.RecipeGateRepository;
 import com.hcprofessions.database.TradeskillRepository;
 import com.hcprofessions.database.XpActionRepository;
+import com.hcprofessions.interaction.ConsumableBuffInteraction;
+import com.hcprofessions.interaction.GatedLearnRecipeInteraction;
 import com.hcprofessions.interaction.ProfessionBenchInteraction;
+import com.hcprofessions.patching.RecipeInjector;
+import com.hcprofessions.patching.RecipeKnowledgePatcher;
+import com.hcprofessions.patching.RecipeScrollGenerator;
+import com.hcprofessions.database.TemperMaterialRepository;
+import com.hcprofessions.database.AllProfessionRepository;
+import com.hcprofessions.managers.AllProfessionManager;
 import com.hcprofessions.managers.CraftingGateManager;
 import com.hcprofessions.managers.ProfessionManager;
 import com.hcprofessions.managers.TradeskillManager;
@@ -22,13 +30,13 @@ import com.hcprofessions.models.Profession;
 import com.hcprofessions.models.SkillDefinition;
 import com.hcprofessions.models.Tradeskill;
 import com.hcprofessions.services.ActionXpService;
+import com.hcprofessions.systems.CraftingXpSystem;
 import com.hcprofessions.systems.GatheringTradeskillXPSystem;
 import com.hcprofessions.systems.PickupXpListener;
 import com.hcprofessions.systems.MobKillXpSystem;
 import com.hypixel.hytale.assetstore.AssetRegistry;
 import com.hypixel.hytale.server.core.Message;
-import com.hypixel.hytale.server.core.asset.type.blocktype.config.bench.Bench;
-import com.hypixel.hytale.protocol.BenchType;
+import com.hypixel.hytale.server.core.asset.LoadAssetEvent;
 import com.hypixel.hytale.server.core.event.events.player.PlayerConnectEvent;
 import com.hypixel.hytale.server.core.event.events.player.PlayerDisconnectEvent;
 import com.hypixel.hytale.server.core.modules.interaction.interaction.config.Interaction;
@@ -48,7 +56,7 @@ import java.util.logging.Level;
 public class HC_ProfessionsPlugin extends JavaPlugin {
 
     public static final String VERSION = "1.0.0";
-    private static final String MOD_FOLDER = "mods/config/HC_Professions";
+    private static final String MOD_FOLDER = "mods/.hc_config/HC_Professions";
 
     private static HC_ProfessionsPlugin instance;
 
@@ -61,11 +69,17 @@ public class HC_ProfessionsPlugin extends JavaPlugin {
     private QualityTierRepository qualityTierRepository;
     private DefinitionRepository definitionRepository;
     private XpActionRepository xpActionRepository;
+    private AllProfessionRepository allProfessionRepository;
+    private TemperMaterialRepository temperMaterialRepository;
 
     // Managers
     private TradeskillManager tradeskillManager;
     private ProfessionManager professionManager;
+    private AllProfessionManager allProfessionManager;
     private CraftingGateManager craftingGateManager;
+
+    // Config caches
+    private volatile Map<String, Integer> temperMaterialRequirements = Map.of();
 
     // Services
     private ActionXpService actionXpService;
@@ -85,8 +99,11 @@ public class HC_ProfessionsPlugin extends JavaPlugin {
     // Getters
     public TradeskillManager getTradeskillManager() { return tradeskillManager; }
     public ProfessionManager getProfessionManager() { return professionManager; }
+    public AllProfessionManager getAllProfessionManager() { return allProfessionManager; }
     public CraftingGateManager getCraftingGateManager() { return craftingGateManager; }
     public ActionXpService getActionXpService() { return actionXpService; }
+    public RecipeGateRepository getRecipeGateRepository() { return recipeGateRepository; }
+    public Map<String, Integer> getTemperMaterialRequirements() { return temperMaterialRequirements; }
 
     public void reloadAll() {
         // Reload XP config
@@ -114,10 +131,31 @@ public class HC_ProfessionsPlugin extends JavaPlugin {
         // Reload recipe gates
         craftingGateManager.reloadCache();
 
+        // Reload temper material requirements
+        if (temperMaterialRepository != null) {
+            temperMaterialRequirements = temperMaterialRepository.loadAll();
+            this.getLogger().at(Level.INFO).log("Reloaded %d temper material requirements", temperMaterialRequirements.size());
+        }
+
         // Reload action XP service
         if (actionXpService != null) {
+            int craftCap = Integer.parseInt(xpConfig.getOrDefault("non_native_craft_level_cap", "10"));
+            actionXpService.setNonNativeCraftLevelCap(craftCap);
             actionXpService.reload();
-            this.getLogger().at(Level.INFO).log("Reloaded action XP service (%d entries)", actionXpService.size());
+            this.getLogger().at(Level.INFO).log("Reloaded action XP service (%d entries, non-native craft cap: %d)", actionXpService.size(), craftCap);
+        }
+
+        // Sync all-profession level cap
+        if (allProfessionManager != null) {
+            int profCap = Integer.parseInt(xpConfig.getOrDefault("non_native_craft_level_cap", "10"));
+            allProfessionManager.setNonNativeLevelCap(profCap);
+        }
+
+        // Sync release level cap
+        if (professionManager != null) {
+            int releaseCap = Integer.parseInt(xpConfig.getOrDefault("release_level_cap", "20"));
+            professionManager.setReleaseLevelCap(releaseCap);
+            this.getLogger().at(Level.INFO).log("Release level cap: %d", releaseCap);
         }
     }
 
@@ -152,15 +190,26 @@ public class HC_ProfessionsPlugin extends JavaPlugin {
             qualityTierRepository = new QualityTierRepository(databaseManager);
             definitionRepository = new DefinitionRepository(databaseManager);
             xpActionRepository = new XpActionRepository(databaseManager);
+            allProfessionRepository = new AllProfessionRepository(databaseManager);
+            temperMaterialRepository = new TemperMaterialRepository(databaseManager);
 
-            // Seed defaults
+            // Seed defaults (schema + base config only, not bulk data)
             recipeGateRepository.seedDefaults();
-            recipeGateRepository.seedComponentGates();
             configRepository.seedDefaults();
             qualityTierRepository.seedDefaults();
             definitionRepository.seedDefaults();
             xpActionRepository.seedDefaults();
-            xpActionRepository.seedCraftingXpActions();
+            temperMaterialRepository.seedDefaults();
+
+            // ── RELEASE RESTRICTIONS ──────────────────────────────
+            definitionRepository.disableAllExcept("profession", List.of(
+                "ALCHEMIST", "COOK", "WEAPONSMITH", "ARMORSMITH", "LEATHERWORKER", "TAILOR"
+            ));
+
+            // Disabled: recipes are now managed via admin UI
+            // recipeGateRepository.seedComponentGates();
+            recipeGateRepository.seedComponentIngredients();
+            xpActionRepository.seedGatheringXpActions();
 
             this.getLogger().at(Level.INFO).log("Repositories initialized");
 
@@ -192,11 +241,20 @@ public class HC_ProfessionsPlugin extends JavaPlugin {
         CraftQualityTier.setTiers(qualityTiers);
         this.getLogger().at(Level.INFO).log("Loaded %d quality tiers", qualityTiers.size());
 
+        temperMaterialRequirements = temperMaterialRepository.loadAll();
+        this.getLogger().at(Level.INFO).log("Loaded %d temper material requirements", temperMaterialRequirements.size());
+
         // ═══════════════════════════════════════════════════════
         // MANAGER INITIALIZATION
         // ═══════════════════════════════════════════════════════
         tradeskillManager = new TradeskillManager(tradeskillRepository);
         professionManager = new ProfessionManager(professionRepository);
+        int releaseCap = Integer.parseInt(xpConfig.getOrDefault("release_level_cap", "20"));
+        professionManager.setReleaseLevelCap(releaseCap);
+        this.getLogger().at(Level.INFO).log("Release level cap: %d", releaseCap);
+        allProfessionManager = new AllProfessionManager(allProfessionRepository, professionManager);
+        int allProfCap = Integer.parseInt(xpConfig.getOrDefault("non_native_craft_level_cap", "10"));
+        allProfessionManager.setNonNativeLevelCap(allProfCap);
         craftingGateManager = new CraftingGateManager(recipeGateRepository, professionManager);
         craftingGateManager.loadCache();
 
@@ -206,7 +264,10 @@ public class HC_ProfessionsPlugin extends JavaPlugin {
         // ACTION XP SERVICE
         // ═══════════════════════════════════════════════════════
         actionXpService = new ActionXpService(xpActionRepository, professionManager, tradeskillManager);
-        this.getLogger().at(Level.INFO).log("ActionXpService initialized (%d entries)", actionXpService.size());
+        actionXpService.setAllProfessionManager(allProfessionManager);
+        int craftCap = Integer.parseInt(xpConfig.getOrDefault("non_native_craft_level_cap", "10"));
+        actionXpService.setNonNativeCraftLevelCap(craftCap);
+        this.getLogger().at(Level.INFO).log("ActionXpService initialized (%d entries, non-native craft cap: %d)", actionXpService.size(), craftCap);
 
         // ═══════════════════════════════════════════════════════
         // ECS SYSTEMS
@@ -224,6 +285,12 @@ public class HC_ProfessionsPlugin extends JavaPlugin {
         this.getEntityStoreRegistry().registerSystem(mobKillXpSystem);
         this.getLogger().at(Level.INFO).log("Registered MobKillXpSystem");
 
+        // Crafting -> profession XP via recipe gate's profession_xp_granted
+        CraftingXpSystem craftingXpSystem = new CraftingXpSystem();
+        craftingXpSystem.initialize(craftingGateManager, professionManager, allProfessionManager);
+        this.getEntityStoreRegistry().registerSystem(craftingXpSystem);
+        this.getLogger().at(Level.INFO).log("Registered CraftingXpSystem");
+
         // Item pickup -> profession/tradeskill XP via HC_Factions pickup listener API
         PickupXpListener pickupXpListener = new PickupXpListener(actionXpService);
         if (pickupXpListener.register()) {
@@ -232,15 +299,47 @@ public class HC_ProfessionsPlugin extends JavaPlugin {
             this.getLogger().at(Level.WARNING).log("PickupXpListener failed to register - pickup XP disabled");
         }
 
+
         // ═══════════════════════════════════════════════════════
-        // TEMPERING BENCH INTERACTION (handles Tempering_Bench F-key)
+        // BENCH INTERACTION OVERRIDE (replaces vanilla *Simple_Crafting_Default)
+        // Handles: Tempering_Bench -> custom page, All other benches -> KnowledgeGatedCraftingWindow
         // ═══════════════════════════════════════════════════════
-        ProfessionBenchInteraction benchInteraction = new ProfessionBenchInteraction("*HC_Prof_Crafting");
-        RootInteraction benchRoot = new RootInteraction("*HC_Prof_Crafting_Root", benchInteraction.getId());
+        ProfessionBenchInteraction benchInteraction = new ProfessionBenchInteraction("*Simple_Crafting_Default");
         AssetRegistry.getAssetStore(Interaction.class).loadAssets("ModServer:HC_Professions", List.of(benchInteraction));
+        // Re-load the RootInteraction to force rebuild with our replacement interaction
+        RootInteraction benchRoot = new RootInteraction("*Simple_Crafting_Default", "*Simple_Crafting_Default");
         AssetRegistry.getAssetStore(RootInteraction.class).loadAssets("ModServer:HC_Professions", List.of(benchRoot));
-        Bench.registerRootInteraction(BenchType.Crafting, benchRoot);
-        this.getLogger().at(Level.INFO).log("Registered TemperingBenchInteraction (Tempering_Bench F-key)");
+        this.getLogger().at(Level.INFO).log("Replaced *Simple_Crafting_Default with KnowledgeGatedCraftingWindow handler");
+
+        // ═══════════════════════════════════════════════════════
+        // GATED LEARN RECIPE INTERACTION (level-checks before teaching recipe)
+        // ═══════════════════════════════════════════════════════
+        this.getCodecRegistry(Interaction.CODEC).register(
+            "GatedLearnRecipe",
+            GatedLearnRecipeInteraction.class,
+            GatedLearnRecipeInteraction.CODEC
+        );
+        this.getLogger().at(Level.INFO).log("Registered GatedLearnRecipe interaction type");
+
+        // ═══════════════════════════════════════════════════════
+        // RUNTIME ITEM PATCHING & SCROLL GENERATION
+        // ═══════════════════════════════════════════════════════
+        this.getEventRegistry().register((short) 64, LoadAssetEvent.class, event -> {
+            RecipeKnowledgePatcher.removeDisabledRecipes(craftingGateManager);
+            RecipeKnowledgePatcher.removeRecipesForBench("Arcanebench");
+            RecipeKnowledgePatcher.patchTodoBenchIds(craftingGateManager);
+            RecipeInjector.injectAll();
+            RecipeKnowledgePatcher.patchAll(craftingGateManager);
+            RecipeScrollGenerator.generateAll(craftingGateManager);
+        });
+
+        // Register DynamicTooltipsLib scroll tooltip provider (soft dependency)
+        registerScrollTooltipProvider();
+
+        // ═══════════════════════════════════════════════════════
+        // CONSUMABLE BUFF INTERACTION (HC_Attributes integration)
+        // ═══════════════════════════════════════════════════════
+        registerConsumableBuffs();
 
         // ═══════════════════════════════════════════════════════
         // COMMANDS
@@ -260,6 +359,7 @@ public class HC_ProfessionsPlugin extends JavaPlugin {
             // Pre-cache player data
             tradeskillManager.getPlayerData(playerUuid);
             professionManager.getPlayerData(playerUuid);
+            allProfessionManager.getPlayerData(playerUuid);
 
             // Show profession info
             var profData = professionManager.getPlayerData(playerUuid);
@@ -284,14 +384,59 @@ public class HC_ProfessionsPlugin extends JavaPlugin {
             // Save dirty data
             tradeskillManager.savePlayer(uuid);
             professionManager.savePlayer(uuid);
+            allProfessionManager.savePlayer(uuid);
 
             // Invalidate cache
             tradeskillManager.invalidateCache(uuid);
             professionManager.invalidateCache(uuid);
+            allProfessionManager.invalidateCache(uuid);
+            actionXpService.clearPlayerNotifications(uuid);
         });
 
         this.getLogger().at(Level.INFO).log("HC_Professions enabled successfully!");
         this.getLogger().at(Level.INFO).log("=================================");
+    }
+
+    /**
+     * Registers RecipeScrollTooltipProvider with DynamicTooltipsLib via reflection (soft dependency).
+     */
+    private void registerScrollTooltipProvider() {
+        try {
+            Class<?> apiProviderClass = Class.forName("org.herolias.tooltips.api.DynamicTooltipsApiProvider");
+            java.lang.reflect.Method getMethod = apiProviderClass.getMethod("get");
+            Object api = getMethod.invoke(null);
+            Class<?> apiInterface = Class.forName("org.herolias.tooltips.api.DynamicTooltipsApi");
+            Class<?> providerInterface = Class.forName("org.herolias.tooltips.api.TooltipProvider");
+            java.lang.reflect.Method registerMethod = apiInterface.getMethod("registerProvider", providerInterface);
+            registerMethod.invoke(api, new com.hcprofessions.tooltip.RecipeScrollTooltipProvider());
+            this.getLogger().at(Level.INFO).log("DynamicTooltipsLib detected - recipe scroll tooltips enabled");
+        } catch (ClassNotFoundException e) {
+            this.getLogger().at(Level.INFO).log("DynamicTooltipsLib not found - scroll tooltips will use placeholder text");
+        } catch (Exception e) {
+            this.getLogger().at(Level.WARNING).log("Failed to register scroll tooltip provider: " + e.getMessage());
+        }
+    }
+
+    /**
+     * Registers the ConsumableBuff interaction type.
+     * Buff definitions are loaded from the database by HC_Attributes (BuiltinBuffs.loadDatabaseBuffs).
+     * Requires HC_Attributes plugin to be loaded.
+     */
+    private void registerConsumableBuffs() {
+        try {
+            // Register the interaction type so item JSONs can use "Type": "ConsumableBuff"
+            this.getCodecRegistry(Interaction.CODEC).register(
+                "ConsumableBuff",
+                ConsumableBuffInteraction.class,
+                ConsumableBuffInteraction.CODEC
+            );
+            this.getLogger().at(Level.INFO).log("Registered ConsumableBuff interaction type (buff definitions loaded from DB by HC_Attributes)");
+
+        } catch (NoClassDefFoundError e) {
+            this.getLogger().at(Level.WARNING).log("HC_Attributes not available - consumable buffs disabled");
+        } catch (Exception e) {
+            this.getLogger().at(Level.WARNING).log("Failed to register ConsumableBuff interaction: " + e.getMessage());
+        }
     }
 
     @Override

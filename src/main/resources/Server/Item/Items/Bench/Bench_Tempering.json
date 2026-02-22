@@ -1,20 +1,29 @@
 {
   "TranslationProperties": {
-    "Name": "hc-professions.items.Bench_Tempering.name",
-    "Description": "hc-professions.items.Bench_Tempering.description"
+    "Name": "server.items.Bench_Tempering.name",
+    "Description": "server.items.Bench_Tempering.description"
   },
-  "Icon": "Icons/ItemsGenerated/Bench_Weapon.png",
-  "Categories": ["Furniture.Benches"],
+  "Categories": [
+    "Furniture.Benches"
+  ],
   "Recipe": {
     "TimeSeconds": 5,
     "Input": [
-      {"ItemId": "Ingredient_Bar_Iron", "Quantity": 5},
-      {"ResourceTypeId": "Wood_Trunk", "Quantity": 10}
+      {
+        "ItemId": "Ingredient_Bar_Iron",
+        "Quantity": 5
+      },
+      {
+        "ResourceTypeId": "Wood_Trunk",
+        "Quantity": 10
+      }
     ],
     "BenchRequirement": [
       {
         "Type": "Crafting",
-        "Categories": ["Workbench_Crafting"],
+        "Categories": [
+          "Workbench_Crafting"
+        ],
         "Id": "Workbench"
       }
     ]
@@ -23,26 +32,23 @@
     "Material": "Solid",
     "DrawType": "Model",
     "Opacity": "Transparent",
-    "CustomModel": "Blocks/Benches/Weapon.blockymodel",
+    "CustomModel": "Blocks/Benches/Tempering.blockymodel",
     "CustomModelTexture": [
-      {"Texture": "Blocks/Benches/Weapon_Texture.png", "Weight": 1}
+      {
+        "Texture": "Blocks/Benches/Tempering_Texture.png",
+        "Weight": 1
+      }
     ],
     "VariantRotation": "NESW",
     "HitboxType": "Bench_Weapon",
     "State": {
       "Id": "crafting",
-      "Definitions": {
-        "CraftCompleted": {
-          "CustomModelAnimation": "Blocks/Benches/Weapon_Crafting.blockyanim",
-          "Looping": true
-        },
-        "CraftCompletedInstant": {
-          "CustomModelAnimation": "Blocks/Benches/Weapon_Crafting.blockyanim"
-        }
-      }
+      "Definitions": {}
     },
     "Gathering": {
-      "Breaking": {"GatherType": "Benches"}
+      "Breaking": {
+        "GatherType": "Benches"
+      }
     },
     "Bench": {
       "Type": "Crafting",
@@ -54,19 +60,37 @@
       "BenchUpgradeCompletedSoundEventId": "SFX_Workbench_Upgrade_Complete_Default",
       "Categories": []
     },
-    "BlockParticleSetId": "Stone",
-    "ParticleColor": "#5C583E",
-    "Support": {"Down": [{"FaceType": "Full"}]},
-    "BlockSoundSetId": "Stone"
+    "BlockParticleSetId": "Wood",
+    "ParticleColor": "#6e4a2f",
+    "Support": {
+      "Down": [
+        {
+          "FaceType": "Full"
+        }
+      ]
+    },
+    "BlockSoundSetId": "Wood"
   },
   "PlayerAnimationsId": "Block",
   "IconProperties": {
-    "Scale": 0.37,
-    "Translation": [18.7, -15],
-    "Rotation": [22.5, 45, 22.5]
+    "Scale": 0.42,
+    "Rotation": [
+      22.5,
+      45.0,
+      22.5
+    ],
+    "Translation": [
+      12.9,
+      -11.7
+    ]
   },
-  "Tags": {"Type": ["Bench"]},
+  "Tags": {
+    "Type": [
+      "Bench"
+    ]
+  },
   "MaxStack": 1,
   "ItemLevel": 2,
-  "ItemSoundSetId": "ISS_Blocks_Wood"
+  "ItemSoundSetId": "ISS_Blocks_Wood",
+  "Icon": "Icons/ItemsGenerated/Bench_Tempering.png"
 }

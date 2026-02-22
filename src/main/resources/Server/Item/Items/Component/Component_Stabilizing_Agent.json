@@ -1,0 +1,46 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.Component_Stabilizing_Agent.name",
+    "Description": "server.items.Component_Stabilizing_Agent.description"
+  },
+  "Categories": [
+    "Items.Ingredients"
+  ],
+  "Quality": "Rare",
+  "Tags": {
+    "Type": [
+      "Component"
+    ]
+  },
+  "MaxStack": 64,
+  "DropOnDeath": true,
+  "Model": "Items/Consumables/Potions/Potion.blockymodel",
+  "Texture": "Items/Consumables/Potions/Potion_Textures/White.png",
+  "Recipe": {
+    "Input": [
+      {
+        "ItemId": "Component_Distilled_Solvent",
+        "Quantity": 1
+      },
+      {
+        "ItemId": "Ingredient_Tree_Sap",
+        "Quantity": 1
+      },
+      {
+        "ItemId": "Ingredient_Motes_Light",
+        "Quantity": 1
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Type": "Crafting",
+        "Id": "Alchemybench",
+        "Categories": [
+          "Alchemy_Potions_Misc"
+        ]
+      }
+    ],
+    "TimeSeconds": 3
+  },
+  "Icon": "Icons/ItemsGenerated/Component_Stabilizing_Agent.png"
+}

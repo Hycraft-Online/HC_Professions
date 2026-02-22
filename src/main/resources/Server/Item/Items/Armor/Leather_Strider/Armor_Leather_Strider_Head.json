@@ -1,0 +1,98 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.Armor_Leather_Strider_Head.name"
+  },
+  "Parent": "Armor_Iron_Head",
+  "Quality": "Epic",
+  "ItemLevel": 60,
+  "Icon": "Icons/ItemsGenerated/Armor_Leather_Strider_Head.png",
+  "IconProperties": {
+    "Rotation": [
+      22.5,
+      45,
+      22.5
+    ],
+    "Scale": 0.5,
+    "Translation": [
+      0,
+      -85.8
+    ]
+  },
+  "Model": "Items/Armors/Cosmetic_Bandits/ForeheadProtector.blockymodel",
+  "Texture": "Items/Armors/Leather_Strider/Cosmetic_Head_Texture.png",
+  "Recipe": {
+    "TimeSeconds": 2,
+    "Input": [
+      {
+        "ItemId": "Ingredient_Leather_Dark",
+        "Quantity": 5
+      },
+      {
+        "ItemId": "Ingredient_Bar_Thorium",
+        "Quantity": 3
+      },
+      {
+        "ItemId": "Ingredient_Bolt_Shadoweave",
+        "Quantity": 2
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Id": "Armor_Bench",
+        "Type": "Crafting",
+        "Categories": [
+          "Armor_Head"
+        ]
+      }
+    ],
+    "KnowledgeRequired": true
+  },
+  "Armor": {
+    "ArmorSlot": "Head",
+    "BaseDamageResistance": 0,
+    "CosmeticsToHide": [
+      "EarAccessory",
+      "Ear",
+      "Haircut",
+      "HeadAccessory"
+    ],
+    "StatModifiers": {
+      "Health": [
+        {
+          "Amount": 17,
+          "CalculationType": "Additive"
+        }
+      ]
+    },
+    "DamageResistance": {
+      "Physical": [
+        {
+          "Amount": 0.09,
+          "CalculationType": "Multiplicative"
+        }
+      ],
+      "Projectile": [
+        {
+          "Amount": 0.08,
+          "CalculationType": "Multiplicative"
+        }
+      ],
+      "Fire": [
+        {
+          "Amount": 0.04,
+          "CalculationType": "Multiplicative"
+        }
+      ]
+    }
+  },
+  "Tags": {
+    "Type": [
+      "Armor"
+    ],
+    "Family": [
+      "Leather_Strider"
+    ]
+  },
+  "MaxDurability": 190,
+  "ItemSoundSetId": "ISS_Armor_Leather"
+}

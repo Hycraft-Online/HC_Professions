@@ -1,0 +1,111 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.Armor_Leather_Bandits_Chest.name"
+  },
+  "Parent": "Armor_Iron_Chest",
+  "Quality": "Rare",
+  "ItemLevel": 40,
+  "Icon": "Icons/ItemsGenerated/Armor_Leather_Bandits_Chest.png",
+  "IconProperties": {
+    "Rotation": [
+      22.5,
+      45,
+      22.5
+    ],
+    "Scale": 0.43,
+    "Translation": [
+      0,
+      -8.7
+    ]
+  },
+  "Model": "Items/Armors/Cosmetic_Bandits/Cheststrap.blockymodel",
+  "Texture": "Items/Armors/Leather_Bandits/Cosmetic_Chest_Texture.png",
+  "Recipe": {
+    "TimeSeconds": 2,
+    "Input": [
+      {
+        "ItemId": "Ingredient_Leather_Scaled",
+        "Quantity": 8
+      },
+      {
+        "ItemId": "Ingredient_Bar_Iron",
+        "Quantity": 4
+      },
+      {
+        "ItemId": "Ingredient_Bolt_Cotton",
+        "Quantity": 4
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Id": "Armor_Bench",
+        "Type": "Crafting",
+        "Categories": [
+          "Armor_Chest"
+        ]
+      }
+    ],
+    "KnowledgeRequired": true
+  },
+  "Armor": {
+    "ArmorSlot": "Chest",
+    "BaseDamageResistance": 0,
+    "CosmeticsToHide": [
+      "Overtop"
+    ],
+    "StatModifiers": {
+      "Health": [
+        {
+          "Amount": 15,
+          "CalculationType": "Additive"
+        }
+      ],
+      "Stamina": [
+        {
+          "Amount": 30,
+          "CalculationType": "Additive"
+        }
+      ]
+    },
+    "DamageResistance": {
+      "Physical": [
+        {
+          "Amount": 0.10,
+          "CalculationType": "Multiplicative"
+        }
+      ],
+      "Projectile": [
+        {
+          "Amount": 0.08,
+          "CalculationType": "Multiplicative"
+        }
+      ],
+      "Poison": [
+        {
+          "Amount": 0.06,
+          "CalculationType": "Multiplicative"
+        }
+      ]
+    }
+  },
+  "Tags": {
+    "Type": [
+      "Armor"
+    ],
+    "Family": [
+      "Leather_Bandits"
+    ]
+  },
+  "MaxDurability": 150,
+  "ItemSoundSetId": "ISS_Armor_Leather",
+  "Utility": {
+    "StatModifiers": {
+      "Stamina": [
+        {
+          "CalculationType": "Multiplicative",
+          "Amount": 0.08
+        }
+      ]
+    }
+  }
+}

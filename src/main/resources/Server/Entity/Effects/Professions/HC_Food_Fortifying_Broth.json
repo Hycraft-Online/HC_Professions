@@ -1,0 +1,13 @@
+{
+  "DamageResistance": {
+    "Physical": [
+      {
+        "CalculationType": "Multiplicative",
+        "Amount": 0.05
+      }
+    ]
+  },
+  "OverlapBehavior": "Overwrite",
+  "Duration": 90,
+  "StatusEffectIcon": "UI/StatusEffects/AddHealth/Tiny.png"
+}

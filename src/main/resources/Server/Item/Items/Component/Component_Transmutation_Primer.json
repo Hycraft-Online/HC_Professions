@@ -1,0 +1,47 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.Component_Transmutation_Primer.name",
+    "Description": "server.items.Component_Transmutation_Primer.description"
+  },
+  "Categories": [
+    "Items.Ingredients"
+  ],
+  "Quality": "Rare",
+  "Tags": {
+    "Type": [
+      "Component"
+    ]
+  },
+  "MaxStack": 64,
+  "DropOnDeath": true,
+  "Model": "Items/Consumables/Potions/Potion.blockymodel",
+  "Texture": "Items/Consumables/Potions/Potion_Textures/White.png",
+  "Recipe": {
+    "Input": [
+      {
+        "ItemId": "Component_Sigil_Dust",
+        "Quantity": 1
+      },
+      {
+        "ItemId": "Component_Quicksilver_Drops",
+        "Quantity": 1
+      },
+      {
+        "ItemId": "Ingredient_Void_Essence",
+        "Quantity": 1
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Type": "Crafting",
+        "Id": "Alchemybench",
+        "Categories": [
+          "Alchemy_Potions_Misc"
+        ]
+      }
+    ],
+    "TimeSeconds": 8,
+    "KnowledgeRequired": true
+  },
+  "Icon": "Icons/ItemsGenerated/Component_Transmutation_Primer.png"
+}

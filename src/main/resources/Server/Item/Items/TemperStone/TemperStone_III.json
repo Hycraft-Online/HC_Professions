@@ -1,0 +1,17 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.TemperStone_III.name"
+  },
+  "Categories": [
+    "Items.Ingredients"
+  ],
+  "Quality": "Common",
+  "Tags": {
+    "Type": [
+      "Ingredient"
+    ]
+  },
+  "MaxStack": 64,
+  "DropOnDeath": true,
+  "Icon": "Icons/ItemsGenerated/TemperStone_III.png"
+}

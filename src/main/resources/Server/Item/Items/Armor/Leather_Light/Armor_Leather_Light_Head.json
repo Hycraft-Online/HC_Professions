@@ -1,0 +1,96 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.Armor_Leather_Light_Head.name"
+  },
+  "Parent": "Armor_Iron_Head",
+  "Quality": "Common",
+  "ItemLevel": 15,
+  "Icon": "Icons/ItemsGenerated/Armor_Leather_Light_Head.png",
+  "IconProperties": {
+    "Rotation": [
+      22.5,
+      45,
+      22.5
+    ],
+    "Scale": 0.5,
+    "Translation": [
+      -1.5,
+      -12.3
+    ]
+  },
+  "Model": "Items/Armors/Leather_Light/Head.blockymodel",
+  "Texture": "Items/Armors/Leather_Light/Head_Texture.png",
+  "Recipe": {
+    "TimeSeconds": 2,
+    "Input": [
+      {
+        "ItemId": "Ingredient_Leather_Light",
+        "Quantity": 3
+      },
+      {
+        "Quantity": 3,
+        "ItemId": "Ingredient_Fibre"
+      },
+      {
+        "ItemId": "Ingredient_Bolt_Wool",
+        "Quantity": 1
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Id": "Armor_Bench",
+        "Type": "Crafting",
+        "Categories": [
+          "Armor_Head"
+        ]
+      }
+    ],
+    "KnowledgeRequired": true
+  },
+  "Armor": {
+    "ArmorSlot": "Head",
+    "BaseDamageResistance": 0,
+    "CosmeticsToHide": [
+      "EarAccessory",
+      "Ear",
+      "Haircut",
+      "HeadAccessory"
+    ],
+    "StatModifiers": {
+      "Health": [
+        {
+          "Amount": 4,
+          "CalculationType": "Additive"
+        }
+      ]
+    },
+    "DamageResistance": {
+      "Physical": [
+        {
+          "Amount": 0.03,
+          "CalculationType": "Multiplicative"
+        }
+      ]
+    }
+  },
+  "Tags": {
+    "Type": [
+      "Armor"
+    ],
+    "Family": [
+      "Leather"
+    ]
+  },
+  "MaxDurability": 70,
+  "ItemSoundSetId": "ISS_Armor_Leather",
+  "Utility": {
+    "StatModifiers": {
+      "Stamina": [
+        {
+          "CalculationType": "Multiplicative",
+          "Amount": 0.02
+        }
+      ]
+    }
+  }
+}

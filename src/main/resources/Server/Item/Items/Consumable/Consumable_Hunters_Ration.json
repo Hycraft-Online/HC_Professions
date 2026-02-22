@@ -1,0 +1,34 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.Consumable_Hunters_Ration.name",
+    "Description": "server.items.Consumable_Hunters_Ration.description"
+  },
+  "Categories": [
+    "Items.Ingredients"
+  ],
+  "Quality": "Common",
+  "Tags": {
+    "Type": [
+      "Consumable"
+    ]
+  },
+  "MaxStack": 10,
+  "DropOnDeath": true,
+  "Model": "Items/pouch.blockymodel",
+  "Texture": "Items/pouch.png",
+  "Consumable": true,
+  "Interactions": {
+    "Secondary": "Root_Secondary_Consume_Food_T2"
+  },
+  "InteractionVars": {
+    "Effect": {
+      "Interactions": [
+        {
+          "Type": "ConsumableBuff",
+          "BuffId": "hunters_ration"
+        }
+      ]
+    }
+  },
+  "Icon": "Icons/ItemsGenerated/Consumable_Hunters_Ration.png"
+}

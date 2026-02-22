@@ -42,6 +42,24 @@ dependencies {
         compileOnly(files(hcLevelingJar))
     }
 
+    // HC_Attributes plugin (for consumable buff interactions)
+    def hcAttributesJar = file("${rootProject.projectDir}/../HC_Attributes/build/libs/HC_Attributes-${project.version}.jar")
+    if (hcAttributesJar.exists()) {
+        compileOnly(files(hcAttributesJar))
+    }
+
+    // DynamicTooltipsLib for scroll tooltip rendering (soft dependency via reflection)
+    // Use server's running version (1.3.0) to ensure full API compatibility
+    def dttJar = file("${rootProject.projectDir}/../../server-files/mods/DynamicTooltipsLib-1.3.1.jar")
+    if (dttJar.exists()) {
+        compileOnly files(dttJar)
+    } else {
+        def dttJarFallback = file("${rootProject.projectDir}/../../external-resources/example-mods/DynamicTooltipsLib-1.1.0.jar")
+        if (dttJarFallback.exists()) {
+            compileOnly files(dttJarFallback)
+        }
+    }
+
     // Database dependencies (bundled into shadow jar)
     shadowBundle 'org.postgresql:postgresql:42.7.8'
     shadowBundle 'com.zaxxer:HikariCP:7.0.2'
@@ -84,6 +102,19 @@ processResources {
     }
     inputs.properties(expandProps)
 }
+
+// Auto-copy consumable item icons into the buff HUD icons directory.
+// BuffIndicatorHud.ui (in HC_Attributes) resolves textures from Common/UI/Custom/Icons/Buffs/.
+// Asset packs merge, so icons placed here by HC_Professions are visible to HC_Attributes' HUD.
+tasks.register('copyConsumableBuffIcons', Copy) {
+    from('src/main/resources/Common/Icons/ItemsGenerated') {
+        include 'Consumable_*.png'
+    }
+    into layout.buildDirectory.dir('resources/main/Common/UI/Custom/Icons/Buffs')
+}
+processResources.finalizedBy copyConsumableBuffIcons
+jar.dependsOn copyConsumableBuffIcons
+shadowJar.dependsOn copyConsumableBuffIcons
 
 task deploy(dependsOn: 'build') {
     doLast {

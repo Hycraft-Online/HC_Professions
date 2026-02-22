@@ -1,0 +1,374 @@
+$C = "../Common.ui";
+
+// Profession Selection UI - 3x3 grid of profession cards
+
+// Button label style (shared)
+@BtnLabel = LabelStyle(
+  FontSize: 14,
+  TextColor: #ffffff,
+  RenderBold: true,
+  HorizontalAlignment: Center,
+  VerticalAlignment: Center
+);
+
+// Per-profession button styles
+@BtnWeaponsmith = TextButtonStyle(
+  Default: (Background: #C83232(0.8), LabelStyle: @BtnLabel),
+  Hovered: (Background: #E04040(1.0), LabelStyle: @BtnLabel),
+  Pressed: (Background: #A02828(1.0), LabelStyle: @BtnLabel),
+  Disabled: (Background: #C83232(0.4), LabelStyle: @BtnLabel),
+  Sounds: $C.@ButtonSounds,
+);
+@BtnArmorsmith = TextButtonStyle(
+  Default: (Background: #3278C8(0.8), LabelStyle: @BtnLabel),
+  Hovered: (Background: #4090E0(1.0), LabelStyle: @BtnLabel),
+  Pressed: (Background: #2860A0(1.0), LabelStyle: @BtnLabel),
+  Disabled: (Background: #3278C8(0.4), LabelStyle: @BtnLabel),
+  Sounds: $C.@ButtonSounds,
+);
+@BtnAlchemist = TextButtonStyle(
+  Default: (Background: #8B5CF6(0.8), LabelStyle: @BtnLabel),
+  Hovered: (Background: #A070FF(1.0), LabelStyle: @BtnLabel),
+  Pressed: (Background: #7048D0(1.0), LabelStyle: @BtnLabel),
+  Disabled: (Background: #8B5CF6(0.4), LabelStyle: @BtnLabel),
+  Sounds: $C.@ButtonSounds,
+);
+@BtnCook = TextButtonStyle(
+  Default: (Background: #E89040(0.8), LabelStyle: @BtnLabel),
+  Hovered: (Background: #FFA050(1.0), LabelStyle: @BtnLabel),
+  Pressed: (Background: #C07830(1.0), LabelStyle: @BtnLabel),
+  Disabled: (Background: #E89040(0.4), LabelStyle: @BtnLabel),
+  Sounds: $C.@ButtonSounds,
+);
+@BtnLeatherworker = TextButtonStyle(
+  Default: (Background: #8B6914(0.8), LabelStyle: @BtnLabel),
+  Hovered: (Background: #A08020(1.0), LabelStyle: @BtnLabel),
+  Pressed: (Background: #705510(1.0), LabelStyle: @BtnLabel),
+  Disabled: (Background: #8B6914(0.4), LabelStyle: @BtnLabel),
+  Sounds: $C.@ButtonSounds,
+);
+@BtnCarpenter = TextButtonStyle(
+  Default: (Background: #B47832(0.8), LabelStyle: @BtnLabel),
+  Hovered: (Background: #D09040(1.0), LabelStyle: @BtnLabel),
+  Pressed: (Background: #906028(1.0), LabelStyle: @BtnLabel),
+  Disabled: (Background: #B47832(0.4), LabelStyle: @BtnLabel),
+  Sounds: $C.@ButtonSounds,
+);
+@BtnTailor = TextButtonStyle(
+  Default: (Background: #C864C8(0.8), LabelStyle: @BtnLabel),
+  Hovered: (Background: #E078E0(1.0), LabelStyle: @BtnLabel),
+  Pressed: (Background: #A050A0(1.0), LabelStyle: @BtnLabel),
+  Disabled: (Background: #C864C8(0.4), LabelStyle: @BtnLabel),
+  Sounds: $C.@ButtonSounds,
+);
+@BtnEnchanter = TextButtonStyle(
+  Default: (Background: #6432C8(0.8), LabelStyle: @BtnLabel),
+  Hovered: (Background: #7840E0(1.0), LabelStyle: @BtnLabel),
+  Pressed: (Background: #5028A0(1.0), LabelStyle: @BtnLabel),
+  Disabled: (Background: #6432C8(0.4), LabelStyle: @BtnLabel),
+  Sounds: $C.@ButtonSounds,
+);
+@BtnBuilder = TextButtonStyle(
+  Default: (Background: #4A9E5C(0.8), LabelStyle: @BtnLabel),
+  Hovered: (Background: #5CB870(1.0), LabelStyle: @BtnLabel),
+  Pressed: (Background: #3C8048(1.0), LabelStyle: @BtnLabel),
+  Disabled: (Background: #4A9E5C(0.4), LabelStyle: @BtnLabel),
+  Sounds: $C.@ButtonSounds,
+);
+
+$C.@PageOverlay {
+
+  $C.@DecoratedContainer {
+    Anchor: (Width: 820, Height: 540);
+
+    #Title {
+      Group {
+        Label #TitleLabel {
+          Text: "Choose Your Profession";
+          Style: (
+            FontSize: 24,
+            TextColor: #ffffff,
+            RenderBold: true,
+            HorizontalAlignment: Center
+          );
+        }
+      }
+    }
+
+    #Content {
+      LayoutMode: Top;
+      Padding: (Left: 15, Right: 15, Top: 10, Bottom: 10);
+
+      // Row 1: Weaponsmith, Armorsmith, Alchemist
+      Group #Row1 {
+        LayoutMode: Left;
+        Anchor: (Height: 145, Bottom: 8);
+
+        Group #CardWeaponsmith {
+          FlexWeight: 1;
+          LayoutMode: Top;
+          Background: #1a1a2e(0.9);
+          OutlineColor: #C83232;
+          OutlineSize: 2;
+          Padding: (Full: 10);
+          Anchor: (Right: 5);
+
+          Label #NameWeaponsmith {
+            Text: "Bladesmith";
+            Style: (FontSize: 16, TextColor: #C83232, RenderBold: true, HorizontalAlignment: Center);
+            Anchor: (Bottom: 4);
+          }
+          Label #DescWeaponsmith {
+            Text: "Forge powerful weapons and blades";
+            Style: (FontSize: 11, TextColor: #bbbbbb, HorizontalAlignment: Center);
+            Anchor: (Bottom: 6);
+          }
+          Label { FlexWeight: 1; }
+          TextButton #BtnWeaponsmith {
+            Text: "Choose";
+            Style: @BtnWeaponsmith;
+            Anchor: (Height: 32);
+          }
+        }
+
+        Group #CardArmorsmith {
+          FlexWeight: 1;
+          LayoutMode: Top;
+          Background: #1a1a2e(0.9);
+          OutlineColor: #3278C8;
+          OutlineSize: 2;
+          Padding: (Full: 10);
+          Anchor: (Left: 5, Right: 5);
+
+          Label #NameArmorsmith {
+            Text: "Platesmith";
+            Style: (FontSize: 16, TextColor: #3278C8, RenderBold: true, HorizontalAlignment: Center);
+            Anchor: (Bottom: 4);
+          }
+          Label #DescArmorsmith {
+            Text: "Craft protective plate armor and shields";
+            Style: (FontSize: 11, TextColor: #bbbbbb, HorizontalAlignment: Center);
+            Anchor: (Bottom: 6);
+          }
+          Label { FlexWeight: 1; }
+          TextButton #BtnArmorsmith {
+            Text: "Choose";
+            Style: @BtnArmorsmith;
+            Anchor: (Height: 32);
+          }
+        }
+
+        Group #CardAlchemist {
+          FlexWeight: 1;
+          LayoutMode: Top;
+          Background: #1a1a2e(0.9);
+          OutlineColor: #8B5CF6;
+          OutlineSize: 2;
+          Padding: (Full: 10);
+          Anchor: (Left: 5);
+
+          Label #NameAlchemist {
+            Text: "Alchemist";
+            Style: (FontSize: 16, TextColor: #8B5CF6, RenderBold: true, HorizontalAlignment: Center);
+            Anchor: (Bottom: 4);
+          }
+          Label #DescAlchemist {
+            Text: "Brew potions and magical elixirs";
+            Style: (FontSize: 11, TextColor: #bbbbbb, HorizontalAlignment: Center);
+            Anchor: (Bottom: 6);
+          }
+          Label { FlexWeight: 1; }
+          TextButton #BtnAlchemist {
+            Text: "Choose";
+            Style: @BtnAlchemist;
+            Anchor: (Height: 32);
+          }
+        }
+      }
+
+      // Row 2: Cook, Leatherworker, Carpenter
+      Group #Row2 {
+        LayoutMode: Left;
+        Anchor: (Height: 145, Bottom: 8);
+
+        Group #CardCook {
+          FlexWeight: 1;
+          LayoutMode: Top;
+          Background: #1a1a2e(0.9);
+          OutlineColor: #E89040;
+          OutlineSize: 2;
+          Padding: (Full: 10);
+          Anchor: (Right: 5);
+
+          Label #NameCook {
+            Text: "Cook";
+            Style: (FontSize: 16, TextColor: #E89040, RenderBold: true, HorizontalAlignment: Center);
+            Anchor: (Bottom: 4);
+          }
+          Label #DescCook {
+            Text: "Prepare hearty meals and feasts";
+            Style: (FontSize: 11, TextColor: #bbbbbb, HorizontalAlignment: Center);
+            Anchor: (Bottom: 6);
+          }
+          Label { FlexWeight: 1; }
+          TextButton #BtnCook {
+            Text: "Choose";
+            Style: @BtnCook;
+            Anchor: (Height: 32);
+          }
+        }
+
+        Group #CardLeatherworker {
+          FlexWeight: 1;
+          LayoutMode: Top;
+          Background: #1a1a2e(0.9);
+          OutlineColor: #8B6914;
+          OutlineSize: 2;
+          Padding: (Full: 10);
+          Anchor: (Left: 5, Right: 5);
+
+          Label #NameLeatherworker {
+            Text: "Leatherworker";
+            Style: (FontSize: 16, TextColor: #8B6914, RenderBold: true, HorizontalAlignment: Center);
+            Anchor: (Bottom: 4);
+          }
+          Label #DescLeatherworker {
+            Text: "Tan hides into sturdy leather gear";
+            Style: (FontSize: 11, TextColor: #bbbbbb, HorizontalAlignment: Center);
+            Anchor: (Bottom: 6);
+          }
+          Label { FlexWeight: 1; }
+          TextButton #BtnLeatherworker {
+            Text: "Choose";
+            Style: @BtnLeatherworker;
+            Anchor: (Height: 32);
+          }
+        }
+
+        Group #CardCarpenter {
+          FlexWeight: 1;
+          LayoutMode: Top;
+          Background: #1a1a2e(0.9);
+          OutlineColor: #B47832;
+          OutlineSize: 2;
+          Padding: (Full: 10);
+          Anchor: (Left: 5);
+
+          Label #NameCarpenter {
+            Text: "Carpenter";
+            Style: (FontSize: 16, TextColor: #B47832, RenderBold: true, HorizontalAlignment: Center);
+            Anchor: (Bottom: 4);
+          }
+          Label #DescCarpenter {
+            Text: "Build furniture and wooden tools";
+            Style: (FontSize: 11, TextColor: #bbbbbb, HorizontalAlignment: Center);
+            Anchor: (Bottom: 6);
+          }
+          Label { FlexWeight: 1; }
+          TextButton #BtnCarpenter {
+            Text: "Choose";
+            Style: @BtnCarpenter;
+            Anchor: (Height: 32);
+          }
+        }
+      }
+
+      // Row 3: Tailor, Enchanter, Builder
+      Group #Row3 {
+        LayoutMode: Left;
+        Anchor: (Height: 145, Bottom: 8);
+
+        Group #CardTailor {
+          FlexWeight: 1;
+          LayoutMode: Top;
+          Background: #1a1a2e(0.9);
+          OutlineColor: #C864C8;
+          OutlineSize: 2;
+          Padding: (Full: 10);
+          Anchor: (Right: 5);
+
+          Label #NameTailor {
+            Text: "Tailor";
+            Style: (FontSize: 16, TextColor: #C864C8, RenderBold: true, HorizontalAlignment: Center);
+            Anchor: (Bottom: 4);
+          }
+          Label #DescTailor {
+            Text: "Weave cloth into fine garments";
+            Style: (FontSize: 11, TextColor: #bbbbbb, HorizontalAlignment: Center);
+            Anchor: (Bottom: 6);
+          }
+          Label { FlexWeight: 1; }
+          TextButton #BtnTailor {
+            Text: "Choose";
+            Style: @BtnTailor;
+            Anchor: (Height: 32);
+          }
+        }
+
+        Group #CardEnchanter {
+          FlexWeight: 1;
+          LayoutMode: Top;
+          Background: #1a1a2e(0.9);
+          OutlineColor: #6432C8;
+          OutlineSize: 2;
+          Padding: (Full: 10);
+          Anchor: (Left: 5, Right: 5);
+
+          Label #NameEnchanter {
+            Text: "Enchanter";
+            Style: (FontSize: 16, TextColor: #6432C8, RenderBold: true, HorizontalAlignment: Center);
+            Anchor: (Bottom: 4);
+          }
+          Label #DescEnchanter {
+            Text: "Imbue items with arcane power";
+            Style: (FontSize: 11, TextColor: #bbbbbb, HorizontalAlignment: Center);
+            Anchor: (Bottom: 6);
+          }
+          Label { FlexWeight: 1; }
+          TextButton #BtnEnchanter {
+            Text: "Choose";
+            Style: @BtnEnchanter;
+            Anchor: (Height: 32);
+          }
+        }
+
+        Group #CardBuilder {
+          FlexWeight: 1;
+          LayoutMode: Top;
+          Background: #1a1a2e(0.9);
+          OutlineColor: #4A9E5C;
+          OutlineSize: 2;
+          Padding: (Full: 10);
+          Anchor: (Left: 5);
+
+          Label #NameBuilder {
+            Text: "Builder";
+            Style: (FontSize: 16, TextColor: #4A9E5C, RenderBold: true, HorizontalAlignment: Center);
+            Anchor: (Bottom: 4);
+          }
+          Label #DescBuilder {
+            Text: "Construct structures and fortifications";
+            Style: (FontSize: 11, TextColor: #bbbbbb, HorizontalAlignment: Center);
+            Anchor: (Bottom: 6);
+          }
+          Label { FlexWeight: 1; }
+          TextButton #BtnBuilder {
+            Text: "Choose";
+            Style: @BtnBuilder;
+            Anchor: (Height: 32);
+          }
+        }
+      }
+
+      // Footer
+      Label #Footer {
+        Text: "You can change your profession later with /profession respec";
+        Style: (
+          FontSize: 12,
+          TextColor: #888888,
+          HorizontalAlignment: Center
+        );
+      }
+    }
+  }
+}

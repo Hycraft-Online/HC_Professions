@@ -1,0 +1,96 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.Armor_Leather_Strider_Legs.name"
+  },
+  "Parent": "Armor_Iron_Legs",
+  "Quality": "Epic",
+  "ItemLevel": 60,
+  "Icon": "Icons/ItemsGenerated/Armor_Leather_Strider_Legs.png",
+  "IconProperties": {
+    "Rotation": [
+      22.5,
+      45,
+      22.5
+    ],
+    "Scale": 0.37,
+    "Translation": [
+      0,
+      -22.8
+    ]
+  },
+  "Model": "Items/Armors/Leather_Medium/Legs.blockymodel",
+  "Texture": "Items/Armors/Leather_Strider/Legs_Texture.png",
+  "Recipe": {
+    "TimeSeconds": 2,
+    "Input": [
+      {
+        "ItemId": "Ingredient_Leather_Dark",
+        "Quantity": 7
+      },
+      {
+        "ItemId": "Ingredient_Bar_Thorium",
+        "Quantity": 4
+      },
+      {
+        "ItemId": "Ingredient_Bolt_Shadoweave",
+        "Quantity": 3
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Id": "Armor_Bench",
+        "Type": "Crafting",
+        "Categories": [
+          "Armor_Legs"
+        ]
+      }
+    ],
+    "KnowledgeRequired": true
+  },
+  "Armor": {
+    "ArmorSlot": "Legs",
+    "BaseDamageResistance": 0,
+    "CosmeticsToHide": [
+      "Shoes",
+      "Pants"
+    ],
+    "StatModifiers": {
+      "Health": [
+        {
+          "Amount": 24,
+          "CalculationType": "Additive"
+        }
+      ]
+    },
+    "DamageResistance": {
+      "Physical": [
+        {
+          "Amount": 0.13,
+          "CalculationType": "Multiplicative"
+        }
+      ],
+      "Projectile": [
+        {
+          "Amount": 0.12,
+          "CalculationType": "Multiplicative"
+        }
+      ],
+      "Fire": [
+        {
+          "Amount": 0.06,
+          "CalculationType": "Multiplicative"
+        }
+      ]
+    }
+  },
+  "Tags": {
+    "Type": [
+      "Armor"
+    ],
+    "Family": [
+      "Leather_Strider"
+    ]
+  },
+  "MaxDurability": 190,
+  "ItemSoundSetId": "ISS_Armor_Leather"
+}

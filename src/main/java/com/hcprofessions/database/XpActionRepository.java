@@ -265,10 +265,11 @@ public class XpActionRepository {
     }
 
     /**
-     * Merges crafting XP rewards for new cross-profession components and consumables.
+     * Seeds tradeskill XP rewards for gathering actions (PICKUP events).
+     * Profession crafting XP is handled directly by CraftingXpSystem via prof_recipe_gates.
      * Uses ON CONFLICT DO NOTHING so it's safe to call repeatedly.
      */
-    public void seedCraftingXpActions() {
+    public void seedGatheringXpActions() {
         String insertSql = """
             INSERT INTO skill_xp_rewards (event, identifier, is_pattern, skill_type, skill_name, xp_amount, min_level)
             VALUES (?, ?, ?, ?, ?, ?, ?)
@@ -282,199 +283,51 @@ public class XpActionRepository {
         try (Connection conn = databaseManager.getConnection()) {
             // Count existing
             try (Statement countStmt = conn.createStatement();
-                 ResultSet rs = countStmt.executeQuery("SELECT COUNT(*) FROM skill_xp_rewards WHERE event = 'CRAFT'")) {
+                 ResultSet rs = countStmt.executeQuery("SELECT COUNT(*) FROM skill_xp_rewards WHERE event = 'PICKUP'")) {
                 if (rs.next()) before = rs.getInt(1);
             }
 
             try (PreparedStatement stmt = conn.prepareStatement(insertSql)) {
                 // ═══════════════════════════════════════════════
-                // WEAPONSMITH components — CRAFT -> PROFESSION XP
+                // GATHERING INGREDIENTS — pickup XP for materials
                 // ═══════════════════════════════════════════════
-                // Rivets (Crude=10, Refined=20, Superior=35, Pristine=55)
-                insertRow(stmt, "CRAFT", "Component_Rivets_Crude",     false, "PROFESSION", null, 10, 0);
-                insertRow(stmt, "CRAFT", "Component_Rivets_Refined",   false, "PROFESSION", null, 20, 0);
-                insertRow(stmt, "CRAFT", "Component_Rivets_Superior",  false, "PROFESSION", null, 35, 0);
-                insertRow(stmt, "CRAFT", "Component_Rivets_Pristine",  false, "PROFESSION", null, 55, 0);
-                // Fittings
-                insertRow(stmt, "CRAFT", "Component_Fittings_Crude",    false, "PROFESSION", null, 10, 0);
-                insertRow(stmt, "CRAFT", "Component_Fittings_Refined",  false, "PROFESSION", null, 20, 0);
-                insertRow(stmt, "CRAFT", "Component_Fittings_Superior", false, "PROFESSION", null, 35, 0);
-                insertRow(stmt, "CRAFT", "Component_Fittings_Pristine", false, "PROFESSION", null, 55, 0);
-
-                // ═══════════════════════════════════════════════
-                // ARMORSMITH components
-                // ═══════════════════════════════════════════════
-                insertRow(stmt, "CRAFT", "Component_Chainlinks_Crude",    false, "PROFESSION", null, 10, 0);
-                insertRow(stmt, "CRAFT", "Component_Chainlinks_Refined",  false, "PROFESSION", null, 20, 0);
-                insertRow(stmt, "CRAFT", "Component_Chainlinks_Superior", false, "PROFESSION", null, 35, 0);
-                insertRow(stmt, "CRAFT", "Component_Chainlinks_Pristine", false, "PROFESSION", null, 55, 0);
-                insertRow(stmt, "CRAFT", "Component_Plating_Crude",       false, "PROFESSION", null, 10, 0);
-                insertRow(stmt, "CRAFT", "Component_Plating_Refined",     false, "PROFESSION", null, 20, 0);
-                insertRow(stmt, "CRAFT", "Component_Plating_Superior",    false, "PROFESSION", null, 35, 0);
-                insertRow(stmt, "CRAFT", "Component_Plating_Pristine",    false, "PROFESSION", null, 55, 0);
-
-                // ═══════════════════════════════════════════════
-                // LEATHERWORKER components
-                // ═══════════════════════════════════════════════
-                insertRow(stmt, "CRAFT", "Component_Straps_Crude",       false, "PROFESSION", null, 10, 0);
-                insertRow(stmt, "CRAFT", "Component_Straps_Refined",     false, "PROFESSION", null, 20, 0);
-                insertRow(stmt, "CRAFT", "Component_Straps_Superior",    false, "PROFESSION", null, 35, 0);
-                insertRow(stmt, "CRAFT", "Component_Straps_Pristine",    false, "PROFESSION", null, 55, 0);
-                insertRow(stmt, "CRAFT", "Component_GripWrap_Crude",     false, "PROFESSION", null, 10, 0);
-                insertRow(stmt, "CRAFT", "Component_GripWrap_Refined",   false, "PROFESSION", null, 20, 0);
-                insertRow(stmt, "CRAFT", "Component_GripWrap_Superior",  false, "PROFESSION", null, 35, 0);
-                insertRow(stmt, "CRAFT", "Component_GripWrap_Pristine",  false, "PROFESSION", null, 55, 0);
-
-                // ═══════════════════════════════════════════════
-                // TAILOR components
-                // ═══════════════════════════════════════════════
-                insertRow(stmt, "CRAFT", "Component_Thread_Crude",    false, "PROFESSION", null, 10, 0);
-                insertRow(stmt, "CRAFT", "Component_Thread_Refined",  false, "PROFESSION", null, 20, 0);
-                insertRow(stmt, "CRAFT", "Component_Thread_Superior", false, "PROFESSION", null, 35, 0);
-                insertRow(stmt, "CRAFT", "Component_Thread_Pristine", false, "PROFESSION", null, 55, 0);
-                insertRow(stmt, "CRAFT", "Component_Lining_Crude",    false, "PROFESSION", null, 10, 0);
-                insertRow(stmt, "CRAFT", "Component_Lining_Refined",  false, "PROFESSION", null, 20, 0);
-                insertRow(stmt, "CRAFT", "Component_Lining_Superior", false, "PROFESSION", null, 35, 0);
-                insertRow(stmt, "CRAFT", "Component_Lining_Pristine", false, "PROFESSION", null, 55, 0);
-
-                // ═══════════════════════════════════════════════
-                // ALCHEMIST components
-                // ═══════════════════════════════════════════════
-                insertRow(stmt, "CRAFT", "Component_Flux_Crude",                   false, "PROFESSION", null, 10, 0);
-                insertRow(stmt, "CRAFT", "Component_Flux_Refined",                 false, "PROFESSION", null, 20, 0);
-                insertRow(stmt, "CRAFT", "Component_Flux_Superior",                false, "PROFESSION", null, 35, 0);
-                insertRow(stmt, "CRAFT", "Component_Flux_Pristine",                false, "PROFESSION", null, 55, 0);
-                insertRow(stmt, "CRAFT", "Component_Tanning_Solution_Crude",       false, "PROFESSION", null, 10, 0);
-                insertRow(stmt, "CRAFT", "Component_Tanning_Solution_Refined",     false, "PROFESSION", null, 20, 0);
-                insertRow(stmt, "CRAFT", "Component_Tanning_Solution_Superior",    false, "PROFESSION", null, 35, 0);
-                insertRow(stmt, "CRAFT", "Component_Tanning_Solution_Pristine",    false, "PROFESSION", null, 55, 0);
-                // Dyes (flat XP — no tiers)
-                insertRow(stmt, "CRAFT", "Component_Dye_Red",    false, "PROFESSION", null, 15, 0);
-                insertRow(stmt, "CRAFT", "Component_Dye_Blue",   false, "PROFESSION", null, 15, 0);
-                insertRow(stmt, "CRAFT", "Component_Dye_Yellow", false, "PROFESSION", null, 15, 0);
-                insertRow(stmt, "CRAFT", "Component_Dye_Green",  false, "PROFESSION", null, 15, 0);
-                insertRow(stmt, "CRAFT", "Component_Dye_Purple", false, "PROFESSION", null, 15, 0);
-                insertRow(stmt, "CRAFT", "Component_Dye_Black",  false, "PROFESSION", null, 15, 0);
-                insertRow(stmt, "CRAFT", "Component_Preserving_Oil", false, "PROFESSION", null, 20, 0);
-
-                // ═══════════════════════════════════════════════
-                // COOK components
-                // ═══════════════════════════════════════════════
-                insertRow(stmt, "CRAFT", "Component_Rendered_Fat",   false, "PROFESSION", null, 10, 0);
-                insertRow(stmt, "CRAFT", "Component_Purified_Water", false, "PROFESSION", null, 10, 0);
-                insertRow(stmt, "CRAFT", "Component_Yeast_Culture",  false, "PROFESSION", null, 15, 0);
-
-                // ═══════════════════════════════════════════════
-                // CARPENTER components
-                // ═══════════════════════════════════════════════
-                insertRow(stmt, "CRAFT", "Component_Handle_Crude",    false, "PROFESSION", null, 10, 0);
-                insertRow(stmt, "CRAFT", "Component_Handle_Refined",  false, "PROFESSION", null, 20, 0);
-                insertRow(stmt, "CRAFT", "Component_Handle_Superior", false, "PROFESSION", null, 35, 0);
-                insertRow(stmt, "CRAFT", "Component_Handle_Pristine", false, "PROFESSION", null, 55, 0);
-                insertRow(stmt, "CRAFT", "Component_Vial_Crude",      false, "PROFESSION", null, 10, 0);
-                insertRow(stmt, "CRAFT", "Component_Vial_Refined",    false, "PROFESSION", null, 20, 0);
-                insertRow(stmt, "CRAFT", "Component_Vial_Superior",   false, "PROFESSION", null, 35, 0);
-                insertRow(stmt, "CRAFT", "Component_Vial_Pristine",   false, "PROFESSION", null, 55, 0);
-                insertRow(stmt, "CRAFT", "Component_Runewood_Blank",  false, "PROFESSION", null, 30, 0);
-                insertRow(stmt, "CRAFT", "Component_Serving_Platter", false, "PROFESSION", null, 25, 0);
-
-                // ═══════════════════════════════════════════════
-                // ENCHANTER components
-                // ═══════════════════════════════════════════════
-                insertRow(stmt, "CRAFT", "Component_Arcane_Ink_Crude",    false, "PROFESSION", null, 10, 0);
-                insertRow(stmt, "CRAFT", "Component_Arcane_Ink_Refined",  false, "PROFESSION", null, 20, 0);
-                insertRow(stmt, "CRAFT", "Component_Arcane_Ink_Superior", false, "PROFESSION", null, 35, 0);
-                insertRow(stmt, "CRAFT", "Component_Arcane_Ink_Pristine", false, "PROFESSION", null, 55, 0);
-                insertRow(stmt, "CRAFT", "Component_Catalyst_Crystal",    false, "PROFESSION", null, 30, 0);
-                insertRow(stmt, "CRAFT", "Component_Rune_Sharpness",      false, "PROFESSION", null, 40, 0);
-                insertRow(stmt, "CRAFT", "Component_Rune_Warding",        false, "PROFESSION", null, 40, 0);
-                insertRow(stmt, "CRAFT", "Component_Rune_Vitality",       false, "PROFESSION", null, 40, 0);
-                insertRow(stmt, "CRAFT", "Component_Rune_Power",          false, "PROFESSION", null, 40, 0);
-
-                // ═══════════════════════════════════════════════
-                // CONSUMABLES — crafted by various professions
-                // ═══════════════════════════════════════════════
-                // Weapon Oils (Alchemist)
-                insertRow(stmt, "CRAFT", "Consumable_Weapon_Oil_Crude",    false, "PROFESSION", null, 15, 0);
-                insertRow(stmt, "CRAFT", "Consumable_Weapon_Oil_Refined",  false, "PROFESSION", null, 30, 0);
-                insertRow(stmt, "CRAFT", "Consumable_Weapon_Oil_Superior", false, "PROFESSION", null, 50, 0);
-                insertRow(stmt, "CRAFT", "Consumable_Weapon_Oil_Pristine", false, "PROFESSION", null, 75, 0);
-                // Armor Polish (Alchemist)
-                insertRow(stmt, "CRAFT", "Consumable_Armor_Polish_Crude",    false, "PROFESSION", null, 15, 0);
-                insertRow(stmt, "CRAFT", "Consumable_Armor_Polish_Refined",  false, "PROFESSION", null, 30, 0);
-                insertRow(stmt, "CRAFT", "Consumable_Armor_Polish_Superior", false, "PROFESSION", null, 50, 0);
-                insertRow(stmt, "CRAFT", "Consumable_Armor_Polish_Pristine", false, "PROFESSION", null, 75, 0);
-                // Sharpening Stones (Weaponsmith)
-                insertRow(stmt, "CRAFT", "Consumable_Sharpening_Stone_Crude",    false, "PROFESSION", null, 15, 0);
-                insertRow(stmt, "CRAFT", "Consumable_Sharpening_Stone_Refined",  false, "PROFESSION", null, 30, 0);
-                insertRow(stmt, "CRAFT", "Consumable_Sharpening_Stone_Superior", false, "PROFESSION", null, 50, 0);
-                insertRow(stmt, "CRAFT", "Consumable_Sharpening_Stone_Pristine", false, "PROFESSION", null, 75, 0);
-                // Repair Kits (Armorsmith)
-                insertRow(stmt, "CRAFT", "Consumable_Repair_Kit_Crude",    false, "PROFESSION", null, 15, 0);
-                insertRow(stmt, "CRAFT", "Consumable_Repair_Kit_Refined",  false, "PROFESSION", null, 30, 0);
-                insertRow(stmt, "CRAFT", "Consumable_Repair_Kit_Superior", false, "PROFESSION", null, 50, 0);
-                insertRow(stmt, "CRAFT", "Consumable_Repair_Kit_Pristine", false, "PROFESSION", null, 75, 0);
-                // Scrolls (Enchanter)
-                insertRow(stmt, "CRAFT", "Consumable_Scroll_Fireball",  false, "PROFESSION", null, 40, 0);
-                insertRow(stmt, "CRAFT", "Consumable_Scroll_Frostbolt", false, "PROFESSION", null, 40, 0);
-                insertRow(stmt, "CRAFT", "Consumable_Scroll_Lightning", false, "PROFESSION", null, 40, 0);
-                insertRow(stmt, "CRAFT", "Consumable_Scroll_Heal",      false, "PROFESSION", null, 45, 0);
-                insertRow(stmt, "CRAFT", "Consumable_Scroll_Haste",     false, "PROFESSION", null, 45, 0);
-                insertRow(stmt, "CRAFT", "Consumable_Scroll_Shield",    false, "PROFESSION", null, 45, 0);
-                // Feasts (Cook)
-                insertRow(stmt, "CRAFT", "Consumable_Feast_Crude",    false, "PROFESSION", null, 20, 0);
-                insertRow(stmt, "CRAFT", "Consumable_Feast_Refined",  false, "PROFESSION", null, 40, 0);
-                insertRow(stmt, "CRAFT", "Consumable_Feast_Superior", false, "PROFESSION", null, 65, 0);
-                insertRow(stmt, "CRAFT", "Consumable_Feast_Pristine", false, "PROFESSION", null, 90, 0);
-                // Traps (Leatherworker)
-                insertRow(stmt, "CRAFT", "Consumable_Trap_Snare",     false, "PROFESSION", null, 20, 0);
-                insertRow(stmt, "CRAFT", "Consumable_Trap_Spike",     false, "PROFESSION", null, 35, 0);
-                insertRow(stmt, "CRAFT", "Consumable_Trap_Explosive", false, "PROFESSION", null, 55, 0);
-
-                // ═══════════════════════════════════════════════
-                // GATHERING INGREDIENTS — pickup XP for new materials
-                // ═══════════════════════════════════════════════
-                // Ore Dust drops from mining -> Mining tradeskill XP
-                insertRow(stmt, "PICKUP", "Ingredient_Ore_Dust", false, "TRADESKILL", "MINING", 5, 0);
-                // Resin from woodcutting -> Woodcutting tradeskill XP
-                insertRow(stmt, "PICKUP", "Ingredient_Resin", false, "TRADESKILL", "WOODCUTTING", 5, 0);
-                // Sand from mining (desert) -> Mining tradeskill XP
-                insertRow(stmt, "PICKUP", "Ingredient_Sand", false, "TRADESKILL", "MINING", 5, 0);
-                // Raw Meat from skinning -> Skinning tradeskill XP
-                insertRow(stmt, "PICKUP", "Ingredient_Raw_Meat", false, "TRADESKILL", "SKINNING", 5, 0);
-                insertRow(stmt, "PICKUP", "Ingredient_Raw_Meat_Prime", false, "TRADESKILL", "SKINNING", 12, 0);
-                // Fish Oil from fishing -> Fishing tradeskill XP
-                insertRow(stmt, "PICKUP", "Ingredient_Fish_Oil", false, "TRADESKILL", "FISHING", 8, 0);
-                // Herbs from herbalism -> Herbalism tradeskill XP
-                insertRow(stmt, "PICKUP", "Ingredient_Herb_Common",   false, "TRADESKILL", "HERBALISM", 5, 0);
-                insertRow(stmt, "PICKUP", "Ingredient_Herb_Uncommon", false, "TRADESKILL", "HERBALISM", 10, 0);
-                insertRow(stmt, "PICKUP", "Ingredient_Herb_Rare",     false, "TRADESKILL", "HERBALISM", 18, 0);
-                insertRow(stmt, "PICKUP", "Ingredient_Herb_Epic",     false, "TRADESKILL", "HERBALISM", 30, 0);
-                // Pigments from herbalism -> Herbalism tradeskill XP
-                insertRow(stmt, "PICKUP", "Ingredient_Pigment_Red",    false, "TRADESKILL", "HERBALISM", 8, 0);
-                insertRow(stmt, "PICKUP", "Ingredient_Pigment_Blue",   false, "TRADESKILL", "HERBALISM", 8, 0);
-                insertRow(stmt, "PICKUP", "Ingredient_Pigment_Yellow", false, "TRADESKILL", "HERBALISM", 8, 0);
-                insertRow(stmt, "PICKUP", "Ingredient_Pigment_Green",  false, "TRADESKILL", "HERBALISM", 8, 0);
-                // Arcane Dust from mining (crystal nodes) -> Mining tradeskill XP
-                insertRow(stmt, "PICKUP", "Ingredient_Arcane_Dust", false, "TRADESKILL", "MINING", 15, 0);
+                insertRow(stmt, "PICKUP", "Ingredient_Ore_Dust",       false, "TRADESKILL", "MINING",     5,  0);
+                insertRow(stmt, "PICKUP", "Ingredient_Resin",          false, "TRADESKILL", "WOODCUTTING",5,  0);
+                insertRow(stmt, "PICKUP", "Ingredient_Sand",           false, "TRADESKILL", "MINING",     5,  0);
+                insertRow(stmt, "PICKUP", "Ingredient_Raw_Meat",       false, "TRADESKILL", "SKINNING",   5,  0);
+                insertRow(stmt, "PICKUP", "Ingredient_Raw_Meat_Prime", false, "TRADESKILL", "SKINNING",   12, 0);
+                insertRow(stmt, "PICKUP", "Ingredient_Fish_Oil",       false, "TRADESKILL", "FISHING",    8,  0);
+                insertRow(stmt, "PICKUP", "Ingredient_Herb_Common",    false, "TRADESKILL", "HERBALISM",  5,  0);
+                insertRow(stmt, "PICKUP", "Ingredient_Herb_Uncommon",  false, "TRADESKILL", "HERBALISM",  10, 0);
+                insertRow(stmt, "PICKUP", "Ingredient_Herb_Rare",      false, "TRADESKILL", "HERBALISM",  18, 0);
+                insertRow(stmt, "PICKUP", "Ingredient_Herb_Epic",      false, "TRADESKILL", "HERBALISM",  30, 0);
+                insertRow(stmt, "PICKUP", "Ingredient_Pigment_Red",    false, "TRADESKILL", "HERBALISM",  8,  0);
+                insertRow(stmt, "PICKUP", "Ingredient_Pigment_Blue",   false, "TRADESKILL", "HERBALISM",  8,  0);
+                insertRow(stmt, "PICKUP", "Ingredient_Pigment_Yellow", false, "TRADESKILL", "HERBALISM",  8,  0);
+                insertRow(stmt, "PICKUP", "Ingredient_Pigment_Green",  false, "TRADESKILL", "HERBALISM",  8,  0);
+                insertRow(stmt, "PICKUP", "Ingredient_Arcane_Dust",    false, "TRADESKILL", "MINING",     15, 0);
+                // New ingredients
+                insertRow(stmt, "PICKUP", "Ingredient_Bone_Meal",      false, "TRADESKILL", "HERBALISM",  10, 0);
+                insertRow(stmt, "PICKUP", "Ingredient_Beeswax",        false, "TRADESKILL", "HERBALISM",  10, 0);
+                insertRow(stmt, "PICKUP", "Ingredient_Crystal_Shard",  false, "TRADESKILL", "MINING",     12, 0);
 
                 stmt.executeBatch();
             }
 
             // Count after
             try (Statement countStmt = conn.createStatement();
-                 ResultSet rs = countStmt.executeQuery("SELECT COUNT(*) FROM skill_xp_rewards WHERE event = 'CRAFT'")) {
+                 ResultSet rs = countStmt.executeQuery("SELECT COUNT(*) FROM skill_xp_rewards WHERE event = 'PICKUP'")) {
                 if (rs.next()) after = rs.getInt(1);
             }
 
             int added = after - before;
             if (added > 0) {
-                LOGGER.at(Level.INFO).log("Seeded %d new crafting/gathering XP action entries (total CRAFT: %d)", added, after);
+                LOGGER.at(Level.INFO).log("Seeded %d new gathering XP action entries (total PICKUP: %d)", added, after);
             } else {
-                LOGGER.at(Level.INFO).log("Crafting XP actions already up to date (%d CRAFT entries)", after);
+                LOGGER.at(Level.INFO).log("Gathering XP actions already up to date (%d PICKUP entries)", after);
             }
         } catch (SQLException e) {
-            LOGGER.at(Level.SEVERE).log("Failed to seed crafting XP actions: " + e.getMessage());
+            LOGGER.at(Level.SEVERE).log("Failed to seed gathering XP actions: " + e.getMessage());
         }
     }
 

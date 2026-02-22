@@ -53,7 +53,9 @@ public class ConfigRepository {
             String[][] defaults = {
                 {"max_level", "100"},
                 {"xp_base", "100"},
-                {"xp_exponent", "1.5"}
+                {"xp_exponent", "1.5"},
+                {"non_native_craft_level_cap", "10"},
+                {"release_level_cap", "20"}
             };
 
             for (String[] entry : defaults) {

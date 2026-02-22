@@ -72,6 +72,14 @@ public class GatheringTradeskillXPSystem extends EntityEventSystem<EntityStore, 
         if (playerRef == null) return;
 
         String blockName = event.getBlockType().getId().toLowerCase();
+
+        // Anti-exploit: ore blocks must be ore_{material} or ore_{material}_{rocktype}
+        // only (max 3 segments). Blocks like ore_adamantite_magma_cracked (4 segments)
+        // are decorative/cracked variants that should not grant tradeskill XP.
+        if (blockName.startsWith("ore_") && blockName.chars().filter(c -> c == '_').count() > 2) {
+            return;
+        }
+
         List<MatchedGrant> matches = actionXpService.findMatches(ActionType.GATHER, blockName);
 
         if (matches.isEmpty()) return;

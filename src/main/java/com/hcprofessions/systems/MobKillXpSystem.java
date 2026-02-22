@@ -1,6 +1,8 @@
 package com.hcprofessions.systems;
 
 import com.hcprofessions.models.ActionType;
+import com.hcprofessions.models.Profession;
+import com.hcprofessions.models.SkillTarget;
 import com.hcprofessions.services.ActionXpService;
 import com.hypixel.hytale.component.CommandBuffer;
 import com.hypixel.hytale.component.Ref;
@@ -18,6 +20,7 @@ import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 import com.hypixel.hytale.server.npc.entities.NPCEntity;
 
 import javax.annotation.Nonnull;
+import java.util.List;
 import java.util.Set;
 import java.util.logging.Level;
 
@@ -78,7 +81,15 @@ public class MobKillXpSystem extends DeathSystems.OnDeathSystem {
         String roleName = victimNPC.getRoleName();
         if (roleName == null || roleName.isEmpty()) return;
 
-        actionXpService.onAction(killerPlayerRef, ActionType.KILL, roleName);
+        // Weaponsmith and Armorsmith only get profession XP from crafting, not kills
+        List<ActionXpService.MatchedGrant> matches = actionXpService.findMatches(ActionType.KILL, roleName);
+        if (!matches.isEmpty()) {
+            Profession prof = actionXpService.getProfessionManager().getProfession(killerPlayerRef.getUuid());
+            if (prof == Profession.WEAPONSMITH || prof == Profession.ARMORSMITH) {
+                matches.removeIf(g -> g.skillType() == SkillTarget.PROFESSION);
+            }
+            actionXpService.applyGrants(killerPlayerRef, matches);
+        }
 
         LOGGER.at(Level.FINE).log("%s killed %s -> checking action XP",
             killerPlayerRef.getUsername(), roleName);

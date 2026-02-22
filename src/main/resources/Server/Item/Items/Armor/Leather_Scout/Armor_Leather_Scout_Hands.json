@@ -1,0 +1,92 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.Armor_Leather_Scout_Hands.name"
+  },
+  "Parent": "Armor_Iron_Hands",
+  "Quality": "Rare",
+  "ItemLevel": 50,
+  "Icon": "Icons/ItemsGenerated/Armor_Leather_Scout_Hands.png",
+  "IconProperties": {
+    "Rotation": [
+      22.5,
+      45,
+      22.5
+    ],
+    "Scale": 0.645,
+    "Translation": [
+      0.9,
+      -0.9
+    ]
+  },
+  "Model": "Items/Armors/Cosmetic_Bandits/Bracers.blockymodel",
+  "Texture": "Items/Armors/Leather_Scout/Cosmetic_Hands_Texture.png",
+  "Recipe": {
+    "TimeSeconds": 2,
+    "Input": [
+      {
+        "ItemId": "Ingredient_Leather_Storm",
+        "Quantity": 3
+      },
+      {
+        "ItemId": "Ingredient_Bar_Thorium",
+        "Quantity": 2
+      },
+      {
+        "ItemId": "Ingredient_Bolt_Silk",
+        "Quantity": 1
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Id": "Armor_Bench",
+        "Type": "Crafting",
+        "Categories": [
+          "Armor_Hands"
+        ]
+      }
+    ],
+    "KnowledgeRequired": true
+  },
+  "Armor": {
+    "ArmorSlot": "Hands",
+    "BaseDamageResistance": 0,
+    "StatModifiers": {
+      "Health": [
+        {
+          "Amount": 10,
+          "CalculationType": "Additive"
+        }
+      ]
+    },
+    "DamageResistance": {
+      "Physical": [
+        {
+          "Amount": 0.06,
+          "CalculationType": "Multiplicative"
+        }
+      ],
+      "Projectile": [
+        {
+          "Amount": 0.05,
+          "CalculationType": "Multiplicative"
+        }
+      ],
+      "Elemental": [
+        {
+          "Amount": 0.02,
+          "CalculationType": "Multiplicative"
+        }
+      ]
+    }
+  },
+  "Tags": {
+    "Type": [
+      "Armor"
+    ],
+    "Family": [
+      "Leather_Scout"
+    ]
+  },
+  "MaxDurability": 170,
+  "ItemSoundSetId": "ISS_Armor_Leather"
+}

@@ -1,0 +1,38 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.Ingredient_Sugar.name",
+    "Description": "server.items.Ingredient_Sugar.description"
+  },
+  "Categories": [
+    "Items.Ingredients"
+  ],
+  "Quality": "Common",
+  "Tags": {
+    "Type": [
+      "Ingredient"
+    ]
+  },
+  "MaxStack": 64,
+  "DropOnDeath": true,
+  "Model": "Items/pouch.blockymodel",
+  "Texture": "Items/pouch.png",
+  "Recipe": {
+    "Input": [
+      {
+        "ItemId": "Plant_Fruit_Berries_Red",
+        "Quantity": 5
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Type": "Crafting",
+        "Id": "Cookingbench",
+        "Categories": [
+          "Ingredients"
+        ]
+      }
+    ],
+    "TimeSeconds": 1
+  },
+  "Icon": "Icons/ItemsGenerated/Ingredient_Sugar.png"
+}

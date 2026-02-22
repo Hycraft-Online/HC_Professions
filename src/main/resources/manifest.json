@@ -11,7 +11,8 @@
   },
   "OptionalDependencies": {
     "ModServer:HC_Equipment": "*",
-    "ModServer:HC_Leveling": "*"
+    "ModServer:HC_Leveling": "*",
+    "ModServer:HC_Attributes": "*"
   },
   "DisabledByDefault": false,
   "Main": "${entry_point}"

@@ -1,0 +1,17 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.TemperStone_Iron.name"
+  },
+  "Categories": [
+    "Items.Ingredients"
+  ],
+  "Quality": "Uncommon",
+  "Tags": {
+    "Type": [
+      "Ingredient"
+    ]
+  },
+  "MaxStack": 64,
+  "DropOnDeath": true,
+  "Icon": "Icons/ItemsGenerated/TemperStone_Iron.png"
+}

@@ -1,0 +1,46 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.Component_Quicksilver_Drops.name",
+    "Description": "server.items.Component_Quicksilver_Drops.description"
+  },
+  "Categories": [
+    "Items.Ingredients"
+  ],
+  "Quality": "Uncommon",
+  "Tags": {
+    "Type": [
+      "Component"
+    ]
+  },
+  "MaxStack": 64,
+  "DropOnDeath": true,
+  "Model": "Items/Consumables/Potions/Potion.blockymodel",
+  "Texture": "Items/Consumables/Potions/Potion_Textures/White.png",
+  "Recipe": {
+    "Input": [
+      {
+        "ItemId": "Component_Glass_Vial",
+        "Quantity": 1
+      },
+      {
+        "ItemId": "Ingredient_Crystal_Cyan",
+        "Quantity": 1
+      },
+      {
+        "ItemId": "Component_Purifying_Salt",
+        "Quantity": 1
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Type": "Crafting",
+        "Id": "Alchemybench",
+        "Categories": [
+          "Alchemy_Potions_Misc"
+        ]
+      }
+    ],
+    "TimeSeconds": 4
+  },
+  "Icon": "Icons/ItemsGenerated/Component_Quicksilver_Drops.png"
+}

@@ -4,7 +4,7 @@ $C.@PageOverlay {}
 
 $C.@DecoratedContainer {
     @CloseButton = true;
-    Anchor: (Width: 620, Height: 420);
+    Anchor: (Width: 620, Height: 500);
 
     #Title {
         Group {
@@ -17,9 +17,7 @@ $C.@DecoratedContainer {
     #Content {
         LayoutMode: Left;
 
-        // ═══════════════════════════════════════
         // LEFT PANEL: Temperable items list
-        // ═══════════════════════════════════════
         Group #ItemListPanel {
             Anchor: (Width: 200);
             LayoutMode: Top;
@@ -40,9 +38,7 @@ $C.@DecoratedContainer {
 
         $C.@VerticalSeparator {}
 
-        // ═══════════════════════════════════════
         // RIGHT PANEL: Tempering details
-        // ═══════════════════════════════════════
         Group #DetailsPanel {
             Anchor: (Full: 0);
             LayoutMode: Top;
@@ -58,7 +54,8 @@ $C.@DecoratedContainer {
             // Item preview section (hidden by default)
             Group #PreviewSection {
                 Visible: false;
-                LayoutMode: Top;
+                LayoutMode: TopScrolling;
+                ScrollbarStyle: $C.@DefaultScrollbarStyle;
 
                 // Item header: icon + name + rarity
                 Group #ItemHeader {
@@ -140,6 +137,24 @@ $C.@DecoratedContainer {
                             Style: (FontSize: 13, TextColor: #FFFFFF, VerticalAlignment: Center);
                             Padding: (Left: 4);
                         }
+                    }
+                }
+
+                // Components section
+                Group #ComponentSection {
+                    Visible: false;
+                    LayoutMode: Top;
+                    Padding: (Top: 6);
+
+                    Label #ComponentsLabel {
+                        Text: "Components:";
+                        Style: (FontSize: 13, TextColor: #8a9aaa, RenderBold: true);
+                        Anchor: (Height: 18);
+                    }
+
+                    Group #ComponentList {
+                        LayoutMode: Top;
+                        Padding: (Top: 2);
                     }
                 }
 

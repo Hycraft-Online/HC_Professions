@@ -31,6 +31,11 @@ public class TradeskillCommand extends AbstractPlayerCommand {
     }
 
     @Override
+    protected boolean canGeneratePermission() {
+        return false;
+    }
+
+    @Override
     protected void execute(@Nonnull CommandContext ctx, @Nonnull Store<EntityStore> store,
                            @Nonnull Ref<EntityStore> ref, @Nonnull PlayerRef playerRef,
                            @Nonnull World world) {

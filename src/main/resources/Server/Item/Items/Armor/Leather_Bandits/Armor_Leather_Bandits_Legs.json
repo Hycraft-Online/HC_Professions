@@ -1,0 +1,113 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.Armor_Leather_Bandits_Legs.name"
+  },
+  "Parent": "Armor_Iron_Legs",
+  "Quality": "Rare",
+  "ItemLevel": 40,
+  "Icon": "Icons/ItemsGenerated/Armor_Leather_Bandits_Legs.png",
+  "IconProperties": {
+    "Rotation": [
+      22.5,
+      45,
+      22.5
+    ],
+    "Scale": 0.445,
+    "Translation": [
+      0.6,
+      -22.8
+    ]
+  },
+  "Model": "Items/Armors/Leather_Light/Legs.blockymodel",
+  "Texture": "Items/Armors/Bandits/Legs_Texture.png",
+  "Recipe": {
+    "TimeSeconds": 2,
+    "Input": [
+      {
+        "ItemId": "Ingredient_Leather_Scaled",
+        "Quantity": 5
+      },
+      {
+        "ItemId": "Ingredient_Bar_Iron",
+        "Quantity": 3
+      },
+      {
+        "ItemId": "Ingredient_Bolt_Cotton",
+        "Quantity": 3
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Id": "Armor_Bench",
+        "Type": "Crafting",
+        "Categories": [
+          "Armor_Legs"
+        ]
+      }
+    ],
+    "KnowledgeRequired": true
+  },
+  "Armor": {
+    "ArmorSlot": "Legs",
+    "BaseDamageResistance": 0,
+    "CosmeticsToHide": [
+      "Shoes",
+      "Pants"
+    ],
+    "StatModifiers": {
+      "Health": [
+        {
+          "Amount": 12,
+          "CalculationType": "Additive"
+        }
+      ],
+      "Stamina": [
+        {
+          "Amount": 22,
+          "CalculationType": "Additive"
+        }
+      ]
+    },
+    "DamageResistance": {
+      "Physical": [
+        {
+          "Amount": 0.07,
+          "CalculationType": "Multiplicative"
+        }
+      ],
+      "Projectile": [
+        {
+          "Amount": 0.06,
+          "CalculationType": "Multiplicative"
+        }
+      ],
+      "Poison": [
+        {
+          "Amount": 0.04,
+          "CalculationType": "Multiplicative"
+        }
+      ]
+    }
+  },
+  "Tags": {
+    "Type": [
+      "Armor"
+    ],
+    "Family": [
+      "Leather_Bandits"
+    ]
+  },
+  "MaxDurability": 150,
+  "ItemSoundSetId": "ISS_Armor_Leather",
+  "Utility": {
+    "StatModifiers": {
+      "Stamina": [
+        {
+          "Target": "Max",
+          "Amount": 0.06,
+          "CalculationType": "Multiplicative"
+        }
+      ]
+    }
+  }
+}

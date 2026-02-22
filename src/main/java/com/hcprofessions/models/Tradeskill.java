@@ -2,6 +2,7 @@ package com.hcprofessions.models;
 
 import javax.annotation.Nullable;
 import java.awt.Color;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -50,6 +51,20 @@ public enum Tradeskill {
 
     public static Map<String, SkillDefinition> getDefinitions() {
         return definitions;
+    }
+
+    public boolean isEnabled() {
+        return definitions.containsKey(this.name());
+    }
+
+    public static List<Tradeskill> getEnabledTradeskills() {
+        List<Tradeskill> enabled = new ArrayList<>();
+        for (Tradeskill t : values()) {
+            if (t.isEnabled()) {
+                enabled.add(t);
+            }
+        }
+        return enabled;
     }
 
     @Nullable

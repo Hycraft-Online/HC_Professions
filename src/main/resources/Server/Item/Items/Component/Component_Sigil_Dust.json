@@ -1,0 +1,47 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.Component_Sigil_Dust.name",
+    "Description": "server.items.Component_Sigil_Dust.description"
+  },
+  "Categories": [
+    "Items.Ingredients"
+  ],
+  "Quality": "Common",
+  "Tags": {
+    "Type": [
+      "Component"
+    ]
+  },
+  "MaxStack": 64,
+  "DropOnDeath": true,
+  "Model": "Items/Consumables/Potions/Potion.blockymodel",
+  "Texture": "Items/Consumables/Potions/Potion_Textures/White.png",
+  "Recipe": {
+    "Input": [
+      {
+        "ItemId": "Component_Mordant_Powder",
+        "Quantity": 1
+      },
+      {
+        "ItemId": "Ingredient_Crystal_Blue",
+        "Quantity": 1
+      },
+      {
+        "ItemId": "Ingredient_Crystal_Purple",
+        "Quantity": 1
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Type": "Crafting",
+        "Id": "Alchemybench",
+        "Categories": [
+          "Alchemy_Potions_Misc"
+        ]
+      }
+    ],
+    "TimeSeconds": 6,
+    "KnowledgeRequired": true
+  },
+  "Icon": "Icons/ItemsGenerated/Component_Sigil_Dust.png"
+}

@@ -1,0 +1,47 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.Component_Resonance_Crystal.name",
+    "Description": "server.items.Component_Resonance_Crystal.description"
+  },
+  "Categories": [
+    "Items.Ingredients"
+  ],
+  "Quality": "Uncommon",
+  "Tags": {
+    "Type": [
+      "Component"
+    ]
+  },
+  "MaxStack": 64,
+  "DropOnDeath": true,
+  "Model": "Items/Consumables/Potions/Potion.blockymodel",
+  "Texture": "Items/Consumables/Potions/Potion_Textures/White.png",
+  "Recipe": {
+    "Input": [
+      {
+        "ItemId": "Component_Spirit_Essence",
+        "Quantity": 1
+      },
+      {
+        "ItemId": "Component_Volatile_Catalyst",
+        "Quantity": 1
+      },
+      {
+        "ItemId": "Ingredient_Crystal_Purple",
+        "Quantity": 1
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Type": "Crafting",
+        "Id": "Alchemybench",
+        "Categories": [
+          "Alchemy_Potions_Misc"
+        ]
+      }
+    ],
+    "TimeSeconds": 10,
+    "KnowledgeRequired": true
+  },
+  "Icon": "Icons/ItemsGenerated/Component_Resonance_Crystal.png"
+}
