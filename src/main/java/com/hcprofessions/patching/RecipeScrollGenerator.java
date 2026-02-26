@@ -66,20 +66,16 @@ public class RecipeScrollGenerator {
             }
 
             try {
-                // Create the GatedLearnRecipe + ModifyInventory interaction chain
-                // The GatedLearnRecipe reads ItemId from the held item's metadata,
-                // but we also set it as a fallback on the interaction field.
+                // Create the GatedLearnRecipe interaction — it handles both the level
+                // check and item consumption atomically in firstRun(), so no separate
+                // ModifyInventory step is needed in the chain.
                 String gatedInteractionId = scrollId + "_GatedLearn";
                 Interaction gatedInteraction = createGatedLearnRecipeInteraction(gatedInteractionId, itemId);
                 interactions.add(gatedInteraction);
 
-                String modifyInteractionId = scrollId + "_Consume";
-                Interaction modifyInteraction = createModifyInventoryInteraction(modifyInteractionId);
-                interactions.add(modifyInteraction);
-
-                // Create RootInteraction that chains: GatedLearn -> Consume
+                // RootInteraction with only the gated interaction (consumption is internal)
                 String rootId = scrollId + "_Root";
-                RootInteraction root = new RootInteraction(rootId, gatedInteractionId, modifyInteractionId);
+                RootInteraction root = new RootInteraction(rootId, gatedInteractionId);
                 rootInteractions.add(root);
 
                 // Create the Item asset
@@ -134,21 +130,6 @@ public class RecipeScrollGenerator {
         setField(interaction, "itemId", targetItemId);
 
         // Set data
-        setField(interaction, "data", new AssetExtraInfo.Data(Interaction.class, id, null));
-
-        return interaction;
-    }
-
-    /**
-     * Creates a ModifyInventoryInteraction that consumes 1 of the held item.
-     */
-    private static Interaction createModifyInventoryInteraction(String id) throws Exception {
-        Class<?> clazz = Class.forName(
-                "com.hypixel.hytale.server.core.modules.interaction.interaction.config.server.ModifyInventoryInteraction");
-        Interaction interaction = (Interaction) clazz.getDeclaredConstructor().newInstance();
-
-        setField(interaction, "id", id);
-        setField(interaction, "adjustHeldItemQuantity", -1);
         setField(interaction, "data", new AssetExtraInfo.Data(Interaction.class, id, null));
 
         return interaction;

@@ -416,42 +416,42 @@ public class RecipeGateRepository {
                 insertGate(stmt, "Furniture_Kweebec_Chest_Small",    "CARPENTER", 1,  10);
                 insertGate(stmt, "Furniture_Kweebec_Candle",         "CARPENTER", 1,  8);
                 insertGate(stmt, "Furniture_Kweebec_Lantern",        "CARPENTER", 1,  8);
-                // Tier 2: Tavern set (IL 2, darkwood planks + cloth)
-                insertGate(stmt, "Furniture_Tavern_Bed",             "CARPENTER", 10, 15);
-                insertGate(stmt, "Furniture_Tavern_Chest_Small",     "CARPENTER", 10, 15);
-                insertGate(stmt, "Furniture_Tavern_Chest_Large",     "CARPENTER", 10, 20);
-                insertGate(stmt, "Furniture_Tavern_Candle",          "CARPENTER", 10, 12);
-                insertGate(stmt, "Furniture_Tavern_Chandelier",      "CARPENTER", 10, 15);
-                // Tier 3: Ancient set (IL 3, rare blackwood + wool)
-                insertGate(stmt, "Furniture_Ancient_Bed",            "CARPENTER", 20, 25);
-                insertGate(stmt, "Furniture_Ancient_Chest_Small",    "CARPENTER", 20, 25);
-                insertGate(stmt, "Furniture_Ancient_Chest_Large",    "CARPENTER", 20, 30);
-                insertGate(stmt, "Furniture_Ancient_Candle",         "CARPENTER", 20, 20);
-                // Tier 4: Lumberjack set (IL 4, hardwood planks + leather)
-                insertGate(stmt, "Furniture_Lumberjack_Bed",         "CARPENTER", 30, 35);
-                insertGate(stmt, "Furniture_Lumberjack_Chest_Small", "CARPENTER", 30, 35);
-                insertGate(stmt, "Furniture_Lumberjack_Chest_Large", "CARPENTER", 30, 40);
-                insertGate(stmt, "Furniture_Lumberjack_Lamp",        "CARPENTER", 30, 30);
-                insertGate(stmt, "Furniture_Lumberjack_Lantern",     "CARPENTER", 30, 30);
-                // Tier 5: Feran set (IL 5, drywood + leather + bone)
-                insertGate(stmt, "Furniture_Feran_Bed",              "CARPENTER", 40, 45);
-                insertGate(stmt, "Furniture_Feran_Chest_Small",      "CARPENTER", 40, 45);
-                insertGate(stmt, "Furniture_Feran_Chest_Large",      "CARPENTER", 40, 50);
-                insertGate(stmt, "Furniture_Feran_Chandelier",       "CARPENTER", 40, 40);
-                insertGate(stmt, "Furniture_Feran_Candle",           "CARPENTER", 40, 40);
-                insertGate(stmt, "Furniture_Feran_Torch",            "CARPENTER", 40, 35);
-                insertGate(stmt, "Furniture_Feran_Torch_Tall",       "CARPENTER", 40, 40);
-                // Tier 6: Temple Dark set (IL 6, stone/mineral)
-                insertGate(stmt, "Furniture_Temple_Dark_Bed",        "CARPENTER", 50, 55);
-                insertGate(stmt, "Furniture_Temple_Dark_Chest_Small","CARPENTER", 50, 55);
-                insertGate(stmt, "Furniture_Temple_Dark_Chest_Large","CARPENTER", 50, 60);
-                insertGate(stmt, "Furniture_Temple_Dark_Brazier",    "CARPENTER", 50, 50);
-                // Tier 7: Jungle set (IL 7, bamboo + multicolor cloth)
-                insertGate(stmt, "Furniture_Jungle_Bed",             "CARPENTER", 60, 70);
-                insertGate(stmt, "Furniture_Jungle_Chest_Small",     "CARPENTER", 60, 70);
-                insertGate(stmt, "Furniture_Jungle_Chest_Large",     "CARPENTER", 60, 75);
-                insertGate(stmt, "Furniture_Jungle_Candle",          "CARPENTER", 60, 60);
-                insertGate(stmt, "Furniture_Jungle_Torch",           "CARPENTER", 60, 60);
+                // Tier 2: Tavern set — freely craftable, grants XP
+                insertGate(stmt, "Furniture_Tavern_Bed",             "CARPENTER", 1, 15);
+                insertGate(stmt, "Furniture_Tavern_Chest_Small",     "CARPENTER", 1, 15);
+                insertGate(stmt, "Furniture_Tavern_Chest_Large",     "CARPENTER", 1, 20);
+                insertGate(stmt, "Furniture_Tavern_Candle",          "CARPENTER", 1, 12);
+                insertGate(stmt, "Furniture_Tavern_Chandelier",      "CARPENTER", 1, 15);
+                // Tier 3: Ancient set — freely craftable, grants XP
+                insertGate(stmt, "Furniture_Ancient_Bed",            "CARPENTER", 1, 25);
+                insertGate(stmt, "Furniture_Ancient_Chest_Small",    "CARPENTER", 1, 25);
+                insertGate(stmt, "Furniture_Ancient_Chest_Large",    "CARPENTER", 1, 30);
+                insertGate(stmt, "Furniture_Ancient_Candle",         "CARPENTER", 1, 20);
+                // Tier 4: Lumberjack set — freely craftable, grants XP
+                insertGate(stmt, "Furniture_Lumberjack_Bed",         "CARPENTER", 1, 35);
+                insertGate(stmt, "Furniture_Lumberjack_Chest_Small", "CARPENTER", 1, 35);
+                insertGate(stmt, "Furniture_Lumberjack_Chest_Large", "CARPENTER", 1, 40);
+                insertGate(stmt, "Furniture_Lumberjack_Lamp",        "CARPENTER", 1, 30);
+                insertGate(stmt, "Furniture_Lumberjack_Lantern",     "CARPENTER", 1, 30);
+                // Tier 5: Feran set — freely craftable, grants XP
+                insertGate(stmt, "Furniture_Feran_Bed",              "CARPENTER", 1, 45);
+                insertGate(stmt, "Furniture_Feran_Chest_Small",      "CARPENTER", 1, 45);
+                insertGate(stmt, "Furniture_Feran_Chest_Large",      "CARPENTER", 1, 50);
+                insertGate(stmt, "Furniture_Feran_Chandelier",       "CARPENTER", 1, 40);
+                insertGate(stmt, "Furniture_Feran_Candle",           "CARPENTER", 1, 40);
+                insertGate(stmt, "Furniture_Feran_Torch",            "CARPENTER", 1, 35);
+                insertGate(stmt, "Furniture_Feran_Torch_Tall",       "CARPENTER", 1, 40);
+                // Tier 6: Temple Dark set — freely craftable, grants XP
+                insertGate(stmt, "Furniture_Temple_Dark_Bed",        "CARPENTER", 1, 55);
+                insertGate(stmt, "Furniture_Temple_Dark_Chest_Small","CARPENTER", 1, 55);
+                insertGate(stmt, "Furniture_Temple_Dark_Chest_Large","CARPENTER", 1, 60);
+                insertGate(stmt, "Furniture_Temple_Dark_Brazier",    "CARPENTER", 1, 50);
+                // Tier 7: Jungle set — freely craftable, grants XP
+                insertGate(stmt, "Furniture_Jungle_Bed",             "CARPENTER", 1, 70);
+                insertGate(stmt, "Furniture_Jungle_Chest_Small",     "CARPENTER", 1, 70);
+                insertGate(stmt, "Furniture_Jungle_Chest_Large",     "CARPENTER", 1, 75);
+                insertGate(stmt, "Furniture_Jungle_Candle",          "CARPENTER", 1, 60);
+                insertGate(stmt, "Furniture_Jungle_Torch",           "CARPENTER", 1, 60);
 
                 // ═══════════════════════════════════════════════════════
                 // Profession bench crafting (at Workbench)

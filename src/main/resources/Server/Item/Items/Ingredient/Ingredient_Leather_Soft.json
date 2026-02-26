@@ -1,0 +1,35 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.Ingredient_Leather_Soft.name",
+    "Description": "server.items.Ingredient_Leather_Soft.description"
+  },
+  "Categories": [
+    "Items.Ingredients"
+  ],
+  "Quality": "Common",
+  "Icon": "Icons/ItemsGenerated/Ingredient_Leather_Soft.png",
+  "Tags": {
+    "Type": [
+      "Ingredient"
+    ]
+  },
+  "MaxStack": 64,
+  "DropOnDeath": true,
+  "Model": "Items/pouch.blockymodel",
+  "Texture": "Items/pouch.png",
+  "Recipe": {
+    "Input": [
+      {
+        "ItemId": "Ingredient_Hide_Soft",
+        "Quantity": 1
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Type": "Processing",
+        "Id": "Tannery"
+      }
+    ],
+    "TimeSeconds": 4
+  }
+}

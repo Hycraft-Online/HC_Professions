@@ -19,6 +19,8 @@ import com.hypixel.hytale.server.core.asset.type.item.config.Item;
 import com.hypixel.hytale.server.core.entity.InteractionContext;
 import com.hypixel.hytale.server.core.entity.entities.Player;
 import com.hypixel.hytale.server.core.inventory.ItemStack;
+import com.hypixel.hytale.server.core.inventory.container.ItemContainer;
+import com.hypixel.hytale.server.core.inventory.transaction.ItemStackSlotTransaction;
 import com.hypixel.hytale.server.core.modules.interaction.interaction.CooldownHandler;
 import com.hypixel.hytale.server.core.modules.interaction.interaction.config.SimpleInstantInteraction;
 import com.hypixel.hytale.server.core.universe.PlayerRef;
@@ -122,6 +124,10 @@ public class GatedLearnRecipeInteraction extends SimpleInstantInteraction {
         Message itemNameMessage = item != null ? Message.translation(item.getTranslationKey()) : Message.raw("?");
 
         if (CraftingPlugin.learnRecipe(ref, resolvedItemId, commandBuffer)) {
+            // Consume the scroll item atomically with the learn — don't rely on a
+            // separate ModifyInventoryInteraction in the chain, which may execute even
+            // if the level check above would have blocked in a different code path.
+            consumeHeldItem(context);
             playerRefComponent.sendMessage(
                 Message.translation("server.modules.learnrecipe.success").param("name", itemNameMessage));
             return;
@@ -130,6 +136,24 @@ public class GatedLearnRecipeInteraction extends SimpleInstantInteraction {
         playerRefComponent.sendMessage(
             Message.translation("server.modules.learnrecipe.alreadyKnown").param("name", itemNameMessage));
         context.getState().state = InteractionState.Failed;
+    }
+
+    /**
+     * Consume 1 of the held item (the recipe scroll).
+     * Mirrors what ModifyInventoryInteraction does with AdjustHeldItemQuantity=-1.
+     */
+    private void consumeHeldItem(@Nonnull InteractionContext context) {
+        ItemStack heldItem = context.getHeldItem();
+        if (heldItem == null) return;
+
+        ItemContainer container = context.getHeldItemContainer();
+        if (container == null) return;
+
+        ItemStackSlotTransaction tx = container.removeItemStackFromSlot(
+                context.getHeldItemSlot(), heldItem, 1);
+        if (tx.succeeded()) {
+            context.setHeldItem(tx.getSlotAfter());
+        }
     }
 
     @Override

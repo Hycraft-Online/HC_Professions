@@ -35,6 +35,7 @@ import com.hcprofessions.systems.GatheringTradeskillXPSystem;
 import com.hcprofessions.systems.PickupXpListener;
 import com.hcprofessions.systems.MobKillXpSystem;
 import com.hypixel.hytale.assetstore.AssetRegistry;
+import com.hypixel.hytale.server.core.HytaleServer;
 import com.hypixel.hytale.server.core.Message;
 import com.hypixel.hytale.server.core.asset.LoadAssetEvent;
 import com.hypixel.hytale.server.core.event.events.player.PlayerConnectEvent;
@@ -44,6 +45,7 @@ import com.hypixel.hytale.server.core.modules.interaction.interaction.config.Roo
 import com.hypixel.hytale.server.core.plugin.JavaPlugin;
 import com.hypixel.hytale.server.core.plugin.JavaPluginInit;
 import com.hypixel.hytale.server.core.universe.PlayerRef;
+import com.hypixel.hytale.server.core.universe.Universe;
 import org.checkerframework.checker.nullness.compatqual.NonNullDecl;
 
 import java.awt.Color;
@@ -51,6 +53,7 @@ import java.io.File;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
+import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 
 public class HC_ProfessionsPlugin extends JavaPlugin {
@@ -203,7 +206,7 @@ public class HC_ProfessionsPlugin extends JavaPlugin {
 
             // ── RELEASE RESTRICTIONS ──────────────────────────────
             definitionRepository.disableAllExcept("profession", List.of(
-                "ALCHEMIST", "COOK", "WEAPONSMITH", "ARMORSMITH", "LEATHERWORKER", "TAILOR"
+                "ALCHEMIST", "COOK", "WEAPONSMITH", "ARMORSMITH", "LEATHERWORKER", "TAILOR", "CARPENTER"
             ));
 
             // Disabled: recipes are now managed via admin UI
@@ -376,21 +379,29 @@ public class HC_ProfessionsPlugin extends JavaPlugin {
 
         // ═══════════════════════════════════════════════════════
         // PLAYER DISCONNECT EVENT - save and cleanup
+        // PlayerDisconnectEvent fires during world teleport transitions (false positive).
+        // Delay cache invalidation to confirm the player actually left the server.
         // ═══════════════════════════════════════════════════════
         this.getEventRegistry().register(PlayerDisconnectEvent.class, (event) -> {
             PlayerRef playerRef = event.getPlayerRef();
             UUID uuid = playerRef.getUuid();
 
-            // Save dirty data
+            // Always save dirty data immediately (safe even during teleport — just persists current state)
             tradeskillManager.savePlayer(uuid);
             professionManager.savePlayer(uuid);
             allProfessionManager.savePlayer(uuid);
 
-            // Invalidate cache
-            tradeskillManager.invalidateCache(uuid);
-            professionManager.invalidateCache(uuid);
-            allProfessionManager.invalidateCache(uuid);
-            actionXpService.clearPlayerNotifications(uuid);
+            // Delay cache invalidation to avoid evicting data for a player who is merely teleporting
+            HytaleServer.SCHEDULED_EXECUTOR.schedule(() -> {
+                PlayerRef stillOnline = Universe.get().getPlayer(uuid);
+                if (stillOnline == null) {
+                    // Player is truly gone — safe to invalidate
+                    tradeskillManager.invalidateCache(uuid);
+                    professionManager.invalidateCache(uuid);
+                    allProfessionManager.invalidateCache(uuid);
+                    actionXpService.clearPlayerNotifications(uuid);
+                }
+            }, 2, TimeUnit.SECONDS);
         });
 
         this.getLogger().at(Level.INFO).log("HC_Professions enabled successfully!");

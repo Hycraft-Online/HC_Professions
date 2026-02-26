@@ -15,7 +15,7 @@ import java.util.logging.Level;
 /**
  * Patches KnowledgeRequired on item recipes at runtime via reflection.
  *
- * Items whose recipe gate level is >= SCROLL_LEVEL_THRESHOLD get KnowledgeRequired=true
+ * Items whose recipe gate level is > SCROLL_LEVEL_THRESHOLD get KnowledgeRequired=true
  * (hidden from crafting bench until learned via scroll). Items below the threshold get
  * KnowledgeRequired=false (freely known).
  *
@@ -55,7 +55,7 @@ public class RecipeKnowledgePatcher {
             if (!gate.enabled()) continue;
 
             String itemId = gate.recipeOutputId();
-            boolean needsKnowledge = gate.requiredLevel() >= SCROLL_LEVEL_THRESHOLD;
+            boolean needsKnowledge = gate.requiredLevel() > SCROLL_LEVEL_THRESHOLD;
 
             Item item = Item.getAssetMap().getAsset(itemId);
             if (item == null) {
@@ -133,7 +133,7 @@ public class RecipeKnowledgePatcher {
         Map<String, Boolean> gateRequirements = new HashMap<>();
         for (RecipeGate gate : gateManager.getAllGates()) {
             if (!gate.enabled()) continue;
-            gateRequirements.put(gate.recipeOutputId(), gate.requiredLevel() >= SCROLL_LEVEL_THRESHOLD);
+            gateRequirements.put(gate.recipeOutputId(), gate.requiredLevel() > SCROLL_LEVEL_THRESHOLD);
         }
 
         int patched = 0;

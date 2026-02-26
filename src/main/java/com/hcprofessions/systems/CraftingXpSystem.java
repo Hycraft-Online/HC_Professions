@@ -3,6 +3,7 @@ package com.hcprofessions.systems;
 import com.hcprofessions.managers.AllProfessionManager;
 import com.hcprofessions.managers.CraftingGateManager;
 import com.hcprofessions.managers.ProfessionManager;
+import com.hcprofessions.models.PlayerProfessionData;
 import com.hcprofessions.models.Profession;
 import com.hcprofessions.models.RecipeGate;
 import com.hypixel.hytale.component.ArchetypeChunk;
@@ -48,7 +49,7 @@ public class CraftingXpSystem extends EntityEventSystem<EntityStore, CraftRecipe
     private static final HytaleLogger LOGGER = HytaleLogger.getLogger().getSubLogger("HC_Professions-CraftXP");
 
     /** Default XP granted for ungated recipes at a recognized profession bench. */
-    private static final int DEFAULT_UNGATED_XP = 10;
+    private static final int DEFAULT_UNGATED_XP = 20;
 
     /**
      * Maps bench IDs (from recipe BenchRequirement) to professions.
@@ -159,6 +160,14 @@ public class CraftingXpSystem extends EntityEventSystem<EntityStore, CraftRecipe
             Profession mainProfession = professionManager.getProfession(playerRef.getUuid());
             if (mainProfession != null && targetProfession == mainProfession) {
                 professionManager.grantXp(playerRef, xp);
+            }
+        }
+
+        // Track items crafted for the player's primary profession
+        PlayerProfessionData profData = professionManager.getPlayerData(playerRef.getUuid());
+        if (profData != null && profData.hasProfession()) {
+            for (int i = 0; i < quantity; i++) {
+                profData.incrementItemsCrafted();
             }
         }
 

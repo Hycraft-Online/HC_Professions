@@ -3,14 +3,14 @@
 
 ## HC_Professions - Bench Items
 
-items.Bench_Weaponsmith_Forge.name=Weaponsmith's Forge
-items.Bench_Weaponsmith_Forge.description=<color is="#C83232">Weaponsmith Profession Bench</color>\n<color is="#ffd100">Craft weapons at this forge.</color>\n<color is="#888888">Recipes require Weaponsmith skill level.</color>\n<color is="#4CAF50">Higher skill produces higher quality gear.</color>
+items.Bench_Weaponsmith_Forge.name=Bladesmith's Forge
+items.Bench_Weaponsmith_Forge.description=<color is="#C83232">Bladesmith Profession Bench</color>\n<color is="#ffd100">Craft weapons at this forge.</color>\n<color is="#888888">Recipes require Bladesmith skill level.</color>\n<color is="#4CAF50">Higher skill produces higher quality gear.</color>
 
-items.Bench_Armorsmith_Anvil.name=Armorsmith's Anvil
-items.Bench_Armorsmith_Anvil.description=<color is="#3278C8">Armorsmith Profession Bench</color>\n<color is="#ffd100">Craft armor and shields at this anvil.</color>\n<color is="#888888">Recipes require Armorsmith skill level.</color>\n<color is="#4CAF50">Higher skill produces higher quality gear.</color>
+items.Bench_Armorsmith_Anvil.name=Platesmith's Anvil
+items.Bench_Armorsmith_Anvil.description=<color is="#3278C8">Platesmith Profession Bench</color>\n<color is="#ffd100">Craft armor and shields at this anvil.</color>\n<color is="#888888">Recipes require Platesmith skill level.</color>\n<color is="#4CAF50">Higher skill produces higher quality gear.</color>
 
 items.Bench_Tempering.name=Tempering Bench
-items.Bench_Tempering.description=<color is="#ffd100">Reroll equipment affixes and rarity.</color>\n<color is="#888888">Requires a profession (Weaponsmith or Armorsmith).</color>\n<color is="#4CAF50">Higher profession level = better rarity chances.</color>
+items.Bench_Tempering.description=<color is="#ffd100">Reroll equipment affixes and rarity.</color>\n<color is="#888888">Requires a profession (Bladesmith or Platesmith).</color>\n<color is="#4CAF50">Higher profession level = better rarity chances.</color>
 
 ## Temper Stones (Roman numeral tiers, every 5 item levels)
 items.TemperStone_I.name=Temper Stone I
@@ -60,628 +60,628 @@ items.Ingredient_Crystal_Shard.name=Crystal Shard
 items.Ingredient_Crystal_Shard.description=<color is="#B8860B">Gathering Ingredient</color>\n<color is="#ffd100">A jagged sliver of raw crystal humming with energy. Used in enchanting.</color>\n<color is="#888888">Gathered from the world.</color>
 
 ## ===============================================
-## Weaponsmith Components
+## Bladesmith Components
 ## ===============================================
 
 items.Component_Crude_Blade_Blank.name=Crude Blade Blank
-items.Component_Crude_Blade_Blank.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A basic and serviceable crude blade blank used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 1+</color>
+items.Component_Crude_Blade_Blank.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A basic and serviceable crude blade blank used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 1+</color>
 items.Component_Crude_Filing.name=Crude Filing
-items.Component_Crude_Filing.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A basic and serviceable crude filing used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 1+</color>
+items.Component_Crude_Filing.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A basic and serviceable crude filing used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 1+</color>
 items.Component_Crude_Handle_Wrap.name=Crude Handle Wrap
-items.Component_Crude_Handle_Wrap.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A basic and serviceable crude handle wrap used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 1+</color>
+items.Component_Crude_Handle_Wrap.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A basic and serviceable crude handle wrap used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 1+</color>
 items.Component_Crude_Crossguard.name=Crude Crossguard
-items.Component_Crude_Crossguard.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A basic and serviceable crude crossguard used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 1+</color>
+items.Component_Crude_Crossguard.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A basic and serviceable crude crossguard used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 1+</color>
 items.Component_Iron_Nails.name=Iron Nails
-items.Component_Iron_Nails.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A basic and serviceable iron nails used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 1+</color>
+items.Component_Iron_Nails.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A basic and serviceable iron nails used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 1+</color>
 items.Component_Wire_Coil.name=Wire Coil
-items.Component_Wire_Coil.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A basic and serviceable wire coil used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 1+</color>
+items.Component_Wire_Coil.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A basic and serviceable wire coil used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 1+</color>
 items.Component_Crude_Latch.name=Crude Latch
-items.Component_Crude_Latch.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A basic and serviceable crude latch used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 1+</color>
+items.Component_Crude_Latch.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A basic and serviceable crude latch used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 1+</color>
 items.Component_Raw_Metal_Scrap.name=Raw Metal Scrap
-items.Component_Raw_Metal_Scrap.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A basic and serviceable raw metal scrap used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 1+</color>
+items.Component_Raw_Metal_Scrap.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A basic and serviceable raw metal scrap used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 1+</color>
 items.Component_Crude_Flux.name=Crude Flux
-items.Component_Crude_Flux.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A basic and serviceable crude flux used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 1+</color>
+items.Component_Crude_Flux.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A basic and serviceable crude flux used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 1+</color>
 items.Component_Crude_Etching.name=Crude Etching
-items.Component_Crude_Etching.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A basic and serviceable crude etching used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 1+</color>
+items.Component_Crude_Etching.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A basic and serviceable crude etching used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 1+</color>
 items.Component_Raw_Tang_Insert.name=Raw Tang Insert
-items.Component_Raw_Tang_Insert.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A basic and serviceable raw tang insert used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 1+</color>
+items.Component_Raw_Tang_Insert.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A basic and serviceable raw tang insert used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 1+</color>
 items.Component_Blade_Blank.name=Blade Blank
-items.Component_Blade_Blank.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A basic and serviceable blade blank used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 10+</color>
+items.Component_Blade_Blank.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A basic and serviceable blade blank used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 10+</color>
 items.Component_Basic_Blade_Form.name=Basic Blade Form
-items.Component_Basic_Blade_Form.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A basic and serviceable basic blade form used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 19+</color>
+items.Component_Basic_Blade_Form.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A basic and serviceable basic blade form used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 19+</color>
 items.Component_Rough_Edge_Strip.name=Rough Edge Strip
-items.Component_Rough_Edge_Strip.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A basic and serviceable rough edge strip used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 19+</color>
+items.Component_Rough_Edge_Strip.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A basic and serviceable rough edge strip used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 19+</color>
 items.Component_Rough_Grip_Cord.name=Rough Grip Cord
-items.Component_Rough_Grip_Cord.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A basic and serviceable rough grip cord used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 19+</color>
+items.Component_Rough_Grip_Cord.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A basic and serviceable rough grip cord used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 19+</color>
 items.Component_Rough_Pommel_Cap.name=Rough Pommel Cap
-items.Component_Rough_Pommel_Cap.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A basic and serviceable rough pommel cap used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 19+</color>
+items.Component_Rough_Pommel_Cap.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A basic and serviceable rough pommel cap used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 19+</color>
 items.Component_Rough_Pins.name=Rough Pins
-items.Component_Rough_Pins.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A basic and serviceable rough pins used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 19+</color>
+items.Component_Rough_Pins.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A basic and serviceable rough pins used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 19+</color>
 items.Component_Rough_Chain_Links.name=Rough Chain Links
-items.Component_Rough_Chain_Links.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A basic and serviceable rough chain links used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 19+</color>
+items.Component_Rough_Chain_Links.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A basic and serviceable rough chain links used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 19+</color>
 items.Component_Simple_Gear_Set.name=Simple Gear Set
-items.Component_Simple_Gear_Set.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A basic and serviceable simple gear set used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 19+</color>
+items.Component_Simple_Gear_Set.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A basic and serviceable simple gear set used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 19+</color>
 items.Component_Crude_Alloy_Bar.name=Crude Alloy Bar
-items.Component_Crude_Alloy_Bar.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A basic and serviceable crude alloy bar used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 19+</color>
+items.Component_Crude_Alloy_Bar.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A basic and serviceable crude alloy bar used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 19+</color>
 items.Component_Raw_Quenching_Oil.name=Raw Quenching Oil
-items.Component_Raw_Quenching_Oil.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A basic and serviceable raw quenching oil used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 19+</color>
+items.Component_Raw_Quenching_Oil.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A basic and serviceable raw quenching oil used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 19+</color>
 items.Component_Rough_Inlay_Strip.name=Rough Inlay Strip
-items.Component_Rough_Inlay_Strip.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A basic and serviceable rough inlay strip used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 19+</color>
+items.Component_Rough_Inlay_Strip.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A basic and serviceable rough inlay strip used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 19+</color>
 items.Component_Crude_Ricasso_Piece.name=Crude Ricasso Piece
-items.Component_Crude_Ricasso_Piece.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A basic and serviceable crude ricasso piece used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 19+</color>
+items.Component_Crude_Ricasso_Piece.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A basic and serviceable crude ricasso piece used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 19+</color>
 items.Component_Steel_Blade_Blank.name=Steel Blade Blank
-items.Component_Steel_Blade_Blank.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A well-crafted and reliable steel blade blank used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 20+</color>
+items.Component_Steel_Blade_Blank.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A well-crafted and reliable steel blade blank used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 20+</color>
 items.Component_Fine_Edge_Filing.name=Fine Edge Filing
-items.Component_Fine_Edge_Filing.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A well-crafted and reliable fine edge filing used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 20+</color>
+items.Component_Fine_Edge_Filing.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A well-crafted and reliable fine edge filing used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 20+</color>
 items.Component_Leather_Grip_Wrap.name=Leather Grip Wrap
-items.Component_Leather_Grip_Wrap.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A well-crafted and reliable leather grip wrap used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 20+</color>
+items.Component_Leather_Grip_Wrap.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A well-crafted and reliable leather grip wrap used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 20+</color>
 items.Component_Fine_Crossguard.name=Fine Crossguard
-items.Component_Fine_Crossguard.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A well-crafted and reliable fine crossguard used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 20+</color>
+items.Component_Fine_Crossguard.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A well-crafted and reliable fine crossguard used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 20+</color>
 items.Component_Metal_Brackets.name=Metal Brackets
-items.Component_Metal_Brackets.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A well-crafted and reliable metal brackets used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 20+</color>
+items.Component_Metal_Brackets.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A well-crafted and reliable metal brackets used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 20+</color>
 items.Component_Fine_Wire_Coil.name=Fine Wire Coil
-items.Component_Fine_Wire_Coil.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A well-crafted and reliable fine wire coil used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 20+</color>
+items.Component_Fine_Wire_Coil.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A well-crafted and reliable fine wire coil used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 20+</color>
 items.Component_Spring_Mechanism.name=Spring Mechanism
-items.Component_Spring_Mechanism.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A well-crafted and reliable spring mechanism used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 20+</color>
+items.Component_Spring_Mechanism.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A well-crafted and reliable spring mechanism used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 20+</color>
 items.Component_Alloy_Binding.name=Alloy Binding
-items.Component_Alloy_Binding.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A well-crafted and reliable alloy binding used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 20+</color>
+items.Component_Alloy_Binding.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A well-crafted and reliable alloy binding used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 20+</color>
 items.Component_Standard_Flux.name=Standard Flux
-items.Component_Standard_Flux.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A well-crafted and reliable standard flux used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 20+</color>
+items.Component_Standard_Flux.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A well-crafted and reliable standard flux used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 20+</color>
 items.Component_Fine_Filigree_Band.name=Fine Filigree Band
-items.Component_Fine_Filigree_Band.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A well-crafted and reliable fine filigree band used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 20+</color>
+items.Component_Fine_Filigree_Band.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A well-crafted and reliable fine filigree band used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 20+</color>
 items.Component_Fine_Fuller_Strip.name=Fine Fuller Strip
-items.Component_Fine_Fuller_Strip.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A well-crafted and reliable fine fuller strip used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 20+</color>
+items.Component_Fine_Fuller_Strip.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A well-crafted and reliable fine fuller strip used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 20+</color>
 items.Component_Folded_Steel_Blank.name=Folded Steel Blank
-items.Component_Folded_Steel_Blank.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A well-crafted and reliable folded steel blank used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 35+</color>
+items.Component_Folded_Steel_Blank.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A well-crafted and reliable folded steel blank used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 35+</color>
 items.Component_Steel_Edge_Piece.name=Steel Edge Piece
-items.Component_Steel_Edge_Piece.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A well-crafted and reliable steel edge piece used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 35+</color>
+items.Component_Steel_Edge_Piece.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A well-crafted and reliable steel edge piece used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 35+</color>
 items.Component_Steel_Tang_Insert.name=Steel Tang Insert
-items.Component_Steel_Tang_Insert.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A well-crafted and reliable steel tang insert used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 35+</color>
+items.Component_Steel_Tang_Insert.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A well-crafted and reliable steel tang insert used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 35+</color>
 items.Component_Counterweight.name=Counterweight
-items.Component_Counterweight.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A well-crafted and reliable counterweight used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 35+</color>
+items.Component_Counterweight.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A well-crafted and reliable counterweight used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 35+</color>
 items.Component_Standard_Bolts.name=Standard Bolts
-items.Component_Standard_Bolts.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A well-crafted and reliable standard bolts used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 35+</color>
+items.Component_Standard_Bolts.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A well-crafted and reliable standard bolts used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 35+</color>
 items.Component_Steel_Chain_Links.name=Steel Chain Links
-items.Component_Steel_Chain_Links.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A well-crafted and reliable steel chain links used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 35+</color>
+items.Component_Steel_Chain_Links.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A well-crafted and reliable steel chain links used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 35+</color>
 items.Component_Fine_Trigger_Assembly.name=Fine Trigger Assembly
-items.Component_Fine_Trigger_Assembly.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A well-crafted and reliable fine trigger assembly used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 35+</color>
+items.Component_Fine_Trigger_Assembly.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A well-crafted and reliable fine trigger assembly used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 35+</color>
 items.Component_Fine_Alloy_Blend.name=Fine Alloy Blend
-items.Component_Fine_Alloy_Blend.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A well-crafted and reliable fine alloy blend used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 35+</color>
+items.Component_Fine_Alloy_Blend.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A well-crafted and reliable fine alloy blend used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 35+</color>
 items.Component_Fine_Tempering_Compound.name=Fine Tempering Compound
-items.Component_Fine_Tempering_Compound.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A well-crafted and reliable fine tempering compound used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 35+</color>
+items.Component_Fine_Tempering_Compound.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A well-crafted and reliable fine tempering compound used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 35+</color>
 items.Component_Steel_Inlay_Ring.name=Steel Inlay Ring
-items.Component_Steel_Inlay_Ring.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A well-crafted and reliable steel inlay ring used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 35+</color>
+items.Component_Steel_Inlay_Ring.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A well-crafted and reliable steel inlay ring used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 35+</color>
 items.Component_Standard_Quillon_Bar.name=Standard Quillon Bar
-items.Component_Standard_Quillon_Bar.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A well-crafted and reliable standard quillon bar used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 35+</color>
+items.Component_Standard_Quillon_Bar.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A well-crafted and reliable standard quillon bar used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 35+</color>
 items.Component_Cobalt_Blade_Blank.name=Cobalt Blade Blank
-items.Component_Cobalt_Blade_Blank.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A superior quality alloy cobalt blade blank used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 36+</color>
+items.Component_Cobalt_Blade_Blank.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A superior quality alloy cobalt blade blank used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 36+</color>
 items.Component_Cobalt_Edge_Strip.name=Cobalt Edge Strip
-items.Component_Cobalt_Edge_Strip.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A superior quality alloy cobalt edge strip used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 36+</color>
+items.Component_Cobalt_Edge_Strip.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A superior quality alloy cobalt edge strip used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 36+</color>
 items.Component_Reinforced_Handle.name=Reinforced Handle
-items.Component_Reinforced_Handle.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A superior quality alloy reinforced handle used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 36+</color>
+items.Component_Reinforced_Handle.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A superior quality alloy reinforced handle used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 36+</color>
 items.Component_Cobalt_Guard_Ring.name=Cobalt Guard Ring
-items.Component_Cobalt_Guard_Ring.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A superior quality alloy cobalt guard ring used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 36+</color>
+items.Component_Cobalt_Guard_Ring.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A superior quality alloy cobalt guard ring used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 36+</color>
 items.Component_Cobalt_Rivets.name=Cobalt Rivets
-items.Component_Cobalt_Rivets.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A superior quality alloy cobalt rivets used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 36+</color>
+items.Component_Cobalt_Rivets.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A superior quality alloy cobalt rivets used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 36+</color>
 items.Component_Cobalt_Chain.name=Cobalt Chain
-items.Component_Cobalt_Chain.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A superior quality alloy cobalt chain used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 36+</color>
+items.Component_Cobalt_Chain.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A superior quality alloy cobalt chain used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 36+</color>
 items.Component_Cobalt_Mechanism.name=Cobalt Mechanism
-items.Component_Cobalt_Mechanism.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A superior quality alloy cobalt mechanism used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 36+</color>
+items.Component_Cobalt_Mechanism.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A superior quality alloy cobalt mechanism used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 36+</color>
 items.Component_Cobalt_Alloy_Bar.name=Cobalt Alloy Bar
-items.Component_Cobalt_Alloy_Bar.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A superior quality alloy cobalt alloy bar used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 36+</color>
+items.Component_Cobalt_Alloy_Bar.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A superior quality alloy cobalt alloy bar used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 36+</color>
 items.Component_Cobalt_Flux.name=Cobalt Flux
-items.Component_Cobalt_Flux.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A superior quality alloy cobalt flux used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 36+</color>
+items.Component_Cobalt_Flux.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A superior quality alloy cobalt flux used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 36+</color>
 items.Component_Cobalt_Inlay.name=Cobalt Inlay
-items.Component_Cobalt_Inlay.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A superior quality alloy cobalt inlay used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 36+</color>
+items.Component_Cobalt_Inlay.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A superior quality alloy cobalt inlay used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 36+</color>
 items.Component_Cobalt_Tang.name=Cobalt Tang
-items.Component_Cobalt_Tang.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A superior quality alloy cobalt tang used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 36+</color>
+items.Component_Cobalt_Tang.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A superior quality alloy cobalt tang used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 36+</color>
 items.Component_Reinforced_Blade_Plate.name=Reinforced Blade Plate
-items.Component_Reinforced_Blade_Plate.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A superior quality alloy reinforced blade plate used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 55+</color>
+items.Component_Reinforced_Blade_Plate.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A superior quality alloy reinforced blade plate used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 55+</color>
 items.Component_Superior_Filing.name=Superior Filing
-items.Component_Superior_Filing.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A superior quality alloy superior filing used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 55+</color>
+items.Component_Superior_Filing.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A superior quality alloy superior filing used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 55+</color>
 items.Component_Superior_Grip_Wrap.name=Superior Grip Wrap
-items.Component_Superior_Grip_Wrap.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A superior quality alloy superior grip wrap used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 55+</color>
+items.Component_Superior_Grip_Wrap.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A superior quality alloy superior grip wrap used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 55+</color>
 items.Component_Reinforced_Quillon.name=Reinforced Quillon
-items.Component_Reinforced_Quillon.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A superior quality alloy reinforced quillon used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 55+</color>
+items.Component_Reinforced_Quillon.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A superior quality alloy reinforced quillon used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 55+</color>
 items.Component_Reinforced_Fasteners.name=Reinforced Fasteners
-items.Component_Reinforced_Fasteners.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A superior quality alloy reinforced fasteners used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 55+</color>
+items.Component_Reinforced_Fasteners.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A superior quality alloy reinforced fasteners used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 55+</color>
 items.Component_Mithril_Wire_Strand.name=Mithril Wire Strand
-items.Component_Mithril_Wire_Strand.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A superior quality alloy mithril wire strand used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 55+</color>
+items.Component_Mithril_Wire_Strand.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A superior quality alloy mithril wire strand used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 55+</color>
 items.Component_Reinforced_Gears.name=Reinforced Gears
-items.Component_Reinforced_Gears.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A superior quality alloy reinforced gears used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 55+</color>
+items.Component_Reinforced_Gears.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A superior quality alloy reinforced gears used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 55+</color>
 items.Component_Superior_Alloy_Blend.name=Superior Alloy Blend
-items.Component_Superior_Alloy_Blend.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A superior quality alloy superior alloy blend used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 55+</color>
+items.Component_Superior_Alloy_Blend.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A superior quality alloy superior alloy blend used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 55+</color>
 items.Component_Superior_Quench_Oil.name=Superior Quench Oil
-items.Component_Superior_Quench_Oil.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A superior quality alloy superior quench oil used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 55+</color>
+items.Component_Superior_Quench_Oil.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A superior quality alloy superior quench oil used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 55+</color>
 items.Component_Superior_Etching_Panel.name=Superior Etching Panel
-items.Component_Superior_Etching_Panel.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A superior quality alloy superior etching panel used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 55+</color>
+items.Component_Superior_Etching_Panel.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A superior quality alloy superior etching panel used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 55+</color>
 items.Component_Reinforced_Ricasso.name=Reinforced Ricasso
-items.Component_Reinforced_Ricasso.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A superior quality alloy reinforced ricasso used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 55+</color>
+items.Component_Reinforced_Ricasso.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A superior quality alloy reinforced ricasso used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 55+</color>
 items.Component_Thorium_Blade_Core.name=Thorium Blade Core
-items.Component_Thorium_Blade_Core.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A masterwork grade material thorium blade core used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 56+</color>
+items.Component_Thorium_Blade_Core.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A masterwork grade material thorium blade core used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 56+</color>
 items.Component_Serrated_Filing.name=Serrated Filing
-items.Component_Serrated_Filing.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A masterwork grade material serrated filing used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 56+</color>
+items.Component_Serrated_Filing.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A masterwork grade material serrated filing used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 56+</color>
 items.Component_Master_Handle_Core.name=Master Handle Core
-items.Component_Master_Handle_Core.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A masterwork grade material master handle core used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 56+</color>
+items.Component_Master_Handle_Core.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A masterwork grade material master handle core used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 56+</color>
 items.Component_Thorium_Crossguard.name=Thorium Crossguard
-items.Component_Thorium_Crossguard.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A masterwork grade material thorium crossguard used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 56+</color>
+items.Component_Thorium_Crossguard.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A masterwork grade material thorium crossguard used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 56+</color>
 items.Component_Thorium_Pins.name=Thorium Pins
-items.Component_Thorium_Pins.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A masterwork grade material thorium pins used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 56+</color>
+items.Component_Thorium_Pins.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A masterwork grade material thorium pins used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 56+</color>
 items.Component_Thorium_Chain_Links.name=Thorium Chain Links
-items.Component_Thorium_Chain_Links.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A masterwork grade material thorium chain links used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 56+</color>
+items.Component_Thorium_Chain_Links.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A masterwork grade material thorium chain links used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 56+</color>
 items.Component_Thorium_Mechanism.name=Thorium Mechanism
-items.Component_Thorium_Mechanism.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A masterwork grade material thorium mechanism used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 56+</color>
+items.Component_Thorium_Mechanism.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A masterwork grade material thorium mechanism used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 56+</color>
 items.Component_Thorium_Alloy_Bar.name=Thorium Alloy Bar
-items.Component_Thorium_Alloy_Bar.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A masterwork grade material thorium alloy bar used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 56+</color>
+items.Component_Thorium_Alloy_Bar.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A masterwork grade material thorium alloy bar used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 56+</color>
 items.Component_Master_Flux.name=Master Flux
-items.Component_Master_Flux.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A masterwork grade material master flux used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 56+</color>
+items.Component_Master_Flux.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A masterwork grade material master flux used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 56+</color>
 items.Component_Thorium_Filigree.name=Thorium Filigree
-items.Component_Thorium_Filigree.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A masterwork grade material thorium filigree used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 56+</color>
+items.Component_Thorium_Filigree.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A masterwork grade material thorium filigree used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 56+</color>
 items.Component_Master_Fuller.name=Master Fuller
-items.Component_Master_Fuller.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A masterwork grade material master fuller used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 56+</color>
+items.Component_Master_Fuller.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A masterwork grade material master fuller used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 56+</color>
 items.Component_Ancient_Blade_Relic.name=Ancient Blade Relic
-items.Component_Ancient_Blade_Relic.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A masterwork grade material ancient blade relic used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 75+</color>
+items.Component_Ancient_Blade_Relic.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A masterwork grade material ancient blade relic used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 75+</color>
 items.Component_Master_Edge_Grind.name=Master Edge Grind
-items.Component_Master_Edge_Grind.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A masterwork grade material master edge grind used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 75+</color>
+items.Component_Master_Edge_Grind.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A masterwork grade material master edge grind used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 75+</color>
 items.Component_Ancient_Grip_Wrap.name=Ancient Grip Wrap
-items.Component_Ancient_Grip_Wrap.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A masterwork grade material ancient grip wrap used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 75+</color>
+items.Component_Ancient_Grip_Wrap.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A masterwork grade material ancient grip wrap used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 75+</color>
 items.Component_Masterwork_Pommel.name=Masterwork Pommel
-items.Component_Masterwork_Pommel.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A masterwork grade material masterwork pommel used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 75+</color>
+items.Component_Masterwork_Pommel.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A masterwork grade material masterwork pommel used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 75+</color>
 items.Component_Ancient_Rivets.name=Ancient Rivets
-items.Component_Ancient_Rivets.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A masterwork grade material ancient rivets used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 75+</color>
+items.Component_Ancient_Rivets.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A masterwork grade material ancient rivets used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 75+</color>
 items.Component_Ancient_Wire_Coil.name=Ancient Wire Coil
-items.Component_Ancient_Wire_Coil.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A masterwork grade material ancient wire coil used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 75+</color>
+items.Component_Ancient_Wire_Coil.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A masterwork grade material ancient wire coil used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 75+</color>
 items.Component_Master_Trigger.name=Master Trigger
-items.Component_Master_Trigger.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A masterwork grade material master trigger used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 75+</color>
+items.Component_Master_Trigger.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A masterwork grade material master trigger used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 75+</color>
 items.Component_Ancient_Metal_Fusion.name=Ancient Metal Fusion
-items.Component_Ancient_Metal_Fusion.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A masterwork grade material ancient metal fusion used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 75+</color>
+items.Component_Ancient_Metal_Fusion.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A masterwork grade material ancient metal fusion used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 75+</color>
 items.Component_Ancient_Tempering_Essence.name=Ancient Tempering Essence
-items.Component_Ancient_Tempering_Essence.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A masterwork grade material ancient tempering essence used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 75+</color>
+items.Component_Ancient_Tempering_Essence.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A masterwork grade material ancient tempering essence used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 75+</color>
 items.Component_Master_Engraving.name=Master Engraving
-items.Component_Master_Engraving.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A masterwork grade material master engraving used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 75+</color>
+items.Component_Master_Engraving.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A masterwork grade material master engraving used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 75+</color>
 items.Component_Ancient_Tang_Insert.name=Ancient Tang Insert
-items.Component_Ancient_Tang_Insert.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A masterwork grade material ancient tang insert used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 75+</color>
+items.Component_Ancient_Tang_Insert.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A masterwork grade material ancient tang insert used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 75+</color>
 items.Component_Starforged_Edge.name=Starforged Edge
-items.Component_Starforged_Edge.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A legendary otherworldly craft starforged edge used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 76+</color>
+items.Component_Starforged_Edge.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A legendary otherworldly craft starforged edge used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 76+</color>
 items.Component_Starforged_Rivet.name=Starforged Rivet
-items.Component_Starforged_Rivet.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A legendary otherworldly craft starforged rivet used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 76+</color>
+items.Component_Starforged_Rivet.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A legendary otherworldly craft starforged rivet used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 76+</color>
 items.Component_Starforged_Blade_Blank.name=Starforged Blade Blank
-items.Component_Starforged_Blade_Blank.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A legendary otherworldly craft starforged blade blank used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 83+</color>
+items.Component_Starforged_Blade_Blank.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A legendary otherworldly craft starforged blade blank used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 83+</color>
 items.Component_Void_Handle_Core.name=Void Handle Core
-items.Component_Void_Handle_Core.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A legendary otherworldly craft void handle core used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 83+</color>
+items.Component_Void_Handle_Core.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A legendary otherworldly craft void handle core used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 83+</color>
 items.Component_Void_Guard_Plate.name=Void Guard Plate
-items.Component_Void_Guard_Plate.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A legendary otherworldly craft void guard plate used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 83+</color>
+items.Component_Void_Guard_Plate.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A legendary otherworldly craft void guard plate used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 83+</color>
 items.Component_Starforged_Chain.name=Starforged Chain
-items.Component_Starforged_Chain.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A legendary otherworldly craft starforged chain used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 83+</color>
+items.Component_Starforged_Chain.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A legendary otherworldly craft starforged chain used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 83+</color>
 items.Component_Void_Mechanism.name=Void Mechanism
-items.Component_Void_Mechanism.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A legendary otherworldly craft void mechanism used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 83+</color>
+items.Component_Void_Mechanism.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A legendary otherworldly craft void mechanism used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 83+</color>
 items.Component_Starforged_Alloy.name=Starforged Alloy
-items.Component_Starforged_Alloy.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A legendary otherworldly craft starforged alloy used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 83+</color>
+items.Component_Starforged_Alloy.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A legendary otherworldly craft starforged alloy used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 83+</color>
 items.Component_Void_Flux.name=Void Flux
-items.Component_Void_Flux.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A legendary otherworldly craft void flux used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 83+</color>
+items.Component_Void_Flux.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A legendary otherworldly craft void flux used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 83+</color>
 items.Component_Void_Inlay_Strip.name=Void Inlay Strip
-items.Component_Void_Inlay_Strip.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A legendary otherworldly craft void inlay strip used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 83+</color>
+items.Component_Void_Inlay_Strip.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A legendary otherworldly craft void inlay strip used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 83+</color>
 items.Component_Starforged_Ricasso.name=Starforged Ricasso
-items.Component_Starforged_Ricasso.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A legendary otherworldly craft starforged ricasso used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 83+</color>
+items.Component_Starforged_Ricasso.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A legendary otherworldly craft starforged ricasso used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 83+</color>
 items.Component_Void_Razor_Strip.name=Void Razor Strip
-items.Component_Void_Razor_Strip.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A legendary otherworldly craft void razor strip used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 90+</color>
+items.Component_Void_Razor_Strip.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A legendary otherworldly craft void razor strip used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 90+</color>
 items.Component_Void_Bolts.name=Void Bolts
-items.Component_Void_Bolts.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A legendary otherworldly craft void bolts used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 90+</color>
+items.Component_Void_Bolts.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A legendary otherworldly craft void bolts used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 90+</color>
 items.Component_Divine_Blade_Essence.name=Divine Blade Essence
-items.Component_Divine_Blade_Essence.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A divine transcendent essence divine blade essence used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 91+</color>
+items.Component_Divine_Blade_Essence.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A divine transcendent essence divine blade essence used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 91+</color>
 items.Component_Cosmic_Edge_Grind.name=Cosmic Edge Grind
-items.Component_Cosmic_Edge_Grind.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A divine transcendent essence cosmic edge grind used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 95+</color>
+items.Component_Cosmic_Edge_Grind.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A divine transcendent essence cosmic edge grind used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 95+</color>
 items.Component_Celestial_Tang_Insert.name=Celestial Tang Insert
-items.Component_Celestial_Tang_Insert.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A divine transcendent essence celestial tang insert used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 95+</color>
+items.Component_Celestial_Tang_Insert.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A divine transcendent essence celestial tang insert used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 95+</color>
 items.Component_Godforged_Pommel.name=Godforged Pommel
-items.Component_Godforged_Pommel.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A divine transcendent essence godforged pommel used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 95+</color>
+items.Component_Godforged_Pommel.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A divine transcendent essence godforged pommel used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 95+</color>
 items.Component_Celestial_Fasteners.name=Celestial Fasteners
-items.Component_Celestial_Fasteners.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A divine transcendent essence celestial fasteners used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 95+</color>
+items.Component_Celestial_Fasteners.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A divine transcendent essence celestial fasteners used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 95+</color>
 items.Component_Cosmic_Wire_Mesh.name=Cosmic Wire Mesh
-items.Component_Cosmic_Wire_Mesh.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A divine transcendent essence cosmic wire mesh used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 95+</color>
+items.Component_Cosmic_Wire_Mesh.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A divine transcendent essence cosmic wire mesh used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 95+</color>
 items.Component_Celestial_Gears.name=Celestial Gears
-items.Component_Celestial_Gears.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A divine transcendent essence celestial gears used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 95+</color>
+items.Component_Celestial_Gears.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A divine transcendent essence celestial gears used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 95+</color>
 items.Component_Cosmic_Alloy_Core.name=Cosmic Alloy Core
-items.Component_Cosmic_Alloy_Core.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A divine transcendent essence cosmic alloy core used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 95+</color>
+items.Component_Cosmic_Alloy_Core.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A divine transcendent essence cosmic alloy core used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 95+</color>
 items.Component_Celestial_Forge_Compound.name=Celestial Forge Compound
-items.Component_Celestial_Forge_Compound.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A divine transcendent essence celestial forge compound used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 95+</color>
+items.Component_Celestial_Forge_Compound.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A divine transcendent essence celestial forge compound used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 95+</color>
 items.Component_Cosmic_Filigree_Band.name=Cosmic Filigree Band
-items.Component_Cosmic_Filigree_Band.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A divine transcendent essence cosmic filigree band used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 95+</color>
+items.Component_Cosmic_Filigree_Band.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A divine transcendent essence cosmic filigree band used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 95+</color>
 items.Component_Cosmic_Quillon.name=Cosmic Quillon
-items.Component_Cosmic_Quillon.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A divine transcendent essence cosmic quillon used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 95+</color>
+items.Component_Cosmic_Quillon.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A divine transcendent essence cosmic quillon used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 95+</color>
 items.Component_Godforged_Edge_Core.name=Godforged Edge Core
-items.Component_Godforged_Edge_Core.description=<color is="#C83232">Weaponsmith Component</color>\n<color is="#ffd100">A divine transcendent essence godforged edge core used in advanced crafting.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 100+</color>
+items.Component_Godforged_Edge_Core.description=<color is="#C83232">Bladesmith Component</color>\n<color is="#ffd100">A divine transcendent essence godforged edge core used in advanced crafting.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 100+</color>
 
 ## ===============================================
-## Weaponsmith Consumables
+## Bladesmith Consumables
 ## ===============================================
 
 items.Consumable_Roughing_Stone.name=Roughing Stone
-items.Consumable_Roughing_Stone.description=<color is="#C83232">Weaponsmith Consumable</color>\n<color is="#ffd100">A basic and serviceable roughing stone for battlefield use.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 1+</color>
+items.Consumable_Roughing_Stone.description=<color is="#C83232">Bladesmith Consumable</color>\n<color is="#ffd100">A basic and serviceable roughing stone for battlefield use.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 1+</color>
 items.Consumable_Crude_Weapon_Oil.name=Crude Weapon Oil
-items.Consumable_Crude_Weapon_Oil.description=<color is="#C83232">Weaponsmith Consumable</color>\n<color is="#ffd100">A basic and serviceable crude weapon oil for battlefield use.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 1+</color>
+items.Consumable_Crude_Weapon_Oil.description=<color is="#C83232">Bladesmith Consumable</color>\n<color is="#ffd100">A basic and serviceable crude weapon oil for battlefield use.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 1+</color>
 items.Consumable_Crude_Repair_Kit.name=Crude Repair Kit
-items.Consumable_Crude_Repair_Kit.description=<color is="#C83232">Weaponsmith Consumable</color>\n<color is="#ffd100">A basic and serviceable crude repair kit for battlefield use.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 1+</color>
+items.Consumable_Crude_Repair_Kit.description=<color is="#C83232">Bladesmith Consumable</color>\n<color is="#ffd100">A basic and serviceable crude repair kit for battlefield use.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 1+</color>
 items.Consumable_Crude_Polish.name=Crude Polish
-items.Consumable_Crude_Polish.description=<color is="#C83232">Weaponsmith Consumable</color>\n<color is="#ffd100">A basic and serviceable crude polish for battlefield use.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 1+</color>
+items.Consumable_Crude_Polish.description=<color is="#C83232">Bladesmith Consumable</color>\n<color is="#ffd100">A basic and serviceable crude polish for battlefield use.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 1+</color>
 items.Consumable_Crude_Whetstone.name=Crude Whetstone
-items.Consumable_Crude_Whetstone.description=<color is="#C83232">Weaponsmith Consumable</color>\n<color is="#ffd100">A basic and serviceable crude whetstone for battlefield use.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 19+</color>
+items.Consumable_Crude_Whetstone.description=<color is="#C83232">Bladesmith Consumable</color>\n<color is="#ffd100">A basic and serviceable crude whetstone for battlefield use.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 19+</color>
 items.Consumable_Basic_Blade_Grease.name=Basic Blade Grease
-items.Consumable_Basic_Blade_Grease.description=<color is="#C83232">Weaponsmith Consumable</color>\n<color is="#ffd100">A basic and serviceable basic blade grease for battlefield use.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 19+</color>
+items.Consumable_Basic_Blade_Grease.description=<color is="#C83232">Bladesmith Consumable</color>\n<color is="#ffd100">A basic and serviceable basic blade grease for battlefield use.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 19+</color>
 items.Consumable_Basic_Mending_Tools.name=Basic Mending Tools
-items.Consumable_Basic_Mending_Tools.description=<color is="#C83232">Weaponsmith Consumable</color>\n<color is="#ffd100">A basic and serviceable basic mending tools for battlefield use.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 19+</color>
+items.Consumable_Basic_Mending_Tools.description=<color is="#C83232">Bladesmith Consumable</color>\n<color is="#ffd100">A basic and serviceable basic mending tools for battlefield use.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 19+</color>
 items.Consumable_Raw_Finish_Wax.name=Raw Finish Wax
-items.Consumable_Raw_Finish_Wax.description=<color is="#C83232">Weaponsmith Consumable</color>\n<color is="#ffd100">A basic and serviceable raw finish wax for battlefield use.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 19+</color>
+items.Consumable_Raw_Finish_Wax.description=<color is="#C83232">Bladesmith Consumable</color>\n<color is="#ffd100">A basic and serviceable raw finish wax for battlefield use.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 19+</color>
 items.Consumable_Honing_Paste.name=Honing Paste
-items.Consumable_Honing_Paste.description=<color is="#C83232">Weaponsmith Consumable</color>\n<color is="#ffd100">A well-crafted and reliable honing paste for battlefield use.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 20+</color>
+items.Consumable_Honing_Paste.description=<color is="#C83232">Bladesmith Consumable</color>\n<color is="#ffd100">A well-crafted and reliable honing paste for battlefield use.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 20+</color>
 items.Consumable_Fine_Weapon_Oil.name=Fine Weapon Oil
-items.Consumable_Fine_Weapon_Oil.description=<color is="#C83232">Weaponsmith Consumable</color>\n<color is="#ffd100">A well-crafted and reliable fine weapon oil for battlefield use.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 20+</color>
+items.Consumable_Fine_Weapon_Oil.description=<color is="#C83232">Bladesmith Consumable</color>\n<color is="#ffd100">A well-crafted and reliable fine weapon oil for battlefield use.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 20+</color>
 items.Consumable_Standard_Repair_Kit.name=Standard Repair Kit
-items.Consumable_Standard_Repair_Kit.description=<color is="#C83232">Weaponsmith Consumable</color>\n<color is="#ffd100">A well-crafted and reliable standard repair kit for battlefield use.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 20+</color>
+items.Consumable_Standard_Repair_Kit.description=<color is="#C83232">Bladesmith Consumable</color>\n<color is="#ffd100">A well-crafted and reliable standard repair kit for battlefield use.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 20+</color>
 items.Consumable_Fine_Polish.name=Fine Polish
-items.Consumable_Fine_Polish.description=<color is="#C83232">Weaponsmith Consumable</color>\n<color is="#ffd100">A well-crafted and reliable fine polish for battlefield use.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 20+</color>
+items.Consumable_Fine_Polish.description=<color is="#C83232">Bladesmith Consumable</color>\n<color is="#ffd100">A well-crafted and reliable fine polish for battlefield use.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 20+</color>
 items.Consumable_Fine_Sharpening_Stone.name=Fine Sharpening Stone
-items.Consumable_Fine_Sharpening_Stone.description=<color is="#C83232">Weaponsmith Consumable</color>\n<color is="#ffd100">A well-crafted and reliable fine sharpening stone for battlefield use.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 35+</color>
+items.Consumable_Fine_Sharpening_Stone.description=<color is="#C83232">Bladesmith Consumable</color>\n<color is="#ffd100">A well-crafted and reliable fine sharpening stone for battlefield use.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 35+</color>
 items.Consumable_Standard_Blade_Coat.name=Standard Blade Coat
-items.Consumable_Standard_Blade_Coat.description=<color is="#C83232">Weaponsmith Consumable</color>\n<color is="#ffd100">A well-crafted and reliable standard blade coat for battlefield use.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 35+</color>
+items.Consumable_Standard_Blade_Coat.description=<color is="#C83232">Bladesmith Consumable</color>\n<color is="#ffd100">A well-crafted and reliable standard blade coat for battlefield use.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 35+</color>
 items.Consumable_Fine_Tool_Set.name=Fine Tool Set
-items.Consumable_Fine_Tool_Set.description=<color is="#C83232">Weaponsmith Consumable</color>\n<color is="#ffd100">A well-crafted and reliable fine tool set for battlefield use.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 35+</color>
+items.Consumable_Fine_Tool_Set.description=<color is="#C83232">Bladesmith Consumable</color>\n<color is="#ffd100">A well-crafted and reliable fine tool set for battlefield use.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 35+</color>
 items.Consumable_Standard_Lacquer_Coat.name=Standard Lacquer Coat
-items.Consumable_Standard_Lacquer_Coat.description=<color is="#C83232">Weaponsmith Consumable</color>\n<color is="#ffd100">A well-crafted and reliable standard lacquer coat for battlefield use.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 35+</color>
+items.Consumable_Standard_Lacquer_Coat.description=<color is="#C83232">Bladesmith Consumable</color>\n<color is="#ffd100">A well-crafted and reliable standard lacquer coat for battlefield use.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 35+</color>
 items.Consumable_Whetstone_Kit.name=Whetstone Kit
-items.Consumable_Whetstone_Kit.description=<color is="#C83232">Weaponsmith Consumable</color>\n<color is="#ffd100">A superior quality alloy whetstone kit for battlefield use.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 36+</color>
+items.Consumable_Whetstone_Kit.description=<color is="#C83232">Bladesmith Consumable</color>\n<color is="#ffd100">A superior quality alloy whetstone kit for battlefield use.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 36+</color>
 items.Consumable_Superior_Weapon_Oil.name=Superior Weapon Oil
-items.Consumable_Superior_Weapon_Oil.description=<color is="#C83232">Weaponsmith Consumable</color>\n<color is="#ffd100">A superior quality alloy superior weapon oil for battlefield use.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 36+</color>
+items.Consumable_Superior_Weapon_Oil.description=<color is="#C83232">Bladesmith Consumable</color>\n<color is="#ffd100">A superior quality alloy superior weapon oil for battlefield use.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 36+</color>
 items.Consumable_Superior_Repair_Kit.name=Superior Repair Kit
-items.Consumable_Superior_Repair_Kit.description=<color is="#C83232">Weaponsmith Consumable</color>\n<color is="#ffd100">A superior quality alloy superior repair kit for battlefield use.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 36+</color>
+items.Consumable_Superior_Repair_Kit.description=<color is="#C83232">Bladesmith Consumable</color>\n<color is="#ffd100">A superior quality alloy superior repair kit for battlefield use.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 36+</color>
 items.Consumable_Strop_Compound.name=Strop Compound
-items.Consumable_Strop_Compound.description=<color is="#C83232">Weaponsmith Consumable</color>\n<color is="#ffd100">A superior quality alloy strop compound for battlefield use.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 36+</color>
+items.Consumable_Strop_Compound.description=<color is="#C83232">Bladesmith Consumable</color>\n<color is="#ffd100">A superior quality alloy strop compound for battlefield use.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 36+</color>
 items.Consumable_Superior_Hone.name=Superior Hone
-items.Consumable_Superior_Hone.description=<color is="#C83232">Weaponsmith Consumable</color>\n<color is="#ffd100">A superior quality alloy superior hone for battlefield use.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 55+</color>
+items.Consumable_Superior_Hone.description=<color is="#C83232">Bladesmith Consumable</color>\n<color is="#ffd100">A superior quality alloy superior hone for battlefield use.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 55+</color>
 items.Consumable_Cobalt_Blade_Polish.name=Cobalt Blade Polish
-items.Consumable_Cobalt_Blade_Polish.description=<color is="#C83232">Weaponsmith Consumable</color>\n<color is="#ffd100">A superior quality alloy cobalt blade polish for battlefield use.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 55+</color>
+items.Consumable_Cobalt_Blade_Polish.description=<color is="#C83232">Bladesmith Consumable</color>\n<color is="#ffd100">A superior quality alloy cobalt blade polish for battlefield use.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 55+</color>
 items.Consumable_Reinforced_Mending_Kit.name=Reinforced Mending Kit
-items.Consumable_Reinforced_Mending_Kit.description=<color is="#C83232">Weaponsmith Consumable</color>\n<color is="#ffd100">A superior quality alloy reinforced mending kit for battlefield use.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 55+</color>
+items.Consumable_Reinforced_Mending_Kit.description=<color is="#C83232">Bladesmith Consumable</color>\n<color is="#ffd100">A superior quality alloy reinforced mending kit for battlefield use.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 55+</color>
 items.Consumable_Superior_Polish.name=Superior Polish
-items.Consumable_Superior_Polish.description=<color is="#C83232">Weaponsmith Consumable</color>\n<color is="#ffd100">A superior quality alloy superior polish for battlefield use.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 55+</color>
+items.Consumable_Superior_Polish.description=<color is="#C83232">Bladesmith Consumable</color>\n<color is="#ffd100">A superior quality alloy superior polish for battlefield use.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 55+</color>
 items.Consumable_Master_Sharpening_Set.name=Master Sharpening Set
-items.Consumable_Master_Sharpening_Set.description=<color is="#C83232">Weaponsmith Consumable</color>\n<color is="#ffd100">A masterwork grade material master sharpening set for battlefield use.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 56+</color>
+items.Consumable_Master_Sharpening_Set.description=<color is="#C83232">Bladesmith Consumable</color>\n<color is="#ffd100">A masterwork grade material master sharpening set for battlefield use.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 56+</color>
 items.Consumable_Enchanted_Weapon_Oil.name=Enchanted Weapon Oil
-items.Consumable_Enchanted_Weapon_Oil.description=<color is="#C83232">Weaponsmith Consumable</color>\n<color is="#ffd100">A masterwork grade material enchanted weapon oil for battlefield use.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 56+</color>
+items.Consumable_Enchanted_Weapon_Oil.description=<color is="#C83232">Bladesmith Consumable</color>\n<color is="#ffd100">A masterwork grade material enchanted weapon oil for battlefield use.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 56+</color>
 items.Consumable_Master_Repair_Kit.name=Master Repair Kit
-items.Consumable_Master_Repair_Kit.description=<color is="#C83232">Weaponsmith Consumable</color>\n<color is="#ffd100">A masterwork grade material master repair kit for battlefield use.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 56+</color>
+items.Consumable_Master_Repair_Kit.description=<color is="#C83232">Bladesmith Consumable</color>\n<color is="#ffd100">A masterwork grade material master repair kit for battlefield use.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 56+</color>
 items.Consumable_Master_Finish_Wax.name=Master Finish Wax
-items.Consumable_Master_Finish_Wax.description=<color is="#C83232">Weaponsmith Consumable</color>\n<color is="#ffd100">A masterwork grade material master finish wax for battlefield use.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 56+</color>
+items.Consumable_Master_Finish_Wax.description=<color is="#C83232">Bladesmith Consumable</color>\n<color is="#ffd100">A masterwork grade material master finish wax for battlefield use.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 56+</color>
 items.Consumable_Razor_Edge_Kit.name=Razor Edge Kit
-items.Consumable_Razor_Edge_Kit.description=<color is="#C83232">Weaponsmith Consumable</color>\n<color is="#ffd100">A masterwork grade material razor edge kit for battlefield use.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 75+</color>
+items.Consumable_Razor_Edge_Kit.description=<color is="#C83232">Bladesmith Consumable</color>\n<color is="#ffd100">A masterwork grade material razor edge kit for battlefield use.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 75+</color>
 items.Consumable_Master_Blade_Essence.name=Master Blade Essence
-items.Consumable_Master_Blade_Essence.description=<color is="#C83232">Weaponsmith Consumable</color>\n<color is="#ffd100">A masterwork grade material master blade essence for battlefield use.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 75+</color>
+items.Consumable_Master_Blade_Essence.description=<color is="#C83232">Bladesmith Consumable</color>\n<color is="#ffd100">A masterwork grade material master blade essence for battlefield use.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 75+</color>
 items.Consumable_Ancient_Tool_Set.name=Ancient Tool Set
-items.Consumable_Ancient_Tool_Set.description=<color is="#C83232">Weaponsmith Consumable</color>\n<color is="#ffd100">A masterwork grade material ancient tool set for battlefield use.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 75+</color>
+items.Consumable_Ancient_Tool_Set.description=<color is="#C83232">Bladesmith Consumable</color>\n<color is="#ffd100">A masterwork grade material ancient tool set for battlefield use.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 75+</color>
 items.Consumable_Ancient_Lacquer.name=Ancient Lacquer
-items.Consumable_Ancient_Lacquer.description=<color is="#C83232">Weaponsmith Consumable</color>\n<color is="#ffd100">A masterwork grade material ancient lacquer for battlefield use.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 75+</color>
+items.Consumable_Ancient_Lacquer.description=<color is="#C83232">Bladesmith Consumable</color>\n<color is="#ffd100">A masterwork grade material ancient lacquer for battlefield use.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 75+</color>
 items.Consumable_Vorpal_Whetstone.name=Vorpal Whetstone
-items.Consumable_Vorpal_Whetstone.description=<color is="#C83232">Weaponsmith Consumable</color>\n<color is="#ffd100">A legendary otherworldly craft vorpal whetstone for battlefield use.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 83+</color>
+items.Consumable_Vorpal_Whetstone.description=<color is="#C83232">Bladesmith Consumable</color>\n<color is="#ffd100">A legendary otherworldly craft vorpal whetstone for battlefield use.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 83+</color>
 items.Consumable_Starforged_Weapon_Oil.name=Starforged Weapon Oil
-items.Consumable_Starforged_Weapon_Oil.description=<color is="#C83232">Weaponsmith Consumable</color>\n<color is="#ffd100">A legendary otherworldly craft starforged weapon oil for battlefield use.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 83+</color>
+items.Consumable_Starforged_Weapon_Oil.description=<color is="#C83232">Bladesmith Consumable</color>\n<color is="#ffd100">A legendary otherworldly craft starforged weapon oil for battlefield use.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 83+</color>
 items.Consumable_Void_Repair_Kit.name=Void Repair Kit
-items.Consumable_Void_Repair_Kit.description=<color is="#C83232">Weaponsmith Consumable</color>\n<color is="#ffd100">A legendary otherworldly craft void repair kit for battlefield use.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 83+</color>
+items.Consumable_Void_Repair_Kit.description=<color is="#C83232">Bladesmith Consumable</color>\n<color is="#ffd100">A legendary otherworldly craft void repair kit for battlefield use.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 83+</color>
 items.Consumable_Worldsplitter_Wax.name=Worldsplitter Wax
-items.Consumable_Worldsplitter_Wax.description=<color is="#C83232">Weaponsmith Consumable</color>\n<color is="#ffd100">A legendary otherworldly craft worldsplitter wax for battlefield use.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 83+</color>
+items.Consumable_Worldsplitter_Wax.description=<color is="#C83232">Bladesmith Consumable</color>\n<color is="#ffd100">A legendary otherworldly craft worldsplitter wax for battlefield use.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 83+</color>
 items.Consumable_Cosmic_Sharpening_Crystal.name=Cosmic Sharpening Crystal
-items.Consumable_Cosmic_Sharpening_Crystal.description=<color is="#C83232">Weaponsmith Consumable</color>\n<color is="#ffd100">A divine transcendent essence cosmic sharpening crystal for battlefield use.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 95+</color>
+items.Consumable_Cosmic_Sharpening_Crystal.description=<color is="#C83232">Bladesmith Consumable</color>\n<color is="#ffd100">A divine transcendent essence cosmic sharpening crystal for battlefield use.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 95+</color>
 items.Consumable_Divine_Weapon_Anointment.name=Divine Weapon Anointment
-items.Consumable_Divine_Weapon_Anointment.description=<color is="#C83232">Weaponsmith Consumable</color>\n<color is="#ffd100">A divine transcendent essence divine weapon anointment for battlefield use.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 95+</color>
+items.Consumable_Divine_Weapon_Anointment.description=<color is="#C83232">Bladesmith Consumable</color>\n<color is="#ffd100">A divine transcendent essence divine weapon anointment for battlefield use.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 95+</color>
 items.Consumable_Celestial_Restoration_Kit.name=Celestial Restoration Kit
-items.Consumable_Celestial_Restoration_Kit.description=<color is="#C83232">Weaponsmith Consumable</color>\n<color is="#ffd100">A divine transcendent essence celestial restoration kit for battlefield use.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 95+</color>
+items.Consumable_Celestial_Restoration_Kit.description=<color is="#C83232">Bladesmith Consumable</color>\n<color is="#ffd100">A divine transcendent essence celestial restoration kit for battlefield use.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 95+</color>
 items.Consumable_Cosmic_Polish.name=Cosmic Polish
-items.Consumable_Cosmic_Polish.description=<color is="#C83232">Weaponsmith Consumable</color>\n<color is="#ffd100">A divine transcendent essence cosmic polish for battlefield use.</color>\n<color is="#888888">Crafted by: Weaponsmith Lv. 95+</color>
+items.Consumable_Cosmic_Polish.description=<color is="#C83232">Bladesmith Consumable</color>\n<color is="#ffd100">A divine transcendent essence cosmic polish for battlefield use.</color>\n<color is="#888888">Crafted by: Bladesmith Lv. 95+</color>
 
 ## ===============================================
-## Armorsmith Components
+## Platesmith Components
 ## ===============================================
 
 items.Component_Crude_Plate_Piece.name=Crude Plate Piece
-items.Component_Crude_Plate_Piece.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A basic and serviceable crude plate piece used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 1+</color>
+items.Component_Crude_Plate_Piece.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A basic and serviceable crude plate piece used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 1+</color>
 items.Component_Crude_Chain_Piece.name=Crude Chain Piece
-items.Component_Crude_Chain_Piece.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A basic and serviceable crude chain piece used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 1+</color>
+items.Component_Crude_Chain_Piece.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A basic and serviceable crude chain piece used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 1+</color>
 items.Component_Crude_Scale_Piece.name=Crude Scale Piece
-items.Component_Crude_Scale_Piece.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A basic and serviceable crude scale piece used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 1+</color>
+items.Component_Crude_Scale_Piece.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A basic and serviceable crude scale piece used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 1+</color>
 items.Component_Buckles.name=Buckles
-items.Component_Buckles.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A basic and serviceable buckles used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 1+</color>
+items.Component_Buckles.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A basic and serviceable buckles used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 1+</color>
 items.Component_Crude_Hinge_Pin.name=Crude Hinge Pin
-items.Component_Crude_Hinge_Pin.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A basic and serviceable crude hinge pin used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 1+</color>
+items.Component_Crude_Hinge_Pin.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A basic and serviceable crude hinge pin used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 1+</color>
 items.Component_Crude_Frame_Piece.name=Crude Frame Piece
-items.Component_Crude_Frame_Piece.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A basic and serviceable crude frame piece used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 1+</color>
+items.Component_Crude_Frame_Piece.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A basic and serviceable crude frame piece used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 1+</color>
 items.Component_Crude_Metal_Band.name=Crude Metal Band
-items.Component_Crude_Metal_Band.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A basic and serviceable crude metal band used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 1+</color>
+items.Component_Crude_Metal_Band.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A basic and serviceable crude metal band used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 1+</color>
 items.Component_Crude_Shield_Boss.name=Crude Shield Boss
-items.Component_Crude_Shield_Boss.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A basic and serviceable crude shield boss used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 1+</color>
+items.Component_Crude_Shield_Boss.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A basic and serviceable crude shield boss used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 1+</color>
 items.Component_Crude_Brace_Bar.name=Crude Brace Bar
-items.Component_Crude_Brace_Bar.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A basic and serviceable crude brace bar used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 1+</color>
+items.Component_Crude_Brace_Bar.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A basic and serviceable crude brace bar used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 1+</color>
 items.Component_Crude_Emblem_Plate.name=Crude Emblem Plate
-items.Component_Crude_Emblem_Plate.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A basic and serviceable crude emblem plate used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 1+</color>
+items.Component_Crude_Emblem_Plate.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A basic and serviceable crude emblem plate used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 1+</color>
 items.Component_Crude_Visor_Plate.name=Crude Visor Plate
-items.Component_Crude_Visor_Plate.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A basic and serviceable crude visor plate used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 1+</color>
+items.Component_Crude_Visor_Plate.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A basic and serviceable crude visor plate used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 1+</color>
 items.Component_Rough_Iron_Plate.name=Rough Iron Plate
-items.Component_Rough_Iron_Plate.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A basic and serviceable rough iron plate used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 19+</color>
+items.Component_Rough_Iron_Plate.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A basic and serviceable rough iron plate used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 19+</color>
 items.Component_Raw_Chain_Rings.name=Raw Chain Rings
-items.Component_Raw_Chain_Rings.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A basic and serviceable raw chain rings used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 19+</color>
+items.Component_Raw_Chain_Rings.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A basic and serviceable raw chain rings used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 19+</color>
 items.Component_Rough_Iron_Scales.name=Rough Iron Scales
-items.Component_Rough_Iron_Scales.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A basic and serviceable rough iron scales used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 19+</color>
+items.Component_Rough_Iron_Scales.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A basic and serviceable rough iron scales used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 19+</color>
 items.Component_Crude_Clasps.name=Crude Clasps
-items.Component_Crude_Clasps.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A basic and serviceable crude clasps used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 19+</color>
+items.Component_Crude_Clasps.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A basic and serviceable crude clasps used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 19+</color>
 items.Component_Raw_Joint_Bracket.name=Raw Joint Bracket
-items.Component_Raw_Joint_Bracket.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A basic and serviceable raw joint bracket used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 19+</color>
+items.Component_Raw_Joint_Bracket.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A basic and serviceable raw joint bracket used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 19+</color>
 items.Component_Rough_Form_Bar.name=Rough Form Bar
-items.Component_Rough_Form_Bar.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A basic and serviceable rough form bar used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 19+</color>
+items.Component_Rough_Form_Bar.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A basic and serviceable rough form bar used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 19+</color>
 items.Component_Rough_Iron_Strip.name=Rough Iron Strip
-items.Component_Rough_Iron_Strip.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A basic and serviceable rough iron strip used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 19+</color>
+items.Component_Rough_Iron_Strip.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A basic and serviceable rough iron strip used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 19+</color>
 items.Component_Rough_Shield_Rim.name=Rough Shield Rim
-items.Component_Rough_Shield_Rim.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A basic and serviceable rough shield rim used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 19+</color>
+items.Component_Rough_Shield_Rim.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A basic and serviceable rough shield rim used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 19+</color>
 items.Component_Raw_Support_Strut.name=Raw Support Strut
-items.Component_Raw_Support_Strut.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A basic and serviceable raw support strut used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 19+</color>
+items.Component_Raw_Support_Strut.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A basic and serviceable raw support strut used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 19+</color>
 items.Component_Rough_Crest_Piece.name=Rough Crest Piece
-items.Component_Rough_Crest_Piece.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A basic and serviceable rough crest piece used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 19+</color>
+items.Component_Rough_Crest_Piece.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A basic and serviceable rough crest piece used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 19+</color>
 items.Component_Rough_Cheek_Guard.name=Rough Cheek Guard
-items.Component_Rough_Cheek_Guard.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A basic and serviceable rough cheek guard used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 19+</color>
+items.Component_Rough_Cheek_Guard.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A basic and serviceable rough cheek guard used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 19+</color>
 items.Component_Steel_Plate_Panel.name=Steel Plate Panel
-items.Component_Steel_Plate_Panel.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A well-crafted and reliable steel plate panel used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 20+</color>
+items.Component_Steel_Plate_Panel.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A well-crafted and reliable steel plate panel used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 20+</color>
 items.Component_Steel_Chainmail_Ring.name=Steel Chainmail Ring
-items.Component_Steel_Chainmail_Ring.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A well-crafted and reliable steel chainmail ring used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 20+</color>
+items.Component_Steel_Chainmail_Ring.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A well-crafted and reliable steel chainmail ring used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 20+</color>
 items.Component_Iron_Studs.name=Iron Studs
-items.Component_Iron_Studs.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A well-crafted and reliable iron studs used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 20+</color>
+items.Component_Iron_Studs.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A well-crafted and reliable iron studs used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 20+</color>
 items.Component_Standard_Buckles.name=Standard Buckles
-items.Component_Standard_Buckles.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A well-crafted and reliable standard buckles used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 20+</color>
+items.Component_Standard_Buckles.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A well-crafted and reliable standard buckles used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 20+</color>
 items.Component_Fine_Hinge.name=Fine Hinge
-items.Component_Fine_Hinge.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A well-crafted and reliable fine hinge used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 20+</color>
+items.Component_Fine_Hinge.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A well-crafted and reliable fine hinge used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 20+</color>
 items.Component_Rivet_Plates.name=Rivet Plates
-items.Component_Rivet_Plates.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A well-crafted and reliable rivet plates used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 20+</color>
+items.Component_Rivet_Plates.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A well-crafted and reliable rivet plates used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 20+</color>
 items.Component_Fine_Metal_Band.name=Fine Metal Band
-items.Component_Fine_Metal_Band.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A well-crafted and reliable fine metal band used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 20+</color>
+items.Component_Fine_Metal_Band.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A well-crafted and reliable fine metal band used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 20+</color>
 items.Component_Standard_Shield_Boss.name=Standard Shield Boss
-items.Component_Standard_Shield_Boss.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A well-crafted and reliable standard shield boss used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 20+</color>
+items.Component_Standard_Shield_Boss.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A well-crafted and reliable standard shield boss used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 20+</color>
 items.Component_Standard_Brace.name=Standard Brace
-items.Component_Standard_Brace.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A well-crafted and reliable standard brace used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 20+</color>
+items.Component_Standard_Brace.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A well-crafted and reliable standard brace used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 20+</color>
 items.Component_Fine_Emblem.name=Fine Emblem
-items.Component_Fine_Emblem.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A well-crafted and reliable fine emblem used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 20+</color>
+items.Component_Fine_Emblem.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A well-crafted and reliable fine emblem used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 20+</color>
 items.Component_Standard_Visor.name=Standard Visor
-items.Component_Standard_Visor.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A well-crafted and reliable standard visor used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 20+</color>
+items.Component_Standard_Visor.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A well-crafted and reliable standard visor used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 20+</color>
 items.Component_Standard_Plate_Sheet.name=Standard Plate Sheet
-items.Component_Standard_Plate_Sheet.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A well-crafted and reliable standard plate sheet used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 35+</color>
+items.Component_Standard_Plate_Sheet.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A well-crafted and reliable standard plate sheet used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 35+</color>
 items.Component_Fine_Chain_Links.name=Fine Chain Links
-items.Component_Fine_Chain_Links.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A well-crafted and reliable fine chain links used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 35+</color>
+items.Component_Fine_Chain_Links.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A well-crafted and reliable fine chain links used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 35+</color>
 items.Component_Standard_Scale_Strip.name=Standard Scale Strip
-items.Component_Standard_Scale_Strip.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A well-crafted and reliable standard scale strip used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 35+</color>
+items.Component_Standard_Scale_Strip.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A well-crafted and reliable standard scale strip used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 35+</color>
 items.Component_Fine_Clasps.name=Fine Clasps
-items.Component_Fine_Clasps.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A well-crafted and reliable fine clasps used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 35+</color>
+items.Component_Fine_Clasps.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A well-crafted and reliable fine clasps used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 35+</color>
 items.Component_Articulated_Joint.name=Articulated Joint
-items.Component_Articulated_Joint.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A well-crafted and reliable articulated joint used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 35+</color>
+items.Component_Articulated_Joint.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A well-crafted and reliable articulated joint used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 35+</color>
 items.Component_Standard_Frame_Bar.name=Standard Frame Bar
-items.Component_Standard_Frame_Bar.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A well-crafted and reliable standard frame bar used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 35+</color>
+items.Component_Standard_Frame_Bar.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A well-crafted and reliable standard frame bar used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 35+</color>
 items.Component_Steel_Strip.name=Steel Strip
-items.Component_Steel_Strip.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A well-crafted and reliable steel strip used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 35+</color>
+items.Component_Steel_Strip.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A well-crafted and reliable steel strip used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 35+</color>
 items.Component_Fine_Shield_Frame.name=Fine Shield Frame
-items.Component_Fine_Shield_Frame.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A well-crafted and reliable fine shield frame used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 35+</color>
+items.Component_Fine_Shield_Frame.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A well-crafted and reliable fine shield frame used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 35+</color>
 items.Component_Fine_Reinforcement_Bar.name=Fine Reinforcement Bar
-items.Component_Fine_Reinforcement_Bar.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A well-crafted and reliable fine reinforcement bar used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 35+</color>
+items.Component_Fine_Reinforcement_Bar.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A well-crafted and reliable fine reinforcement bar used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 35+</color>
 items.Component_Gorget_Ring.name=Gorget Ring
-items.Component_Gorget_Ring.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A well-crafted and reliable gorget ring used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 35+</color>
+items.Component_Gorget_Ring.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A well-crafted and reliable gorget ring used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 35+</color>
 items.Component_Visor_Hinge.name=Visor Hinge
-items.Component_Visor_Hinge.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A well-crafted and reliable visor hinge used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 35+</color>
+items.Component_Visor_Hinge.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A well-crafted and reliable visor hinge used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 35+</color>
 items.Component_Cobalt_Plate.name=Cobalt Plate
-items.Component_Cobalt_Plate.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A superior quality alloy cobalt plate used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 36+</color>
+items.Component_Cobalt_Plate.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A superior quality alloy cobalt plate used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 36+</color>
 items.Component_Cobalt_Chainmail.name=Cobalt Chainmail
-items.Component_Cobalt_Chainmail.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A superior quality alloy cobalt chainmail used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 36+</color>
+items.Component_Cobalt_Chainmail.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A superior quality alloy cobalt chainmail used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 36+</color>
 items.Component_Cobalt_Scale_Plate.name=Cobalt Scale Plate
-items.Component_Cobalt_Scale_Plate.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A superior quality alloy cobalt scale plate used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 36+</color>
+items.Component_Cobalt_Scale_Plate.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A superior quality alloy cobalt scale plate used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 36+</color>
 items.Component_Cobalt_Buckles.name=Cobalt Buckles
-items.Component_Cobalt_Buckles.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A superior quality alloy cobalt buckles used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 36+</color>
+items.Component_Cobalt_Buckles.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A superior quality alloy cobalt buckles used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 36+</color>
 items.Component_Cobalt_Joint_Assembly.name=Cobalt Joint Assembly
-items.Component_Cobalt_Joint_Assembly.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A superior quality alloy cobalt joint assembly used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 36+</color>
+items.Component_Cobalt_Joint_Assembly.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A superior quality alloy cobalt joint assembly used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 36+</color>
 items.Component_Cobalt_Frame_Piece.name=Cobalt Frame Piece
-items.Component_Cobalt_Frame_Piece.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A superior quality alloy cobalt frame piece used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 36+</color>
+items.Component_Cobalt_Frame_Piece.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A superior quality alloy cobalt frame piece used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 36+</color>
 items.Component_Cobalt_Band.name=Cobalt Band
-items.Component_Cobalt_Band.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A superior quality alloy cobalt band used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 36+</color>
+items.Component_Cobalt_Band.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A superior quality alloy cobalt band used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 36+</color>
 items.Component_Cobalt_Shield_Core.name=Cobalt Shield Core
-items.Component_Cobalt_Shield_Core.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A superior quality alloy cobalt shield core used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 36+</color>
+items.Component_Cobalt_Shield_Core.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A superior quality alloy cobalt shield core used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 36+</color>
 items.Component_Cobalt_Brace.name=Cobalt Brace
-items.Component_Cobalt_Brace.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A superior quality alloy cobalt brace used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 36+</color>
+items.Component_Cobalt_Brace.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A superior quality alloy cobalt brace used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 36+</color>
 items.Component_Cobalt_Crest.name=Cobalt Crest
-items.Component_Cobalt_Crest.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A superior quality alloy cobalt crest used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 36+</color>
+items.Component_Cobalt_Crest.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A superior quality alloy cobalt crest used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 36+</color>
 items.Component_Cobalt_Visor_Plate.name=Cobalt Visor Plate
-items.Component_Cobalt_Visor_Plate.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A superior quality alloy cobalt visor plate used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 36+</color>
+items.Component_Cobalt_Visor_Plate.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A superior quality alloy cobalt visor plate used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 36+</color>
 items.Component_Reinforced_Steel_Plate.name=Reinforced Steel Plate
-items.Component_Reinforced_Steel_Plate.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A superior quality alloy reinforced steel plate used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 55+</color>
+items.Component_Reinforced_Steel_Plate.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A superior quality alloy reinforced steel plate used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 55+</color>
 items.Component_Superior_Chain_Rings.name=Superior Chain Rings
-items.Component_Superior_Chain_Rings.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A superior quality alloy superior chain rings used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 55+</color>
+items.Component_Superior_Chain_Rings.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A superior quality alloy superior chain rings used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 55+</color>
 items.Component_Tempered_Scale.name=Tempered Scale
-items.Component_Tempered_Scale.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A superior quality alloy tempered scale used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 55+</color>
+items.Component_Tempered_Scale.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A superior quality alloy tempered scale used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 55+</color>
 items.Component_Reinforced_Clasps.name=Reinforced Clasps
-items.Component_Reinforced_Clasps.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A superior quality alloy reinforced clasps used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 55+</color>
+items.Component_Reinforced_Clasps.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A superior quality alloy reinforced clasps used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 55+</color>
 items.Component_Reinforced_Hinge.name=Reinforced Hinge
-items.Component_Reinforced_Hinge.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A superior quality alloy reinforced hinge used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 55+</color>
+items.Component_Reinforced_Hinge.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A superior quality alloy reinforced hinge used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 55+</color>
 items.Component_Reinforced_Form_Bar.name=Reinforced Form Bar
-items.Component_Reinforced_Form_Bar.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A superior quality alloy reinforced form bar used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 55+</color>
+items.Component_Reinforced_Form_Bar.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A superior quality alloy reinforced form bar used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 55+</color>
 items.Component_Reinforced_Metal_Strip.name=Reinforced Metal Strip
-items.Component_Reinforced_Metal_Strip.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A superior quality alloy reinforced metal strip used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 55+</color>
+items.Component_Reinforced_Metal_Strip.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A superior quality alloy reinforced metal strip used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 55+</color>
 items.Component_Superior_Shield_Rim.name=Superior Shield Rim
-items.Component_Superior_Shield_Rim.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A superior quality alloy superior shield rim used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 55+</color>
+items.Component_Superior_Shield_Rim.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A superior quality alloy superior shield rim used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 55+</color>
 items.Component_Superior_Support_Strut.name=Superior Support Strut
-items.Component_Superior_Support_Strut.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A superior quality alloy superior support strut used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 55+</color>
+items.Component_Superior_Support_Strut.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A superior quality alloy superior support strut used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 55+</color>
 items.Component_Superior_Emblem_Plate.name=Superior Emblem Plate
-items.Component_Superior_Emblem_Plate.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A superior quality alloy superior emblem plate used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 55+</color>
+items.Component_Superior_Emblem_Plate.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A superior quality alloy superior emblem plate used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 55+</color>
 items.Component_Superior_Cheek_Guard.name=Superior Cheek Guard
-items.Component_Superior_Cheek_Guard.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A superior quality alloy superior cheek guard used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 55+</color>
+items.Component_Superior_Cheek_Guard.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A superior quality alloy superior cheek guard used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 55+</color>
 items.Component_Thorium_Plate_Core.name=Thorium Plate Core
-items.Component_Thorium_Plate_Core.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A masterwork grade material thorium plate core used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 56+</color>
+items.Component_Thorium_Plate_Core.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A masterwork grade material thorium plate core used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 56+</color>
 items.Component_Thorium_Chain_Rings.name=Thorium Chain Rings
-items.Component_Thorium_Chain_Rings.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A masterwork grade material thorium chain rings used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 56+</color>
+items.Component_Thorium_Chain_Rings.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A masterwork grade material thorium chain rings used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 56+</color>
 items.Component_Thorium_Scale_Strip.name=Thorium Scale Strip
-items.Component_Thorium_Scale_Strip.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A masterwork grade material thorium scale strip used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 56+</color>
+items.Component_Thorium_Scale_Strip.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A masterwork grade material thorium scale strip used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 56+</color>
 items.Component_Thorium_Clasps.name=Thorium Clasps
-items.Component_Thorium_Clasps.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A masterwork grade material thorium clasps used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 56+</color>
+items.Component_Thorium_Clasps.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A masterwork grade material thorium clasps used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 56+</color>
 items.Component_Thorium_Joint_Pin.name=Thorium Joint Pin
-items.Component_Thorium_Joint_Pin.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A masterwork grade material thorium joint pin used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 56+</color>
+items.Component_Thorium_Joint_Pin.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A masterwork grade material thorium joint pin used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 56+</color>
 items.Component_Thorium_Frame_Core.name=Thorium Frame Core
-items.Component_Thorium_Frame_Core.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A masterwork grade material thorium frame core used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 56+</color>
+items.Component_Thorium_Frame_Core.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A masterwork grade material thorium frame core used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 56+</color>
 items.Component_Thorium_Band.name=Thorium Band
-items.Component_Thorium_Band.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A masterwork grade material thorium band used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 56+</color>
+items.Component_Thorium_Band.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A masterwork grade material thorium band used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 56+</color>
 items.Component_Thorium_Shield_Boss.name=Thorium Shield Boss
-items.Component_Thorium_Shield_Boss.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A masterwork grade material thorium shield boss used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 56+</color>
+items.Component_Thorium_Shield_Boss.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A masterwork grade material thorium shield boss used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 56+</color>
 items.Component_Thorium_Reinforcement.name=Thorium Reinforcement
-items.Component_Thorium_Reinforcement.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A masterwork grade material thorium reinforcement used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 56+</color>
+items.Component_Thorium_Reinforcement.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A masterwork grade material thorium reinforcement used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 56+</color>
 items.Component_Filigree_Inlay.name=Filigree Inlay
-items.Component_Filigree_Inlay.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A masterwork grade material filigree inlay used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 56+</color>
+items.Component_Filigree_Inlay.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A masterwork grade material filigree inlay used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 56+</color>
 items.Component_Thorium_Visor_Plate.name=Thorium Visor Plate
-items.Component_Thorium_Visor_Plate.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A masterwork grade material thorium visor plate used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 56+</color>
+items.Component_Thorium_Visor_Plate.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A masterwork grade material thorium visor plate used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 56+</color>
 items.Component_Ancient_Plate_Panel.name=Ancient Plate Panel
-items.Component_Ancient_Plate_Panel.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A masterwork grade material ancient plate panel used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 75+</color>
+items.Component_Ancient_Plate_Panel.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A masterwork grade material ancient plate panel used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 75+</color>
 items.Component_Ancient_Chainmail.name=Ancient Chainmail
-items.Component_Ancient_Chainmail.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A masterwork grade material ancient chainmail used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 75+</color>
+items.Component_Ancient_Chainmail.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A masterwork grade material ancient chainmail used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 75+</color>
 items.Component_Ancient_Scale_Plate.name=Ancient Scale Plate
-items.Component_Ancient_Scale_Plate.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A masterwork grade material ancient scale plate used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 75+</color>
+items.Component_Ancient_Scale_Plate.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A masterwork grade material ancient scale plate used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 75+</color>
 items.Component_Ancient_Buckles.name=Ancient Buckles
-items.Component_Ancient_Buckles.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A masterwork grade material ancient buckles used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 75+</color>
+items.Component_Ancient_Buckles.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A masterwork grade material ancient buckles used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 75+</color>
 items.Component_Master_Hinge_Set.name=Master Hinge Set
-items.Component_Master_Hinge_Set.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A masterwork grade material master hinge set used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 75+</color>
+items.Component_Master_Hinge_Set.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A masterwork grade material master hinge set used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 75+</color>
 items.Component_Master_Form_Piece.name=Master Form Piece
-items.Component_Master_Form_Piece.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A masterwork grade material master form piece used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 75+</color>
+items.Component_Master_Form_Piece.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A masterwork grade material master form piece used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 75+</color>
 items.Component_Ancient_Metal_Strip.name=Ancient Metal Strip
-items.Component_Ancient_Metal_Strip.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A masterwork grade material ancient metal strip used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 75+</color>
+items.Component_Ancient_Metal_Strip.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A masterwork grade material ancient metal strip used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 75+</color>
 items.Component_Ancient_Shield_Frame.name=Ancient Shield Frame
-items.Component_Ancient_Shield_Frame.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A masterwork grade material ancient shield frame used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 75+</color>
+items.Component_Ancient_Shield_Frame.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A masterwork grade material ancient shield frame used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 75+</color>
 items.Component_Master_Brace_Bar.name=Master Brace Bar
-items.Component_Master_Brace_Bar.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A masterwork grade material master brace bar used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 75+</color>
+items.Component_Master_Brace_Bar.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A masterwork grade material master brace bar used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 75+</color>
 items.Component_Master_Crest_Piece.name=Master Crest Piece
-items.Component_Master_Crest_Piece.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A masterwork grade material master crest piece used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 75+</color>
+items.Component_Master_Crest_Piece.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A masterwork grade material master crest piece used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 75+</color>
 items.Component_Master_Cheek_Guard.name=Master Cheek Guard
-items.Component_Master_Cheek_Guard.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A masterwork grade material master cheek guard used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 75+</color>
+items.Component_Master_Cheek_Guard.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A masterwork grade material master cheek guard used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 75+</color>
 items.Component_Starforged_Plate.name=Starforged Plate
-items.Component_Starforged_Plate.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A legendary otherworldly craft starforged plate used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 83+</color>
+items.Component_Starforged_Plate.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A legendary otherworldly craft starforged plate used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 83+</color>
 items.Component_Void_Chain_Links.name=Void Chain Links
-items.Component_Void_Chain_Links.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A legendary otherworldly craft void chain links used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 83+</color>
+items.Component_Void_Chain_Links.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A legendary otherworldly craft void chain links used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 83+</color>
 items.Component_Starforged_Scales.name=Starforged Scales
-items.Component_Starforged_Scales.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A legendary otherworldly craft starforged scales used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 83+</color>
+items.Component_Starforged_Scales.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A legendary otherworldly craft starforged scales used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 83+</color>
 items.Component_Void_Clasps.name=Void Clasps
-items.Component_Void_Clasps.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A legendary otherworldly craft void clasps used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 83+</color>
+items.Component_Void_Clasps.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A legendary otherworldly craft void clasps used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 83+</color>
 items.Component_Starforged_Joint.name=Starforged Joint
-items.Component_Starforged_Joint.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A legendary otherworldly craft starforged joint used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 83+</color>
+items.Component_Starforged_Joint.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A legendary otherworldly craft starforged joint used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 83+</color>
 items.Component_Void_Frame_Bar.name=Void Frame Bar
-items.Component_Void_Frame_Bar.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A legendary otherworldly craft void frame bar used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 83+</color>
+items.Component_Void_Frame_Bar.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A legendary otherworldly craft void frame bar used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 83+</color>
 items.Component_Starforged_Band.name=Starforged Band
-items.Component_Starforged_Band.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A legendary otherworldly craft starforged band used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 83+</color>
+items.Component_Starforged_Band.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A legendary otherworldly craft starforged band used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 83+</color>
 items.Component_Void_Shield_Core.name=Void Shield Core
-items.Component_Void_Shield_Core.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A legendary otherworldly craft void shield core used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 83+</color>
+items.Component_Void_Shield_Core.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A legendary otherworldly craft void shield core used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 83+</color>
 items.Component_Void_Brace.name=Void Brace
-items.Component_Void_Brace.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A legendary otherworldly craft void brace used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 83+</color>
+items.Component_Void_Brace.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A legendary otherworldly craft void brace used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 83+</color>
 items.Component_Void_Emblem.name=Void Emblem
-items.Component_Void_Emblem.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A legendary otherworldly craft void emblem used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 83+</color>
+items.Component_Void_Emblem.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A legendary otherworldly craft void emblem used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 83+</color>
 items.Component_Void_Visor.name=Void Visor
-items.Component_Void_Visor.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A legendary otherworldly craft void visor used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 83+</color>
+items.Component_Void_Visor.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A legendary otherworldly craft void visor used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 83+</color>
 items.Component_Divine_Plate_Essence.name=Divine Plate Essence
-items.Component_Divine_Plate_Essence.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A divine transcendent essence divine plate essence used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 95+</color>
+items.Component_Divine_Plate_Essence.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A divine transcendent essence divine plate essence used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 95+</color>
 items.Component_Cosmic_Chainmail_Weave.name=Cosmic Chainmail Weave
-items.Component_Cosmic_Chainmail_Weave.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A divine transcendent essence cosmic chainmail weave used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 95+</color>
+items.Component_Cosmic_Chainmail_Weave.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A divine transcendent essence cosmic chainmail weave used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 95+</color>
 items.Component_Godforged_Scale_Piece.name=Godforged Scale Piece
-items.Component_Godforged_Scale_Piece.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A divine transcendent essence godforged scale piece used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 95+</color>
+items.Component_Godforged_Scale_Piece.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A divine transcendent essence godforged scale piece used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 95+</color>
 items.Component_Celestial_Buckles.name=Celestial Buckles
-items.Component_Celestial_Buckles.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A divine transcendent essence celestial buckles used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 95+</color>
+items.Component_Celestial_Buckles.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A divine transcendent essence celestial buckles used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 95+</color>
 items.Component_Cosmic_Joint_Assembly.name=Cosmic Joint Assembly
-items.Component_Cosmic_Joint_Assembly.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A divine transcendent essence cosmic joint assembly used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 95+</color>
+items.Component_Cosmic_Joint_Assembly.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A divine transcendent essence cosmic joint assembly used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 95+</color>
 items.Component_Divine_Frame_Core.name=Divine Frame Core
-items.Component_Divine_Frame_Core.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A divine transcendent essence divine frame core used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 95+</color>
+items.Component_Divine_Frame_Core.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A divine transcendent essence divine frame core used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 95+</color>
 items.Component_Cosmic_Strip.name=Cosmic Strip
-items.Component_Cosmic_Strip.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A divine transcendent essence cosmic strip used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 95+</color>
+items.Component_Cosmic_Strip.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A divine transcendent essence cosmic strip used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 95+</color>
 items.Component_Divine_Shield_Boss.name=Divine Shield Boss
-items.Component_Divine_Shield_Boss.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A divine transcendent essence divine shield boss used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 95+</color>
+items.Component_Divine_Shield_Boss.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A divine transcendent essence divine shield boss used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 95+</color>
 items.Component_Celestial_Support_Beam.name=Celestial Support Beam
-items.Component_Celestial_Support_Beam.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A divine transcendent essence celestial support beam used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 95+</color>
+items.Component_Celestial_Support_Beam.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A divine transcendent essence celestial support beam used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 95+</color>
 items.Component_Cosmic_Crest.name=Cosmic Crest
-items.Component_Cosmic_Crest.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A divine transcendent essence cosmic crest used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 95+</color>
+items.Component_Cosmic_Crest.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A divine transcendent essence cosmic crest used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 95+</color>
 items.Component_Divine_Crown_Piece.name=Divine Crown Piece
-items.Component_Divine_Crown_Piece.description=<color is="#4A90D9">Armorsmith Component</color>\n<color is="#ffd100">A divine transcendent essence divine crown piece used in advanced crafting.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 95+</color>
+items.Component_Divine_Crown_Piece.description=<color is="#4A90D9">Platesmith Component</color>\n<color is="#ffd100">A divine transcendent essence divine crown piece used in advanced crafting.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 95+</color>
 
 ## ===============================================
-## Armorsmith Consumables
+## Platesmith Consumables
 ## ===============================================
 
 items.Consumable_Crude_Armor_Sealant.name=Crude Armor Sealant
-items.Consumable_Crude_Armor_Sealant.description=<color is="#4A90D9">Armorsmith Consumable</color>\n<color is="#ffd100">A basic and serviceable crude armor sealant for battlefield use.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 1+</color>
+items.Consumable_Crude_Armor_Sealant.description=<color is="#4A90D9">Platesmith Consumable</color>\n<color is="#ffd100">A basic and serviceable crude armor sealant for battlefield use.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 1+</color>
 items.Consumable_Patch_Kit.name=Patch Kit
-items.Consumable_Patch_Kit.description=<color is="#4A90D9">Armorsmith Consumable</color>\n<color is="#ffd100">A basic and serviceable patch kit for battlefield use.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 1+</color>
+items.Consumable_Patch_Kit.description=<color is="#4A90D9">Platesmith Consumable</color>\n<color is="#ffd100">A basic and serviceable patch kit for battlefield use.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 1+</color>
 items.Consumable_Crude_Spike_Kit.name=Crude Spike Kit
-items.Consumable_Crude_Spike_Kit.description=<color is="#4A90D9">Armorsmith Consumable</color>\n<color is="#ffd100">A basic and serviceable crude spike kit for battlefield use.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 1+</color>
+items.Consumable_Crude_Spike_Kit.description=<color is="#4A90D9">Platesmith Consumable</color>\n<color is="#ffd100">A basic and serviceable crude spike kit for battlefield use.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 1+</color>
 items.Consumable_Crude_Armor_Lining.name=Crude Armor Lining
-items.Consumable_Crude_Armor_Lining.description=<color is="#4A90D9">Armorsmith Consumable</color>\n<color is="#ffd100">A basic and serviceable crude armor lining for battlefield use.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 1+</color>
+items.Consumable_Crude_Armor_Lining.description=<color is="#4A90D9">Platesmith Consumable</color>\n<color is="#ffd100">A basic and serviceable crude armor lining for battlefield use.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 1+</color>
 items.Consumable_Crude_Armor_Mending_Kit.name=Crude Armor Mending Kit
-items.Consumable_Crude_Armor_Mending_Kit.description=<color is="#4A90D9">Armorsmith Consumable</color>\n<color is="#ffd100">A basic and serviceable crude armor mending kit for battlefield use.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 19+</color>
+items.Consumable_Crude_Armor_Mending_Kit.description=<color is="#4A90D9">Platesmith Consumable</color>\n<color is="#ffd100">A basic and serviceable crude armor mending kit for battlefield use.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 19+</color>
 items.Consumable_Rough_Armor_Thorns.name=Rough Armor Thorns
-items.Consumable_Rough_Armor_Thorns.description=<color is="#4A90D9">Armorsmith Consumable</color>\n<color is="#ffd100">A basic and serviceable rough armor thorns for battlefield use.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 19+</color>
+items.Consumable_Rough_Armor_Thorns.description=<color is="#4A90D9">Platesmith Consumable</color>\n<color is="#ffd100">A basic and serviceable rough armor thorns for battlefield use.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 19+</color>
 items.Consumable_Rough_Armor_Padding.name=Rough Armor Padding
-items.Consumable_Rough_Armor_Padding.description=<color is="#4A90D9">Armorsmith Consumable</color>\n<color is="#ffd100">A basic and serviceable rough armor padding for battlefield use.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 19+</color>
+items.Consumable_Rough_Armor_Padding.description=<color is="#4A90D9">Platesmith Consumable</color>\n<color is="#ffd100">A basic and serviceable rough armor padding for battlefield use.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 19+</color>
 items.Consumable_Standard_Armor_Polish.name=Standard Armor Polish
-items.Consumable_Standard_Armor_Polish.description=<color is="#4A90D9">Armorsmith Consumable</color>\n<color is="#ffd100">A well-crafted and reliable standard armor polish for battlefield use.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 20+</color>
+items.Consumable_Standard_Armor_Polish.description=<color is="#4A90D9">Platesmith Consumable</color>\n<color is="#ffd100">A well-crafted and reliable standard armor polish for battlefield use.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 20+</color>
 items.Consumable_Standard_Armor_Repair_Kit.name=Standard Armor Repair Kit
-items.Consumable_Standard_Armor_Repair_Kit.description=<color is="#4A90D9">Armorsmith Consumable</color>\n<color is="#ffd100">A well-crafted and reliable standard armor repair kit for battlefield use.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 20+</color>
+items.Consumable_Standard_Armor_Repair_Kit.description=<color is="#4A90D9">Platesmith Consumable</color>\n<color is="#ffd100">A well-crafted and reliable standard armor repair kit for battlefield use.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 20+</color>
 items.Consumable_Thorncoat_Resin.name=Thorncoat Resin
-items.Consumable_Thorncoat_Resin.description=<color is="#4A90D9">Armorsmith Consumable</color>\n<color is="#ffd100">A well-crafted and reliable thorncoat resin for battlefield use.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 20+</color>
+items.Consumable_Thorncoat_Resin.description=<color is="#4A90D9">Platesmith Consumable</color>\n<color is="#ffd100">A well-crafted and reliable thorncoat resin for battlefield use.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 20+</color>
 items.Consumable_Standard_Armor_Padding.name=Standard Armor Padding
-items.Consumable_Standard_Armor_Padding.description=<color is="#4A90D9">Armorsmith Consumable</color>\n<color is="#ffd100">A well-crafted and reliable standard armor padding for battlefield use.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 20+</color>
+items.Consumable_Standard_Armor_Padding.description=<color is="#4A90D9">Platesmith Consumable</color>\n<color is="#ffd100">A well-crafted and reliable standard armor padding for battlefield use.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 20+</color>
 items.Consumable_Fine_Armor_Coating.name=Fine Armor Coating
-items.Consumable_Fine_Armor_Coating.description=<color is="#4A90D9">Armorsmith Consumable</color>\n<color is="#ffd100">A well-crafted and reliable fine armor coating for battlefield use.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 35+</color>
+items.Consumable_Fine_Armor_Coating.description=<color is="#4A90D9">Platesmith Consumable</color>\n<color is="#ffd100">A well-crafted and reliable fine armor coating for battlefield use.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 35+</color>
 items.Consumable_Padding_Insert.name=Padding Insert
-items.Consumable_Padding_Insert.description=<color is="#4A90D9">Armorsmith Consumable</color>\n<color is="#ffd100">A well-crafted and reliable padding insert for battlefield use.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 35+</color>
+items.Consumable_Padding_Insert.description=<color is="#4A90D9">Platesmith Consumable</color>\n<color is="#ffd100">A well-crafted and reliable padding insert for battlefield use.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 35+</color>
 items.Consumable_Fine_Spike_Set.name=Fine Spike Set
-items.Consumable_Fine_Spike_Set.description=<color is="#4A90D9">Armorsmith Consumable</color>\n<color is="#ffd100">A well-crafted and reliable fine spike set for battlefield use.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 35+</color>
+items.Consumable_Fine_Spike_Set.description=<color is="#4A90D9">Platesmith Consumable</color>\n<color is="#ffd100">A well-crafted and reliable fine spike set for battlefield use.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 35+</color>
 items.Consumable_Fine_Armor_Lining.name=Fine Armor Lining
-items.Consumable_Fine_Armor_Lining.description=<color is="#4A90D9">Armorsmith Consumable</color>\n<color is="#ffd100">A well-crafted and reliable fine armor lining for battlefield use.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 35+</color>
+items.Consumable_Fine_Armor_Lining.description=<color is="#4A90D9">Platesmith Consumable</color>\n<color is="#ffd100">A well-crafted and reliable fine armor lining for battlefield use.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 35+</color>
 items.Consumable_Cobalt_Armor_Finish.name=Cobalt Armor Finish
-items.Consumable_Cobalt_Armor_Finish.description=<color is="#4A90D9">Armorsmith Consumable</color>\n<color is="#ffd100">A superior quality alloy cobalt armor finish for battlefield use.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 36+</color>
+items.Consumable_Cobalt_Armor_Finish.description=<color is="#4A90D9">Platesmith Consumable</color>\n<color is="#ffd100">A superior quality alloy cobalt armor finish for battlefield use.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 36+</color>
 items.Consumable_Superior_Armor_Repair_Kit.name=Superior Armor Repair Kit
-items.Consumable_Superior_Armor_Repair_Kit.description=<color is="#4A90D9">Armorsmith Consumable</color>\n<color is="#ffd100">A superior quality alloy superior armor repair kit for battlefield use.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 36+</color>
+items.Consumable_Superior_Armor_Repair_Kit.description=<color is="#4A90D9">Platesmith Consumable</color>\n<color is="#ffd100">A superior quality alloy superior armor repair kit for battlefield use.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 36+</color>
 items.Consumable_Cobalt_Spike_Kit.name=Cobalt Spike Kit
-items.Consumable_Cobalt_Spike_Kit.description=<color is="#4A90D9">Armorsmith Consumable</color>\n<color is="#ffd100">A superior quality alloy cobalt spike kit for battlefield use.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 36+</color>
+items.Consumable_Cobalt_Spike_Kit.description=<color is="#4A90D9">Platesmith Consumable</color>\n<color is="#ffd100">A superior quality alloy cobalt spike kit for battlefield use.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 36+</color>
 items.Consumable_Cobalt_Armor_Insert.name=Cobalt Armor Insert
-items.Consumable_Cobalt_Armor_Insert.description=<color is="#4A90D9">Armorsmith Consumable</color>\n<color is="#ffd100">A superior quality alloy cobalt armor insert for battlefield use.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 36+</color>
+items.Consumable_Cobalt_Armor_Insert.description=<color is="#4A90D9">Platesmith Consumable</color>\n<color is="#ffd100">A superior quality alloy cobalt armor insert for battlefield use.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 36+</color>
 items.Consumable_Superior_Armor_Sealant.name=Superior Armor Sealant
-items.Consumable_Superior_Armor_Sealant.description=<color is="#4A90D9">Armorsmith Consumable</color>\n<color is="#ffd100">A superior quality alloy superior armor sealant for battlefield use.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 55+</color>
+items.Consumable_Superior_Armor_Sealant.description=<color is="#4A90D9">Platesmith Consumable</color>\n<color is="#ffd100">A superior quality alloy superior armor sealant for battlefield use.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 55+</color>
 items.Consumable_Reinforced_Mending_Set.name=Reinforced Mending Set
-items.Consumable_Reinforced_Mending_Set.description=<color is="#4A90D9">Armorsmith Consumable</color>\n<color is="#ffd100">A superior quality alloy reinforced mending set for battlefield use.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 55+</color>
+items.Consumable_Reinforced_Mending_Set.description=<color is="#4A90D9">Platesmith Consumable</color>\n<color is="#ffd100">A superior quality alloy reinforced mending set for battlefield use.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 55+</color>
 items.Consumable_Reflective_Polish.name=Reflective Polish
-items.Consumable_Reflective_Polish.description=<color is="#4A90D9">Armorsmith Consumable</color>\n<color is="#ffd100">A superior quality alloy reflective polish for battlefield use.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 55+</color>
+items.Consumable_Reflective_Polish.description=<color is="#4A90D9">Platesmith Consumable</color>\n<color is="#ffd100">A superior quality alloy reflective polish for battlefield use.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 55+</color>
 items.Consumable_Superior_Armor_Padding.name=Superior Armor Padding
-items.Consumable_Superior_Armor_Padding.description=<color is="#4A90D9">Armorsmith Consumable</color>\n<color is="#ffd100">A superior quality alloy superior armor padding for battlefield use.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 55+</color>
+items.Consumable_Superior_Armor_Padding.description=<color is="#4A90D9">Platesmith Consumable</color>\n<color is="#ffd100">A superior quality alloy superior armor padding for battlefield use.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 55+</color>
 items.Consumable_Master_Armor_Finish.name=Master Armor Finish
-items.Consumable_Master_Armor_Finish.description=<color is="#4A90D9">Armorsmith Consumable</color>\n<color is="#ffd100">A masterwork grade material master armor finish for battlefield use.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 56+</color>
+items.Consumable_Master_Armor_Finish.description=<color is="#4A90D9">Platesmith Consumable</color>\n<color is="#ffd100">A masterwork grade material master armor finish for battlefield use.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 56+</color>
 items.Consumable_Master_Armor_Repair_Kit.name=Master Armor Repair Kit
-items.Consumable_Master_Armor_Repair_Kit.description=<color is="#4A90D9">Armorsmith Consumable</color>\n<color is="#ffd100">A masterwork grade material master armor repair kit for battlefield use.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 56+</color>
+items.Consumable_Master_Armor_Repair_Kit.description=<color is="#4A90D9">Platesmith Consumable</color>\n<color is="#ffd100">A masterwork grade material master armor repair kit for battlefield use.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 56+</color>
 items.Consumable_Master_Spike_Set.name=Master Spike Set
-items.Consumable_Master_Spike_Set.description=<color is="#4A90D9">Armorsmith Consumable</color>\n<color is="#ffd100">A masterwork grade material master spike set for battlefield use.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 56+</color>
+items.Consumable_Master_Spike_Set.description=<color is="#4A90D9">Platesmith Consumable</color>\n<color is="#ffd100">A masterwork grade material master spike set for battlefield use.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 56+</color>
 items.Consumable_Master_Armor_Insert.name=Master Armor Insert
-items.Consumable_Master_Armor_Insert.description=<color is="#4A90D9">Armorsmith Consumable</color>\n<color is="#ffd100">A masterwork grade material master armor insert for battlefield use.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 56+</color>
+items.Consumable_Master_Armor_Insert.description=<color is="#4A90D9">Platesmith Consumable</color>\n<color is="#ffd100">A masterwork grade material master armor insert for battlefield use.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 56+</color>
 items.Consumable_Ancient_Armor_Coating.name=Ancient Armor Coating
-items.Consumable_Ancient_Armor_Coating.description=<color is="#4A90D9">Armorsmith Consumable</color>\n<color is="#ffd100">A masterwork grade material ancient armor coating for battlefield use.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 75+</color>
+items.Consumable_Ancient_Armor_Coating.description=<color is="#4A90D9">Platesmith Consumable</color>\n<color is="#ffd100">A masterwork grade material ancient armor coating for battlefield use.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 75+</color>
 items.Consumable_Ancient_Mending_Set.name=Ancient Mending Set
-items.Consumable_Ancient_Mending_Set.description=<color is="#4A90D9">Armorsmith Consumable</color>\n<color is="#ffd100">A masterwork grade material ancient mending set for battlefield use.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 75+</color>
+items.Consumable_Ancient_Mending_Set.description=<color is="#4A90D9">Platesmith Consumable</color>\n<color is="#ffd100">A masterwork grade material ancient mending set for battlefield use.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 75+</color>
 items.Consumable_Ancient_Armor_Lining.name=Ancient Armor Lining
-items.Consumable_Ancient_Armor_Lining.description=<color is="#4A90D9">Armorsmith Consumable</color>\n<color is="#ffd100">A masterwork grade material ancient armor lining for battlefield use.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 75+</color>
+items.Consumable_Ancient_Armor_Lining.description=<color is="#4A90D9">Platesmith Consumable</color>\n<color is="#ffd100">A masterwork grade material ancient armor lining for battlefield use.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 75+</color>
 items.Consumable_Void_Armor_Finish.name=Void Armor Finish
-items.Consumable_Void_Armor_Finish.description=<color is="#4A90D9">Armorsmith Consumable</color>\n<color is="#ffd100">A legendary otherworldly craft void armor finish for battlefield use.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 83+</color>
+items.Consumable_Void_Armor_Finish.description=<color is="#4A90D9">Platesmith Consumable</color>\n<color is="#ffd100">A legendary otherworldly craft void armor finish for battlefield use.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 83+</color>
 items.Consumable_Void_Armor_Repair_Kit.name=Void Armor Repair Kit
-items.Consumable_Void_Armor_Repair_Kit.description=<color is="#4A90D9">Armorsmith Consumable</color>\n<color is="#ffd100">A legendary otherworldly craft void armor repair kit for battlefield use.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 83+</color>
+items.Consumable_Void_Armor_Repair_Kit.description=<color is="#4A90D9">Platesmith Consumable</color>\n<color is="#ffd100">A legendary otherworldly craft void armor repair kit for battlefield use.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 83+</color>
 items.Consumable_Void_Spike_Kit.name=Void Spike Kit
-items.Consumable_Void_Spike_Kit.description=<color is="#4A90D9">Armorsmith Consumable</color>\n<color is="#ffd100">A legendary otherworldly craft void spike kit for battlefield use.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 83+</color>
+items.Consumable_Void_Spike_Kit.description=<color is="#4A90D9">Platesmith Consumable</color>\n<color is="#ffd100">A legendary otherworldly craft void spike kit for battlefield use.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 83+</color>
 items.Consumable_Voidward_Sealant.name=Voidward Sealant
-items.Consumable_Voidward_Sealant.description=<color is="#4A90D9">Armorsmith Consumable</color>\n<color is="#ffd100">A legendary otherworldly craft voidward sealant for battlefield use.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 83+</color>
+items.Consumable_Voidward_Sealant.description=<color is="#4A90D9">Platesmith Consumable</color>\n<color is="#ffd100">A legendary otherworldly craft voidward sealant for battlefield use.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 83+</color>
 items.Consumable_Cosmic_Armor_Sealant.name=Cosmic Armor Sealant
-items.Consumable_Cosmic_Armor_Sealant.description=<color is="#4A90D9">Armorsmith Consumable</color>\n<color is="#ffd100">A divine transcendent essence cosmic armor sealant for battlefield use.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 95+</color>
+items.Consumable_Cosmic_Armor_Sealant.description=<color is="#4A90D9">Platesmith Consumable</color>\n<color is="#ffd100">A divine transcendent essence cosmic armor sealant for battlefield use.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 95+</color>
 items.Consumable_Celestial_Armor_Restoration.name=Celestial Armor Restoration
-items.Consumable_Celestial_Armor_Restoration.description=<color is="#4A90D9">Armorsmith Consumable</color>\n<color is="#ffd100">A divine transcendent essence celestial armor restoration for battlefield use.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 95+</color>
+items.Consumable_Celestial_Armor_Restoration.description=<color is="#4A90D9">Platesmith Consumable</color>\n<color is="#ffd100">A divine transcendent essence celestial armor restoration for battlefield use.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 95+</color>
 items.Consumable_Divine_Modification_Kit.name=Divine Modification Kit
-items.Consumable_Divine_Modification_Kit.description=<color is="#4A90D9">Armorsmith Consumable</color>\n<color is="#ffd100">A divine transcendent essence divine modification kit for battlefield use.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 95+</color>
+items.Consumable_Divine_Modification_Kit.description=<color is="#4A90D9">Platesmith Consumable</color>\n<color is="#ffd100">A divine transcendent essence divine modification kit for battlefield use.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 95+</color>
 items.Consumable_Cosmic_Armor_Lining.name=Cosmic Armor Lining
-items.Consumable_Cosmic_Armor_Lining.description=<color is="#4A90D9">Armorsmith Consumable</color>\n<color is="#ffd100">A divine transcendent essence cosmic armor lining for battlefield use.</color>\n<color is="#888888">Crafted by: Armorsmith Lv. 95+</color>
+items.Consumable_Cosmic_Armor_Lining.description=<color is="#4A90D9">Platesmith Consumable</color>\n<color is="#ffd100">A divine transcendent essence cosmic armor lining for battlefield use.</color>\n<color is="#888888">Crafted by: Platesmith Lv. 95+</color>
 
 ## ===============================================
 ## Leatherworker Components
@@ -2627,29 +2627,29 @@ items.Armor_Cloth_Shadoweave_Legs.name=Shadoweave Legs
 
 # Metal Armor
 items.Armor_Bronze_Head.name=Bronze Head
-items.Armor_Bronze_Head.description=<color is="#3278C8">Armorsmith Armor</color>\n<color is="#ffd100">Base iLvl 22 | Temper Range: 22-32</color>\n<color is="#888888">Requires: Temper Stone V</color>
+items.Armor_Bronze_Head.description=<color is="#3278C8">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 22 | Temper Range: 22-32</color>\n<color is="#888888">Requires: Temper Stone V</color>
 items.Armor_Bronze_Chest.name=Bronze Chest
-items.Armor_Bronze_Chest.description=<color is="#3278C8">Armorsmith Armor</color>\n<color is="#ffd100">Base iLvl 22 | Temper Range: 22-32</color>\n<color is="#888888">Requires: Temper Stone V</color>
+items.Armor_Bronze_Chest.description=<color is="#3278C8">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 22 | Temper Range: 22-32</color>\n<color is="#888888">Requires: Temper Stone V</color>
 items.Armor_Bronze_Hands.name=Bronze Hands
-items.Armor_Bronze_Hands.description=<color is="#3278C8">Armorsmith Armor</color>\n<color is="#ffd100">Base iLvl 22 | Temper Range: 22-32</color>\n<color is="#888888">Requires: Temper Stone V</color>
+items.Armor_Bronze_Hands.description=<color is="#3278C8">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 22 | Temper Range: 22-32</color>\n<color is="#888888">Requires: Temper Stone V</color>
 items.Armor_Bronze_Legs.name=Bronze Legs
-items.Armor_Bronze_Legs.description=<color is="#3278C8">Armorsmith Armor</color>\n<color is="#ffd100">Base iLvl 22 | Temper Range: 22-32</color>\n<color is="#888888">Requires: Temper Stone V</color>
+items.Armor_Bronze_Legs.description=<color is="#3278C8">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 22 | Temper Range: 22-32</color>\n<color is="#888888">Requires: Temper Stone V</color>
 items.Armor_Bronze_Ornate_Head.name=Bronze Ornate Head
-items.Armor_Bronze_Ornate_Head.description=<color is="#3278C8">Armorsmith Armor</color>\n<color is="#ffd100">Base iLvl 28 | Temper Range: 28-38</color>\n<color is="#888888">Requires: Temper Stone VI</color>
+items.Armor_Bronze_Ornate_Head.description=<color is="#3278C8">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 28 | Temper Range: 28-38</color>\n<color is="#888888">Requires: Temper Stone VI</color>
 items.Armor_Bronze_Ornate_Chest.name=Bronze Ornate Chest
-items.Armor_Bronze_Ornate_Chest.description=<color is="#3278C8">Armorsmith Armor</color>\n<color is="#ffd100">Base iLvl 28 | Temper Range: 28-38</color>\n<color is="#888888">Requires: Temper Stone VI</color>
+items.Armor_Bronze_Ornate_Chest.description=<color is="#3278C8">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 28 | Temper Range: 28-38</color>\n<color is="#888888">Requires: Temper Stone VI</color>
 items.Armor_Bronze_Ornate_Hands.name=Bronze Ornate Hands
-items.Armor_Bronze_Ornate_Hands.description=<color is="#3278C8">Armorsmith Armor</color>\n<color is="#ffd100">Base iLvl 28 | Temper Range: 28-38</color>\n<color is="#888888">Requires: Temper Stone VI</color>
+items.Armor_Bronze_Ornate_Hands.description=<color is="#3278C8">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 28 | Temper Range: 28-38</color>\n<color is="#888888">Requires: Temper Stone VI</color>
 items.Armor_Bronze_Ornate_Legs.name=Bronze Ornate Legs
-items.Armor_Bronze_Ornate_Legs.description=<color is="#3278C8">Armorsmith Armor</color>\n<color is="#ffd100">Base iLvl 28 | Temper Range: 28-38</color>\n<color is="#888888">Requires: Temper Stone VI</color>
+items.Armor_Bronze_Ornate_Legs.description=<color is="#3278C8">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 28 | Temper Range: 28-38</color>\n<color is="#888888">Requires: Temper Stone VI</color>
 items.Armor_Steel_Ancient_Head.name=Steel Ancient Head
-items.Armor_Steel_Ancient_Head.description=<color is="#3278C8">Armorsmith Armor</color>\n<color is="#ffd100">Base iLvl 45 | Temper Range: 45-55</color>\n<color is="#888888">Requires: Temper Stone IX</color>
+items.Armor_Steel_Ancient_Head.description=<color is="#3278C8">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 45 | Temper Range: 45-55</color>\n<color is="#888888">Requires: Temper Stone IX</color>
 items.Armor_Steel_Ancient_Chest.name=Steel Ancient Chest
-items.Armor_Steel_Ancient_Chest.description=<color is="#3278C8">Armorsmith Armor</color>\n<color is="#ffd100">Base iLvl 45 | Temper Range: 45-55</color>\n<color is="#888888">Requires: Temper Stone IX</color>
+items.Armor_Steel_Ancient_Chest.description=<color is="#3278C8">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 45 | Temper Range: 45-55</color>\n<color is="#888888">Requires: Temper Stone IX</color>
 items.Armor_Steel_Ancient_Hands.name=Steel Ancient Hands
-items.Armor_Steel_Ancient_Hands.description=<color is="#3278C8">Armorsmith Armor</color>\n<color is="#ffd100">Base iLvl 45 | Temper Range: 45-55</color>\n<color is="#888888">Requires: Temper Stone IX</color>
+items.Armor_Steel_Ancient_Hands.description=<color is="#3278C8">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 45 | Temper Range: 45-55</color>\n<color is="#888888">Requires: Temper Stone IX</color>
 items.Armor_Steel_Ancient_Legs.name=Steel Ancient Legs
-items.Armor_Steel_Ancient_Legs.description=<color is="#3278C8">Armorsmith Armor</color>\n<color is="#ffd100">Base iLvl 45 | Temper Range: 45-55</color>\n<color is="#888888">Requires: Temper Stone IX</color>
+items.Armor_Steel_Ancient_Legs.description=<color is="#3278C8">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 45 | Temper Range: 45-55</color>\n<color is="#888888">Requires: Temper Stone IX</color>
 
 # Bladesmith Weapons (WEAPONSMITH)
 items.Weapon_Longsword_Crude.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 1 | Temper Range: 1-11</color>\n<color is="#888888">Requires: Temper Stone I</color>
@@ -2792,6 +2792,18 @@ items.Component_Transmutation_Primer.description=A primer used to fuse disparate
 items.Component_Resonance_Crystal.name=Resonance Crystal
 items.Component_Resonance_Crystal.description=A tuned crystal that sustains high-tier alchemical effects.
 
+items.Component_Petal_Extract.name=Petal Extract
+items.Component_Petal_Extract.description=A fragrant extract distilled from common herbs.
+
+items.Component_Mushroom_Concentrate.name=Mushroom Concentrate
+items.Component_Mushroom_Concentrate.description=A thick paste reduced from charred mushroom caps.
+
+items.Component_Alchemists_Ink.name=Alchemist's Ink
+items.Component_Alchemists_Ink.description=A dark ink used to inscribe alchemical formulas.
+
+
+
+
 
 
 
@@ -2822,12 +2834,18 @@ items.Consumable_Adventurers_Feast.name=Adventurers Feast
 items.Consumable_Adventurers_Feast.description=<color is="#E67E22">Cook Consumable</color>\n<color is="#ffd100">+3 Spirit, +3 Agility, +3 Strength, +3 Vitality, +3 Intellect for 15 min</color>
 items.Consumable_Campfire_Bread.name=Campfire Bread
 items.Consumable_Campfire_Bread.description=<color is="#E67E22">Cook Consumable</color>\n<color is="#ffd100">+2 Vitality for 15 min</color>\n<color is="#888888">Crafted by: Cook Lv. 3+</color>
+items.Food_Kebab_Fruit.name=Fruit Skewer
+items.Food_Kebab_Fruit.description=<color is="#E67E22">Cook Consumable</color>\n<color is="#ffd100">+2 Agility for 15 min</color>
 items.Consumable_Herb_Butter_Fish.name=Herb Butter Fish
 items.Consumable_Herb_Butter_Fish.description=<color is="#E67E22">Cook Consumable</color>\n<color is="#ffd100">+3 Agility for 15 min</color>\n<color is="#888888">Crafted by: Cook Lv. 9+</color>
 items.Consumable_Hunters_Ration.name=Hunters Ration
 items.Consumable_Hunters_Ration.description=<color is="#E67E22">Cook Consumable</color>\n<color is="#ffd100">+3 Spirit, +5 Agility for 15 min</color>
 items.Consumable_Meat_Pie.name=Meat Pie
 items.Consumable_Meat_Pie.description=<color is="#E67E22">Cook Consumable</color>\n<color is="#ffd100">+3 Strength, +1 Vitality for 15 min</color>\n<color is="#888888">Crafted by: Cook Lv. 11+</color>
+items.Food_Kebab_Meat.name=Meat Skewer
+items.Food_Kebab_Meat.description=<color is="#E67E22">Cook Consumable</color>\n<color is="#ffd100">+2 Strength for 15 min</color>
+items.Food_Kebab_Mushroom.name=Mushroom Skewer
+items.Food_Kebab_Mushroom.description=<color is="#E67E22">Cook Consumable</color>\n<color is="#ffd100">+2 Spirit for 15 min</color>
 items.Consumable_Roasted_Meat.name=Roasted Meat
 items.Consumable_Roasted_Meat.description=<color is="#E67E22">Cook Consumable</color>\n<color is="#ffd100">+2 Strength for 15 min</color>\n<color is="#888888">Crafted by: Cook Lv. 5+</color>
 items.Consumable_Sages_Meal.name=Sages Meal
@@ -2840,6 +2858,8 @@ items.Consumable_Spiced_Stew.name=Spiced Stew
 items.Consumable_Spiced_Stew.description=<color is="#E67E22">Cook Consumable</color>\n<color is="#ffd100">+1 Strength, +3 Vitality for 15 min</color>\n<color is="#888888">Crafted by: Cook Lv. 13+</color>
 items.Consumable_Sweet_Roll.name=Sweet Roll
 items.Consumable_Sweet_Roll.description=<color is="#E67E22">Cook Consumable</color>\n<color is="#ffd100">+4 Spirit, +2 Intellect for 15 min</color>\n<color is="#888888">Crafted by: Cook Lv. 15+</color>
+items.Food_Kebab_Vegetable.name=Vegetable Skewer
+items.Food_Kebab_Vegetable.description=<color is="#E67E22">Cook Consumable</color>\n<color is="#ffd100">+2 Vitality for 15 min</color>
 items.Consumable_Vegetable_Soup.name=Vegetable Soup
 items.Consumable_Vegetable_Soup.description=<color is="#E67E22">Cook Consumable</color>\n<color is="#ffd100">+3 Vitality for 15 min</color>\n<color is="#888888">Crafted by: Cook Lv. 7+</color>
 items.Consumable_Elixir_Brilliance.name=Elixir of Brilliance
@@ -2850,3 +2870,9 @@ items.Consumable_Elixir_Precision.name=Elixir of Precision
 items.Consumable_Elixir_Precision.description=<color is="#27AE60">Alchemist Consumable</color>\n<color is="#ffd100">+8 Agility for 15 min</color>
 items.Consumable_Elixir_Predator.name=Elixir of the Predator
 items.Consumable_Elixir_Predator.description=<color is="#27AE60">Alchemist Consumable</color>\n<color is="#ffd100">+3% Crit Chance for 15 min</color>
+items.Consumable_Herbal_Poultice.name=Herbal Poultice
+items.Consumable_Herbal_Poultice.description=<color is="#27AE60">Alchemist Consumable</color>\n<color is="#ffd100">+2 Vitality for 30 min</color>\n<color is="#888888">Crafted by: Alchemist Lv. 4+</color>
+items.Consumable_Restorative_Draught.name=Restorative Draught
+items.Consumable_Restorative_Draught.description=<color is="#27AE60">Alchemist Consumable</color>\n<color is="#ffd100">+3 Spirit, +3 Vitality for 30 min</color>\n<color is="#888888">Crafted by: Alchemist Lv. 10+</color>
+items.Consumable_Soothing_Tonic.name=Soothing Tonic
+items.Consumable_Soothing_Tonic.description=<color is="#27AE60">Alchemist Consumable</color>\n<color is="#ffd100">+2 Spirit, +2 Vitality for 30 min</color>\n<color is="#888888">Crafted by: Alchemist Lv. 6+</color>

@@ -76,33 +76,6 @@ public class ProfessionManager {
 
         LOGGER.at(Level.INFO).log("%s chose profession: %s", playerRef.getUsername(), profession.getDisplayName());
 
-        // Give profession bench item
-        String benchItemId = switch (profession) {
-            case WEAPONSMITH -> "Bench_Weaponsmith_Forge";
-            case ARMORSMITH -> "Bench_Armorsmith_Anvil";
-            case ALCHEMIST -> "Bench_Alchemy";
-            case COOK -> "Bench_Cooking";
-            case LEATHERWORKER -> "Bench_Tannery";
-            case CARPENTER -> "Bench_Furniture";
-            case TAILOR -> "Bench_Loom";
-            case ENCHANTER -> "Bench_Arcane";
-            case BUILDER -> null; // No bench — Builders use /prefabBuilder command
-        };
-
-        if (benchItemId != null && world != null) {
-            world.execute(() -> {
-                Ref<EntityStore> ref = playerRef.getReference();
-                if (ref == null || !ref.isValid()) return;
-                Store<EntityStore> store = world.getEntityStore().getStore();
-                Player playerComponent = store.getComponent(ref, Player.getComponentType());
-                if (playerComponent == null) return;
-                ItemStack benchItem = new ItemStack(benchItemId, 1);
-                SimpleItemContainer.addOrDropItemStacks(store, ref,
-                    playerComponent.getInventory().getCombinedArmorHotbarUtilityStorage(),
-                    List.of(benchItem));
-            });
-        }
-
         return true;
     }
 

@@ -49,16 +49,16 @@ public class TemperMaterialRepository {
     }
 
     private static final Object[][] DEFAULTS = {
-        {"I",     1,  0},   // iLvl 1-5
-        {"II",    1,  1},   // iLvl 6-10
-        {"III",   5,  2},   // iLvl 11-15
-        {"IV",   10,  3},   // iLvl 16-20
-        {"V",    20,  4},   // iLvl 21-25
-        {"VI",   30,  5},   // iLvl 26-30
-        {"VII",  40,  6},   // iLvl 31-35
-        {"VIII", 55,  7},   // iLvl 36-40
-        {"IX",   70,  8},   // iLvl 41-45
-        {"X",    85,  9},   // iLvl 46-50
+        {"I",     1,  0},   // iLvl 1-4
+        {"II",    1,  1},   // iLvl 5-9
+        {"III",   5,  2},   // iLvl 10-14
+        {"IV",   10,  3},   // iLvl 15-19
+        {"V",    20,  4},   // iLvl 20-24
+        {"VI",   30,  5},   // iLvl 25-29
+        {"VII",  40,  6},   // iLvl 30-34
+        {"VIII", 55,  7},   // iLvl 35-39
+        {"IX",   70,  8},   // iLvl 40-44
+        {"X",    85,  9},   // iLvl 45-50
     };
 
     /**

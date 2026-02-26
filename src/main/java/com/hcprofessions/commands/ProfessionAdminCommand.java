@@ -1,6 +1,7 @@
 package com.hcprofessions.commands;
 
 import com.hcequipment.api.HC_EquipmentAPI;
+import com.hcequipment.generation.BaseItemResolver;
 import com.hcequipment.models.ItemRarity;
 import com.hcprofessions.HC_ProfessionsPlugin;
 import com.hcprofessions.models.Tradeskill;
@@ -335,7 +336,7 @@ public class ProfessionAdminCommand extends AbstractAsyncCommand {
             if (displayName == null) displayName = itemId;
 
             // Roll quality using ratio-based system (fakeProfLevel / baseItemLevel)
-            int baseItemLevel = HC_EquipmentAPI.getVanillaItemLevel(itemId);
+            int baseItemLevel = BaseItemResolver.getItemLevelForItemId(itemId);
             if (baseItemLevel <= 0) baseItemLevel = 1;
             double ratio = (double) fakeProfLevel / baseItemLevel;
 
@@ -365,7 +366,7 @@ public class ProfessionAdminCommand extends AbstractAsyncCommand {
                 default -> 0;
             };
 
-            ItemStack result = HC_EquipmentAPI.generateItem(itemId, displayName, itemLevel, rarity, affixCount, senderPlayer.getPlayerRef().getUsername());
+            ItemStack result = HC_EquipmentAPI.generateItem(itemId, displayName, itemLevel, rarity, affixCount);
             if (result == null) {
                 ctx.sendMessage(Message.raw("Failed to generate tempered item.").color(Color.RED));
                 return;

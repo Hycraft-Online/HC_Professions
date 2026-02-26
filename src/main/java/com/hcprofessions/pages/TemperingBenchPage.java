@@ -1,6 +1,7 @@
 package com.hcprofessions.pages;
 
 import com.hcequipment.api.HC_EquipmentAPI;
+import com.hcequipment.generation.BaseItemResolver;
 import com.hcequipment.models.ArmorType;
 import com.hcequipment.models.ItemRarity;
 import com.hcprofessions.HC_ProfessionsPlugin;
@@ -47,10 +48,10 @@ public class TemperingBenchPage extends InteractiveCustomUIPage<TemperingBenchPa
 
     /**
      * Derives temper stone ID from item level.
-     * Every 5 item levels maps to one tier: I (1-5), II (6-10), ... X (46-50).
+     * Every 5 item levels maps to one tier: I (1-4), II (5-9), III (10-14), ... X (45-50).
      */
     private static String getTemperStoneForLevel(int itemLevel) {
-        int tier = Math.clamp((itemLevel - 1) / 5, 0, 9);
+        int tier = Math.clamp(itemLevel / 5, 0, 9);
         return "TemperStone_" + ROMAN_NUMERALS[tier];
     }
 
@@ -138,7 +139,7 @@ public class TemperingBenchPage extends InteractiveCustomUIPage<TemperingBenchPa
             if (material == null || displayName == null) continue;
 
             // Derive temper stone from item level (not material name)
-            int baseItemLevel = HC_EquipmentAPI.getVanillaItemLevel(itemId);
+            int baseItemLevel = BaseItemResolver.getItemLevelForItemId(itemId);
             String stoneId = getTemperStoneForLevel(baseItemLevel);
             String stoneTier = getStoneTierName(stoneId);
 
@@ -363,7 +364,7 @@ public class TemperingBenchPage extends InteractiveCustomUIPage<TemperingBenchPa
         int affixCount = getAffixCountForRarity(rarity);
 
         // Generate tempered item (keeps vanilla item ID, adds RPG metadata)
-        ItemStack result = HC_EquipmentAPI.generateItem(entry.vanillaId, entry.displayName, itemLevel, rarity, affixCount, playerRef.getUsername());
+        ItemStack result = HC_EquipmentAPI.generateItem(entry.vanillaId, entry.displayName, itemLevel, rarity, affixCount);
         if (result == null) {
             showMessage("Failed to temper item!", java.awt.Color.RED);
             return;
@@ -459,7 +460,7 @@ public class TemperingBenchPage extends InteractiveCustomUIPage<TemperingBenchPa
     }
 
     private void removeMaterials(Player player, String itemId, int quantity) {
-        player.getInventory().getStorage().removeItemStack(new ItemStack(itemId, quantity));
+        player.getInventory().getCombinedEverything().removeItemStack(new ItemStack(itemId, quantity));
     }
 
     private Player getPlayer(Store<EntityStore> store) {
