@@ -14,12 +14,12 @@
   },
   "MaxStack": 10,
   "DropOnDeath": true,
-  "Model": "Items/Consumables/Potions/Potion.blockymodel",
-  "Texture": "Items/Consumables/Potions/Potion_Textures/White.png",
   "Consumable": true,
   "Interactions": {
     "Secondary": "Root_Secondary_Consume_Potion"
   },
+  "Model": "Items/Consumables/Potions/Potion.blockymodel",
+  "Texture": "Items/Consumables/Potions/Potion_Textures/White.png",
   "InteractionVars": {
     "Effect": {
       "Interactions": [
@@ -28,6 +28,37 @@
           "BuffId": "alchemy_elixir_frostguard"
         }
       ]
+    },
+    "ConsumeSFX": {
+      "Interactions": [
+        {
+          "Parent": "Consume_SFX",
+          "Effects": {
+            "LocalSoundEventId": "SFX_Health_Potion_Low_Drink"
+          }
+        }
+      ]
+    },
+    "ConsumedSFX": {
+      "Interactions": [
+        {
+          "Parent": "Consumed_SFX",
+          "Effects": {
+            "LocalSoundEventId": "SFX_Potion_Drink_Success"
+          }
+        }
+      ]
+    }
+  },
+  "PlayerAnimationsId": {
+    "Parent": "Item",
+    "Animations": {
+      "Consume": {
+        "FirstPerson": "Characters/Animations/Items/Main_Handed/Item/Attacks/Drink/Drink_FPS.blockyanim",
+        "ThirdPerson": "Characters/Animations/Items/Main_Handed/Item/Attacks/Drink/Drink.blockyanim",
+        "Speed": 1,
+        "Looping": true
+      }
     }
   },
   "Recipe": {

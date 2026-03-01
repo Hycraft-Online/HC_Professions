@@ -2875,4 +2875,4 @@ items.Consumable_Herbal_Poultice.description=<color is="#27AE60">Alchemist Consu
 items.Consumable_Restorative_Draught.name=Restorative Draught
 items.Consumable_Restorative_Draught.description=<color is="#27AE60">Alchemist Consumable</color>\n<color is="#ffd100">+3 Spirit, +3 Vitality for 30 min</color>\n<color is="#888888">Crafted by: Alchemist Lv. 10+</color>
 items.Consumable_Soothing_Tonic.name=Soothing Tonic
-items.Consumable_Soothing_Tonic.description=<color is="#27AE60">Alchemist Consumable</color>\n<color is="#ffd100">+2 Spirit, +2 Vitality for 30 min</color>\n<color is="#888888">Crafted by: Alchemist Lv. 6+</color>
+items.Consumable_Soothing_Tonic.description=<color is="#27AE60">Alchemist Consumable</color>\n<color is="#ffd100">+2 Spirit, +4 Vitality for 30 min</color>\n<color is="#888888">Crafted by: Alchemist Lv. 6+</color>

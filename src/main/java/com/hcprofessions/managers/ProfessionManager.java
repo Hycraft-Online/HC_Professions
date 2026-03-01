@@ -17,6 +17,8 @@ import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 import com.hypixel.hytale.server.core.util.NotificationUtil;
 import com.hypixel.hytale.protocol.packets.interface_.NotificationStyle;
 
+import com.hcprofessions.config.GlobalXpMultiplier;
+
 import javax.annotation.Nullable;
 import java.awt.Color;
 import java.util.List;
@@ -126,6 +128,8 @@ public class ProfessionManager {
     }
 
     public void grantXp(PlayerRef playerRef, int xpAmount) {
+        xpAmount = GlobalXpMultiplier.apply(xpAmount);
+
         UUID uuid = playerRef.getUuid();
         PlayerProfessionData data = getPlayerData(uuid);
         if (!data.hasProfession()) return;

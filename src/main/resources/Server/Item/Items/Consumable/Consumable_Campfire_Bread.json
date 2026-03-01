@@ -14,18 +14,25 @@
   },
   "MaxStack": 10,
   "DropOnDeath": true,
-  "Model": "Items/pouch.blockymodel",
-  "Texture": "Items/pouch.png",
   "Consumable": true,
   "Interactions": {
     "Secondary": "Root_Secondary_Consume_Food_T2"
   },
+  "Model": "Items/Consumables/Food/Food_Bag.blockymodel",
+  "Texture": "Items/Consumables/Food/Food_Bag_Texture.png",
   "InteractionVars": {
     "Effect": {
       "Interactions": [
         {
           "Type": "ConsumableBuff",
           "BuffId": "campfire_bread"
+        }
+      ]
+    },
+    "ConsumeSFX": {
+      "Interactions": [
+        {
+          "Parent": "Consume_SFX"
         }
       ]
     }

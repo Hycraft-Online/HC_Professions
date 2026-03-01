@@ -4,6 +4,7 @@ import com.hcprofessions.config.XPCurve;
 import com.hcprofessions.database.TradeskillRepository;
 import com.hcprofessions.models.PlayerTradeskillData;
 import com.hcprofessions.models.Tradeskill;
+import com.hcprofessions.config.GlobalXpMultiplier;
 import com.hypixel.hytale.logger.HytaleLogger;
 import com.hypixel.hytale.server.core.Message;
 import com.hypixel.hytale.server.core.universe.PlayerRef;
@@ -42,6 +43,8 @@ public class TradeskillManager {
     }
 
     public void grantXp(PlayerRef playerRef, Tradeskill tradeskill, int xpAmount) {
+        xpAmount = GlobalXpMultiplier.apply(xpAmount);
+
         UUID uuid = playerRef.getUuid();
         PlayerTradeskillData data = getTradeskillData(uuid, tradeskill);
         if (data == null) return;

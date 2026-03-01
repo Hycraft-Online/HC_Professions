@@ -4,6 +4,7 @@ import com.hcprofessions.config.XPCurve;
 import com.hcprofessions.database.AllProfessionRepository;
 import com.hcprofessions.models.PlayerAllProfessionData;
 import com.hcprofessions.models.Profession;
+import com.hcprofessions.config.GlobalXpMultiplier;
 import com.hypixel.hytale.logger.HytaleLogger;
 import com.hypixel.hytale.server.core.Message;
 import com.hypixel.hytale.server.core.universe.PlayerRef;
@@ -55,6 +56,8 @@ public class AllProfessionManager {
      * If the profession is NOT the player's main profession, cap at nonNativeLevelCap.
      */
     public void grantXp(PlayerRef playerRef, Profession targetProfession, int xpAmount) {
+        xpAmount = GlobalXpMultiplier.apply(xpAmount);
+
         UUID uuid = playerRef.getUuid();
         Map<Profession, PlayerAllProfessionData> allData = getPlayerData(uuid);
         PlayerAllProfessionData data = allData.get(targetProfession);

@@ -179,8 +179,10 @@ public class CraftingXpSystem extends EntityEventSystem<EntityStore, CraftRecipe
                 xpColor = targetProfession.getColor();  // Normal color — at-level
             } else if (gap < 10) {
                 xpColor = new Color(255, 255, 0);       // Yellow — reduced XP
+            } else if (gap < 15) {
+                xpColor = new Color(255, 165, 0);       // Orange — significantly reduced
             } else {
-                xpColor = new Color(30, 180, 30);       // Green — heavily reduced
+                xpColor = new Color(30, 180, 30);       // Green — barely any XP
             }
             Message xpMsg = Message.raw("+" + totalXp + " " + targetProfession.getDisplayName() + " XP")
                 .color(xpColor);
@@ -210,14 +212,14 @@ public class CraftingXpSystem extends EntityEventSystem<EntityStore, CraftRecipe
 
     /**
      * Reduces XP based on how far the player's level exceeds the recipe's required level.
-     * 0-4 levels above: 100%, 5-9: 50%, 10-14: 25%, 15+: 0% (grey).
+     * Smooth 5% reduction per level of gap. Grey (0 XP) at gap >= 20.
      */
     private static int applyLevelGapReduction(int baseXp, int playerLevel, int recipeLevel) {
         int gap = playerLevel - recipeLevel;
-        if (gap < 5) return baseXp;
-        if (gap < 10) return baseXp / 2;
-        if (gap < 15) return baseXp / 4;
-        return 0;
+        if (gap <= 0) return baseXp;
+        double multiplier = Math.max(0.0, 1.0 - (gap * 0.05));
+        if (multiplier <= 0.0) return 0;
+        return Math.max(1, (int) Math.ceil(baseXp * multiplier));
     }
 
     @NonNullDecl
