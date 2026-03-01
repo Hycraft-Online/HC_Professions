@@ -93,6 +93,9 @@ public class AllProfessionManager {
         }
 
         if (leveledUp) {
+            // Persist immediately on level-up to prevent desync on relog (HYC-18)
+            repository.save(data);
+
             int newLevel = data.getLevel();
             String suffix = isMain ? "" : " (secondary)";
             Message msg = Message.raw(targetProfession.getDisplayName() + suffix + " leveled up! Lv. " + newLevel)
@@ -109,6 +112,12 @@ public class AllProfessionManager {
         Map<Profession, PlayerAllProfessionData> data = cache.get(playerUuid);
         if (data != null) {
             repository.saveAll(data);
+        }
+    }
+
+    public void saveAllPlayers() {
+        for (Map<Profession, PlayerAllProfessionData> allData : cache.values()) {
+            repository.saveAll(allData);
         }
     }
 

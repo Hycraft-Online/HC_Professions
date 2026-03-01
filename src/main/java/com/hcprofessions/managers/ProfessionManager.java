@@ -167,6 +167,9 @@ public class ProfessionManager {
         }
 
         if (leveledUp) {
+            // Persist immediately on level-up to prevent desync on relog (HYC-18)
+            repository.save(data);
+
             int newLevel = data.getLevel();
             Profession prof = data.getProfession();
             Message msg = Message.raw(prof.getDisplayName() + " leveled up! Lv. " + newLevel)
@@ -190,6 +193,19 @@ public class ProfessionManager {
         PlayerProfessionData data = cache.get(playerUuid);
         if (data != null && data.isDirty()) {
             repository.save(data);
+        }
+    }
+
+    public void saveAllPlayers() {
+        for (PlayerProfessionData data : cache.values()) {
+            if (data.isDirty()) {
+                try {
+                    repository.save(data);
+                } catch (Exception e) {
+                    LOGGER.at(Level.SEVERE).log("Failed to save profession data for %s on shutdown: %s",
+                        data.getPlayerUuid(), e.getMessage());
+                }
+            }
         }
     }
 

@@ -80,6 +80,9 @@ public class TradeskillManager {
         }
 
         if (leveledUp) {
+            // Persist immediately on level-up to prevent desync on relog (HYC-18)
+            repository.save(data);
+
             int newLevel = data.getLevel();
             Message msg = Message.raw(tradeskill.getDisplayName() + " leveled up! Lv. " + newLevel)
                 .color(new Color(0, 200, 100));
@@ -105,6 +108,12 @@ public class TradeskillManager {
         Map<Tradeskill, PlayerTradeskillData> data = cache.get(playerUuid);
         if (data != null) {
             repository.saveAll(data);
+        }
+    }
+
+    public void saveAllPlayers() {
+        for (Map<Tradeskill, PlayerTradeskillData> allData : cache.values()) {
+            repository.saveAll(allData);
         }
     }
 

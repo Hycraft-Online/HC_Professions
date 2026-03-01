@@ -53,6 +53,7 @@ import java.io.File;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
+import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 
@@ -89,6 +90,9 @@ public class HC_ProfessionsPlugin extends JavaPlugin {
 
     // Systems (kept for runtime updates)
     private GatheringTradeskillXPSystem gatheringSystem;
+
+    // Periodic auto-save task
+    private ScheduledFuture<?> autoSaveTask;
 
     public HC_ProfessionsPlugin(@NonNullDecl JavaPluginInit init) {
         super(init);
@@ -404,6 +408,20 @@ public class HC_ProfessionsPlugin extends JavaPlugin {
             }, 2, TimeUnit.SECONDS);
         });
 
+        // ═══════════════════════════════════════════════════════
+        // PERIODIC AUTO-SAVE (safety net for crash/ungraceful shutdown)
+        // ═══════════════════════════════════════════════════════
+        autoSaveTask = HytaleServer.SCHEDULED_EXECUTOR.scheduleAtFixedRate(() -> {
+            try {
+                tradeskillManager.saveAllPlayers();
+                professionManager.saveAllPlayers();
+                allProfessionManager.saveAllPlayers();
+            } catch (Exception e) {
+                this.getLogger().at(Level.WARNING).log("Auto-save failed: " + e.getMessage());
+            }
+        }, 5, 5, TimeUnit.MINUTES);
+        this.getLogger().at(Level.INFO).log("Periodic auto-save enabled (every 5 minutes)");
+
         this.getLogger().at(Level.INFO).log("HC_Professions enabled successfully!");
         this.getLogger().at(Level.INFO).log("=================================");
     }
@@ -453,6 +471,34 @@ public class HC_ProfessionsPlugin extends JavaPlugin {
     @Override
     protected void shutdown() {
         super.shutdown();
+
+        // Cancel periodic auto-save
+        if (autoSaveTask != null) {
+            autoSaveTask.cancel(false);
+        }
+
+        // Save all dirty player data before closing the DB connection
+        if (tradeskillManager != null) {
+            try {
+                tradeskillManager.saveAllPlayers();
+            } catch (Exception e) {
+                this.getLogger().at(Level.WARNING).log("Failed to save tradeskill data on shutdown: " + e.getMessage());
+            }
+        }
+        if (professionManager != null) {
+            try {
+                professionManager.saveAllPlayers();
+            } catch (Exception e) {
+                this.getLogger().at(Level.WARNING).log("Failed to save profession data on shutdown: " + e.getMessage());
+            }
+        }
+        if (allProfessionManager != null) {
+            try {
+                allProfessionManager.saveAllPlayers();
+            } catch (Exception e) {
+                this.getLogger().at(Level.WARNING).log("Failed to save all-profession data on shutdown: " + e.getMessage());
+            }
+        }
 
         if (databaseManager != null) {
             databaseManager.close();
