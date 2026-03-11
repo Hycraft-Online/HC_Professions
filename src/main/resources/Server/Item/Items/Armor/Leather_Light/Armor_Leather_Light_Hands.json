@@ -2,15 +2,19 @@
   "TranslationProperties": {
     "Name": "server.items.Armor_Leather_Light_Hands.name"
   },
-  "Parent": "Armor_Iron_Hands",
   "Quality": "Common",
   "ItemLevel": 15,
+  "PlayerAnimationsId": "Block",
+  "ItemSoundSetId": "ISS_Armor_Leather",
+  "Categories": [
+    "Items.Armors"
+  ],
   "Icon": "Icons/ItemsGenerated/Armor_Leather_Light_Hands.png",
   "IconProperties": {
     "Rotation": [
-      22.5,
-      45,
-      22.5
+      29.815,
+      45.565,
+      25.315
     ],
     "Scale": 0.645,
     "Translation": [
@@ -21,19 +25,18 @@
   "Model": "Items/Armors/Leather_Light/Hands.blockymodel",
   "Texture": "Items/Armors/Leather_Light/Hands_Texture.png",
   "Recipe": {
-    "TimeSeconds": 2,
     "Input": [
       {
         "ItemId": "Ingredient_Leather_Light",
         "Quantity": 2
       },
       {
-        "Quantity": 2,
-        "ItemId": "Ingredient_Fibre"
+        "ResourceTypeId": "Wood_Trunk",
+        "Quantity": 1
       },
       {
         "ItemId": "Ingredient_Bolt_Wool",
-        "Quantity": 1
+        "Quantity": 2
       }
     ],
     "BenchRequirement": [
@@ -45,46 +48,62 @@
         ]
       }
     ],
-    "KnowledgeRequired": true
+    "KnowledgeRequired": false,
+    "TimeSeconds": 5
   },
-  "Armor": {
-    "ArmorSlot": "Hands",
-    "BaseDamageResistance": 0,
-    "StatModifiers": {
-      "Health": [
+  "Interactions": {
+    "Primary": {
+      "Interactions": [
         {
-          "Amount": 3,
-          "CalculationType": "Additive"
+          "Type": "EquipItem"
         }
       ]
     },
-    "DamageResistance": {
-      "Physical": [
+    "Secondary": {
+      "Interactions": [
         {
-          "Amount": 0.02,
-          "CalculationType": "Multiplicative"
+          "Type": "EquipItem"
         }
       ]
     }
   },
+  "Armor": {
+    "ArmorSlot": "Hands",
+    "BaseDamageResistance": 0,
+    "DamageResistance": {
+      "Physical": [
+        {
+          "Amount": 0.0239,
+          "CalculationType": "Multiplicative"
+        }
+      ],
+      "Projectile": [
+        {
+          "Amount": 0.0239,
+          "CalculationType": "Multiplicative"
+        }
+      ]
+    },
+    "StatModifiers": {
+      "Health": [
+        {
+          "Amount": 4,
+          "CalculationType": "Additive"
+        }
+      ]
+    }
+  },
+  "MaxDurability": 76,
+  "DurabilityLossOnHit": 0.5,
   "Tags": {
     "Type": [
       "Armor"
     ],
     "Family": [
+      "Leather_Light"
+    ],
+    "ArmorType": [
       "Leather"
     ]
-  },
-  "MaxDurability": 70,
-  "ItemSoundSetId": "ISS_Armor_Leather",
-  "Utility": {
-    "StatModifiers": {
-      "Stamina": [
-        {
-          "CalculationType": "Multiplicative",
-          "Amount": 0.02
-        }
-      ]
-    }
   }
 }

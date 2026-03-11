@@ -5,34 +5,38 @@
   "Quality": "Rare",
   "ItemLevel": 30,
   "PlayerAnimationsId": "Block",
-  "ItemSoundSetId": "ISS_Armor_Heavy",
+  "ItemSoundSetId": "ISS_Armor_Cloth",
   "Categories": [
     "Items.Armors"
   ],
-  "Icon": "Icons/ItemsGenerated/Armor_Thorium_Legs.png",
+  "Icon": "Icons/ItemsGenerated/Armor_Cloth_Silk_Legs.png",
   "IconProperties": {
     "Rotation": [
       22.5,
       45,
       22.5
     ],
-    "Scale": 0.4,
+    "Scale": 0.37,
     "Translation": [
       0,
-      -21.6
+      -22.8
     ]
   },
-  "Model": "Items/Armors/Thorium/Legs.blockymodel",
-  "Texture": "Items/Armors/Thorium/Legs_Texture.png",
+  "Model": "Items/Armors/Silk/Legs.blockymodel",
+  "Texture": "Items/Armors/Silk/Legs_Texture.png",
   "Recipe": {
     "Input": [
       {
-        "ItemId": "Ingredient_Fabric_Scrap_Shadoweave",
-        "Quantity": 11
+        "ItemId": "Ingredient_Bolt_Silk",
+        "Quantity": 4
       },
       {
-        "ItemId": "Component_Cobalt_Trim_Strip",
-        "Quantity": 5
+        "ResourceTypeId": "Wood_Trunk",
+        "Quantity": 2
+      },
+      {
+        "ItemId": "Ingredient_Bar_Cobalt",
+        "Quantity": 3
       }
     ],
     "BenchRequirement": [

@@ -5,33 +5,37 @@
   "Quality": "Common",
   "ItemLevel": 10,
   "PlayerAnimationsId": "Block",
-  "ItemSoundSetId": "ISS_Armor_Heavy",
+  "ItemSoundSetId": "ISS_Armor_Cloth",
   "Categories": [
     "Items.Armors"
   ],
-  "Icon": "Icons/ItemsGenerated/Armor_Copper_Legs.png",
+  "Icon": "Icons/ItemsGenerated/Armor_Cloth_Linen_Legs.png",
   "IconProperties": {
     "Rotation": [
       22.5,
       45,
       22.5
     ],
-    "Scale": 0.355,
+    "Scale": 0.6,
     "Translation": [
       0.6,
-      -22.2
+      -11.7
     ]
   },
-  "Model": "Items/Armors/Copper/Legs.blockymodel",
-  "Texture": "Items/Armors/Copper/Legs_Texture.png",
+  "Model": "Items/Armors/Linen/Legs.blockymodel",
+  "Texture": "Items/Armors/Linen/Legs_Texture.png",
   "Recipe": {
     "Input": [
       {
-        "ItemId": "Ingredient_Fabric_Scrap_Linen",
-        "Quantity": 6
+        "ItemId": "Ingredient_Bolt_Linen",
+        "Quantity": 4
       },
       {
-        "ItemId": "Component_Crude_Trim_Strip",
+        "ResourceTypeId": "Wood_Trunk",
+        "Quantity": 2
+      },
+      {
+        "ItemId": "Ingredient_Bar_Iron",
         "Quantity": 3
       }
     ],

@@ -359,14 +359,7 @@ public class ProfessionAdminCommand extends AbstractAsyncCommand {
             else if (roll < epicChance + rareChance + uncommonChance) rarity = ItemRarity.UNCOMMON;
             else rarity = ItemRarity.COMMON;
 
-            int affixCount = switch (rarity) {
-                case EPIC -> 3;
-                case RARE -> 2;
-                case UNCOMMON -> 1;
-                default -> 0;
-            };
-
-            ItemStack result = HC_EquipmentAPI.generateItem(itemId, displayName, itemLevel, rarity, affixCount);
+            ItemStack result = HC_EquipmentAPI.generateItem(itemId, displayName, itemLevel, rarity, 0);
             if (result == null) {
                 ctx.sendMessage(Message.raw("Failed to generate tempered item.").color(Color.RED));
                 return;
@@ -378,7 +371,7 @@ public class ProfessionAdminCommand extends AbstractAsyncCommand {
             int mastery = (int) (ratio * 100);
             ctx.sendMessage(Message.raw("Tempered " + displayName + " at fake prof Lv. " + fakeProfLevel
                 + " (" + mastery + "% mastery) -> " + rarity.getDisplayName() + " iLvl " + itemLevel
-                + " (" + affixCount + " affixes)").color(Color.GREEN));
+                + " (" + rarity.getTargetAffixCount() + " affixes)").color(Color.GREEN));
         });
     }
 

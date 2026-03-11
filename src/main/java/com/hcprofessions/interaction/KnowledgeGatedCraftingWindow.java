@@ -26,10 +26,9 @@ import java.util.logging.Level;
  *
  * The vanilla SimpleCraftingWindow has NO server-side enforcement of knowledgeRequired:
  * it sends ALL recipes to the client and allows all crafts without checking.
- * Only DiagramCraftingWindow has server-side enforcement (collectRecipes filter).
  *
- * This window adds two layers of protection:
- * 1. Filters craftableRecipes in windowData before sending to client (onOpen0)
+ * This window:
+ * 1. Keeps all recipes visible in the client (client shows knowledge-locked ones as locked)
  * 2. Validates knowledgeRequired in handleAction before allowing any craft
  *
  * Used by HC_Professions for profession benches where recipe scrolls gate access.
@@ -47,24 +46,16 @@ public class KnowledgeGatedCraftingWindow extends SimpleCraftingWindow {
     protected boolean onOpen0(@Nonnull Ref<EntityStore> ref, @Nonnull Store<EntityStore> store) {
         boolean result = super.onOpen0(ref, store);
 
-        // Log recipe knowledge stats for diagnostics. We do NOT filter recipes out of
-        // windowData — the client natively shows knowledgeRequired recipes as locked
-        // when the player hasn't learned them. Server-side handleAction blocks actual crafts.
+        // Log knowledge stats for diagnostics
         Player player = store.getComponent(ref, Player.getComponentType());
         if (player != null) {
             Set<String> knownRecipes = player.getPlayerConfigData().getKnownRecipes();
             logRecipeKnowledgeStats(knownRecipes);
-        } else {
-            LOGGER.at(Level.WARNING).log("onOpen0 called but Player component is null!");
         }
 
         return result;
     }
 
-    /**
-     * Logs diagnostic stats about recipe knowledge without modifying windowData.
-     * The client handles the visual locked/unlocked state natively via knowledgeRequired.
-     */
     private void logRecipeKnowledgeStats(Set<String> knownRecipes) {
         if (!this.windowData.has("categories")) return;
 
@@ -74,7 +65,6 @@ public class KnowledgeGatedCraftingWindow extends SimpleCraftingWindow {
         int totalRecipes = 0;
         int knowledgeRequiredCount = 0;
         int knownCount = 0;
-        int unknownCount = 0;
 
         for (int i = 0; i < categories.size(); i++) {
             JsonObject category = categories.get(i).getAsJsonObject();
@@ -94,15 +84,13 @@ public class KnowledgeGatedCraftingWindow extends SimpleCraftingWindow {
                     if (knownRecipes.contains(recipeId)
                             || (outputItemId != null && knownRecipes.contains(outputItemId))) {
                         knownCount++;
-                    } else {
-                        unknownCount++;
                     }
                 }
             }
         }
 
-        LOGGER.at(Level.INFO).log("Knowledge stats: %d categories, %d total recipes, %d require knowledge (%d known, %d unknown), player has %d known recipes",
-                categories.size(), totalRecipes, knowledgeRequiredCount, knownCount, unknownCount, knownRecipes.size());
+        LOGGER.at(Level.INFO).log("Knowledge stats: %d total recipes, %d require knowledge (%d known, %d unknown), player knows %d recipes",
+                totalRecipes, knowledgeRequiredCount, knownCount, knowledgeRequiredCount - knownCount, knownRecipes.size());
     }
 
     @Override
@@ -110,8 +98,7 @@ public class KnowledgeGatedCraftingWindow extends SimpleCraftingWindow {
                              @Nonnull Store<EntityStore> store,
                              @Nonnull WindowAction action) {
         // Server-side validation: block crafts for recipes the player hasn't learned
-        if (action instanceof CraftRecipeAction) {
-            CraftRecipeAction craftAction = (CraftRecipeAction) action;
+        if (action instanceof CraftRecipeAction craftAction) {
             String recipeId = craftAction.recipeId;
             CraftingRecipe recipe = CraftingRecipe.getAssetMap().getAsset(recipeId);
 

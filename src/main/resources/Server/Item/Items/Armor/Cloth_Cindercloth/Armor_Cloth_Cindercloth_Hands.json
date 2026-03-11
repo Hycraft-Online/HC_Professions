@@ -5,34 +5,38 @@
   "Quality": "Rare",
   "ItemLevel": 38,
   "PlayerAnimationsId": "Block",
-  "ItemSoundSetId": "ISS_Armor_Heavy",
+  "ItemSoundSetId": "ISS_Armor_Cloth",
   "Categories": [
     "Items.Armors"
   ],
-  "Icon": "Icons/ItemsGenerated/Armor_Cobalt_Hands.png",
+  "Icon": "Icons/ItemsGenerated/Armor_Cloth_Cindercloth_Hands.png",
   "IconProperties": {
     "Rotation": [
       22.5,
       45,
       22.5
     ],
-    "Scale": 0.645,
+    "Scale": 0.72,
     "Translation": [
-      0.7,
-      -2.3
+      2.1,
+      0.3
     ]
   },
-  "Model": "Items/Armors/Cobalt/Hands.blockymodel",
-  "Texture": "Items/Armors/Cobalt/Hands_Texture.png",
+  "Model": "Items/Armors/Cindercloth/Hands.blockymodel",
+  "Texture": "Items/Armors/Cindercloth/Hands_Texture.png",
   "Recipe": {
     "Input": [
       {
-        "ItemId": "Ingredient_Fabric_Scrap_Cindercloth",
-        "Quantity": 9
+        "ItemId": "Ingredient_Bolt_Cindercloth",
+        "Quantity": 2
       },
       {
-        "ItemId": "Component_Master_Trim",
-        "Quantity": 3
+        "ResourceTypeId": "Wood_Trunk",
+        "Quantity": 1
+      },
+      {
+        "ItemId": "Ingredient_Bar_Adamantite",
+        "Quantity": 2
       }
     ],
     "BenchRequirement": [

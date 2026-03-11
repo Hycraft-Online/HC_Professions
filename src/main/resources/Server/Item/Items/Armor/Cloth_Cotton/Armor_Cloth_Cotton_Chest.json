@@ -5,34 +5,38 @@
   "Quality": "Common",
   "ItemLevel": 15,
   "PlayerAnimationsId": "Block",
-  "ItemSoundSetId": "ISS_Armor_Heavy",
+  "ItemSoundSetId": "ISS_Armor_Cloth",
   "Categories": [
     "Items.Armors"
   ],
-  "Icon": "Icons/ItemsGenerated/Armor_Copper_Chest.png",
+  "Icon": "Icons/ItemsGenerated/Armor_Cloth_Cotton_Chest.png",
   "IconProperties": {
     "Rotation": [
       22.5,
       45,
       22.5
     ],
-    "Scale": 0.415,
+    "Scale": 0.34,
     "Translation": [
-      0,
-      -13.2
+      4.2,
+      -18
     ]
   },
-  "Model": "Items/Armors/Copper/Chest.blockymodel",
-  "Texture": "Items/Armors/Copper/Chest_Texture.png",
+  "Model": "Items/Armors/Cotton/Chest.blockymodel",
+  "Texture": "Items/Armors/Cotton/Chest_Texture.png",
   "Recipe": {
     "Input": [
       {
-        "ItemId": "Ingredient_Fabric_Scrap_Linen",
-        "Quantity": 12
+        "ItemId": "Ingredient_Bolt_Cotton",
+        "Quantity": 6
       },
       {
-        "ItemId": "Component_Standard_Sewing_Kit",
-        "Quantity": 5
+        "ResourceTypeId": "Wood_Trunk",
+        "Quantity": 2
+      },
+      {
+        "ItemId": "Ingredient_Bar_Thorium",
+        "Quantity": 2
       }
     ],
     "BenchRequirement": [

@@ -2,15 +2,19 @@
   "TranslationProperties": {
     "Name": "server.items.Armor_Leather_Soft_Hands.name"
   },
-  "Parent": "Armor_Iron_Hands",
   "Quality": "Common",
   "ItemLevel": 10,
+  "PlayerAnimationsId": "Block",
+  "ItemSoundSetId": "ISS_Armor_Leather",
+  "Categories": [
+    "Items.Armors"
+  ],
   "Icon": "Icons/ItemsGenerated/Armor_Leather_Soft_Hands.png",
   "IconProperties": {
     "Rotation": [
-      22.5,
-      45,
-      22.5
+      29.815,
+      45.565,
+      25.315
     ],
     "Scale": 0.645,
     "Translation": [
@@ -21,15 +25,14 @@
   "Model": "Items/Armors/Leather_Soft/Hands.blockymodel",
   "Texture": "Items/Armors/Leather_Soft/Hands_Texture.png",
   "Recipe": {
-    "TimeSeconds": 2,
     "Input": [
       {
         "ItemId": "Ingredient_Leather_Soft",
-        "Quantity": 5
+        "Quantity": 3
       },
       {
         "ItemId": "Ingredient_Fibre",
-        "Quantity": 1
+        "Quantity": 2
       }
     ],
     "BenchRequirement": [
@@ -41,42 +44,62 @@
         ]
       }
     ],
-    "KnowledgeRequired": true
+    "KnowledgeRequired": false,
+    "TimeSeconds": 4
+  },
+  "Interactions": {
+    "Primary": {
+      "Interactions": [
+        {
+          "Type": "EquipItem"
+        }
+      ]
+    },
+    "Secondary": {
+      "Interactions": [
+        {
+          "Type": "EquipItem"
+        }
+      ]
+    }
   },
   "Armor": {
     "ArmorSlot": "Hands",
     "BaseDamageResistance": 0,
-    "StatModifiers": {
-      "Health": [
-        {
-          "Amount": 7,
-          "CalculationType": "Additive"
-        }
-      ]
-    },
     "DamageResistance": {
       "Physical": [
         {
-          "Amount": 0.04,
+          "Amount": 0.0202,
           "CalculationType": "Multiplicative"
         }
       ],
       "Projectile": [
         {
-          "Amount": 0.04,
+          "Amount": 0.0202,
           "CalculationType": "Multiplicative"
+        }
+      ]
+    },
+    "StatModifiers": {
+      "Health": [
+        {
+          "Amount": 3,
+          "CalculationType": "Additive"
         }
       ]
     }
   },
+  "MaxDurability": 68,
+  "DurabilityLossOnHit": 0.5,
   "Tags": {
     "Type": [
       "Armor"
     ],
     "Family": [
+      "Leather_Soft"
+    ],
+    "ArmorType": [
       "Leather"
     ]
-  },
-  "MaxDurability": 120,
-  "ItemSoundSetId": "ISS_Armor_Leather"
+  }
 }

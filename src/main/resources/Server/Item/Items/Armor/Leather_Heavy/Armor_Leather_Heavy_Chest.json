@@ -2,9 +2,13 @@
   "TranslationProperties": {
     "Name": "server.items.Armor_Leather_Heavy_Chest.name"
   },
-  "Parent": "Armor_Iron_Chest",
-  "Quality": "Uncommon",
+  "Quality": "Rare",
   "ItemLevel": 30,
+  "PlayerAnimationsId": "Block",
+  "ItemSoundSetId": "ISS_Armor_Leather",
+  "Categories": [
+    "Items.Armors"
+  ],
   "Icon": "Icons/ItemsGenerated/Armor_Leather_Heavy_Chest.png",
   "IconProperties": {
     "Rotation": [
@@ -21,19 +25,18 @@
   "Model": "Items/Armors/Leather_Heavy/Chest.blockymodel",
   "Texture": "Items/Armors/Leather_Heavy/Chest_Texture.png",
   "Recipe": {
-    "TimeSeconds": 2,
     "Input": [
       {
         "ItemId": "Ingredient_Leather_Heavy",
-        "Quantity": 7
+        "Quantity": 6
       },
       {
-        "Quantity": 4,
-        "ItemId": "Ingredient_Bar_Iron"
+        "ResourceTypeId": "Wood_Trunk",
+        "Quantity": 2
       },
       {
         "ItemId": "Ingredient_Bolt_Wool",
-        "Quantity": 6
+        "Quantity": 2
       }
     ],
     "BenchRequirement": [
@@ -42,55 +45,68 @@
         "Type": "Crafting",
         "Categories": [
           "Armor_Chest"
-        ],
-        "RequiredTierLevel": 0
+        ]
       }
     ],
-    "KnowledgeRequired": true
+    "KnowledgeRequired": false,
+    "TimeSeconds": 10
+  },
+  "Interactions": {
+    "Primary": {
+      "Interactions": [
+        {
+          "Type": "EquipItem"
+        }
+      ]
+    },
+    "Secondary": {
+      "Interactions": [
+        {
+          "Type": "EquipItem"
+        }
+      ]
+    }
   },
   "Armor": {
     "ArmorSlot": "Chest",
     "BaseDamageResistance": 0,
-    "CosmeticsToHide": [
-      "Overtop"
-    ],
-    "StatModifiers": {
-      "Health": [
-        {
-          "Amount": 19,
-          "CalculationType": "Additive"
-        }
-      ]
-    },
     "DamageResistance": {
       "Physical": [
         {
-          "Amount": 0.11,
+          "Amount": 0.0805,
           "CalculationType": "Multiplicative"
         }
       ],
       "Projectile": [
         {
-          "Amount": 0.10,
+          "Amount": 0.0805,
           "CalculationType": "Multiplicative"
         }
-      ],
-      "Ice": [
+      ]
+    },
+    "StatModifiers": {
+      "Health": [
         {
-          "CalculationType": "Multiplicative",
-          "Amount": 0.04
+          "Amount": 15,
+          "CalculationType": "Additive"
         }
       ]
-    }
+    },
+    "CosmeticsToHide": [
+      "Overtop"
+    ]
   },
+  "MaxDurability": 102,
+  "DurabilityLossOnHit": 0.5,
   "Tags": {
     "Type": [
       "Armor"
     ],
     "Family": [
+      "Leather_Heavy"
+    ],
+    "ArmorType": [
       "Leather"
     ]
-  },
-  "MaxDurability": 130,
-  "ItemSoundSetId": "ISS_Armor_Leather"
+  }
 }

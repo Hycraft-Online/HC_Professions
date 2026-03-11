@@ -4,6 +4,7 @@ import com.hcequipment.api.HC_EquipmentAPI;
 import com.hcequipment.generation.BaseItemResolver;
 import com.hcequipment.models.ArmorType;
 import com.hcequipment.models.ItemRarity;
+import com.hcequipment.models.WeaponFamily;
 import com.hcprofessions.HC_ProfessionsPlugin;
 import com.hcprofessions.managers.AllProfessionManager;
 import com.hcprofessions.managers.CraftingGateManager;
@@ -48,10 +49,11 @@ public class TemperingBenchPage extends InteractiveCustomUIPage<TemperingBenchPa
 
     /**
      * Derives temper stone ID from item level.
-     * Every 5 item levels maps to one tier: I (1-4), II (5-9), III (10-14), ... X (45-50).
+     * Every 5 item levels maps to one tier: I (1-5), II (6-10), III (11-15), ... X (46+).
+     * Matches HC_DropLists level ranges.
      */
     private static String getTemperStoneForLevel(int itemLevel) {
-        int tier = Math.clamp(itemLevel / 5, 0, 9);
+        int tier = Math.clamp((itemLevel - 1) / 5, 0, 9);
         return "TemperStone_" + ROMAN_NUMERALS[tier];
     }
 
@@ -71,7 +73,20 @@ public class TemperingBenchPage extends InteractiveCustomUIPage<TemperingBenchPa
      * Leather -> LEATHERWORKER, Cloth -> TAILOR.
      */
     private static Profession getRelevantProfession(String itemId, String equipType) {
-        if ("WEAPON".equals(equipType)) return Profession.WEAPONSMITH;
+        if ("WEAPON".equals(equipType)) {
+            // Check if this is a ranged weapon (bows/crossbows -> Carpenter)
+            WeaponFamily family = BaseItemResolver.getWeaponFamily(itemId);
+            if (family != null && family.getDamageCategory() == WeaponFamily.DamageCategory.RANGED) {
+                return Profession.CARPENTER;
+            }
+            // BaseItemResolver.getWeaponFamily returns null for "Shortbow" (id mismatch),
+            // so also check item ID prefix as fallback for ranged weapons
+            if (itemId != null && (itemId.startsWith("Weapon_Shortbow_")
+                    || itemId.startsWith("Weapon_Crossbow_"))) {
+                return Profession.CARPENTER;
+            }
+            return Profession.WEAPONSMITH;
+        }
         // ARMOR -> check armor_type via HC_EquipmentAPI
         ArmorType armorType = HC_EquipmentAPI.getArmorType(itemId);
         if (armorType == null) return Profession.ARMORSMITH; // fallback to plate
@@ -361,10 +376,10 @@ public class TemperingBenchPage extends InteractiveCustomUIPage<TemperingBenchPa
 
         int itemLevel = rollTemperItemLevel(baseILvl, ratio);
         ItemRarity rarity = rollTemperRarity(ratio);
-        int affixCount = getAffixCountForRarity(rarity);
 
         // Generate tempered item (keeps vanilla item ID, adds RPG metadata)
-        ItemStack result = HC_EquipmentAPI.generateItem(entry.vanillaId, entry.displayName, itemLevel, rarity, affixCount);
+        // Affix count is driven by ItemRarity — no bonus affixes from tempering
+        ItemStack result = HC_EquipmentAPI.generateItem(entry.vanillaId, entry.displayName, itemLevel, rarity, 0);
         if (result == null) {
             showMessage("Failed to temper item!", java.awt.Color.RED);
             return;
@@ -435,15 +450,6 @@ public class TemperingBenchPage extends InteractiveCustomUIPage<TemperingBenchPa
         int effectiveRange = (int) (progress * ITEM_LEVEL_RANGE);
         if (effectiveRange <= 0) return baseItemLevel;
         return baseItemLevel + random.nextInt(effectiveRange + 1);
-    }
-
-    private int getAffixCountForRarity(ItemRarity rarity) {
-        return switch (rarity) {
-            case EPIC -> 3;
-            case RARE -> 2;
-            case UNCOMMON -> 1;
-            default -> 0;
-        };
     }
 
     private boolean hasMaterials(Player player, String itemId, int quantity) {

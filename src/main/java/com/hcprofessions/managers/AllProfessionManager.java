@@ -25,6 +25,7 @@ public class AllProfessionManager {
     private final AllProfessionRepository repository;
     private final ProfessionManager professionManager;
     private final ConcurrentHashMap<UUID, Map<Profession, PlayerAllProfessionData>> cache = new ConcurrentHashMap<>();
+    private final Map<UUID, UUID> accountToChar = new ConcurrentHashMap<>();
 
     /** Non-native profession level cap (set from config) */
     private volatile int nonNativeLevelCap = 10;
@@ -32,6 +33,19 @@ public class AllProfessionManager {
     public AllProfessionManager(AllProfessionRepository repository, ProfessionManager professionManager) {
         this.repository = repository;
         this.professionManager = professionManager;
+    }
+
+    public void registerCharMapping(UUID accountUuid, UUID charUuid) {
+        accountToChar.put(accountUuid, charUuid);
+    }
+
+    public void unregisterCharMapping(UUID accountUuid) {
+        accountToChar.remove(accountUuid);
+    }
+
+    /** Translate account UUID to character UUID for DB operations. */
+    UUID dbKey(UUID uuid) {
+        return accountToChar.getOrDefault(uuid, uuid);
     }
 
     public void setNonNativeLevelCap(int cap) {
@@ -43,7 +57,7 @@ public class AllProfessionManager {
     }
 
     public Map<Profession, PlayerAllProfessionData> getPlayerData(UUID playerUuid) {
-        return cache.computeIfAbsent(playerUuid, repository::loadAll);
+        return cache.computeIfAbsent(playerUuid, uuid -> repository.loadAll(dbKey(uuid)));
     }
 
     public int getLevel(UUID playerUuid, Profession profession) {

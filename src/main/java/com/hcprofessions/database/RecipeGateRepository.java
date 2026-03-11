@@ -198,6 +198,10 @@ public class RecipeGateRepository {
                 insertGate(stmt, "Weapon_Club_Adamantite",      "WEAPONSMITH", 70, 100);
                 insertGate(stmt, "Weapon_Club_Onyxium",        "WEAPONSMITH", 85, 125);
 
+                // Weaponsmith: Whirlwind Weapons (named variants)
+                insertGate(stmt, "Weapon_Battleaxe_Whirlwind",  "WEAPONSMITH", 30, 55);
+                insertGate(stmt, "Weapon_Mace_Whirlwind",       "WEAPONSMITH", 30, 55);
+
                 // Weaponsmith: Daggers
                 insertGate(stmt, "Weapon_Daggers_Copper",       "WEAPONSMITH", 1,  10);
                 insertGate(stmt, "Weapon_Daggers_Iron",         "WEAPONSMITH", 10, 20);
@@ -207,19 +211,19 @@ public class RecipeGateRepository {
                 insertGate(stmt, "Weapon_Daggers_Adamantite",   "WEAPONSMITH", 70, 100);
                 insertGate(stmt, "Weapon_Daggers_Onyxium",     "WEAPONSMITH", 85, 125);
 
-                // Weaponsmith: Shortbows
-                insertGate(stmt, "Weapon_Shortbow_Crude",       "WEAPONSMITH", 1,  5);
-                insertGate(stmt, "Weapon_Shortbow_Copper",      "WEAPONSMITH", 1,  10);
-                insertGate(stmt, "Weapon_Shortbow_Iron",        "WEAPONSMITH", 10, 20);
-                insertGate(stmt, "Weapon_Shortbow_Thorium",     "WEAPONSMITH", 25, 35);
-                insertGate(stmt, "Weapon_Shortbow_Cobalt",      "WEAPONSMITH", 40, 55);
-                insertGate(stmt, "Weapon_Shortbow_Mithril",     "WEAPONSMITH", 55, 75);
-                insertGate(stmt, "Weapon_Shortbow_Adamantite",  "WEAPONSMITH", 70, 100);
-                insertGate(stmt, "Weapon_Shortbow_Onyxium",    "WEAPONSMITH", 85, 125);
+                // Carpenter: Shortbows (ranged weapons crafted from wood)
+                insertGate(stmt, "Weapon_Shortbow_Crude",       "CARPENTER", 1,  5);
+                insertGate(stmt, "Weapon_Shortbow_Copper",      "CARPENTER", 1,  10);
+                insertGate(stmt, "Weapon_Shortbow_Iron",        "CARPENTER", 10, 20);
+                insertGate(stmt, "Weapon_Shortbow_Thorium",     "CARPENTER", 25, 35);
+                insertGate(stmt, "Weapon_Shortbow_Cobalt",      "CARPENTER", 40, 55);
+                insertGate(stmt, "Weapon_Shortbow_Mithril",     "CARPENTER", 55, 75);
+                insertGate(stmt, "Weapon_Shortbow_Adamantite",  "CARPENTER", 70, 100);
+                insertGate(stmt, "Weapon_Shortbow_Onyxium",    "CARPENTER", 85, 125);
 
-                // Weaponsmith: Crossbow & Arrow
-                insertGate(stmt, "Weapon_Crossbow_Iron",        "WEAPONSMITH", 10, 20);
-                insertGate(stmt, "Weapon_Arrow_Crude",           "WEAPONSMITH", 1,  5);
+                // Carpenter: Crossbow & Arrow (ranged weapons crafted from wood)
+                insertGate(stmt, "Weapon_Crossbow_Iron",        "CARPENTER", 10, 20);
+                insertGate(stmt, "Weapon_Arrow_Crude",           "CARPENTER", 1,  5);
 
                 // Armorsmith: Copper
                 insertGate(stmt, "Armor_Copper_Head",           "ARMORSMITH", 1,  10);

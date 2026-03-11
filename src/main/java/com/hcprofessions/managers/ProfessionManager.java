@@ -22,6 +22,7 @@ import com.hcprofessions.config.GlobalXpMultiplier;
 import javax.annotation.Nullable;
 import java.awt.Color;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.logging.Level;
@@ -32,13 +33,27 @@ public class ProfessionManager {
 
     private final ProfessionRepository repository;
     private final ConcurrentHashMap<UUID, PlayerProfessionData> cache = new ConcurrentHashMap<>();
+    private final Map<UUID, UUID> accountToChar = new ConcurrentHashMap<>();
 
     public ProfessionManager(ProfessionRepository repository) {
         this.repository = repository;
     }
 
+    public void registerCharMapping(UUID accountUuid, UUID charUuid) {
+        accountToChar.put(accountUuid, charUuid);
+    }
+
+    public void unregisterCharMapping(UUID accountUuid) {
+        accountToChar.remove(accountUuid);
+    }
+
+    /** Translate account UUID to character UUID for DB operations. */
+    UUID dbKey(UUID uuid) {
+        return accountToChar.getOrDefault(uuid, uuid);
+    }
+
     public PlayerProfessionData getPlayerData(UUID playerUuid) {
-        return cache.computeIfAbsent(playerUuid, repository::loadOrCreate);
+        return cache.computeIfAbsent(playerUuid, uuid -> repository.loadOrCreate(dbKey(uuid)));
     }
 
     @Nullable
@@ -186,6 +201,7 @@ public class ProfessionManager {
         PlayerProfessionData data = getPlayerData(playerUuid);
         data.setLevel(Math.min(level, XPCurve.getMaxLevel()));
         data.setCurrentXp(0);
+        // save() uses data.getPlayerUuid() which is the DB key from initial load
         repository.save(data);
     }
 

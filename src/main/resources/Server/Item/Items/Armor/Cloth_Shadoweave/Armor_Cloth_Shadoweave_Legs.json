@@ -5,34 +5,38 @@
   "Quality": "Epic",
   "ItemLevel": 46,
   "PlayerAnimationsId": "Block",
-  "ItemSoundSetId": "ISS_Armor_Heavy",
+  "ItemSoundSetId": "ISS_Armor_Cloth",
   "Categories": [
     "Items.Armors"
   ],
-  "Icon": "Icons/ItemsGenerated/Armor_Mithril_Legs.png",
+  "Icon": "Icons/ItemsGenerated/Armor_Cloth_Cindercloth_Legs.png",
   "IconProperties": {
     "Rotation": [
       22.5,
       45,
       22.5
     ],
-    "Scale": 0.415,
+    "Scale": 0.37,
     "Translation": [
-      4.2,
-      -9.6
+      0,
+      -22.8
     ]
   },
-  "Model": "Items/Armors/Mithril/Legs.blockymodel",
-  "Texture": "Items/Armors/Mithril/Legs_Texture.png",
+  "Model": "Items/Armors/Cindercloth/Legs.blockymodel",
+  "Texture": "Items/Armors/Cindercloth/Legs_Texture.png",
   "Recipe": {
     "Input": [
       {
-        "ItemId": "Ingredient_Fabric_Scrap_Shadoweave",
-        "Quantity": 16
+        "ItemId": "Ingredient_Bolt_Shadoweave",
+        "Quantity": 4
       },
       {
-        "ItemId": "Component_Void_Trim_Strip",
-        "Quantity": 6
+        "ResourceTypeId": "Wood_Trunk",
+        "Quantity": 2
+      },
+      {
+        "ItemId": "Ingredient_Bar_Mithril",
+        "Quantity": 3
       }
     ],
     "BenchRequirement": [

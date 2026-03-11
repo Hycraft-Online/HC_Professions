@@ -5,34 +5,38 @@
   "Quality": "Rare",
   "ItemLevel": 38,
   "PlayerAnimationsId": "Block",
-  "ItemSoundSetId": "ISS_Armor_Heavy",
+  "ItemSoundSetId": "ISS_Armor_Leather",
   "Categories": [
     "Items.Armors"
   ],
-  "Icon": "Icons/ItemsGenerated/Armor_Cobalt_Head.png",
+  "Icon": "Icons/ItemsGenerated/Armor_Leather_Heavy_Head.png",
   "IconProperties": {
     "Rotation": [
       22.5,
       45,
       22.5
     ],
-    "Scale": 0.45,
+    "Scale": 0.47,
     "Translation": [
-      0,
-      -8.1
+      -4.2,
+      -15.6
     ]
   },
-  "Model": "Items/Armors/Cobalt/Head.blockymodel",
-  "Texture": "Items/Armors/Cobalt/Head_Texture.png",
+  "Model": "Items/Armors/Leather_Heavy/Head.blockymodel",
+  "Texture": "Items/Armors/Leather_Heavy/Head_Texture.png",
   "Recipe": {
     "Input": [
       {
-        "ItemId": "Ingredient_Leather_Heavy",
-        "Quantity": 11
+        "ItemId": "Ingredient_Leather_Scaled",
+        "Quantity": 3
       },
       {
-        "ItemId": "Component_Master_Tooled_Strip",
-        "Quantity": 4
+        "ResourceTypeId": "Wood_Trunk",
+        "Quantity": 2
+      },
+      {
+        "ItemId": "Ingredient_Bolt_Wool",
+        "Quantity": 2
       }
     ],
     "BenchRequirement": [

@@ -5,34 +5,38 @@
   "Quality": "Epic",
   "ItemLevel": 46,
   "PlayerAnimationsId": "Block",
-  "ItemSoundSetId": "ISS_Armor_Heavy",
+  "ItemSoundSetId": "ISS_Armor_Cloth",
   "Categories": [
     "Items.Armors"
   ],
-  "Icon": "Icons/ItemsGenerated/Armor_Mithril_Chest.png",
+  "Icon": "Icons/ItemsGenerated/Armor_Cloth_Cindercloth_Chest.png",
   "IconProperties": {
     "Rotation": [
       22.5,
       45,
       22.5
     ],
-    "Scale": 0.3,
+    "Scale": 0.4,
     "Translation": [
-      -3.6,
-      -59.4
+      0,
+      -17.4
     ]
   },
-  "Model": "Items/Armors/Mithril/Chest.blockymodel",
-  "Texture": "Items/Armors/Mithril/Chest_Texture.png",
+  "Model": "Items/Armors/Cindercloth/Chest.blockymodel",
+  "Texture": "Items/Armors/Cindercloth/Chest_Texture.png",
   "Recipe": {
     "Input": [
       {
-        "ItemId": "Ingredient_Fabric_Scrap_Shadoweave",
-        "Quantity": 20
+        "ItemId": "Ingredient_Bolt_Shadoweave",
+        "Quantity": 6
       },
       {
-        "ItemId": "Component_Void_Trim_Strip",
-        "Quantity": 8
+        "ResourceTypeId": "Wood_Trunk",
+        "Quantity": 2
+      },
+      {
+        "ItemId": "Ingredient_Bar_Mithril",
+        "Quantity": 2
       }
     ],
     "BenchRequirement": [

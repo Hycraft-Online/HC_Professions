@@ -2,9 +2,13 @@
   "TranslationProperties": {
     "Name": "server.items.Armor_Leather_Soft_Legs.name"
   },
-  "Parent": "Armor_Iron_Legs",
   "Quality": "Common",
   "ItemLevel": 10,
+  "PlayerAnimationsId": "Block",
+  "ItemSoundSetId": "ISS_Armor_Leather",
+  "Categories": [
+    "Items.Armors"
+  ],
   "Icon": "Icons/ItemsGenerated/Armor_Leather_Soft_Legs.png",
   "IconProperties": {
     "Rotation": [
@@ -21,15 +25,14 @@
   "Model": "Items/Armors/Leather_Soft/Legs.blockymodel",
   "Texture": "Items/Armors/Leather_Soft/Legs_Texture.png",
   "Recipe": {
-    "TimeSeconds": 2,
     "Input": [
       {
         "ItemId": "Ingredient_Leather_Soft",
-        "Quantity": 9
+        "Quantity": 4
       },
       {
         "ItemId": "Ingredient_Fibre",
-        "Quantity": 3
+        "Quantity": 4
       }
     ],
     "BenchRequirement": [
@@ -41,46 +44,66 @@
         ]
       }
     ],
-    "KnowledgeRequired": true
+    "KnowledgeRequired": false,
+    "TimeSeconds": 4
+  },
+  "Interactions": {
+    "Primary": {
+      "Interactions": [
+        {
+          "Type": "EquipItem"
+        }
+      ]
+    },
+    "Secondary": {
+      "Interactions": [
+        {
+          "Type": "EquipItem"
+        }
+      ]
+    }
   },
   "Armor": {
     "ArmorSlot": "Legs",
     "BaseDamageResistance": 0,
-    "CosmeticsToHide": [
-      "Shoes",
-      "Pants"
-    ],
-    "StatModifiers": {
-      "Health": [
-        {
-          "Amount": 13,
-          "CalculationType": "Additive"
-        }
-      ]
-    },
     "DamageResistance": {
       "Physical": [
         {
-          "Amount": 0.07,
+          "Amount": 0.0354,
           "CalculationType": "Multiplicative"
         }
       ],
       "Projectile": [
         {
-          "Amount": 0.07,
+          "Amount": 0.0354,
           "CalculationType": "Multiplicative"
         }
       ]
-    }
+    },
+    "StatModifiers": {
+      "Health": [
+        {
+          "Amount": 5,
+          "CalculationType": "Additive"
+        }
+      ]
+    },
+    "CosmeticsToHide": [
+      "Pants",
+      "Shoes"
+    ]
   },
+  "MaxDurability": 68,
+  "DurabilityLossOnHit": 0.5,
   "Tags": {
     "Type": [
       "Armor"
     ],
     "Family": [
+      "Leather_Soft"
+    ],
+    "ArmorType": [
       "Leather"
     ]
-  },
-  "MaxDurability": 120,
-  "ItemSoundSetId": "ISS_Armor_Leather"
+  }
 }

@@ -2,9 +2,13 @@
   "TranslationProperties": {
     "Name": "server.items.Armor_Leather_Medium_Head.name"
   },
-  "Parent": "Armor_Iron_Head",
-  "Quality": "Common",
-  "ItemLevel": 25,
+  "Quality": "Uncommon",
+  "ItemLevel": 20,
+  "PlayerAnimationsId": "Block",
+  "ItemSoundSetId": "ISS_Armor_Leather",
+  "Categories": [
+    "Items.Armors"
+  ],
   "Icon": "Icons/ItemsGenerated/Armor_Leather_Medium_Head.png",
   "IconProperties": {
     "Rotation": [
@@ -21,15 +25,14 @@
   "Model": "Items/Armors/Leather_Medium/Head.blockymodel",
   "Texture": "Items/Armors/Leather_Medium/Head_Texture.png",
   "Recipe": {
-    "TimeSeconds": 2,
     "Input": [
       {
         "ItemId": "Ingredient_Leather_Medium",
         "Quantity": 3
       },
       {
-        "Quantity": 1,
-        "ItemId": "Plant_Petals_Green"
+        "ResourceTypeId": "Wood_Trunk",
+        "Quantity": 2
       },
       {
         "ItemId": "Ingredient_Bolt_Wool",
@@ -45,48 +48,68 @@
         ]
       }
     ],
-    "KnowledgeRequired": true
+    "KnowledgeRequired": false,
+    "TimeSeconds": 6
+  },
+  "Interactions": {
+    "Primary": {
+      "Interactions": [
+        {
+          "Type": "EquipItem"
+        }
+      ]
+    },
+    "Secondary": {
+      "Interactions": [
+        {
+          "Type": "EquipItem"
+        }
+      ]
+    }
   },
   "Armor": {
     "ArmorSlot": "Head",
     "BaseDamageResistance": 0,
-    "CosmeticsToHide": [
-      "EarAccessory",
-      "Ear",
-      "Haircut",
-      "HeadAccessory"
-    ],
-    "StatModifiers": {
-      "Health": [
-        {
-          "Amount": 8,
-          "CalculationType": "Additive"
-        }
-      ]
-    },
     "DamageResistance": {
       "Physical": [
         {
-          "Amount": 0.05,
+          "Amount": 0.035,
           "CalculationType": "Multiplicative"
         }
       ],
       "Projectile": [
         {
-          "Amount": 0.03,
+          "Amount": 0.035,
           "CalculationType": "Multiplicative"
         }
       ]
-    }
+    },
+    "StatModifiers": {
+      "Health": [
+        {
+          "Amount": 6,
+          "CalculationType": "Additive"
+        }
+      ]
+    },
+    "CosmeticsToHide": [
+      "EarAccessory",
+      "Ear",
+      "Haircut",
+      "HeadAccessory"
+    ]
   },
+  "MaxDurability": 85,
+  "DurabilityLossOnHit": 0.5,
   "Tags": {
     "Type": [
       "Armor"
     ],
     "Family": [
+      "Leather_Medium"
+    ],
+    "ArmorType": [
       "Leather"
     ]
-  },
-  "MaxDurability": 100,
-  "ItemSoundSetId": "ISS_Armor_Leather"
+  }
 }

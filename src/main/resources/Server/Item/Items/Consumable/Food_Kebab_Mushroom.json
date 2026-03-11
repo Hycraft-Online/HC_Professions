@@ -3,26 +3,57 @@
     "Name": "server.items.Food_Kebab_Mushroom.name",
     "Description": "server.items.Food_Kebab_Mushroom.description"
   },
-  "Categories": [
-    "Items.Ingredients"
-  ],
-  "Quality": "Uncommon",
-  "Tags": {
-    "Type": [
-      "Consumable"
-    ]
-  },
-  "MaxStack": 10,
-  "DropOnDeath": true,
-  "Consumable": true,
+  "Parent": "Template_Food",
   "Interactions": {
     "Secondary": "Root_Secondary_Consume_Food_T2"
   },
-  "Model": "Items/Consumables/Food/Food_Bag.blockymodel",
-  "Texture": "Items/Consumables/Food/Food_Bag_Texture.png",
+  "Quality": "Uncommon",
+  "Icon": "Icons/ItemsGenerated/Food_Skewer_Mushroom.png",
+  "PlayerAnimationsId": {
+    "Parent": "Item",
+    "Animations": {
+      "Consume": {
+        "FirstPerson": "Characters/Animations/Items/Main_Handed/Item/Attacks/Eat_Side/Eat_Side_FPS.blockyanim",
+        "ThirdPerson": "Characters/Animations/Items/Main_Handed/Item/Attacks/Eat_Side/Eat_Side.blockyanim",
+        "Speed": 1,
+        "Looping": true
+      }
+    }
+  },
+  "BlockType": {
+    "Material": "Empty",
+    "DrawType": "Model",
+    "CustomModel": "Items/Consumables/Food/Mushroom_Skewer.blockymodel",
+    "CustomModelTexture": [
+      {
+        "Texture": "Items/Consumables/Food/Mushroom_Skewer_Texture.png",
+        "Weight": 1
+      }
+    ],
+    "ParticleColor": "#f2de88"
+  },
   "InteractionVars": {
+    "Consume_Charge": {
+      "Interactions": [
+        {
+          "Parent": "Consume_Charge_Food_T1_Inner",
+          "Effects": {
+            "Particles": [
+              {
+                "SystemId": "Food_Eat",
+                "Color": "#BDAB76",
+                "TargetNodeName": "Mouth",
+                "TargetEntityPart": "Entity"
+              }
+            ]
+          }
+        }
+      ]
+    },
     "Effect": {
       "Interactions": [
+        "HealthRegen_TierCheck_T2",
+        "FruitVeggie_TierCheck_T2",
         {
           "Type": "ConsumableBuff",
           "BuffId": "mushroom_skewer"
@@ -37,5 +68,33 @@
       ]
     }
   },
-  "Icon": "Icons/ItemsGenerated/Food_Skewer_Mushroom.png"
+  "Recipe": {
+    "TimeSeconds": 1,
+    "Input": [
+      {
+        "ItemId": "Ingredient_Stick"
+      },
+      {
+        "ResourceTypeId": "Mushrooms",
+        "Quantity": 3
+      }
+    ],
+    "Output": [
+      {
+        "ItemId": "Food_Kebab_Mushroom"
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Type": "Crafting",
+        "Id": "Cookingbench",
+        "Categories": [
+          "Prepared"
+        ]
+      }
+    ]
+  },
+  "ItemLevel": 1,
+  "MaxStack": 25,
+  "DropOnDeath": true
 }

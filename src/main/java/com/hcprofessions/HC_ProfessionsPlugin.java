@@ -94,6 +94,25 @@ public class HC_ProfessionsPlugin extends JavaPlugin {
     // Periodic auto-save task
     private ScheduledFuture<?> autoSaveTask;
 
+    /** Check if player is mid-character-switch (HC_MultiChar). Reflection-based to avoid hard dependency. */
+    private static boolean isCharacterSwitching(UUID accountUuid) {
+        try {
+            Class<?> api = Class.forName("com.hcmultichar.api.HC_MultiCharAPI");
+            return (boolean) api.getMethod("isSwitching", UUID.class).invoke(null, accountUuid);
+        } catch (Exception e) { return false; }
+    }
+
+    /** Resolve the active character UUID for multi-char support. Falls back to account UUID. */
+    static UUID resolveCharacterUuid(UUID accountUuid) {
+        try {
+            Class<?> apiClass = Class.forName("com.hcmultichar.api.HC_MultiCharAPI");
+            var method = apiClass.getMethod("getActiveCharacterId", UUID.class);
+            UUID result = (UUID) method.invoke(null, accountUuid);
+            if (result != null) return result;
+        } catch (Exception ignored) {}
+        return accountUuid;
+    }
+
     public HC_ProfessionsPlugin(@NonNullDecl JavaPluginInit init) {
         super(init);
         instance = this;
@@ -363,6 +382,12 @@ public class HC_ProfessionsPlugin extends JavaPlugin {
             PlayerRef playerRef = event.getPlayerRef();
             UUID playerUuid = playerRef.getUuid();
 
+            // Resolve character UUID for multi-char support and register mappings
+            UUID charUuid = resolveCharacterUuid(playerUuid);
+            tradeskillManager.registerCharMapping(playerUuid, charUuid);
+            professionManager.registerCharMapping(playerUuid, charUuid);
+            allProfessionManager.registerCharMapping(playerUuid, charUuid);
+
             // Pre-cache player data
             tradeskillManager.getPlayerData(playerUuid);
             professionManager.getPlayerData(playerUuid);
@@ -390,6 +415,18 @@ public class HC_ProfessionsPlugin extends JavaPlugin {
             PlayerRef playerRef = event.getPlayerRef();
             UUID uuid = playerRef.getUuid();
 
+            // Skip cleanup during character switch — data reloads on reconnect
+            if (isCharacterSwitching(uuid)) {
+                tradeskillManager.invalidateCache(uuid);
+                professionManager.invalidateCache(uuid);
+                allProfessionManager.invalidateCache(uuid);
+                tradeskillManager.unregisterCharMapping(uuid);
+                professionManager.unregisterCharMapping(uuid);
+                allProfessionManager.unregisterCharMapping(uuid);
+                actionXpService.clearPlayerNotifications(uuid);
+                return;
+            }
+
             // Always save dirty data immediately (safe even during teleport — just persists current state)
             tradeskillManager.savePlayer(uuid);
             professionManager.savePlayer(uuid);
@@ -403,6 +440,9 @@ public class HC_ProfessionsPlugin extends JavaPlugin {
                     tradeskillManager.invalidateCache(uuid);
                     professionManager.invalidateCache(uuid);
                     allProfessionManager.invalidateCache(uuid);
+                    tradeskillManager.unregisterCharMapping(uuid);
+                    professionManager.unregisterCharMapping(uuid);
+                    allProfessionManager.unregisterCharMapping(uuid);
                     actionXpService.clearPlayerNotifications(uuid);
                 }
             }, 2, TimeUnit.SECONDS);

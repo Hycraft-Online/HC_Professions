@@ -3,26 +3,57 @@
     "Name": "server.items.Food_Kebab_Vegetable.name",
     "Description": "server.items.Food_Kebab_Vegetable.description"
   },
-  "Categories": [
-    "Items.Ingredients"
-  ],
-  "Quality": "Uncommon",
-  "Tags": {
-    "Type": [
-      "Consumable"
-    ]
-  },
-  "MaxStack": 10,
-  "DropOnDeath": true,
-  "Consumable": true,
+  "Parent": "Template_Food",
   "Interactions": {
     "Secondary": "Root_Secondary_Consume_Food_T2"
   },
-  "Model": "Items/Consumables/Food/Food_Bag.blockymodel",
-  "Texture": "Items/Consumables/Food/Food_Bag_Texture.png",
+  "Quality": "Uncommon",
+  "Icon": "Icons/ItemsGenerated/Food_Skewer_Vegetable.png",
+  "PlayerAnimationsId": {
+    "Parent": "Item",
+    "Animations": {
+      "Consume": {
+        "FirstPerson": "Characters/Animations/Items/Main_Handed/Item/Attacks/Eat_Side/Eat_Side_FPS.blockyanim",
+        "ThirdPerson": "Characters/Animations/Items/Main_Handed/Item/Attacks/Eat_Side/Eat_Side.blockyanim",
+        "Speed": 1,
+        "Looping": true
+      }
+    }
+  },
+  "BlockType": {
+    "Material": "Empty",
+    "DrawType": "Model",
+    "CustomModel": "Items/Consumables/Food/Vegetable_Skewer.blockymodel",
+    "CustomModelTexture": [
+      {
+        "Texture": "Items/Consumables/Food/Vegetable_Skewer_Vegetable.png",
+        "Weight": 1
+      }
+    ],
+    "ParticleColor": "#f2de88"
+  },
   "InteractionVars": {
+    "Consume_Charge": {
+      "Interactions": [
+        {
+          "Parent": "Consume_Charge_Food_T1_Inner",
+          "Effects": {
+            "Particles": [
+              {
+                "SystemId": "Food_Eat",
+                "Color": "#DDD994",
+                "TargetNodeName": "Mouth",
+                "TargetEntityPart": "Entity"
+              }
+            ]
+          }
+        }
+      ]
+    },
     "Effect": {
       "Interactions": [
+        "HealthRegen_TierCheck_T2",
+        "FruitVeggie_TierCheck_T2",
         {
           "Type": "ConsumableBuff",
           "BuffId": "vegetable_skewer"
@@ -37,5 +68,33 @@
       ]
     }
   },
-  "Icon": "Icons/ItemsGenerated/Food_Skewer_Vegetable.png"
+  "Recipe": {
+    "TimeSeconds": 1,
+    "Input": [
+      {
+        "ItemId": "Ingredient_Stick"
+      },
+      {
+        "ResourceTypeId": "Vegetables",
+        "Quantity": 4
+      }
+    ],
+    "Output": [
+      {
+        "ItemId": "Food_Kebab_Vegetable"
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Type": "Crafting",
+        "Id": "Cookingbench",
+        "Categories": [
+          "Prepared"
+        ]
+      }
+    ]
+  },
+  "ItemLevel": 4,
+  "MaxStack": 25,
+  "DropOnDeath": true
 }

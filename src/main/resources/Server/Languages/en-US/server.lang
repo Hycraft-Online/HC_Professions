@@ -2500,80 +2500,96 @@ items.Consumable_Celestial_Power_Scroll.name=Celestial Power Scroll
 items.Consumable_Celestial_Power_Scroll.description=<color is="#8E44AD">Enchanter Consumable</color>\n<color is="#ffd100">A divine transcendent essence celestial power scroll for battlefield use.</color>\n<color is="#888888">Crafted by: Enchanter Lv. 95+</color>
 
 # Plate Armor
-items.Armor_Copper_Head.description=<color is="#8B6914">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 10 | Temper Range: 10-20</color>\n<color is="#888888">Requires: Temper Stone II</color>
-items.Armor_Copper_Chest.description=<color is="#8B6914">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 10 | Temper Range: 10-20</color>\n<color is="#888888">Requires: Temper Stone II</color>
-items.Armor_Copper_Hands.description=<color is="#8B6914">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 10 | Temper Range: 10-20</color>\n<color is="#888888">Requires: Temper Stone II</color>
-items.Armor_Copper_Legs.description=<color is="#8B6914">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 10 | Temper Range: 10-20</color>\n<color is="#888888">Requires: Temper Stone II</color>
-items.Armor_Diving_Crude_Head.description=<color is="#8B6914">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 25 | Temper Range: 25-35</color>\n<color is="#888888">Requires: Temper Stone V</color>
-items.Armor_Diving_Crude_Chest.description=<color is="#8B6914">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 25 | Temper Range: 25-35</color>\n<color is="#888888">Requires: Temper Stone V</color>
-items.Armor_Diving_Crude_Hands.description=<color is="#8B6914">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 25 | Temper Range: 25-35</color>\n<color is="#888888">Requires: Temper Stone V</color>
-items.Armor_Diving_Crude_Legs.description=<color is="#8B6914">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 25 | Temper Range: 25-35</color>\n<color is="#888888">Requires: Temper Stone V</color>
-items.Armor_Iron_Head.description=<color is="#8B6914">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 20 | Temper Range: 20-30</color>\n<color is="#888888">Requires: Temper Stone IV</color>
-items.Armor_Iron_Chest.description=<color is="#8B6914">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 20 | Temper Range: 20-30</color>\n<color is="#888888">Requires: Temper Stone IV</color>
-items.Armor_Iron_Hands.description=<color is="#8B6914">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 20 | Temper Range: 20-30</color>\n<color is="#888888">Requires: Temper Stone IV</color>
-items.Armor_Iron_Legs.description=<color is="#8B6914">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 20 | Temper Range: 20-30</color>\n<color is="#888888">Requires: Temper Stone IV</color>
-items.Armor_Thorium_Head.description=<color is="#8B6914">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 30 | Temper Range: 30-40</color>\n<color is="#888888">Requires: Temper Stone VI</color>
-items.Armor_Thorium_Chest.description=<color is="#8B6914">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 30 | Temper Range: 30-40</color>\n<color is="#888888">Requires: Temper Stone VI</color>
-items.Armor_Thorium_Hands.description=<color is="#8B6914">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 30 | Temper Range: 30-40</color>\n<color is="#888888">Requires: Temper Stone VI</color>
-items.Armor_Thorium_Legs.description=<color is="#8B6914">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 30 | Temper Range: 30-40</color>\n<color is="#888888">Requires: Temper Stone VI</color>
-items.Armor_Cobalt_Head.description=<color is="#8B6914">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 35 | Temper Range: 35-45</color>\n<color is="#888888">Requires: Temper Stone VII</color>
-items.Armor_Cobalt_Chest.description=<color is="#8B6914">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 35 | Temper Range: 35-45</color>\n<color is="#888888">Requires: Temper Stone VII</color>
-items.Armor_Cobalt_Hands.description=<color is="#8B6914">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 35 | Temper Range: 35-45</color>\n<color is="#888888">Requires: Temper Stone VII</color>
-items.Armor_Cobalt_Legs.description=<color is="#8B6914">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 35 | Temper Range: 35-45</color>\n<color is="#888888">Requires: Temper Stone VII</color>
-items.Armor_Mithril_Head.description=<color is="#8B6914">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 40 | Temper Range: 40-50</color>\n<color is="#888888">Requires: Temper Stone VIII</color>
-items.Armor_Mithril_Chest.description=<color is="#8B6914">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 40 | Temper Range: 40-50</color>\n<color is="#888888">Requires: Temper Stone VIII</color>
-items.Armor_Mithril_Hands.description=<color is="#8B6914">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 40 | Temper Range: 40-50</color>\n<color is="#888888">Requires: Temper Stone VIII</color>
-items.Armor_Mithril_Legs.description=<color is="#8B6914">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 40 | Temper Range: 40-50</color>\n<color is="#888888">Requires: Temper Stone VIII</color>
-items.Armor_Adamantite_Head.description=<color is="#8B6914">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 40 | Temper Range: 40-50</color>\n<color is="#888888">Requires: Temper Stone VIII</color>
-items.Armor_Adamantite_Chest.description=<color is="#8B6914">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 40 | Temper Range: 40-50</color>\n<color is="#888888">Requires: Temper Stone VIII</color>
-items.Armor_Adamantite_Hands.description=<color is="#8B6914">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 40 | Temper Range: 40-50</color>\n<color is="#888888">Requires: Temper Stone VIII</color>
-items.Armor_Adamantite_Legs.description=<color is="#8B6914">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 40 | Temper Range: 40-50</color>\n<color is="#888888">Requires: Temper Stone VIII</color>
-items.Armor_Onyxium_Head.description=<color is="#8B6914">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 65 | Temper Range: 65-75</color>\n<color is="#888888">Requires: Temper Stone X</color>
-items.Armor_Onyxium_Chest.description=<color is="#8B6914">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 65 | Temper Range: 65-75</color>\n<color is="#888888">Requires: Temper Stone X</color>
-items.Armor_Onyxium_Hands.description=<color is="#8B6914">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 65 | Temper Range: 65-75</color>\n<color is="#888888">Requires: Temper Stone X</color>
-items.Armor_Onyxium_Legs.description=<color is="#8B6914">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 65 | Temper Range: 65-75</color>\n<color is="#888888">Requires: Temper Stone X</color>
+items.Armor_Copper_Head.description=<color is="#8B6914">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 10 | Temper Range: 10-20</color>\n<color is="#888888">Requires: Temper Stone III</color>
+items.Armor_Copper_Chest.description=<color is="#8B6914">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 10 | Temper Range: 10-20</color>\n<color is="#888888">Requires: Temper Stone III</color>
+items.Armor_Copper_Hands.description=<color is="#8B6914">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 10 | Temper Range: 10-20</color>\n<color is="#888888">Requires: Temper Stone III</color>
+items.Armor_Copper_Legs.description=<color is="#8B6914">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 10 | Temper Range: 10-20</color>\n<color is="#888888">Requires: Temper Stone III</color>
+items.Armor_Diving_Crude_Head.description=<color is="#8B6914">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 25 | Temper Range: 25-35</color>\n<color is="#888888">Requires: Temper Stone VI</color>
+items.Armor_Diving_Crude_Chest.description=<color is="#8B6914">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 25 | Temper Range: 25-35</color>\n<color is="#888888">Requires: Temper Stone VI</color>
+items.Armor_Diving_Crude_Hands.description=<color is="#8B6914">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 30 | Temper Range: 30-40</color>\n<color is="#888888">Requires: Temper Stone VII</color>
+items.Armor_Diving_Crude_Legs.description=<color is="#8B6914">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 30 | Temper Range: 30-40</color>\n<color is="#888888">Requires: Temper Stone VII</color>
+items.Armor_Iron_Head.description=<color is="#8B6914">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 20 | Temper Range: 20-30</color>\n<color is="#888888">Requires: Temper Stone V</color>
+items.Armor_Iron_Chest.description=<color is="#8B6914">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 20 | Temper Range: 20-30</color>\n<color is="#888888">Requires: Temper Stone V</color>
+items.Armor_Iron_Hands.description=<color is="#8B6914">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 20 | Temper Range: 20-30</color>\n<color is="#888888">Requires: Temper Stone V</color>
+items.Armor_Iron_Legs.description=<color is="#8B6914">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 20 | Temper Range: 20-30</color>\n<color is="#888888">Requires: Temper Stone V</color>
+items.Armor_Thorium_Head.description=<color is="#8B6914">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 30 | Temper Range: 30-40</color>\n<color is="#888888">Requires: Temper Stone VII</color>
+items.Armor_Thorium_Chest.description=<color is="#8B6914">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 30 | Temper Range: 30-40</color>\n<color is="#888888">Requires: Temper Stone VII</color>
+items.Armor_Thorium_Hands.description=<color is="#8B6914">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 30 | Temper Range: 30-40</color>\n<color is="#888888">Requires: Temper Stone VII</color>
+items.Armor_Thorium_Legs.description=<color is="#8B6914">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 30 | Temper Range: 30-40</color>\n<color is="#888888">Requires: Temper Stone VII</color>
+items.Armor_Cobalt_Head.description=<color is="#8B6914">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 35 | Temper Range: 35-45</color>\n<color is="#888888">Requires: Temper Stone VIII</color>
+items.Armor_Cobalt_Chest.description=<color is="#8B6914">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 35 | Temper Range: 35-45</color>\n<color is="#888888">Requires: Temper Stone VIII</color>
+items.Armor_Cobalt_Hands.description=<color is="#8B6914">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 35 | Temper Range: 35-45</color>\n<color is="#888888">Requires: Temper Stone VIII</color>
+items.Armor_Cobalt_Legs.description=<color is="#8B6914">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 35 | Temper Range: 35-45</color>\n<color is="#888888">Requires: Temper Stone VIII</color>
+items.Armor_Adamantite_Head.description=<color is="#8B6914">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 40 | Temper Range: 40-50</color>\n<color is="#888888">Requires: Temper Stone IX</color>
+items.Armor_Adamantite_Chest.description=<color is="#8B6914">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 40 | Temper Range: 40-50</color>\n<color is="#888888">Requires: Temper Stone IX</color>
+items.Armor_Adamantite_Hands.description=<color is="#8B6914">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 40 | Temper Range: 40-50</color>\n<color is="#888888">Requires: Temper Stone IX</color>
+items.Armor_Adamantite_Legs.description=<color is="#8B6914">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 40 | Temper Range: 40-50</color>\n<color is="#888888">Requires: Temper Stone IX</color>
+items.Armor_Mithril_Head.description=<color is="#8B6914">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 50 | Temper Range: 50-60</color>\n<color is="#888888">Requires: Temper Stone X</color>
+items.Armor_Mithril_Chest.description=<color is="#8B6914">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 50 | Temper Range: 50-60</color>\n<color is="#888888">Requires: Temper Stone X</color>
+items.Armor_Mithril_Hands.description=<color is="#8B6914">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 50 | Temper Range: 50-60</color>\n<color is="#888888">Requires: Temper Stone X</color>
+items.Armor_Mithril_Legs.description=<color is="#8B6914">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 50 | Temper Range: 50-60</color>\n<color is="#888888">Requires: Temper Stone X</color>
+items.Armor_Onyxium_Head.description=<color is="#8B6914">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 50 | Temper Range: 50-60</color>\n<color is="#888888">Requires: Temper Stone X</color>
+items.Armor_Onyxium_Chest.description=<color is="#8B6914">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 50 | Temper Range: 50-60</color>\n<color is="#888888">Requires: Temper Stone X</color>
+items.Armor_Onyxium_Hands.description=<color is="#8B6914">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 50 | Temper Range: 50-60</color>\n<color is="#888888">Requires: Temper Stone X</color>
+items.Armor_Onyxium_Legs.description=<color is="#8B6914">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 50 | Temper Range: 50-60</color>\n<color is="#888888">Requires: Temper Stone X</color>
 
 # Leather Armor
 items.Armor_Leather_Soft_Head.name=Soft Leather Head
-items.Armor_Leather_Soft_Head.description=<color is="#8B6914">Leatherworker Armor</color>\n<color is="#ffd100">Base iLvl 10 | Temper Range: 10-20</color>\n<color is="#888888">Requires: Temper Stone II</color>
+items.Armor_Leather_Soft_Head.description=<color is="#8B6914">Leatherworker Armor</color>\n<color is="#ffd100">Base iLvl 10 | Temper Range: 10-20</color>\n<color is="#888888">Requires: Temper Stone III</color>
 items.Armor_Leather_Soft_Chest.name=Soft Leather Chest
-items.Armor_Leather_Soft_Chest.description=<color is="#8B6914">Leatherworker Armor</color>\n<color is="#ffd100">Base iLvl 10 | Temper Range: 10-20</color>\n<color is="#888888">Requires: Temper Stone II</color>
+items.Armor_Leather_Soft_Chest.description=<color is="#8B6914">Leatherworker Armor</color>\n<color is="#ffd100">Base iLvl 10 | Temper Range: 10-20</color>\n<color is="#888888">Requires: Temper Stone III</color>
 items.Armor_Leather_Soft_Hands.name=Soft Leather Hands
-items.Armor_Leather_Soft_Hands.description=<color is="#8B6914">Leatherworker Armor</color>\n<color is="#ffd100">Base iLvl 10 | Temper Range: 10-20</color>\n<color is="#888888">Requires: Temper Stone II</color>
+items.Armor_Leather_Soft_Hands.description=<color is="#8B6914">Leatherworker Armor</color>\n<color is="#ffd100">Base iLvl 10 | Temper Range: 10-20</color>\n<color is="#888888">Requires: Temper Stone III</color>
 items.Armor_Leather_Soft_Legs.name=Soft Leather Legs
-items.Armor_Leather_Soft_Legs.description=<color is="#8B6914">Leatherworker Armor</color>\n<color is="#ffd100">Base iLvl 10 | Temper Range: 10-20</color>\n<color is="#888888">Requires: Temper Stone II</color>
+items.Armor_Leather_Soft_Legs.description=<color is="#8B6914">Leatherworker Armor</color>\n<color is="#ffd100">Base iLvl 10 | Temper Range: 10-20</color>\n<color is="#888888">Requires: Temper Stone III</color>
 items.Armor_Leather_Light_Head.name=Light Leather Head
-items.Armor_Leather_Light_Head.description=<color is="#8B6914">Leatherworker Armor</color>\n<color is="#ffd100">Base iLvl 15 | Temper Range: 15-25</color>\n<color is="#888888">Requires: Temper Stone III</color>
+items.Armor_Leather_Light_Head.description=<color is="#8B6914">Leatherworker Armor</color>\n<color is="#ffd100">Base iLvl 15 | Temper Range: 15-25</color>\n<color is="#888888">Requires: Temper Stone IV</color>
 items.Armor_Leather_Light_Chest.name=Light Leather Chest
-items.Armor_Leather_Light_Chest.description=<color is="#8B6914">Leatherworker Armor</color>\n<color is="#ffd100">Base iLvl 15 | Temper Range: 15-25</color>\n<color is="#888888">Requires: Temper Stone III</color>
+items.Armor_Leather_Light_Chest.description=<color is="#8B6914">Leatherworker Armor</color>\n<color is="#ffd100">Base iLvl 15 | Temper Range: 15-25</color>\n<color is="#888888">Requires: Temper Stone IV</color>
 items.Armor_Leather_Light_Hands.name=Light Leather Hands
-items.Armor_Leather_Light_Hands.description=<color is="#8B6914">Leatherworker Armor</color>\n<color is="#ffd100">Base iLvl 15 | Temper Range: 15-25</color>\n<color is="#888888">Requires: Temper Stone III</color>
+items.Armor_Leather_Light_Hands.description=<color is="#8B6914">Leatherworker Armor</color>\n<color is="#ffd100">Base iLvl 15 | Temper Range: 15-25</color>\n<color is="#888888">Requires: Temper Stone IV</color>
 items.Armor_Leather_Light_Legs.name=Light Leather Legs
-items.Armor_Leather_Light_Legs.description=<color is="#8B6914">Leatherworker Armor</color>\n<color is="#ffd100">Base iLvl 15 | Temper Range: 15-25</color>\n<color is="#888888">Requires: Temper Stone III</color>
+items.Armor_Leather_Light_Legs.description=<color is="#8B6914">Leatherworker Armor</color>\n<color is="#ffd100">Base iLvl 15 | Temper Range: 15-25</color>\n<color is="#888888">Requires: Temper Stone IV</color>
 items.Armor_Leather_Medium_Head.name=Medium Leather Head
-items.Armor_Leather_Medium_Head.description=<color is="#8B6914">Leatherworker Armor</color>\n<color is="#ffd100">Base iLvl 22 | Temper Range: 22-32</color>\n<color is="#888888">Requires: Temper Stone V</color>
+items.Armor_Leather_Medium_Head.description=<color is="#8B6914">Leatherworker Armor</color>\n<color is="#ffd100">Base iLvl 20 | Temper Range: 20-30</color>\n<color is="#888888">Requires: Temper Stone V</color>
 items.Armor_Leather_Medium_Chest.name=Medium Leather Chest
-items.Armor_Leather_Medium_Chest.description=<color is="#8B6914">Leatherworker Armor</color>\n<color is="#ffd100">Base iLvl 22 | Temper Range: 22-32</color>\n<color is="#888888">Requires: Temper Stone V</color>
+items.Armor_Leather_Medium_Chest.description=<color is="#8B6914">Leatherworker Armor</color>\n<color is="#ffd100">Base iLvl 20 | Temper Range: 20-30</color>\n<color is="#888888">Requires: Temper Stone V</color>
 items.Armor_Leather_Medium_Hands.name=Medium Leather Hands
-items.Armor_Leather_Medium_Hands.description=<color is="#8B6914">Leatherworker Armor</color>\n<color is="#ffd100">Base iLvl 22 | Temper Range: 22-32</color>\n<color is="#888888">Requires: Temper Stone V</color>
+items.Armor_Leather_Medium_Hands.description=<color is="#8B6914">Leatherworker Armor</color>\n<color is="#ffd100">Base iLvl 20 | Temper Range: 20-30</color>\n<color is="#888888">Requires: Temper Stone V</color>
 items.Armor_Leather_Medium_Legs.name=Medium Leather Legs
-items.Armor_Leather_Medium_Legs.description=<color is="#8B6914">Leatherworker Armor</color>\n<color is="#ffd100">Base iLvl 22 | Temper Range: 22-32</color>\n<color is="#888888">Requires: Temper Stone V</color>
+items.Armor_Leather_Medium_Legs.description=<color is="#8B6914">Leatherworker Armor</color>\n<color is="#ffd100">Base iLvl 20 | Temper Range: 20-30</color>\n<color is="#888888">Requires: Temper Stone V</color>
 items.Armor_Leather_Heavy_Head.name=Heavy Leather Head
-items.Armor_Leather_Heavy_Head.description=<color is="#8B6914">Leatherworker Armor</color>\n<color is="#ffd100">Base iLvl 30 | Temper Range: 30-40</color>\n<color is="#888888">Requires: Temper Stone VI</color>
+items.Armor_Leather_Heavy_Head.description=<color is="#8B6914">Leatherworker Armor</color>\n<color is="#ffd100">Base iLvl 30 | Temper Range: 30-40</color>\n<color is="#888888">Requires: Temper Stone VII</color>
 items.Armor_Leather_Heavy_Chest.name=Heavy Leather Chest
-items.Armor_Leather_Heavy_Chest.description=<color is="#8B6914">Leatherworker Armor</color>\n<color is="#ffd100">Base iLvl 30 | Temper Range: 30-40</color>\n<color is="#888888">Requires: Temper Stone VI</color>
+items.Armor_Leather_Heavy_Chest.description=<color is="#8B6914">Leatherworker Armor</color>\n<color is="#ffd100">Base iLvl 30 | Temper Range: 30-40</color>\n<color is="#888888">Requires: Temper Stone VII</color>
 items.Armor_Leather_Heavy_Hands.name=Heavy Leather Hands
-items.Armor_Leather_Heavy_Hands.description=<color is="#8B6914">Leatherworker Armor</color>\n<color is="#ffd100">Base iLvl 30 | Temper Range: 30-40</color>\n<color is="#888888">Requires: Temper Stone VI</color>
+items.Armor_Leather_Heavy_Hands.description=<color is="#8B6914">Leatherworker Armor</color>\n<color is="#ffd100">Base iLvl 30 | Temper Range: 30-40</color>\n<color is="#888888">Requires: Temper Stone VII</color>
 items.Armor_Leather_Heavy_Legs.name=Heavy Leather Legs
-items.Armor_Leather_Heavy_Legs.description=<color is="#8B6914">Leatherworker Armor</color>\n<color is="#ffd100">Base iLvl 30 | Temper Range: 30-40</color>\n<color is="#888888">Requires: Temper Stone VI</color>
+items.Armor_Leather_Heavy_Legs.description=<color is="#8B6914">Leatherworker Armor</color>\n<color is="#ffd100">Base iLvl 30 | Temper Range: 30-40</color>\n<color is="#888888">Requires: Temper Stone VII</color>
+items.Armor_Leather_Scaled_Head.name=Scaled Leather Head
+items.Armor_Leather_Scaled_Head.description=<color is="#8B6914">Leatherworker Armor</color>\n<color is="#ffd100">Base iLvl 38 | Temper Range: 38-48</color>\n<color is="#888888">Requires: Temper Stone VIII</color>
+items.Armor_Leather_Scaled_Chest.name=Scaled Leather Chest
+items.Armor_Leather_Scaled_Chest.description=<color is="#8B6914">Leatherworker Armor</color>\n<color is="#ffd100">Base iLvl 38 | Temper Range: 38-48</color>\n<color is="#888888">Requires: Temper Stone VIII</color>
+items.Armor_Leather_Scaled_Hands.name=Scaled Leather Hands
+items.Armor_Leather_Scaled_Hands.description=<color is="#8B6914">Leatherworker Armor</color>\n<color is="#ffd100">Base iLvl 38 | Temper Range: 38-48</color>\n<color is="#888888">Requires: Temper Stone VIII</color>
+items.Armor_Leather_Scaled_Legs.name=Scaled Leather Legs
+items.Armor_Leather_Scaled_Legs.description=<color is="#8B6914">Leatherworker Armor</color>\n<color is="#ffd100">Base iLvl 38 | Temper Range: 38-48</color>\n<color is="#888888">Requires: Temper Stone VIII</color>
+items.Armor_Leather_Storm_Head.name=Storm Leather Head
+items.Armor_Leather_Storm_Head.description=<color is="#8B6914">Leatherworker Armor</color>\n<color is="#ffd100">Base iLvl 46 | Temper Range: 46-56</color>\n<color is="#888888">Requires: Temper Stone X</color>
+items.Armor_Leather_Storm_Chest.name=Storm Leather Chest
+items.Armor_Leather_Storm_Chest.description=<color is="#8B6914">Leatherworker Armor</color>\n<color is="#ffd100">Base iLvl 46 | Temper Range: 46-56</color>\n<color is="#888888">Requires: Temper Stone X</color>
+items.Armor_Leather_Storm_Hands.name=Storm Leather Hands
+items.Armor_Leather_Storm_Hands.description=<color is="#8B6914">Leatherworker Armor</color>\n<color is="#ffd100">Base iLvl 46 | Temper Range: 46-56</color>\n<color is="#888888">Requires: Temper Stone X</color>
+items.Armor_Leather_Storm_Legs.name=Storm Leather Legs
+items.Armor_Leather_Storm_Legs.description=<color is="#8B6914">Leatherworker Armor</color>\n<color is="#ffd100">Base iLvl 46 | Temper Range: 46-56</color>\n<color is="#888888">Requires: Temper Stone X</color>
 items.Armor_Leather_Bandits_Head.name=Bandits Leather Head
-items.Armor_Leather_Bandits_Head.description=<color is="#8B6914">Leatherworker Armor</color>\n<color is="#ffd100">Base iLvl 40 | Temper Range: 40-50</color>\n<color is="#888888">Requires: Temper Stone VIII</color>
+items.Armor_Leather_Bandits_Head.description=<color is="#8B6914">Leatherworker Armor</color>\n<color is="#ffd100">Base iLvl 40 | Temper Range: 40-50</color>\n<color is="#888888">Requires: Temper Stone IX</color>
 items.Armor_Leather_Bandits_Chest.name=Bandits Leather Chest
-items.Armor_Leather_Bandits_Chest.description=<color is="#8B6914">Leatherworker Armor</color>\n<color is="#ffd100">Base iLvl 40 | Temper Range: 40-50</color>\n<color is="#888888">Requires: Temper Stone VIII</color>
+items.Armor_Leather_Bandits_Chest.description=<color is="#8B6914">Leatherworker Armor</color>\n<color is="#ffd100">Base iLvl 40 | Temper Range: 40-50</color>\n<color is="#888888">Requires: Temper Stone IX</color>
 items.Armor_Leather_Bandits_Hands.name=Bandits Leather Hands
-items.Armor_Leather_Bandits_Hands.description=<color is="#8B6914">Leatherworker Armor</color>\n<color is="#ffd100">Base iLvl 40 | Temper Range: 40-50</color>\n<color is="#888888">Requires: Temper Stone VIII</color>
+items.Armor_Leather_Bandits_Hands.description=<color is="#8B6914">Leatherworker Armor</color>\n<color is="#ffd100">Base iLvl 40 | Temper Range: 40-50</color>\n<color is="#888888">Requires: Temper Stone IX</color>
 items.Armor_Leather_Bandits_Legs.name=Bandits Leather Legs
-items.Armor_Leather_Bandits_Legs.description=<color is="#8B6914">Leatherworker Armor</color>\n<color is="#ffd100">Base iLvl 40 | Temper Range: 40-50</color>\n<color is="#888888">Requires: Temper Stone VIII</color>
+items.Armor_Leather_Bandits_Legs.description=<color is="#8B6914">Leatherworker Armor</color>\n<color is="#ffd100">Base iLvl 40 | Temper Range: 40-50</color>\n<color is="#888888">Requires: Temper Stone IX</color>
 items.Armor_Leather_Scout_Head.name=Scout Leather Head
 items.Armor_Leather_Scout_Head.description=<color is="#8B6914">Leatherworker Armor</color>\n<color is="#ffd100">Base iLvl 50 | Temper Range: 50-60</color>\n<color is="#888888">Requires: Temper Stone X</color>
 items.Armor_Leather_Scout_Chest.name=Scout Leather Chest
@@ -2635,98 +2651,94 @@ items.Armor_Bronze_Hands.description=<color is="#3278C8">Platesmith Armor</color
 items.Armor_Bronze_Legs.name=Bronze Legs
 items.Armor_Bronze_Legs.description=<color is="#3278C8">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 22 | Temper Range: 22-32</color>\n<color is="#888888">Requires: Temper Stone V</color>
 items.Armor_Bronze_Ornate_Head.name=Bronze Ornate Head
-items.Armor_Bronze_Ornate_Head.description=<color is="#3278C8">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 28 | Temper Range: 28-38</color>\n<color is="#888888">Requires: Temper Stone VI</color>
 items.Armor_Bronze_Ornate_Chest.name=Bronze Ornate Chest
-items.Armor_Bronze_Ornate_Chest.description=<color is="#3278C8">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 28 | Temper Range: 28-38</color>\n<color is="#888888">Requires: Temper Stone VI</color>
 items.Armor_Bronze_Ornate_Hands.name=Bronze Ornate Hands
-items.Armor_Bronze_Ornate_Hands.description=<color is="#3278C8">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 28 | Temper Range: 28-38</color>\n<color is="#888888">Requires: Temper Stone VI</color>
 items.Armor_Bronze_Ornate_Legs.name=Bronze Ornate Legs
-items.Armor_Bronze_Ornate_Legs.description=<color is="#3278C8">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 28 | Temper Range: 28-38</color>\n<color is="#888888">Requires: Temper Stone VI</color>
 items.Armor_Steel_Ancient_Head.name=Steel Ancient Head
-items.Armor_Steel_Ancient_Head.description=<color is="#3278C8">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 45 | Temper Range: 45-55</color>\n<color is="#888888">Requires: Temper Stone IX</color>
+items.Armor_Steel_Ancient_Head.description=<color is="#3278C8">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 45 | Temper Range: 45-55</color>\n<color is="#888888">Requires: Temper Stone X</color>
 items.Armor_Steel_Ancient_Chest.name=Steel Ancient Chest
-items.Armor_Steel_Ancient_Chest.description=<color is="#3278C8">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 45 | Temper Range: 45-55</color>\n<color is="#888888">Requires: Temper Stone IX</color>
+items.Armor_Steel_Ancient_Chest.description=<color is="#3278C8">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 45 | Temper Range: 45-55</color>\n<color is="#888888">Requires: Temper Stone X</color>
 items.Armor_Steel_Ancient_Hands.name=Steel Ancient Hands
-items.Armor_Steel_Ancient_Hands.description=<color is="#3278C8">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 45 | Temper Range: 45-55</color>\n<color is="#888888">Requires: Temper Stone IX</color>
+items.Armor_Steel_Ancient_Hands.description=<color is="#3278C8">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 45 | Temper Range: 45-55</color>\n<color is="#888888">Requires: Temper Stone X</color>
 items.Armor_Steel_Ancient_Legs.name=Steel Ancient Legs
-items.Armor_Steel_Ancient_Legs.description=<color is="#3278C8">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 45 | Temper Range: 45-55</color>\n<color is="#888888">Requires: Temper Stone IX</color>
+items.Armor_Steel_Ancient_Legs.description=<color is="#3278C8">Platesmith Armor</color>\n<color is="#ffd100">Base iLvl 45 | Temper Range: 45-55</color>\n<color is="#888888">Requires: Temper Stone X</color>
 
 # Bladesmith Weapons (WEAPONSMITH)
-items.Weapon_Longsword_Crude.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 1 | Temper Range: 1-11</color>\n<color is="#888888">Requires: Temper Stone I</color>
-items.Weapon_Sword_Copper.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 12 | Temper Range: 12-22</color>\n<color is="#888888">Requires: Temper Stone III</color>
-items.Weapon_Longsword_Copper.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 12 | Temper Range: 12-22</color>\n<color is="#888888">Requires: Temper Stone III</color>
-items.Weapon_Axe_Copper.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 12 | Temper Range: 12-22</color>\n<color is="#888888">Requires: Temper Stone III</color>
-items.Weapon_Battleaxe_Copper.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 12 | Temper Range: 12-22</color>\n<color is="#888888">Requires: Temper Stone III</color>
-items.Weapon_Mace_Copper.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 12 | Temper Range: 12-22</color>\n<color is="#888888">Requires: Temper Stone III</color>
-items.Weapon_Club_Copper.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 12 | Temper Range: 12-22</color>\n<color is="#888888">Requires: Temper Stone III</color>
-items.Weapon_Daggers_Copper.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 12 | Temper Range: 12-22</color>\n<color is="#888888">Requires: Temper Stone III</color>
-items.Weapon_Sword_Iron.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 20 | Temper Range: 20-30</color>\n<color is="#888888">Requires: Temper Stone IV</color>
-items.Weapon_Longsword_Iron.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 20 | Temper Range: 20-30</color>\n<color is="#888888">Requires: Temper Stone IV</color>
-items.Weapon_Axe_Iron.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 20 | Temper Range: 20-30</color>\n<color is="#888888">Requires: Temper Stone IV</color>
-items.Weapon_Battleaxe_Iron.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 20 | Temper Range: 20-30</color>\n<color is="#888888">Requires: Temper Stone IV</color>
-items.Weapon_Mace_Iron.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 20 | Temper Range: 20-30</color>\n<color is="#888888">Requires: Temper Stone IV</color>
-items.Weapon_Club_Iron.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 20 | Temper Range: 20-30</color>\n<color is="#888888">Requires: Temper Stone IV</color>
-items.Weapon_Daggers_Iron.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 20 | Temper Range: 20-30</color>\n<color is="#888888">Requires: Temper Stone IV</color>
-items.Weapon_Longsword_Scarab.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 25 | Temper Range: 25-35</color>\n<color is="#888888">Requires: Temper Stone V</color>
-items.Weapon_Sword_Thorium.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 34 | Temper Range: 34-44</color>\n<color is="#888888">Requires: Temper Stone VII</color>
-items.Weapon_Longsword_Thorium.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 34 | Temper Range: 34-44</color>\n<color is="#888888">Requires: Temper Stone VII</color>
-items.Weapon_Axe_Thorium.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 34 | Temper Range: 34-44</color>\n<color is="#888888">Requires: Temper Stone VII</color>
-items.Weapon_Battleaxe_Thorium.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 34 | Temper Range: 34-44</color>\n<color is="#888888">Requires: Temper Stone VII</color>
-items.Weapon_Mace_Thorium.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 34 | Temper Range: 34-44</color>\n<color is="#888888">Requires: Temper Stone VII</color>
-items.Weapon_Club_Thorium.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 34 | Temper Range: 34-44</color>\n<color is="#888888">Requires: Temper Stone VII</color>
-items.Weapon_Daggers_Thorium.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 34 | Temper Range: 34-44</color>\n<color is="#888888">Requires: Temper Stone VII</color>
-items.Weapon_Sword_Cobalt.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 38 | Temper Range: 38-48</color>\n<color is="#888888">Requires: Temper Stone VIII</color>
-items.Weapon_Longsword_Cobalt.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 38 | Temper Range: 38-48</color>\n<color is="#888888">Requires: Temper Stone VIII</color>
-items.Weapon_Axe_Cobalt.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 38 | Temper Range: 38-48</color>\n<color is="#888888">Requires: Temper Stone VIII</color>
-items.Weapon_Battleaxe_Cobalt.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 38 | Temper Range: 38-48</color>\n<color is="#888888">Requires: Temper Stone VIII</color>
-items.Weapon_Mace_Cobalt.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 38 | Temper Range: 38-48</color>\n<color is="#888888">Requires: Temper Stone VIII</color>
-items.Weapon_Club_Cobalt.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 38 | Temper Range: 38-48</color>\n<color is="#888888">Requires: Temper Stone VIII</color>
-items.Weapon_Daggers_Cobalt.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 38 | Temper Range: 38-48</color>\n<color is="#888888">Requires: Temper Stone VIII</color>
-items.Weapon_Sword_Adamantite.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 42 | Temper Range: 42-52</color>\n<color is="#888888">Requires: Temper Stone IX</color>
-items.Weapon_Longsword_Adamantite.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 42 | Temper Range: 42-52</color>\n<color is="#888888">Requires: Temper Stone IX</color>
-items.Weapon_Axe_Adamantite.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 42 | Temper Range: 42-52</color>\n<color is="#888888">Requires: Temper Stone IX</color>
-items.Weapon_Battleaxe_Adamantite.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 42 | Temper Range: 42-52</color>\n<color is="#888888">Requires: Temper Stone IX</color>
-items.Weapon_Mace_Adamantite.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 42 | Temper Range: 42-52</color>\n<color is="#888888">Requires: Temper Stone IX</color>
-items.Weapon_Club_Adamantite.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 42 | Temper Range: 42-52</color>\n<color is="#888888">Requires: Temper Stone IX</color>
-items.Weapon_Daggers_Adamantite.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 42 | Temper Range: 42-52</color>\n<color is="#888888">Requires: Temper Stone IX</color>
-items.Weapon_Sword_Mithril.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 46 | Temper Range: 46-56</color>\n<color is="#888888">Requires: Temper Stone X</color>
-items.Weapon_Longsword_Mithril.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 46 | Temper Range: 46-56</color>\n<color is="#888888">Requires: Temper Stone X</color>
-items.Weapon_Axe_Mithril.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 46 | Temper Range: 46-56</color>\n<color is="#888888">Requires: Temper Stone X</color>
-items.Weapon_Battleaxe_Mithril.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 46 | Temper Range: 46-56</color>\n<color is="#888888">Requires: Temper Stone X</color>
-items.Weapon_Mace_Mithril.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 46 | Temper Range: 46-56</color>\n<color is="#888888">Requires: Temper Stone X</color>
-items.Weapon_Club_Mithril.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 46 | Temper Range: 46-56</color>\n<color is="#888888">Requires: Temper Stone X</color>
-items.Weapon_Daggers_Mithril.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 46 | Temper Range: 46-56</color>\n<color is="#888888">Requires: Temper Stone X</color>
-items.Weapon_Sword_Onyxium.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 49 | Temper Range: 49-59</color>\n<color is="#888888">Requires: Temper Stone X</color>
-items.Weapon_Longsword_Onyxium.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 49 | Temper Range: 49-59</color>\n<color is="#888888">Requires: Temper Stone X</color>
-items.Weapon_Axe_Onyxium.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 49 | Temper Range: 49-59</color>\n<color is="#888888">Requires: Temper Stone X</color>
-items.Weapon_Battleaxe_Onyxium.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 49 | Temper Range: 49-59</color>\n<color is="#888888">Requires: Temper Stone X</color>
-items.Weapon_Mace_Onyxium.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 49 | Temper Range: 49-59</color>\n<color is="#888888">Requires: Temper Stone X</color>
-items.Weapon_Club_Onyxium.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 49 | Temper Range: 49-59</color>\n<color is="#888888">Requires: Temper Stone X</color>
-items.Weapon_Daggers_Onyxium.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 49 | Temper Range: 49-59</color>\n<color is="#888888">Requires: Temper Stone X</color>
+items.Weapon_Longsword_Crude.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 5 | Temper Range: 5-15</color>\n<color is="#888888">Requires: Temper Stone II</color>
+items.Weapon_Sword_Copper.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 10 | Temper Range: 10-20</color>\n<color is="#888888">Requires: Temper Stone III</color>
+items.Weapon_Longsword_Copper.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 10 | Temper Range: 10-20</color>\n<color is="#888888">Requires: Temper Stone III</color>
+items.Weapon_Axe_Copper.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 10 | Temper Range: 10-20</color>\n<color is="#888888">Requires: Temper Stone III</color>
+items.Weapon_Battleaxe_Copper.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 10 | Temper Range: 10-20</color>\n<color is="#888888">Requires: Temper Stone III</color>
+items.Weapon_Mace_Copper.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 10 | Temper Range: 10-20</color>\n<color is="#888888">Requires: Temper Stone III</color>
+items.Weapon_Club_Copper.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 10 | Temper Range: 10-20</color>\n<color is="#888888">Requires: Temper Stone III</color>
+items.Weapon_Daggers_Copper.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 10 | Temper Range: 10-20</color>\n<color is="#888888">Requires: Temper Stone III</color>
+items.Weapon_Sword_Iron.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 20 | Temper Range: 20-30</color>\n<color is="#888888">Requires: Temper Stone V</color>
+items.Weapon_Longsword_Iron.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 20 | Temper Range: 20-30</color>\n<color is="#888888">Requires: Temper Stone V</color>
+items.Weapon_Axe_Iron.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 20 | Temper Range: 20-30</color>\n<color is="#888888">Requires: Temper Stone V</color>
+items.Weapon_Battleaxe_Iron.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 20 | Temper Range: 20-30</color>\n<color is="#888888">Requires: Temper Stone V</color>
+items.Weapon_Mace_Iron.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 20 | Temper Range: 20-30</color>\n<color is="#888888">Requires: Temper Stone V</color>
+items.Weapon_Club_Iron.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 20 | Temper Range: 20-30</color>\n<color is="#888888">Requires: Temper Stone V</color>
+items.Weapon_Daggers_Iron.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 20 | Temper Range: 20-30</color>\n<color is="#888888">Requires: Temper Stone V</color>
+items.Weapon_Longsword_Scarab.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 40 | Temper Range: 40-50</color>\n<color is="#888888">Requires: Temper Stone IX</color>
+items.Weapon_Sword_Thorium.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 30 | Temper Range: 30-40</color>\n<color is="#888888">Requires: Temper Stone VII</color>
+items.Weapon_Longsword_Thorium.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 30 | Temper Range: 30-40</color>\n<color is="#888888">Requires: Temper Stone VII</color>
+items.Weapon_Axe_Thorium.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 30 | Temper Range: 30-40</color>\n<color is="#888888">Requires: Temper Stone VII</color>
+items.Weapon_Battleaxe_Thorium.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 30 | Temper Range: 30-40</color>\n<color is="#888888">Requires: Temper Stone VII</color>
+items.Weapon_Mace_Thorium.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 30 | Temper Range: 30-40</color>\n<color is="#888888">Requires: Temper Stone VII</color>
+items.Weapon_Club_Thorium.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 30 | Temper Range: 30-40</color>\n<color is="#888888">Requires: Temper Stone VII</color>
+items.Weapon_Daggers_Thorium.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 30 | Temper Range: 30-40</color>\n<color is="#888888">Requires: Temper Stone VII</color>
+items.Weapon_Sword_Cobalt.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 35 | Temper Range: 35-45</color>\n<color is="#888888">Requires: Temper Stone VIII</color>
+items.Weapon_Longsword_Cobalt.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 35 | Temper Range: 35-45</color>\n<color is="#888888">Requires: Temper Stone VIII</color>
+items.Weapon_Axe_Cobalt.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 35 | Temper Range: 35-45</color>\n<color is="#888888">Requires: Temper Stone VIII</color>
+items.Weapon_Battleaxe_Cobalt.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 35 | Temper Range: 35-45</color>\n<color is="#888888">Requires: Temper Stone VIII</color>
+items.Weapon_Mace_Cobalt.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 35 | Temper Range: 35-45</color>\n<color is="#888888">Requires: Temper Stone VIII</color>
+items.Weapon_Club_Cobalt.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 35 | Temper Range: 35-45</color>\n<color is="#888888">Requires: Temper Stone VIII</color>
+items.Weapon_Daggers_Cobalt.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 35 | Temper Range: 35-45</color>\n<color is="#888888">Requires: Temper Stone VIII</color>
+items.Weapon_Sword_Adamantite.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 40 | Temper Range: 40-50</color>\n<color is="#888888">Requires: Temper Stone IX</color>
+items.Weapon_Longsword_Adamantite.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 40 | Temper Range: 40-50</color>\n<color is="#888888">Requires: Temper Stone IX</color>
+items.Weapon_Axe_Adamantite.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 40 | Temper Range: 40-50</color>\n<color is="#888888">Requires: Temper Stone IX</color>
+items.Weapon_Battleaxe_Adamantite.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 40 | Temper Range: 40-50</color>\n<color is="#888888">Requires: Temper Stone IX</color>
+items.Weapon_Mace_Adamantite.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 40 | Temper Range: 40-50</color>\n<color is="#888888">Requires: Temper Stone IX</color>
+items.Weapon_Club_Adamantite.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 40 | Temper Range: 40-50</color>\n<color is="#888888">Requires: Temper Stone IX</color>
+items.Weapon_Daggers_Adamantite.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 40 | Temper Range: 40-50</color>\n<color is="#888888">Requires: Temper Stone IX</color>
+items.Weapon_Sword_Mithril.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 50 | Temper Range: 50-60</color>\n<color is="#888888">Requires: Temper Stone X</color>
+items.Weapon_Longsword_Mithril.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 50 | Temper Range: 50-60</color>\n<color is="#888888">Requires: Temper Stone X</color>
+items.Weapon_Axe_Mithril.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 50 | Temper Range: 50-60</color>\n<color is="#888888">Requires: Temper Stone X</color>
+items.Weapon_Battleaxe_Mithril.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 50 | Temper Range: 50-60</color>\n<color is="#888888">Requires: Temper Stone X</color>
+items.Weapon_Mace_Mithril.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 50 | Temper Range: 50-60</color>\n<color is="#888888">Requires: Temper Stone X</color>
+items.Weapon_Club_Mithril.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 50 | Temper Range: 50-60</color>\n<color is="#888888">Requires: Temper Stone X</color>
+items.Weapon_Daggers_Mithril.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 50 | Temper Range: 50-60</color>\n<color is="#888888">Requires: Temper Stone X</color>
+items.Weapon_Sword_Onyxium.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 50 | Temper Range: 50-60</color>\n<color is="#888888">Requires: Temper Stone X</color>
+items.Weapon_Longsword_Onyxium.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 50 | Temper Range: 50-60</color>\n<color is="#888888">Requires: Temper Stone X</color>
+items.Weapon_Axe_Onyxium.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 50 | Temper Range: 50-60</color>\n<color is="#888888">Requires: Temper Stone X</color>
+items.Weapon_Battleaxe_Onyxium.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 50 | Temper Range: 50-60</color>\n<color is="#888888">Requires: Temper Stone X</color>
+items.Weapon_Mace_Onyxium.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 50 | Temper Range: 50-60</color>\n<color is="#888888">Requires: Temper Stone X</color>
+items.Weapon_Club_Onyxium.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 50 | Temper Range: 50-60</color>\n<color is="#888888">Requires: Temper Stone X</color>
+items.Weapon_Daggers_Onyxium.description=<color is="#C83232">Bladesmith Weapon</color>\n<color is="#ffd100">Base iLvl 50 | Temper Range: 50-60</color>\n<color is="#888888">Requires: Temper Stone X</color>
 
 # Carpenter Weapons (bows/crossbows)
-items.Weapon_Shortbow_Crude.description=<color is="#B47832">Carpenter Weapon</color>\n<color is="#ffd100">Base iLvl 1 | Temper Range: 1-11</color>\n<color is="#888888">Requires: Temper Stone I</color>
-items.Weapon_Shortbow_Copper.description=<color is="#B47832">Carpenter Weapon</color>\n<color is="#ffd100">Base iLvl 12 | Temper Range: 12-22</color>\n<color is="#888888">Requires: Temper Stone III</color>
-items.Weapon_Shortbow_Iron.description=<color is="#B47832">Carpenter Weapon</color>\n<color is="#ffd100">Base iLvl 20 | Temper Range: 20-30</color>\n<color is="#888888">Requires: Temper Stone IV</color>
-items.Weapon_Crossbow_Iron.description=<color is="#B47832">Carpenter Weapon</color>\n<color is="#ffd100">Base iLvl 20 | Temper Range: 20-30</color>\n<color is="#888888">Requires: Temper Stone IV</color>
-items.Weapon_Shortbow_Thorium.description=<color is="#B47832">Carpenter Weapon</color>\n<color is="#ffd100">Base iLvl 34 | Temper Range: 34-44</color>\n<color is="#888888">Requires: Temper Stone VII</color>
-items.Weapon_Shortbow_Cobalt.description=<color is="#B47832">Carpenter Weapon</color>\n<color is="#ffd100">Base iLvl 38 | Temper Range: 38-48</color>\n<color is="#888888">Requires: Temper Stone VIII</color>
-items.Weapon_Shortbow_Adamantite.description=<color is="#B47832">Carpenter Weapon</color>\n<color is="#ffd100">Base iLvl 42 | Temper Range: 42-52</color>\n<color is="#888888">Requires: Temper Stone IX</color>
-items.Weapon_Shortbow_Mithril.description=<color is="#B47832">Carpenter Weapon</color>\n<color is="#ffd100">Base iLvl 46 | Temper Range: 46-56</color>\n<color is="#888888">Requires: Temper Stone X</color>
-items.Weapon_Shortbow_Onyxium.description=<color is="#B47832">Carpenter Weapon</color>\n<color is="#ffd100">Base iLvl 49 | Temper Range: 49-59</color>\n<color is="#888888">Requires: Temper Stone X</color>
+items.Weapon_Shortbow_Crude.description=<color is="#B47832">Carpenter Weapon</color>\n<color is="#ffd100">Base iLvl 13 | Temper Range: 13-23</color>\n<color is="#888888">Requires: Temper Stone III</color>
+items.Weapon_Shortbow_Copper.description=<color is="#B47832">Carpenter Weapon</color>\n<color is="#ffd100">Base iLvl 15 | Temper Range: 15-25</color>\n<color is="#888888">Requires: Temper Stone IV</color>
+items.Weapon_Shortbow_Iron.description=<color is="#B47832">Carpenter Weapon</color>\n<color is="#ffd100">Base iLvl 20 | Temper Range: 20-30</color>\n<color is="#888888">Requires: Temper Stone V</color>
+items.Weapon_Crossbow_Iron.description=<color is="#B47832">Carpenter Weapon</color>\n<color is="#ffd100">Base iLvl 20 | Temper Range: 20-30</color>\n<color is="#888888">Requires: Temper Stone V</color>
+items.Weapon_Shortbow_Thorium.description=<color is="#B47832">Carpenter Weapon</color>\n<color is="#ffd100">Base iLvl 30 | Temper Range: 30-40</color>\n<color is="#888888">Requires: Temper Stone VII</color>
+items.Weapon_Shortbow_Cobalt.description=<color is="#B47832">Carpenter Weapon</color>\n<color is="#ffd100">Base iLvl 35 | Temper Range: 35-45</color>\n<color is="#888888">Requires: Temper Stone VIII</color>
+items.Weapon_Shortbow_Adamantite.description=<color is="#B47832">Carpenter Weapon</color>\n<color is="#ffd100">Base iLvl 40 | Temper Range: 40-50</color>\n<color is="#888888">Requires: Temper Stone IX</color>
+items.Weapon_Shortbow_Mithril.description=<color is="#B47832">Carpenter Weapon</color>\n<color is="#ffd100">Base iLvl 50 | Temper Range: 50-60</color>\n<color is="#888888">Requires: Temper Stone X</color>
+items.Weapon_Shortbow_Onyxium.description=<color is="#B47832">Carpenter Weapon</color>\n<color is="#ffd100">Base iLvl 50 | Temper Range: 50-60</color>\n<color is="#888888">Requires: Temper Stone X</color>
 
 # Platesmith Weapons (shields)
-items.Weapon_Shield_Copper.description=<color is="#3278C8">Platesmith Weapon</color>\n<color is="#ffd100">Base iLvl 12 | Temper Range: 12-22</color>\n<color is="#888888">Requires: Temper Stone III</color>
-items.Weapon_Shield_Iron.description=<color is="#3278C8">Platesmith Weapon</color>\n<color is="#ffd100">Base iLvl 20 | Temper Range: 20-30</color>\n<color is="#888888">Requires: Temper Stone IV</color>
-items.Weapon_Shield_Thorium.description=<color is="#3278C8">Platesmith Weapon</color>\n<color is="#ffd100">Base iLvl 34 | Temper Range: 34-44</color>\n<color is="#888888">Requires: Temper Stone VII</color>
-items.Weapon_Shield_Cobalt.description=<color is="#3278C8">Platesmith Weapon</color>\n<color is="#ffd100">Base iLvl 38 | Temper Range: 38-48</color>\n<color is="#888888">Requires: Temper Stone VIII</color>
-items.Weapon_Shield_Adamantite.description=<color is="#3278C8">Platesmith Weapon</color>\n<color is="#ffd100">Base iLvl 42 | Temper Range: 42-52</color>\n<color is="#888888">Requires: Temper Stone IX</color>
-items.Weapon_Shield_Mithril.description=<color is="#3278C8">Platesmith Weapon</color>\n<color is="#ffd100">Base iLvl 46 | Temper Range: 46-56</color>\n<color is="#888888">Requires: Temper Stone X</color>
-items.Weapon_Shield_Onyxium.description=<color is="#3278C8">Platesmith Weapon</color>\n<color is="#ffd100">Base iLvl 49 | Temper Range: 49-59</color>\n<color is="#888888">Requires: Temper Stone X</color>
+items.Weapon_Shield_Copper.description=<color is="#3278C8">Platesmith Weapon</color>\n<color is="#ffd100">Base iLvl 10 | Temper Range: 10-20</color>\n<color is="#888888">Requires: Temper Stone III</color>
+items.Weapon_Shield_Iron.description=<color is="#3278C8">Platesmith Weapon</color>\n<color is="#ffd100">Base iLvl 20 | Temper Range: 20-30</color>\n<color is="#888888">Requires: Temper Stone V</color>
+items.Weapon_Shield_Thorium.description=<color is="#3278C8">Platesmith Weapon</color>\n<color is="#ffd100">Base iLvl 30 | Temper Range: 30-40</color>\n<color is="#888888">Requires: Temper Stone VII</color>
+items.Weapon_Shield_Cobalt.description=<color is="#3278C8">Platesmith Weapon</color>\n<color is="#ffd100">Base iLvl 35 | Temper Range: 35-45</color>\n<color is="#888888">Requires: Temper Stone VIII</color>
+items.Weapon_Shield_Adamantite.description=<color is="#3278C8">Platesmith Weapon</color>\n<color is="#ffd100">Base iLvl 40 | Temper Range: 40-50</color>\n<color is="#888888">Requires: Temper Stone IX</color>
+items.Weapon_Shield_Mithril.description=<color is="#3278C8">Platesmith Weapon</color>\n<color is="#ffd100">Base iLvl 50 | Temper Range: 50-60</color>\n<color is="#888888">Requires: Temper Stone X</color>
+items.Weapon_Shield_Onyxium.description=<color is="#3278C8">Platesmith Weapon</color>\n<color is="#ffd100">Base iLvl 50 | Temper Range: 50-60</color>\n<color is="#888888">Requires: Temper Stone X</color>
 
 # Enchanter Weapons (staves)
-items.Weapon_Staff_Crystal_Flame.description=<color is="#6432C8">Enchanter Weapon</color>\n<color is="#ffd100">Base iLvl 30 | Temper Range: 30-40</color>\n<color is="#888888">Requires: Temper Stone VI</color>
-items.Weapon_Staff_Crystal_Ice.description=<color is="#6432C8">Enchanter Weapon</color>\n<color is="#ffd100">Base iLvl 30 | Temper Range: 30-40</color>\n<color is="#888888">Requires: Temper Stone VI</color>
+items.Weapon_Staff_Crystal_Flame.description=<color is="#6432C8">Enchanter Weapon</color>\n<color is="#ffd100">Base iLvl 50 | Temper Range: 50-60</color>\n<color is="#888888">Requires: Temper Stone X</color>
+items.Weapon_Staff_Crystal_Ice.description=<color is="#6432C8">Enchanter Weapon</color>\n<color is="#ffd100">Base iLvl 50 | Temper Range: 50-60</color>\n<color is="#888888">Requires: Temper Stone X</color>
 ## Managed Items (auto-generated from items_registry)
 ## Do not edit manually -- re-run generate-recipes-from-db.py to regenerate
 
@@ -2834,18 +2846,12 @@ items.Consumable_Adventurers_Feast.name=Adventurers Feast
 items.Consumable_Adventurers_Feast.description=<color is="#E67E22">Cook Consumable</color>\n<color is="#ffd100">+3 Spirit, +3 Agility, +3 Strength, +3 Vitality, +3 Intellect for 15 min</color>
 items.Consumable_Campfire_Bread.name=Campfire Bread
 items.Consumable_Campfire_Bread.description=<color is="#E67E22">Cook Consumable</color>\n<color is="#ffd100">+2 Vitality for 15 min</color>\n<color is="#888888">Crafted by: Cook Lv. 3+</color>
-items.Food_Kebab_Fruit.name=Fruit Skewer
-items.Food_Kebab_Fruit.description=<color is="#E67E22">Cook Consumable</color>\n<color is="#ffd100">+2 Agility for 15 min</color>
 items.Consumable_Herb_Butter_Fish.name=Herb Butter Fish
 items.Consumable_Herb_Butter_Fish.description=<color is="#E67E22">Cook Consumable</color>\n<color is="#ffd100">+3 Agility for 15 min</color>\n<color is="#888888">Crafted by: Cook Lv. 9+</color>
 items.Consumable_Hunters_Ration.name=Hunters Ration
 items.Consumable_Hunters_Ration.description=<color is="#E67E22">Cook Consumable</color>\n<color is="#ffd100">+3 Spirit, +5 Agility for 15 min</color>
 items.Consumable_Meat_Pie.name=Meat Pie
 items.Consumable_Meat_Pie.description=<color is="#E67E22">Cook Consumable</color>\n<color is="#ffd100">+3 Strength, +1 Vitality for 15 min</color>\n<color is="#888888">Crafted by: Cook Lv. 11+</color>
-items.Food_Kebab_Meat.name=Meat Skewer
-items.Food_Kebab_Meat.description=<color is="#E67E22">Cook Consumable</color>\n<color is="#ffd100">+2 Strength for 15 min</color>
-items.Food_Kebab_Mushroom.name=Mushroom Skewer
-items.Food_Kebab_Mushroom.description=<color is="#E67E22">Cook Consumable</color>\n<color is="#ffd100">+2 Spirit for 15 min</color>
 items.Consumable_Roasted_Meat.name=Roasted Meat
 items.Consumable_Roasted_Meat.description=<color is="#E67E22">Cook Consumable</color>\n<color is="#ffd100">+2 Strength for 15 min</color>\n<color is="#888888">Crafted by: Cook Lv. 5+</color>
 items.Consumable_Sages_Meal.name=Sages Meal
@@ -2858,8 +2864,6 @@ items.Consumable_Spiced_Stew.name=Spiced Stew
 items.Consumable_Spiced_Stew.description=<color is="#E67E22">Cook Consumable</color>\n<color is="#ffd100">+1 Strength, +3 Vitality for 15 min</color>\n<color is="#888888">Crafted by: Cook Lv. 13+</color>
 items.Consumable_Sweet_Roll.name=Sweet Roll
 items.Consumable_Sweet_Roll.description=<color is="#E67E22">Cook Consumable</color>\n<color is="#ffd100">+4 Spirit, +2 Intellect for 15 min</color>\n<color is="#888888">Crafted by: Cook Lv. 15+</color>
-items.Food_Kebab_Vegetable.name=Vegetable Skewer
-items.Food_Kebab_Vegetable.description=<color is="#E67E22">Cook Consumable</color>\n<color is="#ffd100">+2 Vitality for 15 min</color>
 items.Consumable_Vegetable_Soup.name=Vegetable Soup
 items.Consumable_Vegetable_Soup.description=<color is="#E67E22">Cook Consumable</color>\n<color is="#ffd100">+3 Vitality for 15 min</color>\n<color is="#888888">Crafted by: Cook Lv. 7+</color>
 items.Consumable_Elixir_Brilliance.name=Elixir of Brilliance

@@ -5,33 +5,37 @@
   "Quality": "Uncommon",
   "ItemLevel": 20,
   "PlayerAnimationsId": "Block",
-  "ItemSoundSetId": "ISS_Armor_Heavy",
+  "ItemSoundSetId": "ISS_Armor_Cloth",
   "Categories": [
     "Items.Armors"
   ],
-  "Icon": "Icons/ItemsGenerated/Armor_Iron_Hands.png",
+  "Icon": "Icons/ItemsGenerated/Armor_Leather_Light_Hands.png",
   "IconProperties": {
     "Rotation": [
-      22.5,
-      45,
-      22.5
+      29.815,
+      45.565,
+      25.315
     ],
-    "Scale": 0.92,
+    "Scale": 0.645,
     "Translation": [
-      15,
-      -33
+      0.9,
+      -0.9
     ]
   },
-  "Model": "Items/Armors/Iron/Hands.blockymodel",
-  "Texture": "Items/Armors/Iron/Hands_Texture.png",
+  "Model": "Items/Armors/Leather_Light/Hands.blockymodel",
+  "Texture": "Items/Armors/Leather_Light/Hands_Texture.png",
   "Recipe": {
     "Input": [
       {
-        "ItemId": "Ingredient_Fabric_Scrap_Linen",
-        "Quantity": 7
+        "ItemId": "Ingredient_Bolt_Wool",
+        "Quantity": 2
       },
       {
-        "ItemId": "Component_Embroidered_Trim",
+        "ResourceTypeId": "Wood_Trunk",
+        "Quantity": 1
+      },
+      {
+        "ItemId": "Ingredient_Bar_Copper",
         "Quantity": 2
       }
     ],

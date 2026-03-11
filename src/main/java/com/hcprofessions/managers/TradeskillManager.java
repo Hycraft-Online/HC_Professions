@@ -24,13 +24,27 @@ public class TradeskillManager {
 
     private final TradeskillRepository repository;
     private final ConcurrentHashMap<UUID, Map<Tradeskill, PlayerTradeskillData>> cache = new ConcurrentHashMap<>();
+    private final Map<UUID, UUID> accountToChar = new ConcurrentHashMap<>();
 
     public TradeskillManager(TradeskillRepository repository) {
         this.repository = repository;
     }
 
+    public void registerCharMapping(UUID accountUuid, UUID charUuid) {
+        accountToChar.put(accountUuid, charUuid);
+    }
+
+    public void unregisterCharMapping(UUID accountUuid) {
+        accountToChar.remove(accountUuid);
+    }
+
+    /** Translate account UUID to character UUID for DB operations. */
+    UUID dbKey(UUID uuid) {
+        return accountToChar.getOrDefault(uuid, uuid);
+    }
+
     public Map<Tradeskill, PlayerTradeskillData> getPlayerData(UUID playerUuid) {
-        return cache.computeIfAbsent(playerUuid, repository::loadAll);
+        return cache.computeIfAbsent(playerUuid, uuid -> repository.loadAll(dbKey(uuid)));
     }
 
     public PlayerTradeskillData getTradeskillData(UUID playerUuid, Tradeskill tradeskill) {
@@ -101,6 +115,7 @@ public class TradeskillManager {
         if (data == null) return;
         data.setLevel(Math.min(level, XPCurve.getMaxLevel()));
         data.setCurrentXp(0);
+        // save() uses data.getPlayerUuid() which is the DB key from initial load
         repository.save(data);
     }
 

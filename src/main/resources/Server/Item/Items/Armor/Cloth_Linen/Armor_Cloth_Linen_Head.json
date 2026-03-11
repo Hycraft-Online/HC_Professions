@@ -5,33 +5,37 @@
   "Quality": "Common",
   "ItemLevel": 10,
   "PlayerAnimationsId": "Block",
-  "ItemSoundSetId": "ISS_Armor_Heavy",
+  "ItemSoundSetId": "ISS_Armor_Cloth",
   "Categories": [
     "Items.Armors"
   ],
-  "Icon": "Icons/ItemsGenerated/Armor_Copper_Head.png",
+  "Icon": "Icons/ItemsGenerated/Armor_Cloth_Linen_Head.png",
   "IconProperties": {
     "Rotation": [
       22.5,
-      45,
+      47.815,
       22.5
     ],
     "Scale": 0.5,
     "Translation": [
-      0,
-      -15
+      -0.9,
+      -3.3
     ]
   },
-  "Model": "Items/Armors/Copper/Head.blockymodel",
-  "Texture": "Items/Armors/Copper/Head_Texture.png",
+  "Model": "Items/Armors/Linen/Head.blockymodel",
+  "Texture": "Items/Armors/Linen/Head_Texture.png",
   "Recipe": {
     "Input": [
       {
-        "ItemId": "Ingredient_Fabric_Scrap_Linen",
-        "Quantity": 5
+        "ItemId": "Ingredient_Bolt_Linen",
+        "Quantity": 3
       },
       {
-        "ItemId": "Component_Crude_Trim_Strip",
+        "ResourceTypeId": "Wood_Trunk",
+        "Quantity": 2
+      },
+      {
+        "ItemId": "Ingredient_Bar_Iron",
         "Quantity": 2
       }
     ],

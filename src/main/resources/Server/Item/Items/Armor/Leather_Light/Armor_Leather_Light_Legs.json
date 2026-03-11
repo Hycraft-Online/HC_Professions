@@ -2,9 +2,13 @@
   "TranslationProperties": {
     "Name": "server.items.Armor_Leather_Light_Legs.name"
   },
-  "Parent": "Armor_Iron_Legs",
   "Quality": "Common",
   "ItemLevel": 15,
+  "PlayerAnimationsId": "Block",
+  "ItemSoundSetId": "ISS_Armor_Leather",
+  "Categories": [
+    "Items.Armors"
+  ],
   "Icon": "Icons/ItemsGenerated/Armor_Leather_Light_Legs.png",
   "IconProperties": {
     "Rotation": [
@@ -21,19 +25,18 @@
   "Model": "Items/Armors/Leather_Light/Legs.blockymodel",
   "Texture": "Items/Armors/Leather_Light/Legs_Texture.png",
   "Recipe": {
-    "TimeSeconds": 2,
     "Input": [
       {
         "ItemId": "Ingredient_Leather_Light",
         "Quantity": 4
       },
       {
-        "Quantity": 3,
-        "ItemId": "Ingredient_Fibre"
+        "ResourceTypeId": "Wood_Trunk",
+        "Quantity": 2
       },
       {
         "ItemId": "Ingredient_Bolt_Wool",
-        "Quantity": 2
+        "Quantity": 3
       }
     ],
     "BenchRequirement": [
@@ -45,57 +48,66 @@
         ]
       }
     ],
-    "KnowledgeRequired": true
+    "KnowledgeRequired": false,
+    "TimeSeconds": 5
+  },
+  "Interactions": {
+    "Primary": {
+      "Interactions": [
+        {
+          "Type": "EquipItem"
+        }
+      ]
+    },
+    "Secondary": {
+      "Interactions": [
+        {
+          "Type": "EquipItem"
+        }
+      ]
+    }
   },
   "Armor": {
     "ArmorSlot": "Legs",
     "BaseDamageResistance": 0,
-    "CosmeticsToHide": [
-      "Shoes",
-      "Pants"
-    ],
-    "StatModifiers": {
-      "Health": [
-        {
-          "Amount": 6,
-          "CalculationType": "Additive"
-        }
-      ]
-    },
     "DamageResistance": {
       "Physical": [
         {
-          "Amount": 0.04,
+          "Amount": 0.0419,
           "CalculationType": "Multiplicative"
         }
       ],
       "Projectile": [
         {
-          "Amount": 0.04,
+          "Amount": 0.0419,
           "CalculationType": "Multiplicative"
         }
       ]
-    }
+    },
+    "StatModifiers": {
+      "Health": [
+        {
+          "Amount": 7,
+          "CalculationType": "Additive"
+        }
+      ]
+    },
+    "CosmeticsToHide": [
+      "Pants",
+      "Shoes"
+    ]
   },
+  "MaxDurability": 76,
+  "DurabilityLossOnHit": 0.5,
   "Tags": {
     "Type": [
       "Armor"
     ],
     "Family": [
+      "Leather_Light"
+    ],
+    "ArmorType": [
       "Leather"
     ]
-  },
-  "MaxDurability": 70,
-  "ItemSoundSetId": "ISS_Armor_Leather",
-  "Utility": {
-    "StatModifiers": {
-      "Stamina": [
-        {
-          "Target": "Max",
-          "Amount": 0.05,
-          "CalculationType": "Multiplicative"
-        }
-      ]
-    }
   }
 }

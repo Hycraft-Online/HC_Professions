@@ -2,9 +2,13 @@
   "TranslationProperties": {
     "Name": "server.items.Armor_Leather_Light_Chest.name"
   },
-  "Parent": "Armor_Iron_Chest",
   "Quality": "Common",
   "ItemLevel": 15,
+  "PlayerAnimationsId": "Block",
+  "ItemSoundSetId": "ISS_Armor_Leather",
+  "Categories": [
+    "Items.Armors"
+  ],
   "Icon": "Icons/ItemsGenerated/Armor_Leather_Light_Chest.png",
   "IconProperties": {
     "Rotation": [
@@ -21,15 +25,14 @@
   "Model": "Items/Armors/Leather_Light/Chest.blockymodel",
   "Texture": "Items/Armors/Leather_Light/Chest_Texture.png",
   "Recipe": {
-    "TimeSeconds": 2,
     "Input": [
       {
         "ItemId": "Ingredient_Leather_Light",
         "Quantity": 6
       },
       {
-        "Quantity": 5,
-        "ItemId": "Ingredient_Fibre"
+        "ResourceTypeId": "Wood_Trunk",
+        "Quantity": 2
       },
       {
         "ItemId": "Ingredient_Bolt_Wool",
@@ -45,55 +48,65 @@
         ]
       }
     ],
-    "KnowledgeRequired": true
+    "KnowledgeRequired": false,
+    "TimeSeconds": 5
+  },
+  "Interactions": {
+    "Primary": {
+      "Interactions": [
+        {
+          "Type": "EquipItem"
+        }
+      ]
+    },
+    "Secondary": {
+      "Interactions": [
+        {
+          "Type": "EquipItem"
+        }
+      ]
+    }
   },
   "Armor": {
     "ArmorSlot": "Chest",
     "BaseDamageResistance": 0,
-    "CosmeticsToHide": [
-      "Overtop"
-    ],
-    "StatModifiers": {
-      "Health": [
-        {
-          "Amount": 8,
-          "CalculationType": "Additive"
-        }
-      ]
-    },
     "DamageResistance": {
       "Physical": [
         {
-          "Amount": 0.05,
+          "Amount": 0.0539,
           "CalculationType": "Multiplicative"
         }
       ],
       "Projectile": [
         {
-          "Amount": 0.05,
+          "Amount": 0.0539,
           "CalculationType": "Multiplicative"
         }
       ]
-    }
+    },
+    "StatModifiers": {
+      "Health": [
+        {
+          "Amount": 9,
+          "CalculationType": "Additive"
+        }
+      ]
+    },
+    "CosmeticsToHide": [
+      "Overtop"
+    ]
   },
+  "MaxDurability": 76,
+  "DurabilityLossOnHit": 0.5,
   "Tags": {
     "Type": [
       "Armor"
     ],
     "Family": [
+      "Leather_Light"
+    ],
+    "ArmorType": [
       "Leather"
     ]
-  },
-  "MaxDurability": 70,
-  "ItemSoundSetId": "ISS_Armor_Leather",
-  "Utility": {
-    "StatModifiers": {
-      "Stamina": [
-        {
-          "CalculationType": "Multiplicative",
-          "Amount": 0.06
-        }
-      ]
-    }
   }
 }

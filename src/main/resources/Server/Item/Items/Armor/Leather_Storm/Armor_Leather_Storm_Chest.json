@@ -5,34 +5,38 @@
   "Quality": "Epic",
   "ItemLevel": 46,
   "PlayerAnimationsId": "Block",
-  "ItemSoundSetId": "ISS_Armor_Heavy",
+  "ItemSoundSetId": "ISS_Armor_Leather",
   "Categories": [
     "Items.Armors"
   ],
-  "Icon": "Icons/ItemsGenerated/Armor_Mithril_Chest.png",
+  "Icon": "Icons/ItemsGenerated/Armor_Leather_Raven_Chest.png",
   "IconProperties": {
     "Rotation": [
       22.5,
       45,
       22.5
     ],
-    "Scale": 0.3,
+    "Scale": 0.4,
     "Translation": [
-      -3.6,
-      -59.4
+      0,
+      -16.8
     ]
   },
-  "Model": "Items/Armors/Mithril/Chest.blockymodel",
-  "Texture": "Items/Armors/Mithril/Chest_Texture.png",
+  "Model": "Items/Armors/Leather_Raven/Chest.blockymodel",
+  "Texture": "Items/Armors/Leather_Raven/Chest_Texture.png",
   "Recipe": {
     "Input": [
       {
         "ItemId": "Ingredient_Leather_Storm",
-        "Quantity": 20
+        "Quantity": 6
       },
       {
-        "ItemId": "Component_Void_Tooled_Strip",
-        "Quantity": 8
+        "ResourceTypeId": "Wood_Trunk",
+        "Quantity": 2
+      },
+      {
+        "ItemId": "Ingredient_Bolt_Wool",
+        "Quantity": 2
       }
     ],
     "BenchRequirement": [
