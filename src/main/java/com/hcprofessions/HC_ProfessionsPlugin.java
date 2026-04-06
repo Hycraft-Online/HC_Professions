@@ -62,7 +62,7 @@ public class HC_ProfessionsPlugin extends JavaPlugin {
     public static final String VERSION = "1.0.0";
     private static final String MOD_FOLDER = "mods/.hc_config/HC_Professions";
 
-    private static HC_ProfessionsPlugin instance;
+    private static volatile HC_ProfessionsPlugin instance;
 
     // Database
     private DatabaseManager databaseManager;
@@ -279,6 +279,7 @@ public class HC_ProfessionsPlugin extends JavaPlugin {
         professionManager.setReleaseLevelCap(releaseCap);
         this.getLogger().at(Level.INFO).log("Release level cap: %d", releaseCap);
         allProfessionManager = new AllProfessionManager(allProfessionRepository, professionManager);
+        professionManager.setAllProfessionManager(allProfessionManager);
         int allProfCap = Integer.parseInt(xpConfig.getOrDefault("non_native_craft_level_cap", "10"));
         allProfessionManager.setNonNativeLevelCap(allProfCap);
         craftingGateManager = new CraftingGateManager(recipeGateRepository, professionManager);
@@ -544,6 +545,7 @@ public class HC_ProfessionsPlugin extends JavaPlugin {
             databaseManager.close();
         }
 
+        instance = null;
         this.getLogger().at(Level.INFO).log("HC_Professions disabled");
     }
 }

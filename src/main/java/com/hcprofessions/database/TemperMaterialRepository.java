@@ -70,10 +70,12 @@ public class TemperMaterialRepository {
              Statement stmt = conn.createStatement()) {
 
             // Check if old named tiers exist and need migration
-            ResultSet oldCheck = stmt.executeQuery(
-                "SELECT count(*) FROM prof_temper_material_requirements WHERE material = 'Crude'");
-            oldCheck.next();
-            boolean hasOldTiers = oldCheck.getInt(1) > 0;
+            boolean hasOldTiers;
+            try (ResultSet oldCheck = stmt.executeQuery(
+                "SELECT count(*) FROM prof_temper_material_requirements WHERE material = 'Crude'")) {
+                oldCheck.next();
+                hasOldTiers = oldCheck.getInt(1) > 0;
+            }
 
             if (hasOldTiers) {
                 // Migrate: delete old named tiers, insert new Roman numeral tiers

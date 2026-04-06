@@ -40,12 +40,8 @@ public class ActionXpService {
     /** Track players already notified about the non-native craft cap (uuid:nativeProfession) */
     private final Set<String> notifiedNonNativeCap = ConcurrentHashMap.newKeySet();
 
-    // Per-event: exact match lookup (case-insensitive key)
-    private volatile Map<ActionType, Map<String, List<MatchedGrant>>> exactGrants = new EnumMap<>(ActionType.class);
-    // Per-event: pattern match list (iterated)
-    private volatile Map<ActionType, List<PatternGrant>> patternGrants = new EnumMap<>(ActionType.class);
-
-    private volatile int totalEntries = 0;
+    // Grant data swapped atomically to avoid torn reads during reload()
+    private volatile GrantData grantData = new GrantData(new EnumMap<>(ActionType.class), new EnumMap<>(ActionType.class), 0);
 
     public ActionXpService(XpActionRepository repository, ProfessionManager professionManager,
                            TradeskillManager tradeskillManager) {
@@ -90,9 +86,10 @@ public class ActionXpService {
             MatchedGrant grant = new MatchedGrant(row.skillType(), row.skillName(), row.xpAmount(), row.minLevel());
 
             if (row.isPattern()) {
-                // Convert SQL LIKE pattern to regex
+                // Convert SQL LIKE pattern to regex, precompute specificity
                 Pattern regex = likeToRegex(row.identifier());
-                PatternGrant pg = new PatternGrant(row.identifier(), regex, grant);
+                int specificity = patternSpecificity(row.identifier());
+                PatternGrant pg = new PatternGrant(row.identifier(), regex, specificity, grant);
                 newPattern.computeIfAbsent(row.event(), k -> new ArrayList<>()).add(pg);
             } else {
                 String key = row.identifier().toLowerCase();
@@ -102,11 +99,10 @@ public class ActionXpService {
             }
         }
 
-        this.exactGrants = newExact;
-        this.patternGrants = newPattern;
-        this.totalEntries = rows.size();
+        // Swap all grant data atomically — readers always see a consistent snapshot
+        this.grantData = new GrantData(newExact, newPattern, rows.size());
 
-        LOGGER.at(Level.INFO).log("ActionXpService loaded %d entries", totalEntries);
+        LOGGER.at(Level.INFO).log("ActionXpService loaded %d entries", rows.size());
     }
 
     public void onAction(PlayerRef playerRef, ActionType event, String identifier) {
@@ -122,6 +118,7 @@ public class ActionXpService {
         if (event == null || identifier == null) return List.of();
 
         String lowerIdentifier = identifier.toLowerCase();
+        GrantData data = this.grantData; // single volatile read
 
         // Track best grant per (skillType, skillName) — most specific wins
         // Key: "TRADESKILL:MINING" or "PROFESSION:null"
@@ -129,7 +126,7 @@ public class ActionXpService {
         Map<String, Integer> specificityBySkill = new HashMap<>();
 
         // 1. Check exact matches (specificity = Integer.MAX_VALUE, always win)
-        Map<String, List<MatchedGrant>> exactMap = exactGrants.get(event);
+        Map<String, List<MatchedGrant>> exactMap = data.exactGrants.get(event);
         if (exactMap != null) {
             List<MatchedGrant> exact = exactMap.get(lowerIdentifier);
             if (exact != null) {
@@ -141,17 +138,16 @@ public class ActionXpService {
             }
         }
 
-        // 2. Check pattern matches (specificity = raw pattern length minus wildcards)
-        List<PatternGrant> patterns = patternGrants.get(event);
+        // 2. Check pattern matches (specificity precomputed during reload)
+        List<PatternGrant> patterns = data.patternGrants.get(event);
         if (patterns != null) {
             for (PatternGrant pg : patterns) {
                 if (pg.regex.matcher(lowerIdentifier).matches()) {
                     String key = pg.grant.skillType() + ":" + pg.grant.skillName();
-                    int specificity = patternSpecificity(pg.rawPattern);
                     int existing = specificityBySkill.getOrDefault(key, -1);
-                    if (specificity > existing) {
+                    if (pg.specificity > existing) {
                         bestBySkill.put(key, pg.grant);
-                        specificityBySkill.put(key, specificity);
+                        specificityBySkill.put(key, pg.specificity);
                     }
                 }
             }
@@ -229,7 +225,7 @@ public class ActionXpService {
     }
 
     public int size() {
-        return totalEntries;
+        return grantData.totalEntries;
     }
 
     /**
@@ -257,5 +253,12 @@ public class ActionXpService {
 
     public record MatchedGrant(SkillTarget skillType, String skillName, int xpAmount, int minLevel) {}
 
-    private record PatternGrant(String rawPattern, Pattern regex, MatchedGrant grant) {}
+    private record PatternGrant(String rawPattern, Pattern regex, int specificity, MatchedGrant grant) {}
+
+    /** Immutable holder for grant data — swapped atomically during reload() */
+    private record GrantData(
+        Map<ActionType, Map<String, List<MatchedGrant>>> exactGrants,
+        Map<ActionType, List<PatternGrant>> patternGrants,
+        int totalEntries
+    ) {}
 }

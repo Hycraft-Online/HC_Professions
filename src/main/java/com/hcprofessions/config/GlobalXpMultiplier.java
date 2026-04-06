@@ -26,8 +26,8 @@ public class GlobalXpMultiplier {
 
     private static Method getSettingDoubleMethod;
     private static Method getSettingStringMethod;
-    private static boolean initialized = false;
-    private static boolean available = false;
+    private static volatile boolean initialized = false;
+    private static volatile boolean available = false;
 
     private static void init() {
         if (initialized) return;

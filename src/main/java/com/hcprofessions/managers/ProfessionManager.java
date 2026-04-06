@@ -34,9 +34,14 @@ public class ProfessionManager {
     private final ProfessionRepository repository;
     private final ConcurrentHashMap<UUID, PlayerProfessionData> cache = new ConcurrentHashMap<>();
     private final Map<UUID, UUID> accountToChar = new ConcurrentHashMap<>();
+    private AllProfessionManager allProfessionManager;
 
     public ProfessionManager(ProfessionRepository repository) {
         this.repository = repository;
+    }
+
+    public void setAllProfessionManager(AllProfessionManager allProfessionManager) {
+        this.allProfessionManager = allProfessionManager;
     }
 
     public void registerCharMapping(UUID accountUuid, UUID charUuid) {
@@ -85,6 +90,11 @@ public class ProfessionManager {
         data.setCurrentXp(0);
         repository.save(data);
 
+        // Sync AllProfessionManager to match (prevents level desync / ghost secondary)
+        if (allProfessionManager != null) {
+            allProfessionManager.syncOnChoose(playerUuid, profession);
+        }
+
         Message msg = Message.raw("You are now a " + profession.getDisplayName() + "!")
             .color(profession.getColor());
         try {
@@ -104,19 +114,28 @@ public class ProfessionManager {
             return false;
         }
 
-        String oldProfession = data.getProfession().getDisplayName();
+        Profession oldProf = data.getProfession();
+        String oldProfession = oldProf.getDisplayName();
         int oldLevel = data.getLevel();
         data.setProfession(null);
 
         // If above level 20, cap at 20 instead of full reset
+        int newLevel;
         if (oldLevel > 20) {
+            newLevel = 20;
             data.setLevel(20);
             data.setCurrentXp(0);
         } else {
+            newLevel = 0;
             data.resetProgression();
         }
         data.incrementRespecCount();
         repository.save(data);
+
+        // Reset AllProfessionManager to match (prevents ghost secondary profession)
+        if (allProfessionManager != null) {
+            allProfessionManager.resetOnRespec(playerUuid, oldProf, newLevel);
+        }
 
         if (oldLevel > 20) {
             playerRef.sendMessage(Message.raw("Profession reset! You are no longer a " + oldProfession +

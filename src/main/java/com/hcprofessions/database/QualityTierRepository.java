@@ -25,20 +25,21 @@ public class QualityTierRepository {
         try (Connection conn = db.getConnection();
              PreparedStatement stmt = conn.prepareStatement(
                  "SELECT * FROM prof_quality_tiers ORDER BY sort_order, min_level")) {
-            ResultSet rs = stmt.executeQuery();
-            while (rs.next()) {
-                tiers.add(new QualityTierDefinition(
-                    rs.getInt("id"),
-                    rs.getString("name"),
-                    rs.getInt("min_level"),
-                    rs.getInt("max_level"),
-                    rs.getString("max_rarity"),
-                    rs.getInt("min_affixes"),
-                    rs.getInt("max_affixes"),
-                    rs.getDouble("bonus_affix_chance"),
-                    rs.getInt("ilvl_variance"),
-                    rs.getInt("sort_order")
-                ));
+            try (ResultSet rs = stmt.executeQuery()) {
+                while (rs.next()) {
+                    tiers.add(new QualityTierDefinition(
+                        rs.getInt("id"),
+                        rs.getString("name"),
+                        rs.getInt("min_level"),
+                        rs.getInt("max_level"),
+                        rs.getString("max_rarity"),
+                        rs.getInt("min_affixes"),
+                        rs.getInt("max_affixes"),
+                        rs.getDouble("bonus_affix_chance"),
+                        rs.getInt("ilvl_variance"),
+                        rs.getInt("sort_order")
+                    ));
+                }
             }
         } catch (SQLException e) {
             LOGGER.at(Level.SEVERE).log("Failed to load quality tiers: " + e.getMessage());

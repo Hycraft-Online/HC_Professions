@@ -23,9 +23,10 @@ public class ConfigRepository {
         Map<String, String> config = new LinkedHashMap<>();
         try (Connection conn = db.getConnection();
              PreparedStatement stmt = conn.prepareStatement("SELECT key, value FROM prof_xp_config ORDER BY key")) {
-            ResultSet rs = stmt.executeQuery();
-            while (rs.next()) {
-                config.put(rs.getString("key"), rs.getString("value"));
+            try (ResultSet rs = stmt.executeQuery()) {
+                while (rs.next()) {
+                    config.put(rs.getString("key"), rs.getString("value"));
+                }
             }
         } catch (SQLException e) {
             LOGGER.at(Level.SEVERE).log("Failed to load XP config: " + e.getMessage());

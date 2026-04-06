@@ -26,9 +26,10 @@ public class DefinitionRepository {
              PreparedStatement stmt = conn.prepareStatement(
                  "SELECT * FROM prof_definitions WHERE type = ? AND enabled = true ORDER BY sort_order, id")) {
             stmt.setString(1, type);
-            ResultSet rs = stmt.executeQuery();
-            while (rs.next()) {
-                defs.add(mapRow(rs));
+            try (ResultSet rs = stmt.executeQuery()) {
+                while (rs.next()) {
+                    defs.add(mapRow(rs));
+                }
             }
         } catch (SQLException e) {
             LOGGER.at(Level.SEVERE).log("Failed to load definitions for type " + type + ": " + e.getMessage());
@@ -40,9 +41,10 @@ public class DefinitionRepository {
         try (Connection conn = db.getConnection();
              PreparedStatement stmt = conn.prepareStatement("SELECT * FROM prof_definitions WHERE id = ?")) {
             stmt.setString(1, id);
-            ResultSet rs = stmt.executeQuery();
-            if (rs.next()) {
-                return mapRow(rs);
+            try (ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()) {
+                    return mapRow(rs);
+                }
             }
         } catch (SQLException e) {
             LOGGER.at(Level.SEVERE).log("Failed to load definition " + id + ": " + e.getMessage());
@@ -104,12 +106,13 @@ public class DefinitionRepository {
                 stmt.setString(1, type);
                 stmt.executeUpdate();
             }
-            // Re-enable only the ones we want
-            for (String id : keepEnabled) {
+            // Re-enable the ones we want in a single batch query
+            if (!keepEnabled.isEmpty()) {
+                String[] ids = keepEnabled.toArray(new String[0]);
                 try (PreparedStatement stmt = conn.prepareStatement(
-                        "UPDATE prof_definitions SET enabled = true WHERE id = ? AND type = ?")) {
-                    stmt.setString(1, id);
-                    stmt.setString(2, type);
+                        "UPDATE prof_definitions SET enabled = true WHERE type = ? AND id = ANY(?)")) {
+                    stmt.setString(1, type);
+                    stmt.setArray(2, conn.createArrayOf("text", ids));
                     stmt.executeUpdate();
                 }
             }

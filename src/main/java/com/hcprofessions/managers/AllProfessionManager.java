@@ -122,6 +122,36 @@ public class AllProfessionManager {
         }
     }
 
+    /**
+     * Called when a player chooses a profession. Resets AllProfessionManager data
+     * for that profession to level 1 / 0 XP so both managers stay in sync.
+     */
+    public void syncOnChoose(UUID playerUuid, Profession profession) {
+        Map<Profession, PlayerAllProfessionData> allData = getPlayerData(playerUuid);
+        PlayerAllProfessionData data = allData.get(profession);
+        if (data != null) {
+            data.setLevel(1);
+            data.setCurrentXp(0);
+            repository.save(data);
+            LOGGER.at(Level.INFO).log("Synced AllProfession %s to Lv.1 for %s on choose", profession.name(), playerUuid);
+        }
+    }
+
+    /**
+     * Called when a player respecs. Resets AllProfessionManager data for the old
+     * profession to the post-respec level so it doesn't appear as a ghost secondary.
+     */
+    public void resetOnRespec(UUID playerUuid, Profession oldProfession, int newLevel) {
+        Map<Profession, PlayerAllProfessionData> allData = getPlayerData(playerUuid);
+        PlayerAllProfessionData data = allData.get(oldProfession);
+        if (data != null) {
+            data.setLevel(newLevel);
+            data.setCurrentXp(0);
+            repository.save(data);
+            LOGGER.at(Level.INFO).log("Reset AllProfession %s to Lv.%d for %s on respec", oldProfession.name(), newLevel, playerUuid);
+        }
+    }
+
     public void savePlayer(UUID playerUuid) {
         Map<Profession, PlayerAllProfessionData> data = cache.get(playerUuid);
         if (data != null) {

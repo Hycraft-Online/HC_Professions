@@ -2,7 +2,9 @@ package com.hcprofessions.commands;
 
 import com.hcprofessions.HC_ProfessionsPlugin;
 import com.hcprofessions.config.XPCurve;
+import com.hcprofessions.managers.AllProfessionManager;
 import com.hcprofessions.managers.ProfessionManager;
+import com.hcprofessions.models.PlayerAllProfessionData;
 import com.hcprofessions.models.PlayerProfessionData;
 import com.hcprofessions.models.Profession;
 import com.hcprofessions.pages.ProfessionSelectionPage;
@@ -99,6 +101,7 @@ public class ProfessionCommand extends AbstractPlayerCommand {
     private void handleInfo(CommandContext ctx, PlayerRef playerRef) {
         UUID uuid = playerRef.getUuid();
         ProfessionManager profManager = plugin.getProfessionManager();
+        AllProfessionManager allProfManager = plugin.getAllProfessionManager();
         PlayerProfessionData data = profManager.getPlayerData(uuid);
 
         ctx.sendMessage(Message.raw("=== Profession Info ===").color(Color.YELLOW));
@@ -110,18 +113,25 @@ public class ProfessionCommand extends AbstractPlayerCommand {
 
         Profession prof = data.getProfession();
         int cap = profManager.getEffectiveLevelCap();
-        ctx.sendMessage(Message.raw("Profession: " + prof.getDisplayName()).color(prof.getColor()));
-        ctx.sendMessage(Message.raw("Level: " + data.getLevel() + " / " + cap).color(Color.WHITE));
 
-        if (data.getLevel() < cap) {
-            long needed = XPCurve.getXpToNextLevel(data.getLevel());
-            ctx.sendMessage(Message.raw("XP: " + String.format("%,d / %,d", data.getCurrentXp(), needed)).color(Color.WHITE));
+        // Read level/XP from AllProfessionManager (same source as /menu) for consistency
+        PlayerAllProfessionData allData = allProfManager.getPlayerData(uuid).get(prof);
+        int level = allData != null ? allData.getLevel() : data.getLevel();
+        long currentXp = allData != null ? allData.getCurrentXp() : data.getCurrentXp();
+        long totalXpEarned = allData != null ? allData.getTotalXpEarned() : data.getTotalXpEarned();
+
+        ctx.sendMessage(Message.raw("Profession: " + prof.getDisplayName()).color(prof.getColor()));
+        ctx.sendMessage(Message.raw("Level: " + level + " / " + cap).color(Color.WHITE));
+
+        if (level < cap) {
+            long needed = XPCurve.getXpToNextLevel(level);
+            ctx.sendMessage(Message.raw("XP: " + String.format("%,d / %,d", currentXp, needed)).color(Color.WHITE));
         } else {
             ctx.sendMessage(Message.raw("XP: MAX LEVEL").color(new Color(255, 215, 0)));
         }
 
         ctx.sendMessage(Message.raw("Items Crafted: " + data.getTotalItemsCrafted()).color(Color.WHITE));
-        ctx.sendMessage(Message.raw("Total XP Earned: " + String.format("%,d", data.getTotalXpEarned())).color(Color.GRAY));
+        ctx.sendMessage(Message.raw("Total XP Earned: " + String.format("%,d", totalXpEarned)).color(Color.GRAY));
         if (data.getRespecCount() > 0) {
             ctx.sendMessage(Message.raw("Respecs: " + data.getRespecCount()).color(Color.GRAY));
         }

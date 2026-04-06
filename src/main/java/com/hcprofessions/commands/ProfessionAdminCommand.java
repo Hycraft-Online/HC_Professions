@@ -142,6 +142,11 @@ public class ProfessionAdminCommand extends AbstractAsyncCommand {
 
         if (skillName.equalsIgnoreCase("profession") || skillName.equalsIgnoreCase("prof")) {
             plugin.getProfessionManager().grantXp(targetRef, xp);
+            // Also grant to AllProfessionManager to keep both in sync
+            var mainProf = plugin.getProfessionManager().getProfession(targetRef.getUuid());
+            if (mainProf != null) {
+                plugin.getAllProfessionManager().grantXp(targetRef, mainProf, xp);
+            }
             ctx.sendMessage(Message.raw("Granted " + xp + " profession XP to " + playerName).color(Color.GREEN));
             return;
         }
